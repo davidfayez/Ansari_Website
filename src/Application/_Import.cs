@@ -1,0 +1,12 @@
+﻿global using System.Linq;
+global using System.Text;
+global using System.Threading.Tasks;
+global using Microsoft.EntityFrameworkCore;
+global using System;
+global using System.Collections.Generic;
+global using DB = Ansari_Website.Domain.Entities.CPanel;
+global using AutoMapper;
+global using MediatR;
+global using Ansari_Website.Application.Common.Interfaces;
+global using Ansari_Website.Application.Common.Mappings;
+global using Ansari_Website.Domain.Common;

@@ -1,0 +1,177 @@
+@media print{
+	body{
+		  -webkit-print-color-adjust: exact !important;
+		  -ms-print-color-adjust: exact !important;
+		  		  -moz-print-color-adjust: exact !important;
+
+		print-color-adjust: exact !important;
+
+	}
+
+.page-name-print{
+	background-color:#5786e8;
+	border-radius:20px;
+	margin:10px 0px;
+	padding:10px;
+	color:#fff;
+}
+
+.page-date-print{
+	border:1px solid#f00;
+	border-radius:20px;
+	margin:10px 0px;
+	padding:10px;
+}
+
+.h6-title{
+	font-size:16px;
+}
+.hr-header{
+	border-top:1px solid #f00;
+}
+	.print-div{
+		display:block;
+	}
+	.input-sys-print{
+		border-radius: 8px;
+    padding: 1px 4px;
+    border: 1px solid #5786e8;
+    color: #000;
+	}
+	header, #main-nav, .yourdiv{
+		display:none;
+	}
+	
+	.title-data{
+		position:relative;
+	
+
+	}
+	
+.title-data h3{
+				border:1px solid #5786e8;
+				padding:1px !important;
+				font-size:14px;
+				border-radius:5px;
+background-color:#BBCEFF !important;
+font-weight:bold;
+color:#000 !important;
+max-width:170px;
+text-align:center;
+color:#5786e8;
+z-index:5;
+		position:relative;
+
+	}
+	.title-data::after{
+		content:"";
+		border-top:1px solid #5786e8;
+		position:absolute;
+		top:10px;
+		z-index:1;
+		width:100%;
+		
+	}
+		.patient-data{
+		border:1px solid #f00;
+		padding:15px !important;
+		border-radius:10px;
+		position:relative;
+				margin-top:20px;
+
+	}
+	.patient-data h3{
+		position:absolute;
+				border:1px solid #f00;
+		top:-20px !important;
+		left:20px;
+				padding:5px !important;
+				font-size:18px;
+				border-radius:5px;
+background-color:#fff !important;
+	}
+		.patient-data h3:lang(ar){
+			left:auto;
+			right:20px !important;
+		}
+	.logo-print{
+		width:100px;
+		margin-bottom:10px;
+	}
+	.hr-print{
+	border-top: 1px solid #f00;
+}
+
+
+.title-div-print{
+	padding:2px 2px 3px 30px !important;
+	position:relative;
+	border-radius:25px;
+border:1px solid #f00;
+color:#f00;
+width:100%;
+margin:7px 0px;
+}
+.title-div-print:lang(ar){
+		padding:2px 30px 3px 2px !important;
+
+}
+.title-div-print i{
+border:1px solid #f00;
+padding:2px;
+position:absolute;
+left:5px;
+top:3px;
+border-radius:50%;
+
+
+}
+.title-div-print i:lang(ar){
+	left:auto;
+	right:5px;
+}
+    .pagebreak {
+        clear: both;
+        page-break-after: always;
+    }
+.r-l-color{
+	color:#f00;
+}
+
+.label-small{
+	font-size:14px !important;
+}
+
+
+
+.table-ins{
+	width:100%;
+}
+.table-ins th, .table-ins td{
+	padding:4px;
+	font-size:14px;
+}
+.checklist-div hr{
+	margin:5px;
+}
+
+
+body:lang(ar){
+
+}
+
+
+
+.h3-print-ar{
+	font-size:18px;
+	position:absolute;
+	right:30px;
+	top:-20px;
+	padding:10px;
+	color:#fff;
+	border-radius:10px;
+	background-color:#5785e7 !important;
+}
+
+
+}

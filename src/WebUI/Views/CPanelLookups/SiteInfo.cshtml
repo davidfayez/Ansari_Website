@@ -1,0 +1,73 @@
+﻿@model CreateUpdateSiteInfoCommand
+
+@{
+    Layout = "_Layout";
+}
+
+<div class="inner-page">
+    <form asp-controller="CPanelLookups" asp-action="SiteInfo" method="post" class="row" enctype="multipart/form-data">
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="input-sys-wrapper">
+                    <label>Facebook Link</label>
+                    <input type="text" asp-for="FacebookLink" />
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="input-sys-wrapper">
+                    <label>Twitter Link</label>
+                    <input type="text" asp-for="TwitterLink" />
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="input-sys-wrapper">
+                    <label>Instgrame Link</label>
+                    <input type="text" asp-for="InstgramLink" />
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="input-sys-wrapper">
+                    <label>youtube</label>
+                    <input type="text" asp-for="Youtube" />
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="input-sys-wrapper">
+                    <label>Email</label>
+                    <input type="text" asp-for="Email" />
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="input-sys-wrapper">
+                    <label>Telephone</label>
+                    <input type="text" asp-for="Phone" />
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="input-sys-wrapper">
+                    <label>Adress arabic</label>
+                    <input type="text" asp-for="AddressAr" />
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="input-sys-wrapper">
+                    <label>Adress English</label>
+                    <input type="text" asp-for="AddressEn" />
+                </div>
+            </div>
+
+        </div>
+
+        <div class="text-end">
+            <button type="submit" class="save-btn"><i class="fa-solid fa-check"></i> Save </button>
+            <button class="cancel-btn"> <i class="fa-solid fa-xmark"></i> Cancel </button>
+        </div>
+    </form>
+</div>

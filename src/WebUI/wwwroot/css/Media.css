@@ -1,0 +1,59 @@
+@media (max-width:991px){
+    header{
+        padding: 10px 20px !important;
+    }
+    .padding-toggel{
+        padding-left: 0px;
+    }
+    .padding-toggel:lang(ar){
+        padding-left: 0px;
+
+        padding-right: 0px;
+    }
+    .search-grid{
+        display: none;
+    }
+    nav{
+        position: fixed;
+        top: 0px;
+        background: rgb(59,168,230);
+        background: linear-gradient(45deg, rgb(37, 145, 207) 0%, rgba(59 168 230,1) 59%);
+        padding: 40px 0px 10px 0px;
+    }
+    .nav-mobile{
+        left: -250px;
+    }
+    .nav-mobile:lang(ar){
+        right: -250px;
+        left: auto;
+    }
+    .btn-close-menu, .btn-close-menu{
+        display: none;
+    }
+    .serach-modal, .btn-toggel-mobile{
+display: inline-block;
+    }
+    .btn-menu{
+        display: inline-block;
+    }
+    .btn-toggel{
+        display: none;
+    }
+    
+}
+@media (max-width:768px){
+    .chat-div-item{
+        right: 20px;
+    }
+    .head-Nav{
+        display: none;
+    }
+    .wrapper-logo{
+width: 35px;
+height: 35px;
+background-image: url(../images/logo-m.png);
+    }
+    .back-white{
+        min-height: auto;
+    }
+}

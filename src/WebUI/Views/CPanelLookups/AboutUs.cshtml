@@ -1,0 +1,217 @@
+﻿@model CreateUpdateAboutUsCommand
+
+@{
+    Layout = "_Layout";
+}
+
+<div class="inner-page">
+    <form asp-controller="CPanelLookups" asp-action="AboutUs" method="post" class="row" enctype="multipart/form-data">
+
+        <div class="accordion">
+
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingOne">
+                    <button class="accordion-button  accordion-setting" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        About Us
+                    </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse accordion-content collapse show" aria-labelledby="headingOne">
+                    <div class="accordion-body">
+                        <br />
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="input-sys-wrapper">
+                                    <label>Title Arabic</label>
+                                    <input type="text" asp-for="TitleAr"/>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="input-sys-wrapper">
+                                    <label>Title English</label>
+                                    <input type="text" asp-for="TitleEn" />
+                                </div>
+                            </div>
+
+                            <div class="col-md-12">
+                                <div class="input-sys-wrapper">
+                                    <label>Describtion Arabic</label>
+                                    <textarea type="text" asp-for="DescriptionAr"></textarea>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="input-sys-wrapper">
+                                    <label>Describtion English</label>
+                                    <textarea type="text" asp-for="DescriptionEn"></textarea>
+                                </div>
+                            </div>
+                        </div>
+
+                        <ul class=" ul-file">
+
+                            <li>
+                                <span>    Attach File</span>
+                                <div class="item-file-div" style="background-image:url(images/rheumatism.jpg)">
+                                    <label for="id-1"><i class="fa-regular fa-pen-to-square"></i></label> <input type="file" id="id-1">
+
+                                </div>
+
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingTwo">
+                    <button class="accordion-button  accordion-setting collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        Our Mission
+
+                    </button>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse accordion-content collapse" aria-labelledby="headingTwo">
+                    <div class="accordion-body">
+
+                        <br />
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="input-sys-wrapper">
+                                    <label>Title Arabic</label>
+                                    <input type="text" asp-for="MissionTitleAr" />
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="input-sys-wrapper">
+                                    <label>Title English</label>
+                                    <input type="text" asp-for="MissionTitleEn" />
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="input-sys-wrapper">
+                                    <label>Icon Class Name</label>
+                                    <input type="text" asp-for="MissionIconName" />
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="input-sys-wrapper">
+                                    <label>Describtion Arabic</label>
+                                    <textarea type="text" asp-for="MissionDescriptionAr"></textarea>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="input-sys-wrapper">
+                                    <label>Describtion English</label>
+                                    <textarea type="text" asp-for="MissionDescriptionEn"></textarea>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingThree">
+                    <button class="accordion-button  accordion-setting collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        Our Vision
+
+                    </button>
+                </h2>
+                <div id="collapseThree" class="accordion-collapse accordion-content collapse" aria-labelledby="headingThree">
+                    <div class="accordion-body">
+
+                        <br />
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="input-sys-wrapper">
+                                    <label>Title Arabic</label>
+                                    <input type="text" asp-for="VisionTitleAr" />
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="input-sys-wrapper">
+                                    <label>Title English</label>
+                                    <input type="text" asp-for="VisionTitleEn" />
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="input-sys-wrapper">
+                                    <label>Icon Class Name</label>
+                                    <input type="text" asp-for="VisionIconName" />
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="input-sys-wrapper">
+                                    <label>Describtion Arabic</label>
+                                    <textarea type="text" asp-for="VisionDescriptionAr"></textarea>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="input-sys-wrapper">
+                                    <label>Describtion English</label>
+                                    <textarea type="text" asp-for="VisionDescriptionEn"></textarea>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingFive">
+                    <button class="accordion-button  accordion-setting collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                        Our Values
+
+
+                    </button>
+                </h2>
+                <div id="collapseFive" class="accordion-collapse accordion-content collapse" aria-labelledby="headingFive">
+                    <div class="accordion-body">
+
+                        <br />
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="input-sys-wrapper">
+                                    <label>Title Arabic</label>
+                                    <input type="text" asp-for="ValueTitleAr" />
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="input-sys-wrapper">
+                                    <label>Title English</label>
+                                    <input type="text" asp-for="ValueTitleEn" />
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="input-sys-wrapper">
+                                    <label>Icon Class Name</label>
+                                    <input type="text" asp-for="ValueIconName" />
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="input-sys-wrapper">
+                                    <label>Describtion Arabic</label>
+                                    <textarea type="text" asp-for="ValueDescriptionAr"></textarea>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="input-sys-wrapper">
+                                    <label>Describtion English</label>
+                                    <textarea type="text" asp-for="ValueDescriptionEn"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-end">
+            <button type="submit" class="save-btn"><i class="fa-solid fa-check"></i> Save </button>
+            <button class="cancel-btn"> <i class="fa-solid fa-xmark"></i> Cancel </button>
+        </div>
+    </form>
+</div>

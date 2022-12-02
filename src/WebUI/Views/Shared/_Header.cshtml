@@ -1,0 +1,104 @@
+﻿
+
+<div class="col-lg-3 col-4">
+    <div class="wrapper-logo">
+
+        <button id="actionNav" class="btn-menu"><i class="fa-solid fa-bars"></i></button>
+
+    </div>
+</div>
+<div class="col-lg-5 search-grid">
+    <div class="search">
+        <button class="btn-search"> <i class="fa-solid fa-magnifying-glass"></i></button>
+        <div class="search-div">
+            <button id="filterAction" class="filter-btn"><i class="fa-solid fa-filter"></i></button>
+            <div id="DropFilter" class="drop-filter hide-filter">
+                <div class="inner-filter">
+                    <ul>
+                        <li><label>From</label><input type="date" /></li>
+                        <li><label>To</label><input type="date" /></li>
+                        <li>
+                            <label>Category</label>
+                            <select class="select-filter">
+                                <option>Inbox</option>
+                                <option>Drafts</option>
+                                <option>Trash</option>
+                                <option>Send </option>
+                                <option>Contact </option>
+                            </select>
+                        </li>
+
+                    </ul>
+                    <div class="text-end" style="margin-top: 10px;">
+                        <button class="btn btn-success btn-sm"><i class="fa-solid fa-check"></i></button>
+                        <button id="closeFilter" class="btn btn-dark btn-sm"><i class="fa-solid fa-xmark"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <input class="input-search" placeholder="Search" />
+    </div>
+</div>
+<div class="col-lg-4 col-8">
+    <div class="head-Nav">
+        <div class="dropdown-panel" id="triggerToggle" tabindex="0">
+            <img src="images/UserProfile.png" />
+            <h6>Hello., Dina Adel Mohamed</h6>
+            <i class="fa-solid fa-angle-down i-down"></i>
+        </div>
+        <ul id="drop-Down" class="drop-Down Toggle">
+            <li>
+                <a href="#"><i class="fa-solid fa-gear"></i> Acount Setting</a>
+            </li>
+            <li>
+                <a href="#"><i class="fa-solid fa-right-from-bracket"></i> Sign Out</a>
+            </li>
+        </ul>
+
+    </div>
+    <div class="haeder-icon-div ">
+        <button class="btn-header" id="btnChat">
+            <div class="alert-icon-not"></div><i class="fa-solid fa-comment-dots"></i>
+        </button>
+
+    </div>
+    <div class="haeder-icon-div">
+        <button id="actionDrop" class="btn-header" tabindex="0">
+            <div class="bill-animation">
+                <div id="alert-bill" class="alert-icon-not"></div> <i class="fa-solid fa-bell ring-bill"></i>
+            </div>
+        </button>
+        <div id="dropNotifaction" class="drop-notifaction hide-not">
+            <div class="paddding-drop">
+                <ul class="ul-notifaction">
+                    <li>
+                        <div class="alert-icon alert-inbox"><i class="fa-solid fa-inbox"></i></div>
+                        <h6>Message From <b>Mohamed Gamal</b> </h6>
+                    </li>
+                    <li>
+                        <div class="alert-icon alert-contact"><i class="fa-solid fa-address-book"></i></div>
+                        <h6><b>Mohamed Gamal</b> Added To your Cotact List </h6>
+                    </li>
+                    <li>
+                        <div class="alert-icon alert-inbox"><i class="fa-solid fa-inbox"></i></div>
+                        <h6>Message From <b>Mohamed Gamal</b> </h6>
+                    </li>
+                    <li>
+                        <div class="alert-icon alert-contact"><i class="fa-solid fa-address-book"></i></div>
+                        <h6><b>Mohamed Gamal</b> Added To your Cotact List </h6>
+                    </li>
+                </ul>
+                <a href="#" class="link-notifaction">Show All Notifaction</a>
+            </div>
+
+        </div>
+    </div>
+    <div class="haeder-icon-div">
+        <button class="btn-header serach-modal" data-bs-toggle="modal" data-bs-target="#searchModal">
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+
+    </div>
+</div>

@@ -1,0 +1,148 @@
+@font-face {
+    font-family: 'Cairo';   
+    src: url('../Fonts/Website/Cairo-ExtraBold');
+    src: url('../Fonts/Website/Cairo-ExtraBold.eot?#iefix') format('embedded-opentype'),
+        url('../Fonts/Website/Cairo-ExtraBold.woff2') format('woff2'),
+        url('../Fonts/Website/Cairo-ExtraBold.woff') format('woff'),
+        url('../Fonts/Website/Cairo-ExtraBold.ttf') format('truetype'),
+        url('../Fonts/Website/Cairo-ExtraBold.svg#Cairo-ExtraBold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Cairo';
+    src: url('../Fonts/Website/Cairo-Black.eot');
+    src: url('../Fonts/Website/Cairo-Black.eot?#iefix') format('embedded-opentype'),
+        url('../Fonts/Website/Cairo-Black.woff2') format('woff2'),
+        url('../Fonts/Website/Cairo-Black.woff') format('woff'),
+        url('../Fonts/Website/Cairo-Black.ttf') format('truetype'),
+        url('../Fonts/Website/Cairo-Black.svg#Cairo-Black') format('svg');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Cairo';
+    src: url('../Fonts/Website/Cairo-Bold.eot');
+    src: url('../Fonts/Website/Cairo-Bold.eot?#iefix') format('embedded-opentype'),
+        url('../Fonts/Website/Cairo-Bold.woff2') format('woff2'),
+        url('../Fonts/Website/Cairo-Bold.woff') format('woff'),
+        url('../Fonts/Website/Cairo-Bold.ttf') format('truetype'),
+        url('../Fonts/Website/Cairo-Bold.svg#Cairo-Bold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Cairo';
+    src: url('../Fonts/Website/Cairo-ExtraLight.eot');
+    src: url('../Fonts/Website/Cairo-ExtraLight.eot?#iefix') format('embedded-opentype'),
+        url('../Fonts/Website/Cairo-ExtraLight.woff2') format('woff2'),
+        url('../Fonts/Website/Cairo-ExtraLight.woff') format('woff'),
+        url('../Fonts/Website/Cairo-ExtraLight.ttf') format('truetype'),
+        url('../Fonts/Website/Cairo-ExtraLight.svg#Cairo-ExtraLight') format('svg');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Cairo';
+    src: url('../Fonts/Website/Cairo-Light.eot');
+    src: url('../Fonts/Website/Cairo-Light.eot?#iefix') format('embedded-opentype'),
+        url('../Fonts/Website/Cairo-Light.woff2') format('woff2'),
+        url('../Fonts/Website/Cairo-Light.woff') format('woff'),
+        url('../Fonts/Website/Cairo-Light.ttf') format('truetype'),
+        url('../Fonts/Website/Cairo-Light.svg#Cairo-Light') format('svg');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Cairo';
+    src: url('../Fonts/Website/Cairo-Medium.eot');
+    src: url('../Fonts/Website/Cairo-Medium.eot?#iefix') format('embedded-opentype'),
+        url('../Fonts/Website/Cairo-Medium.woff2') format('woff2'),
+        url('../Fonts/Website/Cairo-Medium.woff') format('woff'),
+        url('../Fonts/Website/Cairo-Medium.ttf') format('truetype'),
+        url('../Fonts/Website/Cairo-Medium.svg#Cairo-Medium') format('svg');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Cairo';
+    src: url('../Fonts/Website/Cairo-Regular.eot');
+    src: url('../Fonts/Website/Cairo-Regular.eot?#iefix') format('embedded-opentype'),
+        url('../Fonts/Website/Cairo-Regular.woff2') format('woff2'),
+        url('../Fonts/Website/Cairo-Regular.woff') format('woff'),
+        url('../Fonts/Website/Cairo-Regular.ttf') format('truetype'),
+        url('../Fonts/Website/Cairo-Regular.svg#Cairo-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Cairo';
+    src: url('../Fonts/Website/Cairo-SemiBold.eot');
+    src: url('../Fonts/Website/Cairo-SemiBold.eot?#iefix') format('embedded-opentype'),
+        url('../Fonts/Website/Cairo-SemiBold.woff2') format('woff2'),
+        url('../Fonts/Website/Cairo-SemiBold.woff') format('woff'),
+        url('../Fonts/Website/Cairo-SemiBold.ttf') format('truetype'),
+        url('../Fonts/Website/Cairo-SemiBold.svg#Cairo-SemiBold') format('svg');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Material Icons';
+    font-style: normal;
+    font-weight: 400;
+    src: url(../fonts/google-solid.woff2) format('woff2');
+  }
+  
+  .material-icons {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    -webkit-font-feature-settings: 'liga';
+    -webkit-font-smoothing: antialiased;
+  }
+  @font-face {
+    font-family: 'Material Symbols Outlined';
+    font-style: normal;
+    font-weight: 100 700;
+    src: url(../fonts/google-outline.woff2) format('woff2');
+  }
+  
+  .material-symbols-outlined {
+    font-family: 'Material Symbols Outlined';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    -webkit-font-feature-settings: 'liga';
+    -webkit-font-smoothing: antialiased;
+  }

@@ -1,0 +1,273 @@
+/* ...............nav............ */
+nav {
+
+    position: absolute;
+
+    height: 100%;
+
+    left: 0px;
+
+    z-index: 6;
+
+    padding: 30px 0px;
+
+    overflow: hidden;
+
+    transition: .5s;
+    width: 250px;
+
+    /* border-right: 1px solid #6989aa; */
+
+}
+
+nav:lang(ar) {
+    right: 0px;
+    left: auto;
+}
+
+
+.drop-Down {
+    position: absolute;
+    top: 100%;
+    left: 0px;
+    color: #1C2732;
+    list-style: none;
+    width: 100%;
+    overflow: hidden;
+    height: 85px;
+    transition: .5s;
+    z-index: 3;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: rgba(255,255,255,.6);
+
+}
+
+
+
+
+.Toggle {
+    height: 0px !important;
+
+}
+
+.drop-Down li {
+    position: relative;
+    padding: 0px 40px;
+}
+
+.drop-Down a {
+    padding: 10px 0px;
+
+    display: block;
+    width: 100%;
+    font-size: 14px;
+
+}
+
+.Dark .drop-Down a {
+    color: #fff;
+}
+
+.drop-Down a i {
+    position: absolute;
+    left: 10px;
+    top: 15px;
+}
+
+/* ................ */
+
+.navigation {
+    font-size: 10px;
+    padding: 0 10px;
+    color: #6989AA;
+}
+
+.big_menu li {
+    position: relative;
+
+}
+
+.big_menu li a {
+    color: #ffffff;
+    padding: 9px 32px;
+    display: block;
+    font-size: 14px;
+    transition: .5s;
+    position: relative;
+    z-index: 1;
+    /* font-weight: bold; */
+}
+
+.Cloud .big_menu li a {
+    color: #fbfdff;
+}
+
+.big_menu li a:hover {
+    color: #fff;
+
+}
+
+.inner-child i {
+    position: absolute;
+    left: 10px;
+    top: 13px;
+}
+
+.big_menu li i:lang(ar) {
+    left: auto;
+    right: 10px;
+}
+
+.active-link {
+    position: relative;
+}
+
+.active-link::after {
+    content: "";
+    width: 100%;
+    position: absolute;
+    left: 0px;
+    border-left: 5px solid #F406FE;
+    z-index: 0;
+    height: 100%;
+    background-color: #A34DF3;
+    top: 0px;
+}
+.Cloud .active-link::after {
+    background-color: #1153a1;
+    border-left: 5px solid #de3c73;
+
+}
+
+.active-link:lang(ar)::after {
+    border-right: 5px solid #EC407A;
+    border-left: 0px;
+}
+.Cloud .active-link:lang(ar)::after {
+    border-right: 5px solid #de3c73;
+}
+
+.active-link a {
+    color: #fff !important;
+}
+
+.border-divider {
+    border-top: 1px solid #6989aa;
+}
+
+.btn-toggel {
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    position: absolute;
+    left: 210px;
+    z-index: 3;
+    top: 18px;
+    font-size: 20px;
+}
+
+.btn-toggel:lang(ar) {
+    left: auto;
+    right: 210px;
+}
+
+.btn-toggel-mobile {
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    position: absolute;
+    left: 210px;
+    z-index: 3;
+    top: 10px;
+    font-size: 20px;
+    display: none;
+}
+.btn-toggel-mobile {
+    right: 210px;
+    left: auto;
+}
+
+
+
+.overlay-menu {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .5);
+    top: 0px;
+    z-index: 3;
+    left: 0px;
+    display: none;
+}
+
+.big_menu {
+    overflow-y: auto;
+    overflow-x: hidden;
+    max-height: 100%;
+}
+
+.nav-link .fa-link {
+    display: none !important;
+}
+.btn-close-menu{
+    position: absolute;
+    background-image: url(../images/close-menu.png);
+    background-color: transparent;
+    top: 24px;
+    right: 0px;
+    border: none;
+    width: 20px;
+    height: 40px;
+    background-size: 100% 100%;
+    z-index: 3;
+}
+.btn-close-menu:lang(ar){
+    right: auto;
+    left: 0px;
+    background-image: url(../images/open-menu.png);
+
+}
+.btn-open-menu{
+    position: absolute;
+    background-image: url(../images/open-menu.png);
+    background-color: transparent;
+    top: 24px;
+    left: 0px;
+    border: none;
+    width: 20px;
+    height: 40px;
+    background-size: 100% 100%;
+    display: none;
+    z-index: 3;
+}
+.btn-open-menu:lang(ar){
+    left: auto;
+    right: 0px;
+    background-image: url(../images/close-menu.png);
+
+}
+.box {
+    cursor: pointer;
+  }
+  .box:after{
+    content: "\f105";
+    position: absolute;
+    right: 10px;
+    top: 7px;
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    color: #fff;
+    transition: .5s;
+
+  }
+  .rotate-arrow::after{
+    transform: rotate(90deg);
+  }
+  .toggle-container {
+    transition: height 0.35s ease-in-out;
+    overflow: hidden;
+  }
+  .toggle-container:not(.active) {
+    display: none;
+  }
