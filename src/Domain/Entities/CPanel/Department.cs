@@ -12,4 +12,7 @@ public class Department : AuditableEntity
     public string? TitleEn { get; set; }
     public string? DescriptionAr { get; set; }
     public string? DescriptionEn { get; set; }
+    public virtual IList<Doctor> Doctors { get; set; }
+    public string? ImageUrl { get; set; }
+    public string? IconUrl { get; set; }
 }

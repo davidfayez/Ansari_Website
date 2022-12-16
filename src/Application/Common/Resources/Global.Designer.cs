@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Medical_Optics.Application.Common.Resources {
+namespace Ansari_Website.Application.Common.Resources {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace Medical_Optics.Application.Common.Resources {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Medical_Optics.Application.Common.Resources.Global", typeof(Global).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Ansari_Website.Application.Common.Resources.Global", typeof(Global).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -867,6 +867,24 @@ namespace Medical_Optics.Application.Common.Resources {
         public static string Description {
             get {
                 return ResourceManager.GetString("Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Arabic Description.
+        /// </summary>
+        public static string DescriptionAr {
+            get {
+                return ResourceManager.GetString("DescriptionAr", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to English Description.
+        /// </summary>
+        public static string DescriptionEn {
+            get {
+                return ResourceManager.GetString("DescriptionEn", resourceCulture);
             }
         }
         

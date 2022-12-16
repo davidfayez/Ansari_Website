@@ -4,6 +4,7 @@ using Ansari_Website.Application.CPanel.Department.Queries.GetAll;
 using Ansari_Website.Application.CPanel.Department.Queries.GetById;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
 namespace Ansari_Website.WebUI.Controllers;
 public class DepartmentController : BaseController
@@ -14,9 +15,11 @@ public class DepartmentController : BaseController
     {
         _mapper = mapper;
     }
-    public IActionResult Index()
+    public async Task<IActionResult> IndexAsync()
     {
-        return View();
+        var Departments = await Mediator.Send(new GetAllDepartmentsQuery());
+
+        return View(Departments);
     }
 
     [HttpGet]
@@ -49,15 +52,15 @@ public class DepartmentController : BaseController
             if (Department != null)
             {
                 var result = _mapper.Map<CreateUpdateDepartmentCommand>(Department);
-                return RedirectToAction("Create",result);
+                return View("Create",result);
             }
         }
 
-        return RedirectToAction("Create",new CreateUpdateDepartmentCommand());
+        return View("Create",new CreateUpdateDepartmentCommand());
     }
     
     [HttpPost]
-    public async Task<JsonResult> DeleteAsync(int id)
+    public async Task<IActionResult> DeleteAsync(int id)
     {
         if (id > 0)
         {
@@ -66,9 +69,10 @@ public class DepartmentController : BaseController
               {
                   Id = id
               });
-            return Json(isSuccess);
+            //return Json(isSuccess);
         }
-        return Json(false);
+        var Departments = await Mediator.Send(new GetAllDepartmentsQuery());
+        return PartialView("_DepartmentsList", Departments);
     }
 
     public async Task<JsonResult> GetAll()

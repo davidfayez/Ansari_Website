@@ -20,7 +20,7 @@ public static class DependencyInjection
         if (configuration.GetValue<bool>("UseInMemoryDatabase"))
         {
             services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseInMemoryDatabase("Ansari_WebsiteDb"));
+                options.UseInMemoryDatabase("Ansari_Website"));
         }
         else
         {
@@ -35,8 +35,9 @@ public static class DependencyInjection
         }
 
         services.AddScoped<IApplicationDbContext>(provider => provider.GetRequiredService<ApplicationDbContext>());
-
         services.AddScoped<IDomainEventService, DomainEventService>();
+        services.AddTransient<ICookieHandler, CookieHandler>();
+        services.AddTransient<IFileHandler, FileHandler>();
 
         //services
         //    .AddDefaultIdentity<ApplicationUser>()

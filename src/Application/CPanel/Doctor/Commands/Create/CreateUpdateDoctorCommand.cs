@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Ansari_Website.Application.CPanel.Doctor.Commands.Create;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace Ansari_Website.Application.CPanel.Doctor.Commands.Create;
 public class CreateUpdateDoctorCommand : AuditableEntity, IRequest<bool>, IMapFrom<DB.Doctor>
@@ -12,10 +14,17 @@ public class CreateUpdateDoctorCommand : AuditableEntity, IRequest<bool>, IMapFr
     public string? NameAr { get; set; }
     public string? NameEn { get; set; }
     public int DepartmentId { get; set; }
+    public string? DepartmentName { get; set; }
+    public string? ImageUrl { get; set; }
+    public IFormFile DoctorImage { get; set; }
+
+    public List<SelectListItem> Departments { get; set; } = new();
+
 
     public void Mapping(Profile profile)
     {
-        profile.CreateMap<CreateUpdateDoctorCommand, DB.Doctor>()
+        profile.CreateMap<DB.Doctor, CreateUpdateDoctorCommand>()
+                .ForMember(des => des.DepartmentName, opt => opt.MapFrom(src => src.Department.TitleAr))
                .ReverseMap();
     }
 }

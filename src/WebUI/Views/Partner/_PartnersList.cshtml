@@ -1,0 +1,36 @@
+﻿@model List<PartnerVM>
+
+<table id="table_id" class=" table-pages table table-bordered" style="font-size:13px;">
+    <thead>
+        <tr>
+            <th>Title Name english</th>
+            <th>Title Name Arabic </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var partner in Model)
+        {
+            <tr>
+                <td> @department.TitleEn </td>
+                <td> @department.TitleAr </td>
+
+                <td>
+                    <a asp-controller="Partner" asp-action="Edit" asp-route-id="@partner.Id" class="btn btn-warning btn-sm"><i class="fa-regular fa-pen-to-square"></i></a>
+                    <button class="btn btn-dark btn-sm"><i class="fa-regular fa-eye"></i></button>
+                    <form asp-controller="Partner" asp-action="Delete" asp-route-id="@department.Id"
+                      data-ajax="true"
+                      data-ajax-method="POST"
+                      data-ajax-update="#partner-list"
+                      data-ajax-mode="replace" autocomplete="off">
+
+                        <button type="submit" class="btn btn-danger btn-sm"><i class="fas fa-times"></i></button>
+
+                    </form>
+
+                </td>
+            </tr>
+        }
+
+    </tbody>
+</table>

@@ -8,11 +8,7 @@ namespace Ansari_Website.Domain.Entities.CPanel;
 public class AboutUs : AuditableEntity
 {
     public int Id { get; set; }
-    public string? TitleAr { get; set; }
-    public string? TitleEn { get; set; }
-    public string? DescriptionAr { get; set; }
-    public string? DescriptionEn { get; set; }
-
+    
     #region Our Mission
     public string? MissionTitleAr { get; set; }
     public string? MissionTitleEn { get; set; }
@@ -30,11 +26,12 @@ public class AboutUs : AuditableEntity
     #endregion
 
     #region Our Value
-    public string? ValueTitleAr { get; set; }
-    public string? ValueTitleEn { get; set; }
-    public string? ValueIconName { get; set; }
-    public string? ValueDescriptionAr { get; set; }
-    public string? ValueDescriptionEn { get; set; }
+    public virtual IList<OurValue> OurValues { get; set; }
+
     #endregion
 
+    #region Picture
+    public string? ImageUrl { get; set; }
+
+    #endregion
 }

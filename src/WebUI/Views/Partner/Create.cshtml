@@ -1,0 +1,70 @@
+﻿@model CreateUpdatePartnerCommand
+@{
+    Layout = "_Layout";
+}
+
+<div class="inner-page">
+    <form asp-controller="Partner" asp-action="Create" method="post" class="row" enctype="multipart/form-data">
+        <input type="hidden" asp-for="Id" />
+        <input type="hidden" asp-for="CreationDate" />
+        <input type="hidden" asp-for="CreatedUserId" />
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="input-sys-wrapper">
+                    <label>Title Arabic</label>
+                    <input type="text" asp-for="TitleAr" />
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="input-sys-wrapper">
+                    <label>Title English</label>
+                    <input type="text" asp-for="TitleEn" />
+                </div>
+            </div>
+
+            <div class="col-md-12">
+                <div class="input-sys-wrapper">
+                    <label>Describtion Arabic</label>
+                    <textarea type="text" asp-for="DescriptionAr"></textarea>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="input-sys-wrapper">
+                    <label>Describtion English</label>
+                    <textarea type="text" asp-for="DescriptionEn"></textarea>
+                </div>
+            </div>
+        </div>
+
+        <ul class=" ul-file">
+
+            <li>
+                <span>Attach Photo</span>
+                @*<div class="item-file-div" style="background-image:url(~/images/rheumatism.jpg)">
+                <label for="PartnerImage"><i class="fa-regular fa-pen-to-square"></i></label>
+                <input type="file" asp-for="PartnerImage" accept=".gif, .jpg, .png" onchange="setImage(this)" style="display:none;">
+                </div>*@
+
+                <div class="item-file-div image-upload">
+                    <img class="item-file-div" src="~/images/rheumatism.jpg" id="partnerImage">
+                    <label for="PartnerImage"><i class="fa-regular fa-pen-to-square"></i></label>
+                    <input type="file" asp-for="PartnerImage" accept=".gif, .jpg, .png" onchange="setImage(this)" style="display:none;">
+                </div>
+
+            </li>
+
+        </ul>
+
+        <div class="text-end">
+            <button type="submit" class="save-btn"><i class="fa-solid fa-check"></i> Save </button>
+            <button class="cancel-btn"> <i class="fa-solid fa-xmark"></i> Cancel </button>
+        </div>
+    
+
+    </form>
+
+
+</div>
+<script src="~/js/pages/Partner/AddPartner.js"></script>

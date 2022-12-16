@@ -387,6 +387,12 @@
   <data name="Description" xml:space="preserve">
     <value>ملاحظات</value>
   </data>
+  <data name="DescriptionAr" xml:space="preserve">
+    <value>الوصف بالعربي</value>
+  </data>
+  <data name="DescriptionEn" xml:space="preserve">
+    <value>الوصف بالانجليزي</value>
+  </data>
   <data name="Details" xml:space="preserve">
     <value>تفاصيل</value>
   </data>

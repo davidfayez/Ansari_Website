@@ -33,6 +33,10 @@ public interface IApplicationDbContext
     DbSet<SiteInfo> SiteInfo { get; }
     DbSet<Doctor> Doctors { get; }
     DbSet<Department> Departments { get; }
+    DbSet<Partner> Partners { get; }
+    DbSet<Answer> Answers { get; }
+    DbSet<AnswerType> AnswerTypes { get; }
+    DbSet<SurveyQuestion> SurveyQuestions { get; }
 
     #endregion
 

@@ -1,0 +1,60 @@
+﻿@model CreateUpdateDepartmentCommand
+
+@{
+    Layout = "_Layout";
+}
+
+<div class="inner-page">
+    <form asp-controller="Department" asp-action="Create" method="post" class="row" enctype="multipart/form-data">
+        <input type="hidden" asp-for="Id" />
+        <input type="hidden" asp-for="CreationDate" />
+        <input type="hidden" asp-for="CreatedUserId" />
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="input-sys-wrapper">
+                    <label>@Global.NameAr</label>
+                    <input type="text" asp-for="TitleAr" />
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="input-sys-wrapper">
+                    <label>@Global.NameEn</label>
+                    <input type="text" asp-for="TitleEn" />
+                </div>
+            </div>
+
+            <div class="col-md-12">
+                <div class="input-sys-wrapper">
+                    <label>@Global.DescriptionAr</label>
+                    <textarea type="text" asp-for="DescriptionAr"></textarea>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="input-sys-wrapper">
+                    <label>@Global.DescriptionEn</label>
+                    <textarea type="text" asp-for="DescriptionEn"></textarea>
+                </div>
+            </div>
+        </div>
+
+        <ul class=" ul-file">
+
+            <li>
+                <span>    Attach File</span>
+                <div class="item-file-div" style="background-image:url(images/rheumatism.jpg)">
+                    <label for="id-1"><i class="fa-regular fa-pen-to-square"></i></label> <input type="file" id="id-1">
+
+                </div>
+            </li>
+        </ul>
+
+        <div class="text-end">
+            <button type="submit" class="save-btn"><i class="fa-solid fa-check"></i> Save </button>
+            <button class="cancel-btn"> <i class="fa-solid fa-xmark"></i> Cancel </button>
+        </div>
+    
+    </form>
+</div>
+

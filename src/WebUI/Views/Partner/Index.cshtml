@@ -1,0 +1,13 @@
+﻿@model List<PartnerVM>
+
+@{
+    Layout = "_Layout";
+}
+<div class="inner-page">
+    <a asp-controller="Partner" asp-action="Create" class="btn-add-table" style="min-width: 130px; margin-bottom: 20px;"><i class="fa-solid fa-plus"></i> add New</a>
+
+    <div id="partner-list">
+        <partial name="_PartnersList" model="Model" />
+    </div>
+
+</div>

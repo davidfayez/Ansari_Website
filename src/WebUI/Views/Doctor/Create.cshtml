@@ -1,0 +1,69 @@
+﻿@model CreateUpdateDoctorCommand
+
+@{
+    Layout = "_Layout";
+}
+<div class="inner-page">
+    <form asp-controller="Doctor" asp-action="Create" method="post" class="row" enctype="multipart/form-data">
+        <input type="hidden" asp-for="Id" />
+        <input type="hidden" asp-for="CreationDate" />
+        <input type="hidden" asp-for="CreatedUserId" />
+
+        <div class="row">
+            <div class="col-md-6 ">
+                <div class="input-sys-wrapper">
+                    <label>Spcialty Name</label>
+                    <select asp-for="DepartmentId" asp-items="Model.Departments" class="form-control input-sys">
+                    </select>
+                    <span asp-validation-for="DepartmentId" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="col-md-6 ">
+            </div>
+
+            <div class="col-md-6">
+                <div class="input-sys-wrapper">
+                    <label>Doctor Name Arabic</label>
+                    <input type="text" asp-for="NameAr" />
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="input-sys-wrapper">
+                    <label>Doctor Name English</label>
+                    <input type="text" asp-for="NameEn" />
+                </div>
+            </div>
+        </div>
+        <ul class=" ul-file">
+
+            <li>
+                <span>Attach Photo</span>
+                @*<div class="item-file-div" style="background-image:url(~/images/rheumatism.jpg)">
+                <label for="DoctorImage"><i class="fa-regular fa-pen-to-square"></i></label>
+                <input type="file" asp-for="DoctorImage" accept=".gif, .jpg, .png" onchange="setImage(this)" style="display:none;">
+                </div>*@
+
+                <div class="item-file-div image-upload">
+                    <img class="item-file-div" src="~/images/rheumatism.jpg" id="doctorImage">
+                    <label for="DoctorImage"><i class="fa-regular fa-pen-to-square"></i></label>
+                    <input type="file" asp-for="DoctorImage" accept=".gif, .jpg, .png" onchange="setImage(this)" style="display:none;">
+                </div>
+
+            </li>
+
+        </ul>
+
+        <div class="text-end">
+            <button type="submit" class="save-btn"><i class="fa-solid fa-check"></i> Save </button>
+            <button class="cancel-btn"> <i class="fa-solid fa-xmark"></i> Cancel </button>
+        </div>
+    
+    </form>
+</div>
+
+<script src="~/js/pages/Doctor/AddDoctor.js"></script>
+
+
+
