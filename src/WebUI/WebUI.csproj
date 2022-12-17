@@ -46,6 +46,22 @@
     </ItemGroup>
 
     <ItemGroup>
+      <None Include="wwwroot\fonts\bootstrap-icons.woff2" />
+      <None Include="wwwroot\fonts\fa-brands-400.svg" />
+      <None Include="wwwroot\fonts\fa-brands-400.woff2" />
+      <None Include="wwwroot\fonts\fa-regular-400.svg" />
+      <None Include="wwwroot\fonts\fa-regular-400.woff2" />
+      <None Include="wwwroot\fonts\fa-solid-900.svg" />
+      <None Include="wwwroot\fonts\fa-solid-900.woff2" />
+      <None Include="wwwroot\fonts\fa-v4compatibility.woff2" />
+      <None Include="wwwroot\fonts\google-outline.woff2" />
+      <None Include="wwwroot\fonts\google-solid.woff2" />
+      <None Include="wwwroot\fonts\google.woff2" />
+      <None Include="wwwroot\fonts\lc_lightbox.svg" />
+      <None Include="wwwroot\fonts\materialdesignicons-webfont.woff2" />
+      <None Include="wwwroot\fonts\SLXGc1nY6HkvalIhTps.woff2" />
+      <None Include="wwwroot\fonts\SLXGc1nY6HkvalIkTpu0xg.woff2" />
+      <None Include="wwwroot\fonts\SLXGc1nY6HkvalIvTpu0xg.woff2" />
       <None Include="wwwroot\fonts\Website\Cairo-Black.svg" />
       <None Include="wwwroot\fonts\Website\Cairo-Black.woff2" />
       <None Include="wwwroot\fonts\Website\Cairo-Bold.svg" />

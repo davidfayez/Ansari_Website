@@ -10,6 +10,5 @@ public class Answer : AuditableEntity
     public int Id { get; set; }
     public string NameAr { get; set; }
     public string NameEn { get; set; }
-    public int AnswerTypeId { get; set; }
-    public virtual AnswerType AnswerType { get; set; }
+    public int? Order { get; set; }
 }

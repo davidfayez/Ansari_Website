@@ -1,16 +1,16 @@
 // .............them............
 
-let darkTheme = document.getElementById("darkTheme");
+let GreenTheme = document.getElementById("GreenTheme");
 let lightTheme = document.getElementById("lightTheme");
 let cloudTheme = document.getElementById("cloudTheme");
-//window.localStorage.clear();
+// window.localStorage.clear();
 
-if(darkTheme){    
-darkTheme.addEventListener("change", function(e){
+if(GreenTheme){    
+GreenTheme.addEventListener("change", function(e){
  
   if(e.target.checked){
- localStorage.setItem("Theme", "DarkTheme");
- document.getElementsByTagName("body")[0].classList.add("Dark")
+ localStorage.setItem("Theme", "GreenTheme");
+ document.getElementsByTagName("body")[0].classList.add("Green")
  document.getElementsByTagName("body")[0].classList.remove("Light")
  document.getElementsByTagName("body")[0].classList.remove("Cloud")
 
@@ -23,7 +23,7 @@ if(lightTheme){
     if(e.target.checked){
    localStorage.setItem("Theme", "LightTheme");
    document.getElementsByTagName("body")[0].classList.add("Light")
-   document.getElementsByTagName("body")[0].classList.remove("Dark")
+   document.getElementsByTagName("body")[0].classList.remove("Green")
    document.getElementsByTagName("body")[0].classList.remove("Cloud")
 
       }
@@ -36,7 +36,7 @@ if(lightTheme){
       if(e.target.checked){
      localStorage.setItem("Theme", "CloudTheme");
      document.getElementsByTagName("body")[0].classList.add("Cloud")
-     document.getElementsByTagName("body")[0].classList.remove("Dark")
+     document.getElementsByTagName("body")[0].classList.remove("Green")
      document.getElementsByTagName("body")[0].classList.remove("Light")      
       }
     })
@@ -45,10 +45,10 @@ if(lightTheme){
 
 
 
-if(localStorage.getItem("Theme")==="DarkTheme"){
- document.getElementsByTagName("body")[0].classList.add("Dark")
- if(darkTheme){
-    darkTheme.checked=true
+if(localStorage.getItem("Theme")==="GreenTheme"){
+ document.getElementsByTagName("body")[0].classList.add("Green")
+ if(GreenTheme){
+    GreenTheme.checked=true
  }
 
 }
@@ -66,9 +66,9 @@ if(localStorage.getItem("Theme")==="CloudTheme"){
  }
 if(localStorage.getItem("Theme")===null){
 
-document.getElementsByTagName("body")[0].classList.add("Cloud");
-if(cloudTheme){
-  cloudTheme.checked=true
+document.getElementsByTagName("body")[0].classList.add("Green");
+if(GreenTheme){
+  GreenTheme.checked=true
  }
 }
 

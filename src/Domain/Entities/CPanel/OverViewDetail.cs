@@ -5,10 +5,10 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Ansari_Website.Domain.Entities.CPanel;
-public class OurValue
+public class OverViewDetail
 {
     public int Id { get; set; }
     public string? TitleAr { get; set; }
     public string? TitleEn { get; set; }
-    public string? IconName { get; set; }
+    public int Value { get; set; }
 }

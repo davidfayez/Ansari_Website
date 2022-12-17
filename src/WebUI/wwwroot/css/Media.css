@@ -20,6 +20,10 @@
         background: linear-gradient(45deg, rgb(37, 145, 207) 0%, rgba(59 168 230,1) 59%);
         padding: 40px 0px 10px 0px;
     }
+    .Green nav{
+        background: #74D680;
+        background: linear-gradient(120deg, #378B29 0%, #74D680 100%);
+    }
     .nav-mobile{
         left: -250px;
     }
@@ -52,8 +56,5 @@ display: inline-block;
 width: 35px;
 height: 35px;
 background-image: url(../images/logo-m.png);
-    }
-    .back-white{
-        min-height: auto;
     }
 }

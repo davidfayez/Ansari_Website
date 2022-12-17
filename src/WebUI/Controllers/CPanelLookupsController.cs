@@ -52,4 +52,13 @@ public class CPanelLookupsController : BaseController
     }
 
     #endregion
+
+    #region Setting
+
+    [HttpGet]
+    public IActionResult Setting()
+    {
+        return View();
+    }
+    #endregion
 }

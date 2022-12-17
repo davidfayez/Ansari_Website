@@ -8,7 +8,7 @@ namespace Ansari_Website.Domain.Entities.CPanel;
 public class Blog : AuditableEntity
 {
     public int Id { get; set; }
-    public int Order { get; set; }
+    public int? Order { get; set; }
     public int DepartmentId { get; set; }
     public int DoctorId { get; set; }
     public string? TitleAr { get; set; }

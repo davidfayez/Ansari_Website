@@ -365,6 +365,15 @@
                     <div class="inner-filter">
                         <h3>Choose Your Theme</h3>
                         <br />
+
+                        <div class="item-check">
+                            <label>
+                                <input type="radio" class="default__check" id="GreenTheme" name="filterMail">
+                                <span class="custom__check"></span>
+
+                            </label>
+                            <h6>Green Theme </h6>
+                        </div>
                         <div class="item-check">
                             <label>
                                 <input type="radio" class="default__check" id="cloudTheme" name="filterMail">
@@ -417,7 +426,11 @@
     <script src="~/js/bootstrap.min.js"></script>
     <script src="~/lib/bootstrap-sweetalert/sweetalert1.0.1.min.js"></script>
     <script src="~/js/My-js.js"></script>
-
+    <script src="~/js/Resizable.js"></script>
+    <script>
+        let table = document.getElementsByClassName('main-table')[0];
+        resizableGrid(table);
+    </script>
 
     <!--Kendo js-->
     @*<script src="~/js/Kendo-UI/jquery.min.js"></script>*@

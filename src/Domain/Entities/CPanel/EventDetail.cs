@@ -5,10 +5,11 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Ansari_Website.Domain.Entities.CPanel;
-public class AnswerType : AuditableEntity
+public class EventDetail
 {
     public int Id { get; set; }
-    public string Name { get; set; }
-    public virtual IList<Answer> Answers { get; set; }
-    public virtual IList<SurveyQuestion> SurveyQuestions { get; set; }
+    public int? Order { get; set; }
+    public string? TitleAr { get; set; }
+    public string? TitleEn { get; set; }
+    public List<string> ImageUrls { get; set; }
 }

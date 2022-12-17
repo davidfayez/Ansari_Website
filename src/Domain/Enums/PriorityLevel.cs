@@ -7,3 +7,9 @@ public enum PriorityLevel
     Medium = 2,
     High = 3
 }
+
+public enum Speciality
+{
+    Department = 1,
+    Center = 2
+}

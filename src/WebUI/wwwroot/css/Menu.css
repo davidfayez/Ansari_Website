@@ -1,29 +1,20 @@
 /* ...............nav............ */
 nav {
-
     position: absolute;
-
     height: 100%;
-
     left: 0px;
-
     z-index: 6;
-
     padding: 30px 0px;
-
     overflow: hidden;
-
     transition: .5s;
     width: 250px;
-
     /* border-right: 1px solid #6989aa; */
-
 }
 
-nav:lang(ar) {
-    right: 0px;
-    left: auto;
-}
+    nav:lang(ar) {
+        right: 0px;
+        left: auto;
+    }
 
 
 .drop-Down {
@@ -40,29 +31,29 @@ nav:lang(ar) {
     border-radius: 10px;
     overflow: hidden;
     background-color: rgba(255,255,255,.6);
-
+    min-width:170px;
 }
 
 
 
 
 .Toggle {
-    height: 0px !important;
-
+    transition: .5s;
+   visibility:hidden;
 }
 
 .drop-Down li {
     position: relative;
-    padding: 0px 40px;
+    padding: 0px 30px 0px 5px;
 }
-
-.drop-Down a {
+    .drop-Down li:lang(ar) {
+        padding: 0px 5px 0px 30px;
+    }
+   .drop-Down a {
     padding: 10px 0px;
-
     display: block;
     width: 100%;
     font-size: 14px;
-
 }
 
 .Dark .drop-Down a {
@@ -71,10 +62,15 @@ nav:lang(ar) {
 
 .drop-Down a i {
     position: absolute;
-    left: 10px;
+    right: 10px;
     top: 15px;
 }
 
+.drop-Down button i {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+}
 /* ................ */
 
 .navigation {
@@ -85,19 +81,18 @@ nav:lang(ar) {
 
 .big_menu li {
     position: relative;
-
 }
 
-.big_menu li a {
-    color: #ffffff;
-    padding: 9px 32px;
-    display: block;
-    font-size: 14px;
-    transition: .5s;
-    position: relative;
-    z-index: 1;
-    /* font-weight: bold; */
-}
+    .big_menu li a {
+        color: #ffffff;
+        padding: 9px 32px;
+        display: block;
+        font-size: 14px;
+        transition: .5s;
+        position: relative;
+        z-index: 1;
+        /* font-weight: bold; */
+    }
 
 .Cloud .big_menu li a {
     color: #fbfdff;
@@ -105,13 +100,13 @@ nav:lang(ar) {
 
 .big_menu li a:hover {
     color: #fff;
-
 }
 
 .inner-child i {
     position: absolute;
     left: 10px;
     top: 13px;
+    color: #fff;
 }
 
 .big_menu li i:lang(ar) {
@@ -123,29 +118,39 @@ nav:lang(ar) {
     position: relative;
 }
 
-.active-link::after {
-    content: "";
-    width: 100%;
-    position: absolute;
-    left: 0px;
-    border-left: 5px solid #F406FE;
-    z-index: 0;
-    height: 100%;
-    background-color: #A34DF3;
-    top: 0px;
-}
+    .active-link::after {
+        content: "";
+        width: 100%;
+        position: absolute;
+        left: 0px;
+        border-left: 5px solid #F406FE;
+        z-index: -1;
+        height: 100%;
+        background-color: #A34DF3;
+        top: 0px;
+    }
+
 .Cloud .active-link::after {
     background-color: #1153a1;
     border-left: 5px solid #de3c73;
-
 }
 
 .active-link:lang(ar)::after {
     border-right: 5px solid #EC407A;
-    border-left: 0px;
+    border-left: 0px !important;
 }
+
 .Cloud .active-link:lang(ar)::after {
     border-right: 5px solid #de3c73;
+}
+
+.Green .active-link::after {
+    background-color: #378B29;
+    border-left: 5px solid #FECA57;
+}
+
+.Green .active-link:lang(ar)::after {
+    border-right: 5px solid #FECA57;
 }
 
 .active-link a {
@@ -153,7 +158,7 @@ nav:lang(ar) {
 }
 
 .border-divider {
-    border-top: 1px solid #6989aa;
+    border-top: 1px solid #ffffff;
 }
 
 .btn-toggel {
@@ -167,10 +172,10 @@ nav:lang(ar) {
     font-size: 20px;
 }
 
-.btn-toggel:lang(ar) {
-    left: auto;
-    right: 210px;
-}
+    .btn-toggel:lang(ar) {
+        left: auto;
+        right: 210px;
+    }
 
 .btn-toggel-mobile {
     background-color: transparent;
@@ -183,6 +188,7 @@ nav:lang(ar) {
     font-size: 20px;
     display: none;
 }
+
 .btn-toggel-mobile {
     right: 210px;
     left: auto;
@@ -207,10 +213,34 @@ nav:lang(ar) {
     max-height: 100%;
 }
 
+
+
+.big_menu::-webkit-scrollbar {
+    width: 14px;
+}
+
+.big_menu::-webkit-scrollbar-track {
+    border-radius: 100px;
+    background-color: #e4e4e4;
+}
+
+
+.big_menu::-webkit-scrollbar-thumb {
+    border-radius: 100px;
+    border: 5px solid transparent;
+    background-clip: content-box;
+    background-color: #6989aa;
+}
+.Green .big_menu::-webkit-scrollbar-thumb {
+    background-color: #378B29;
+
+}
+
 .nav-link .fa-link {
     display: none !important;
 }
-.btn-close-menu{
+
+.btn-close-menu {
     position: absolute;
     background-image: url(../images/close-menu.png);
     background-color: transparent;
@@ -222,13 +252,14 @@ nav:lang(ar) {
     background-size: 100% 100%;
     z-index: 3;
 }
-.btn-close-menu:lang(ar){
-    right: auto;
-    left: 0px;
-    background-image: url(../images/open-menu.png);
 
-}
-.btn-open-menu{
+    .btn-close-menu:lang(ar) {
+        right: auto;
+        left: 0px;
+        background-image: url(../images/open-menu.png);
+    }
+
+.btn-open-menu {
     position: absolute;
     background-image: url(../images/open-menu.png);
     background-color: transparent;
@@ -241,33 +272,51 @@ nav:lang(ar) {
     display: none;
     z-index: 3;
 }
-.btn-open-menu:lang(ar){
-    left: auto;
-    right: 0px;
-    background-image: url(../images/close-menu.png);
 
-}
+    .btn-open-menu:lang(ar) {
+        left: auto;
+        right: 0px;
+        background-image: url(../images/close-menu.png);
+    }
+
 .box {
     cursor: pointer;
-  }
-  .box:after{
-    content: "\f105";
-    position: absolute;
-    right: 10px;
-    top: 7px;
-    font-family: "Font Awesome 6 Free";
-    font-weight: 900;
-    color: #fff;
-    transition: .5s;
+}
 
-  }
-  .rotate-arrow::after{
+    .box:after {
+        content: "\f105";
+        position: absolute;
+        right: 10px;
+        top: 7px;
+        font-family: "Font Awesome 6 Free";
+        font-weight: 900;
+        color: #fff;
+        transition: .5s;
+    }
+
+    .box:lang(ar)::after {
+        content: "\f104";
+    }
+
+    .box:lang(ar):after {
+        left: 10px;
+        right: auto;
+    }
+
+.rotate-arrow::after {
     transform: rotate(90deg);
-  }
-  .toggle-container {
-    transition: height 0.35s ease-in-out;
+}
+
+.rotate-arrow:lang(ar):after {
+    transform: rotate(-90deg);
+}
+
+.toggle-container {
     overflow: hidden;
-  }
-  .toggle-container:not(.active) {
+}
+
+.toggle-container {
     display: none;
-  }
+}
+
+

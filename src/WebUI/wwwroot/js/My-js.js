@@ -1,4 +1,4 @@
-let DropDown = document.getElementById("drop-Down");
+﻿let DropDown = document.getElementById("drop-Down");
 ['click', 'blur'].forEach(function (ev) {
     document.getElementById("triggerToggle").addEventListener(ev, function () {
         if (ev === "blur") {
@@ -41,31 +41,39 @@ if(btnClose){
 // ...............alertdropdowwn.............
 
 let dropNotifaction = document.getElementById("dropNotifaction");
-['click', 'blur'].forEach(function (ev) {
-    document.getElementById("actionDrop").addEventListener(ev, function () {
-        if (ev === "blur") {
-            dropNotifaction.classList.add("hide-not");
-        }
-        if (ev === 'click') {
-            dropNotifaction.classList.contains("hide-not") ? dropNotifaction.classList.remove("hide-not") : dropNotifaction.classList.add("hide-not");
-        }
-    })
 
-});
+if (dropNotifaction) {
+    ['click', 'blur'].forEach(function (ev) {
+        document.getElementById("actionDrop").addEventListener(ev, function () {
+            if (ev === "blur") {
+                dropNotifaction.classList.add("hide-not");
+            }
+            if (ev === 'click') {
+                dropNotifaction.classList.contains("hide-not") ? dropNotifaction.classList.remove("hide-not") : dropNotifaction.classList.add("hide-not");
+            }
+        })
+
+    });
+
+}
+
 
 
 // ...............filterdropdowwn.............
-
 let DropFilter = document.getElementById("DropFilter");
+
+if (DropFilter) {
     document.getElementById("filterAction").addEventListener("click", function () {
 
         if (DropFilter.classList.contains("hide-filter")) {
-           DropFilter.classList.remove("hide-filter") ;
+            DropFilter.classList.remove("hide-filter");
         }
     })
     document.getElementById("closeFilter").addEventListener("click", function () {
-        DropFilter.classList.add("hide-filter") ;
+        DropFilter.classList.add("hide-filter");
     });
+}
+
 
 // ...............filterdropdowwn.............
 
@@ -233,61 +241,80 @@ if(closeChat){
 }
 
 // ...................chat item...............
-if(chatItem){
-    chatItem.forEach((e)=>{
-        e.addEventListener("click",()=>{
-        document.getElementById("chatItemDiv").style.display="block"
-        })
-    })
-    document.getElementById("closeItemChat").addEventListener("click",()=>{
-        document.getElementById("chatItemDiv").style.display="none"
-    })
-}
+//if(chatItem){
+//    chatItem.forEach((e)=>{
+//        e.addEventListener("click",()=>{
+//        document.getElementById("chatItemDiv").style.display="block"
+//        })
+//    })
+//    document.getElementById("closeItemChat").addEventListener("click",()=>{
+//        document.getElementById("chatItemDiv").style.display="none"
+//    })
+//}
 
 
-
-// ....................slide down..............
-
+ // ....................slide down..............
 let linkToggle = document.querySelectorAll('.js-toggle');
 
-for(i = 0; i < linkToggle.length; i++){
+for (i = 0; i < linkToggle.length; i++) {
 
-  linkToggle[i].addEventListener('click', function(event){
+    linkToggle[i].addEventListener('click', function (event) {
 
-    event.preventDefault();
+        event.preventDefault();
 
-    let container = document.getElementById(this.dataset.container);
+        let container = document.getElementById(this.dataset.container);
 
-    if (!container.classList.contains('active')) {
-      container.parentElement.classList.add("rotate-arrow");
-      container.classList.add('active');
-      container.style.height = 'auto';
+        if (!container.classList.contains('active')) {
+            container.parentElement.classList.add("rotate-arrow");
+            container.classList.add('active');
 
-      let height = container.clientHeight + 'px';
+            $(this).next(".toggle-container").slideDown();
 
-      container.style.height = '0px';
 
-      setTimeout(function () {
-        container.style.height = height;
-      }, 0);
-      
-    } else {
-      container.parentElement.classList.remove("rotate-arrow");
+        } else {
+            container.parentElement.classList.remove("rotate-arrow");
 
-      container.style.height = '0px';
 
-      container.addEventListener('transitionend', function () {
-        container.classList.remove('active');
-      }, {
-        once: true
-      });
-      
-    }
-    
-  });
+            container.classList.remove('active');
+            $(this).next(".toggle-container").slideUp();
+
+        }
+
+    });
 
 }
 
+//-----------progress bar----------
 
+$(function () {
+
+    // Remove svg.radial-progress .complete inline styling
+    $('svg.radial-progress').each(function (index, value) {
+        $(this).find($('circle.complete')).removeAttr('style');
+    });
+
+    // Activate progress animation on scroll
+    $(window).scroll(function () {
+        $('svg.radial-progress').each(function (index, value) {
+            // If svg.radial-progress is approximately 25% vertically into the window when scrolling from the top or the bottom
+            if (
+                $(window).scrollTop() > $(this).offset().top - ($(window).height() * 0.75) &&
+                $(window).scrollTop() < $(this).offset().top + $(this).height() - ($(window).height() * 0.25)
+            ) {
+                // Get percentage of progress
+                percent = $(value).data('percentage');
+                // Get radius of the svg's circle.complete
+                radius = $(this).find($('circle.complete')).attr('r');
+                // Get circumference (2πr)
+                circumference = 2 * Math.PI * radius;
+                // Get stroke-dashoffset value based on the percentage of the circumference
+                strokeDashOffset = circumference - ((percent * circumference) / 100);
+                // Transition progress for 1.25 seconds
+                $(this).find($('circle.complete')).animate({ 'stroke-dashoffset': strokeDashOffset }, 1250);
+            }
+        });
+    }).trigger('scroll');
+
+});
 
 
