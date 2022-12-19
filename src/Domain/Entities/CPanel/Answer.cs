@@ -11,4 +11,5 @@ public class Answer : AuditableEntity
     public string NameAr { get; set; }
     public string NameEn { get; set; }
     public int? Order { get; set; }
+    public virtual IList<QuestionAnswer> QuestionAnswers { get; set; }
 }

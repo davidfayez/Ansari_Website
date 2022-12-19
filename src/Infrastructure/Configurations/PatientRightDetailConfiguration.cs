@@ -8,11 +8,12 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Ansari_Website.Infrastructure.Configurations;
-public class SurveyQuestionConfiguration : IEntityTypeConfiguration<SurveyQuestion>
+public class PatientRightDetailConfiguration : IEntityTypeConfiguration<PatientRightDetail>
 {
-    public void Configure(EntityTypeBuilder<SurveyQuestion> builder)
+    public void Configure(EntityTypeBuilder<PatientRightDetail> builder)
     {
-        builder.ToTable(nameof(SurveyQuestion));
+        builder.ToTable(nameof(PatientRightDetail));
+
         builder.Property(s => s.Id).UseIdentityColumn();
 
         builder.Property(s => s.TitleAr)
@@ -23,17 +24,9 @@ public class SurveyQuestionConfiguration : IEntityTypeConfiguration<SurveyQuesti
                .IsRequired()
                .HasMaxLength(50);
 
-        builder.Property(s => s.Order)
-               .IsRequired();
-
-        builder.Property(s => s.AnswerTypeId)
-               .HasMaxLength(50);
-
-        builder.HasOne(s => s.AnswerType)
-               .WithMany(s => s.SurveyQuestions)
-               .HasForeignKey(s => s.AnswerTypeId)
+        builder.HasOne(s => s.PatientRight)
+               .WithMany(s => s.PatientRightDetails)
+               .HasForeignKey(s => s.PatientRightId)
                .OnDelete(DeleteBehavior.NoAction);
-
-
     }
 }

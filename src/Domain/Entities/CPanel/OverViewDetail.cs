@@ -11,4 +11,6 @@ public class OverViewDetail
     public string? TitleAr { get; set; }
     public string? TitleEn { get; set; }
     public int Value { get; set; }
+    public int OverViewId { get; set; }
+    public virtual OverView OverView { get; set; }
 }

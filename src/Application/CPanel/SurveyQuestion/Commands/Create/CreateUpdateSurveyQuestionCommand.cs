@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Ansari_Website.Application.CPanel.SurveyQuestion.Commands.Create;
 
 namespace Ansari_Website.Application.CPanel.SurveyQuestion.Commands.Create;
-public class CreateUpdateSurveyQuestionCommand : AuditableEntity, IRequest<bool>, IMapFrom<DB.SurveyQuestion>
+public class CreateUpdateSurveyQuestionCommand : AuditableEntity, IRequest<bool>, IMapFrom<DB.Question>
 {
     public int Id { get; set; }
     public string? TitleAr { get; set; }
@@ -16,7 +16,7 @@ public class CreateUpdateSurveyQuestionCommand : AuditableEntity, IRequest<bool>
 
     public void Mapping(Profile profile)
     {
-        profile.CreateMap<DB.SurveyQuestion, CreateUpdateSurveyQuestionCommand>()
+        profile.CreateMap<DB.Question, CreateUpdateSurveyQuestionCommand>()
                .ReverseMap();
     }
 }
@@ -35,7 +35,7 @@ public class CreateUpdateSurveyQuestionCommandHandler : IRequestHandler<CreateUp
     {
         try
         {
-            var SurveyQuestion = _mapper.Map<DB.SurveyQuestion>(request);
+            var SurveyQuestion = _mapper.Map<DB.Question>(request);
 
             if (request.Id > 0)
                 _applicationDbContext.SurveyQuestions.Update(SurveyQuestion);

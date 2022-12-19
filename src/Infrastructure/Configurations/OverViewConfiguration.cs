@@ -8,15 +8,19 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Ansari_Website.Infrastructure.Configurations;
-public class AnswerTypeConfiguration : IEntityTypeConfiguration<AnswerType>
+public class OverViewConfiguration : IEntityTypeConfiguration<OverView>
 {
-    public void Configure(EntityTypeBuilder<AnswerType> builder)
+    public void Configure(EntityTypeBuilder<OverView> builder)
     {
-        builder.ToTable(nameof(AnswerType));
+        builder.ToTable(nameof(OverView));
 
         builder.Property(s => s.Id).UseIdentityColumn();
 
-        builder.Property(s => s.Name)
+        builder.Property(s => s.TitleAr)
+               .IsRequired()
+               .HasMaxLength(50);
+
+        builder.Property(s => s.TitleEn)
                .IsRequired()
                .HasMaxLength(50);
     }

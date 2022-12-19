@@ -13,10 +13,6 @@ public class Testiminie : AuditableEntity
     public string? DescriptionAr { get; set; }
     public string? DescriptionEn { get; set; }
     public string? ImageUrl { get; set; }
-
-    #region Testiminie Details
     public virtual IList<TestiminieDetail> TestiminieDetails { get; set; }
-
-    #endregion
 
 }

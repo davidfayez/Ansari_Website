@@ -8,22 +8,20 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Ansari_Website.Infrastructure.Configurations;
-public class AnswerConfiguration : IEntityTypeConfiguration<Answer>
+public class EventConfiguration : IEntityTypeConfiguration<Event>
 {
-    public void Configure(EntityTypeBuilder<Answer> builder)
+    public void Configure(EntityTypeBuilder<Event> builder)
     {
-        builder.ToTable(nameof(Answer));
+        builder.ToTable(nameof(Event));
 
         builder.Property(s => s.Id).UseIdentityColumn();
 
-        builder.Property(s => s.NameAr)
+        builder.Property(s => s.TitleAr)
                .IsRequired()
                .HasMaxLength(50);
 
-        builder.Property(s => s.NameEn)
+        builder.Property(s => s.TitleEn)
                .IsRequired()
                .HasMaxLength(50);
-
-        
     }
 }

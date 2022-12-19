@@ -10,4 +10,6 @@ public class PatientRightDetail
     public int Id { get; set; }
     public string? TitleAr { get; set; }
     public string? TitleEn { get; set; }
+    public int PatientRightId { get; set; }
+    public virtual PatientRight PatientRight { get; set; }
 }

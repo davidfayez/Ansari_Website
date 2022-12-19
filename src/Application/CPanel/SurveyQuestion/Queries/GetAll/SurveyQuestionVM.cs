@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 using Ansari_Website.Application.CPanel.Answer.Queries.GetAll;
 
 namespace Ansari_Website.Application.CPanel.SurveyQuestion.Queries.GetAll;
-public class SurveyQuestionVM : AuditableEntity, IMapFrom<DB.SurveyQuestion>
+public class SurveyQuestionVM : AuditableEntity, IMapFrom<DB.Question>
 {
     public void Mapping(Profile profile)
     {
-        profile.CreateMap<SurveyQuestionVM, DB.SurveyQuestion>()
+        profile.CreateMap<SurveyQuestionVM, DB.Question>()
                .ReverseMap();
     }
 

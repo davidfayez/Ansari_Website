@@ -35,8 +35,7 @@ public interface IApplicationDbContext
     DbSet<Department> Departments { get; }
     DbSet<Partner> Partners { get; }
     DbSet<Answer> Answers { get; }
-    DbSet<AnswerType> AnswerTypes { get; }
-    DbSet<SurveyQuestion> SurveyQuestions { get; }
+    DbSet<Question> SurveyQuestions { get; }
 
     #endregion
 

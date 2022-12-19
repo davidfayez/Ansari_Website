@@ -12,4 +12,6 @@ public class EventDetail
     public string? TitleAr { get; set; }
     public string? TitleEn { get; set; }
     public List<string> ImageUrls { get; set; }
+    public int EventId { get; set; }
+    public virtual Event Event { get; set; }
 }

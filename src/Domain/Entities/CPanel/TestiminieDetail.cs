@@ -11,5 +11,7 @@ public class TestiminieDetail
     public string? TitleAr { get; set; }
     public string? TitleEn { get; set; }
     public string? ImageUrl { get; set; }
+    public int TestiminieId { get; set; }
+    public virtual Testiminie Testiminie { get; set; }
 
 }

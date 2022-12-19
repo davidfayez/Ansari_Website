@@ -11,4 +11,6 @@ public class OfferDetail
     public int? Order { get; set; }
     public string? TitleAr { get; set; }
     public string? TitleEn { get; set; }
+    public int OfferId { get; set; }
+    public virtual Offer Offer { get; set; }
 }

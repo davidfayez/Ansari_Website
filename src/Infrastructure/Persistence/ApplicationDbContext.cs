@@ -63,8 +63,7 @@ public partial class ApplicationDbContext : IdentityDbContext<AspNetUser, Applic
     public virtual DbSet<Doctor> Doctors => Set<Doctor>();
     public virtual DbSet<Partner> Partners => Set<Partner>();
     public virtual DbSet<Answer> Answers => Set<Answer>();
-    public virtual DbSet<AnswerType> AnswerTypes => Set<AnswerType>();
-    public virtual DbSet<SurveyQuestion> SurveyQuestions => Set<SurveyQuestion>();
+    public virtual DbSet<Question> SurveyQuestions => Set<Question>();
 
     #endregion
     public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken = new CancellationToken())

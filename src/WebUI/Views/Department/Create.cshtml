@@ -25,6 +25,37 @@
                 </div>
             </div>
 
+            <div class="col-md-6">
+                <div class="input-sys-wrapper">
+                    <label>Order</label>
+                    <input type="number" asp-for="Order"/>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="input-sys-wrapper">
+                    <label>Alt Image</label>
+                    <input type="text" asp-for="AltImage" />
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="input-sys-wrapper">
+                    <label>Upload icon</label>
+                    <input type="text" asp-for="IconUrl" />
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="input-sys-wrapper">
+                    <label>@Optic.Speciality</label>
+                    <select asp-for="Speciality" class="form-control input-sys">
+                        <option value="@((int)Speciality.Center)">@Optic.Center</option>
+                        <option value="@((int)Speciality.Department)">@Optic.Department</option>
+                    </select>
+                    <span asp-validation-for="Speciality" class="text-danger"></span>
+                </div>
+            </div>
+
             <div class="col-md-12">
                 <div class="input-sys-wrapper">
                     <label>@Global.DescriptionAr</label>
@@ -42,12 +73,15 @@
         <ul class=" ul-file">
 
             <li>
-                <span>    Attach File</span>
-                <div class="item-file-div" style="background-image:url(images/rheumatism.jpg)">
-                    <label for="id-1"><i class="fa-regular fa-pen-to-square"></i></label> <input type="file" id="id-1">
-
+                <span>    Attach File <b>(Hint: W.1200px) </b></span>
+                <div class="item-file-div image-upload">
+                    <img class="item-file-div" src="~/images/rheumatism.jpg" id="departmentImage">
+                    <label for="DepartmentImage"><i class="fa-regular fa-pen-to-square"></i></label>
+                    <input type="file" asp-for="DepartmentImage" accept=".gif, .jpg, .png" onchange="setImage(this)" style="display:none;">
                 </div>
+
             </li>
+
         </ul>
 
         <div class="text-end">
@@ -57,4 +91,6 @@
     
     </form>
 </div>
+<script asp-append-version="true" src="~/js/pages/Department/AddDepartment.js"></script>
+
 

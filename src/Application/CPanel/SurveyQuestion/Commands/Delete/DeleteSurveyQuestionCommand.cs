@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Ansari_Website.Application.CPanel.SurveyQuestion.Commands.Delete;
 
 namespace Ansari_Website.Application.CPanel.SurveyQuestion.Commands.Delete;
-public class DeleteSurveyQuestionCommand : IRequest<bool>, IMapFrom<DB.SurveyQuestion>
+public class DeleteSurveyQuestionCommand : IRequest<bool>, IMapFrom<DB.Question>
 {
     public int Id { get; set; }
 }

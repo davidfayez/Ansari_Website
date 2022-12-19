@@ -8,22 +8,25 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Ansari_Website.Infrastructure.Configurations;
-public class AnswerConfiguration : IEntityTypeConfiguration<Answer>
+public class OfferDetailConfiguration : IEntityTypeConfiguration<OfferDetail>
 {
-    public void Configure(EntityTypeBuilder<Answer> builder)
+    public void Configure(EntityTypeBuilder<OfferDetail> builder)
     {
-        builder.ToTable(nameof(Answer));
+        builder.ToTable(nameof(OfferDetail));
 
         builder.Property(s => s.Id).UseIdentityColumn();
 
-        builder.Property(s => s.NameAr)
+        builder.Property(s => s.TitleAr)
                .IsRequired()
                .HasMaxLength(50);
 
-        builder.Property(s => s.NameEn)
+        builder.Property(s => s.TitleEn)
                .IsRequired()
                .HasMaxLength(50);
 
-        
+        builder.HasOne(s => s.Offer)
+               .WithMany(s => s.OfferDetails)
+               .HasForeignKey(s => s.OfferId)
+               .OnDelete(DeleteBehavior.NoAction);
     }
 }

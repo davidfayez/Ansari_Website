@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 using Ansari_Website.Application.CPanel.SurveyQuestion.Queries.GetById;
 
 namespace Ansari_Website.Application.CPanel.SurveyQuestion.Queries.GetById;
-public class GetSurveyQuestionByIdQuery : IRequest<DB.SurveyQuestion>
+public class GetSurveyQuestionByIdQuery : IRequest<DB.Question>
 {
     public int Id { get; set; }
 }
 
-public class GetSurveyQuestionByIdQueryHandler : IRequestHandler<GetSurveyQuestionByIdQuery, DB.SurveyQuestion>
+public class GetSurveyQuestionByIdQueryHandler : IRequestHandler<GetSurveyQuestionByIdQuery, DB.Question>
 {
     private readonly IApplicationDbContext _applicationDbContext;
 
@@ -19,7 +19,7 @@ public class GetSurveyQuestionByIdQueryHandler : IRequestHandler<GetSurveyQuesti
     {
         _applicationDbContext = applicationDbContext;
     }
-    public Task<DB.SurveyQuestion> Handle(GetSurveyQuestionByIdQuery request, CancellationToken cancellationToken)
+    public Task<DB.Question> Handle(GetSurveyQuestionByIdQuery request, CancellationToken cancellationToken)
     {
         var SurveyQuestion = _applicationDbContext.SurveyQuestions.FirstOrDefault(s => s.Id == request.Id && !s.IsDeleted);
 
@@ -27,7 +27,7 @@ public class GetSurveyQuestionByIdQueryHandler : IRequestHandler<GetSurveyQuesti
             return Task.FromResult(SurveyQuestion);
 
         else
-            return Task.FromResult(new DB.SurveyQuestion());
+            return Task.FromResult(new DB.Question());
 
     }
 

@@ -64,8 +64,6 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="CPanel\AnswerType\Commands\Create\" />
-      <Folder Include="CPanel\AnswerType\Commands\Delete\" />
       <Folder Include="CPanel\Answer\Commands\Create\" />
       <Folder Include="CPanel\Answer\Commands\Delete\" />
     </ItemGroup>

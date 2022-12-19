@@ -88,6 +88,15 @@ namespace Ansari_Website.Application.Common.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Center.
+        /// </summary>
+        public static string Center {
+            get {
+                return ResourceManager.GetString("Center", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Class Type.
         /// </summary>
         public static string ClassType {
@@ -192,6 +201,15 @@ namespace Ansari_Website.Application.Common.Resources {
         public static string DateIssued {
             get {
                 return ResourceManager.GetString("DateIssued", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Department.
+        /// </summary>
+        public static string Department {
+            get {
+                return ResourceManager.GetString("Department", resourceCulture);
             }
         }
         
@@ -354,6 +372,15 @@ namespace Ansari_Website.Application.Common.Resources {
         public static string SocialStatus {
             get {
                 return ResourceManager.GetString("SocialStatus", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Speciality.
+        /// </summary>
+        public static string Speciality {
+            get {
+                return ResourceManager.GetString("Speciality", resourceCulture);
             }
         }
         
