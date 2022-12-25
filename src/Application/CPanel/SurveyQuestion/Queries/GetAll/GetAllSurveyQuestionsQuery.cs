@@ -23,7 +23,7 @@ public class GetAllSurveyQuestionsQueryHandler : IRequestHandler<GetAllSurveyQue
     }
     public Task<List<SurveyQuestionVM>> Handle(GetAllSurveyQuestionsQuery request, CancellationToken cancellationToken)
     {
-        var SurveyQuestions = _applicationDbContext.SurveyQuestions.Where(s => !s.IsDeleted);
+        var SurveyQuestions = _applicationDbContext.Questions.Where(s => !s.IsDeleted);
 
         var SurveyQuestionVMs = _mapper.Map<List<SurveyQuestionVM>>(SurveyQuestions.ToList());
         return Task.FromResult(SurveyQuestionVMs);

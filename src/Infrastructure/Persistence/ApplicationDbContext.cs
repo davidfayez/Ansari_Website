@@ -63,7 +63,21 @@ public partial class ApplicationDbContext : IdentityDbContext<AspNetUser, Applic
     public virtual DbSet<Doctor> Doctors => Set<Doctor>();
     public virtual DbSet<Partner> Partners => Set<Partner>();
     public virtual DbSet<Answer> Answers => Set<Answer>();
-    public virtual DbSet<Question> SurveyQuestions => Set<Question>();
+    public virtual DbSet<Question> Questions => Set<Question>();
+    public virtual DbSet<QuestionAnswer> QuestionAnswers => Set<QuestionAnswer>();
+    public virtual DbSet<Blog> Blogs => Set<Blog>();
+    public virtual DbSet<Complaint> Complaints => Set<Complaint>();
+    public virtual DbSet<EventDetail> EventDetails => Set<EventDetail>();
+    public virtual DbSet<Event> Events => Set<Event>();
+    public virtual DbSet<Offer> Offers => Set<Offer>();
+    public virtual DbSet<OfferDetail> OfferDetails => Set<OfferDetail>();
+    public virtual DbSet<OurValue> OurValues => Set<OurValue>();
+    public virtual DbSet<OverView> OverViews => Set<OverView>();
+    public virtual DbSet<PatientRight> PatientRights => Set<PatientRight>();
+    public virtual DbSet<PatientRightDetail> PatientRightDetails => Set<PatientRightDetail>();
+    public virtual DbSet<PatientSay> PatientSays => Set<PatientSay>();
+    public virtual DbSet<Testiminie> Testiminies => Set<Testiminie>();
+    public virtual DbSet<TestiminieDetail> TestiminieDetails => Set<TestiminieDetail>();
 
     #endregion
     public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken = new CancellationToken())

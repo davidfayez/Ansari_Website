@@ -24,11 +24,6 @@ public static class DependencyInjection
         }
         else
         {
-            //services.AddDbContext<ApplicationDbContext>(options =>
-            //    options.UseSqlServer(
-            //        configuration.GetConnectionString("DefaultConnection"),
-            //        b => b.MigrationsAssembly(typeof(ApplicationDbContext).Assembly.FullName)));
-
             services.AddDbContext<ApplicationDbContext>(options =>
                    options.UseSqlServer(
                        configuration.GetConnectionString("DefaultConnection")));
@@ -39,13 +34,6 @@ public static class DependencyInjection
         services.AddTransient<ICookieHandler, CookieHandler>();
         services.AddTransient<IFileHandler, FileHandler>();
 
-        //services
-        //    .AddDefaultIdentity<ApplicationUser>()
-        //    .AddRoles<IdentityRole>()
-        //    .AddEntityFrameworkStores<ApplicationDbContext>();
-
-        //services.AddIdentityServer()
-        //    .AddApiAuthorization<ApplicationUser, ApplicationDbContext>();
         services.AddIdentity<AspNetUser, ApplicationRole>() // </-- here you have to replace `IdenityUser` and `IdentityRole` with `ApplicationUser` and `ApplicationRole` respectively
             .AddEntityFrameworkStores<ApplicationDbContext>()
             .AddDefaultUI()
@@ -57,16 +45,11 @@ public static class DependencyInjection
             options.SlidingExpiration = true;
         });
 
-        //services.AddIdentityServer()
-        //    .AddApiAuthorization<AspNetUser, ApplicationDbContext>();
         services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
         services.AddSession();
 
         services.AddTransient<IDateTime, DateTimeService>();
         services.AddTransient<IIdentityService, IdentityService>();
-
-        //services.AddAuthentication()
-        //    .AddIdentityServerJwt();
 
         services.AddAuthorization(options => 
             options.AddPolicy("CanPurge", policy => policy.RequireRole("Administrator")));

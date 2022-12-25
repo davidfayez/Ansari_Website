@@ -70,6 +70,24 @@ namespace Ansari_Website.Application.Common.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Alt Image.
+        /// </summary>
+        public static string AltImage {
+            get {
+                return ResourceManager.GetString("AltImage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Attach Photo.
+        /// </summary>
+        public static string AttachPhoto {
+            get {
+                return ResourceManager.GetString("AttachPhoto", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Card Image.
         /// </summary>
         public static string CardImage {
@@ -340,6 +358,15 @@ namespace Ansari_Website.Application.Common.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Order.
+        /// </summary>
+        public static string Order {
+            get {
+                return ResourceManager.GetString("Order", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Patient File.
         /// </summary>
         public static string PatientFile {
@@ -354,6 +381,24 @@ namespace Ansari_Website.Application.Common.Resources {
         public static string PayType {
             get {
                 return ResourceManager.GetString("PayType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Price After.
+        /// </summary>
+        public static string PriceAfter {
+            get {
+                return ResourceManager.GetString("PriceAfter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Price Before.
+        /// </summary>
+        public static string PriceBefore {
+            get {
+                return ResourceManager.GetString("PriceBefore", resourceCulture);
             }
         }
         

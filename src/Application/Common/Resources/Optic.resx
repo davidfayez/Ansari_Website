@@ -120,6 +120,12 @@
   <data name="Age" xml:space="preserve">
     <value>Age</value>
   </data>
+  <data name="AltImage" xml:space="preserve">
+    <value>Alt Image</value>
+  </data>
+  <data name="AttachPhoto" xml:space="preserve">
+    <value>Attach Photo</value>
+  </data>
   <data name="CardImage" xml:space="preserve">
     <value>Card Image</value>
   </data>
@@ -210,11 +216,20 @@
   <data name="OpticMedicalFile" xml:space="preserve">
     <value>Optics Medical File</value>
   </data>
+  <data name="Order" xml:space="preserve">
+    <value>Order</value>
+  </data>
   <data name="PatientFile" xml:space="preserve">
     <value>Patient File</value>
   </data>
   <data name="PayType" xml:space="preserve">
     <value>Pay Type</value>
+  </data>
+  <data name="PriceAfter" xml:space="preserve">
+    <value>Price After</value>
+  </data>
+  <data name="PriceBefore" xml:space="preserve">
+    <value>Price Before</value>
   </data>
   <data name="Religion" xml:space="preserve">
     <value>Religion</value>

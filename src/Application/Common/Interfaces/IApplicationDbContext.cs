@@ -35,7 +35,21 @@ public interface IApplicationDbContext
     DbSet<Department> Departments { get; }
     DbSet<Partner> Partners { get; }
     DbSet<Answer> Answers { get; }
-    DbSet<Question> SurveyQuestions { get; }
+    DbSet<Question> Questions { get; }
+    DbSet<QuestionAnswer> QuestionAnswers { get; }
+    DbSet<Blog> Blogs { get; }
+    DbSet<Complaint> Complaints { get; }
+    DbSet<Event> Events { get; }
+    DbSet<EventDetail> EventDetails { get; }
+    DbSet<Offer> Offers { get; }
+    DbSet<OfferDetail> OfferDetails { get; }
+    DbSet<OurValue> OurValues { get; }
+    DbSet<OverView> OverViews { get; }
+    DbSet<PatientRight> PatientRights { get; }
+    DbSet<PatientRightDetail> PatientRightDetails { get; }
+    DbSet<PatientSay> PatientSays { get; }
+    DbSet<Testiminie> Testiminies { get; }
+    DbSet<TestiminieDetail> TestiminieDetails { get; }
 
     #endregion
 

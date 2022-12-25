@@ -78,6 +78,9 @@
       <None Include="wwwroot\fonts\Website\Cairo-Regular.woff2" />
       <None Include="wwwroot\fonts\Website\Cairo-SemiBold.svg" />
       <None Include="wwwroot\fonts\Website\Cairo-SemiBold.woff2" />
+      <None Include="wwwroot\js\Common\common.js" />
+      <None Include="wwwroot\js\Common\common.min.js" />
+      <None Include="wwwroot\js\Common\Shared.js" />
     </ItemGroup>
 
     <ItemGroup>

@@ -26,11 +26,11 @@ public class DeleteSurveyQuestionCommandHandler : IRequestHandler<DeleteSurveyQu
     {
         if (request.Id > 0)
         {
-            var SurveyQuestion = _applicationDbContext.SurveyQuestions.Find(request.Id);
+            var SurveyQuestion = _applicationDbContext.Questions.Find(request.Id);
             if (SurveyQuestion != null)
             {
                 SurveyQuestion.IsDeleted = true;
-                _applicationDbContext.SurveyQuestions.Update(SurveyQuestion);
+                _applicationDbContext.Questions.Update(SurveyQuestion);
                 await _applicationDbContext.SaveChangesAsync(cancellationToken);
                 return await Task.FromResult(true);
             }

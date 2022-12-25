@@ -38,9 +38,9 @@ public class CreateUpdateSurveyQuestionCommandHandler : IRequestHandler<CreateUp
             var SurveyQuestion = _mapper.Map<DB.Question>(request);
 
             if (request.Id > 0)
-                _applicationDbContext.SurveyQuestions.Update(SurveyQuestion);
+                _applicationDbContext.Questions.Update(SurveyQuestion);
             else
-                _applicationDbContext.SurveyQuestions.Add(SurveyQuestion);
+                _applicationDbContext.Questions.Add(SurveyQuestion);
 
             await _applicationDbContext.SaveChangesAsync(cancellationToken);
             return await Task.FromResult(true);

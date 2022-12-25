@@ -120,6 +120,12 @@
   <data name="Age" xml:space="preserve">
     <value>العمر</value>
   </data>
+  <data name="AltImage" xml:space="preserve">
+    <value>بديل الصورة</value>
+  </data>
+  <data name="AttachPhoto" xml:space="preserve">
+    <value>ارفق صوره</value>
+  </data>
   <data name="CardImage" xml:space="preserve">
     <value>صورة كارت التامين</value>
   </data>
@@ -210,11 +216,20 @@
   <data name="OpticMedicalFile" xml:space="preserve">
     <value>الملف الطبى للنظارت</value>
   </data>
+  <data name="Order" xml:space="preserve">
+    <value>الترتيب</value>
+  </data>
   <data name="PatientFile" xml:space="preserve">
     <value>ملف العميل</value>
   </data>
   <data name="PayType" xml:space="preserve">
     <value>طريقة الدفع</value>
+  </data>
+  <data name="PriceAfter" xml:space="preserve">
+    <value>السعر بعد</value>
+  </data>
+  <data name="PriceBefore" xml:space="preserve">
+    <value>السعر قبل</value>
   </data>
   <data name="Religion" xml:space="preserve">
     <value>الديانه</value>

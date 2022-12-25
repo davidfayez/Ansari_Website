@@ -13,17 +13,20 @@ public class QuestionAnswerConfiguration : IEntityTypeConfiguration<QuestionAnsw
 {
     public void Configure(EntityTypeBuilder<QuestionAnswer> builder)
     {
-        builder.ToTable(nameof(Answer));
+        builder.ToTable(nameof(QuestionAnswer));
 
         builder.Property(s => s.Id).UseIdentityColumn();
+
         builder.HasKey(bc => new { bc.QuestionId, bc.AnswerId });
        
         builder.HasOne(bc => bc.Question)
                .WithMany(b => b.QuestionAnswers)
-               .HasForeignKey(bc => bc.QuestionId);
+               .HasForeignKey(bc => bc.QuestionId)
+               .OnDelete(DeleteBehavior.NoAction); ;
 
         builder.HasOne(bc => bc.Answer)
                .WithMany(c => c.QuestionAnswers)
-               .HasForeignKey(bc => bc.AnswerId);
+               .HasForeignKey(bc => bc.AnswerId)
+               .OnDelete(DeleteBehavior.NoAction); ;
     }
 }
