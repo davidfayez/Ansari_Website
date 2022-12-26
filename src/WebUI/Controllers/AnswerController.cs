@@ -33,7 +33,11 @@ public class AnswerController : BaseController
         if (ModelState.IsValid)
         {
             var isSuccess = await Mediator.Send(command);
-            return isSuccess ? RedirectToAction("Index") : View(command);
+            if(isSuccess)
+            {
+                var Answers = await Mediator.Send(new GetAllAnswersQuery());
+                return PartialView("_AnswersList", Answers);
+            }
         }
         return View(command);
 
@@ -68,10 +72,11 @@ public class AnswerController : BaseController
               {
                   Id = id
               });
-            //return Json(isSuccess);
+            return Json(isSuccess);
         }
-        var Answers = await Mediator.Send(new GetAllAnswersQuery());
-        return PartialView("_AnswersList", Answers);
+        return Json(false);
+        //var Answers = await Mediator.Send(new GetAllAnswersQuery());
+        //return PartialView("_AnswersList", Answers);
     }
 
     public async Task<JsonResult> GetAll()

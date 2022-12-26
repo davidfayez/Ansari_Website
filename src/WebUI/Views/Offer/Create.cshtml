@@ -99,8 +99,8 @@
                         <td>@detail.TitleAr</td>    
                         <td>@detail.Order</td>    
                         <td>
-                            <button type="button" data-bs-toggle="modal" onclick="editCardItem('@detail.Id','Offer', 'GetOfferById', 'editOfferModal', 'offerModalDialog')" data-bs-target="#EditModal" class="btn btn-warning btn-sm"><i class="fa-regular fa-pen-to-square"></i></button>
-                            <button type="button" class="btn btn-danger btn-sm" onclick="deleteDetail(@detail.Id)" data-bs-toggle="modal" data-bs-target="#DeletePop"><i class="fas fa-times"></i></button>
+                            <button type="button" @*data-bs-toggle="modal"*@ onclick="editCardItem('@detail.Id','Offer', 'GetOfferDetailById', 'editOfferModal', 'EditModal')" @*data-bs-target="#EditModal"*@ class="btn btn-warning btn-sm"><i class="fa-regular fa-pen-to-square"></i></button>
+                            <button type="button" class="btn btn-danger btn-sm" onclick="deleteDetail('Offer','DeleteDetail',@detail.Id)" data-bs-toggle="modal" data-bs-target="#DeletePop"><i class="fas fa-times"></i></button>
                         </td>
                     </tr>
                 }
@@ -117,7 +117,7 @@
 
 </form>
 
-<partial name="_PopupDetail" />
+<partial name="_PopupDetail" model="new CreateUpdateOfferDetailCommand()" />
 @section scripts {
     <script asp-append-version="true" src="~/js/pages/Offer/AddOffer.js"></script>
 }

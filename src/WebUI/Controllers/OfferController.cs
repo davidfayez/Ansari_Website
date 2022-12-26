@@ -51,7 +51,7 @@ public class OfferController : BaseController
             {
                 if (OfferImagePath != null)
                     _fileHandler.UploadFile("Offers", command.OfferImage, "" /*command.OfferCode.ToString()*/);
-                RedirectToAction("Index");
+                return RedirectToAction("Index");
             }
         }
         return View(command);

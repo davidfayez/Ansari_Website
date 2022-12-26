@@ -18,7 +18,7 @@ public class CreateUpdateAnswerCommand : AuditableEntity, IRequest<bool>, IMapFr
 
     public void Mapping(Profile profile)
     {
-        profile.CreateMap<DB.Question,CreateUpdateAnswerCommand>()
+        profile.CreateMap<DB.Answer,CreateUpdateAnswerCommand>()
                 .ForMember(des => des.QuestionAnswerVMs, opt => opt.MapFrom(src => src.QuestionAnswers))
                .ReverseMap();
     }

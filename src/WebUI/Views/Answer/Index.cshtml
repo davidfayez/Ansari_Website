@@ -3,7 +3,7 @@
 @{
     Layout = "_Layout";
 }
-<div class="inner-page">
+<div class="inner-page" >
     <button data-bs-toggle="modal" data-bs-target="#EditModal" class="btn-add-table" style="min-width: 130px; margin-bottom: 20px;"><i class="fa-solid fa-plus"></i> add New</button>
 
     <table id="table_id" class=" table-pages" style="font-size:13px;">
@@ -15,37 +15,19 @@
                 <th style="max-width:50px ;"></th>
             </tr>
         </thead>
-        <tbody>
-            @if (Model != null)
-            {
-                foreach (var answer in Model)
-                {
-                    <tr>
-                        <td>@answer.NameEn</td>
-                        <td>@answer.NameAr</td>
-                        <td>@answer.Order</td>
-
-                        <td>
-                            <button data-bs-toggle="modal" data-bs-target="#EditModal" class="btn btn-warning btn-sm"><i class="fa-regular fa-pen-to-square"></i></button>
-                            <button class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#DeletePop"><i class="fas fa-times"></i></button>
-                        </td>
-
-
-                    </tr>
-                }
-            }
-            
-            
+        <tbody id="_AnswerContainer">
+          <partial name="_AnswersList" model="Model" />
 
         </tbody>
     </table>
+    
 
-    <div class="text-end">
+    @*<div class="text-end">
         <button class="save-btn"><i class="fa-solid fa-check"></i> Save </button>
         <button class="cancel-btn"> <i class="fa-solid fa-xmark"></i> Cancel </button>
-    </div>
+    </div>*@
 
 </div>
 
-<partial name="_PopUp" />
+<partial name="_PopUp" model="new CreateUpdateAnswerCommand()"/>
 <partial name="_Delete" />

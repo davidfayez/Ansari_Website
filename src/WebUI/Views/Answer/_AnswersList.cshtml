@@ -1,0 +1,20 @@
+﻿@model List<AnswerVM>
+
+@if (Model != null)
+ {
+     foreach (var answer in Model)
+     {
+         <tr>
+             <td>@answer.NameEn</td>
+             <td>@answer.NameAr</td>
+             <td>@answer.Order</td>
+
+             <td>
+                 <button data-bs-toggle="modal" data-bs-target="#EditModal" class="btn btn-warning btn-sm"><i class="fa-regular fa-pen-to-square"></i></button>
+                 <button class="btn btn-danger btn-sm" onclick="deleteDetail('Answer','Delete',@answer.Id)" @*data-bs-toggle="modal" data-bs-target="#DeletePop"*@><i class="fas fa-times"></i></button>
+             </td>
+
+
+         </tr>
+     }
+ }
