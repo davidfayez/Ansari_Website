@@ -9,6 +9,9 @@ using Microsoft.AspNetCore.Mvc;
 using Ansari_Website.Application.CPanel.Doctor.Commands.Create;
 using Ansari_Website.Application.CPanel.Doctor.Commands.Delete;
 using Ansari_Website.Application.CPanel.Offer.Commands.Delete;
+using Ansari_Website.Application.CPanel.Answer.Queries.GetAll;
+using Ansari_Website.Application.CPanel.Offer.Queries.GetAll;
+using Ansari_Website.Domain.Entities.CPanel;
 
 namespace Ansari_Website.WebUI.Controllers;
 public class OfferController : BaseController
@@ -21,9 +24,11 @@ public class OfferController : BaseController
         _fileHandler = fileHandler;
         _mapper = mapper;
     }
-    public IActionResult Index()
+    public async Task<IActionResult> IndexAsync()
     {
-        return View();
+        var Offers = await Mediator.Send(new GetAllOffersQuery());
+
+        return View(Offers);
     }
 
     public IActionResult Create()
@@ -71,6 +76,7 @@ public class OfferController : BaseController
         return View("Create", command);
     }
 
+
     [HttpPost]
     public async Task<JsonResult> DeleteDetail(int id)
     {
@@ -84,5 +90,25 @@ public class OfferController : BaseController
             return Json(isSuccess);
         }
         return Json(false);
+    }
+
+
+    [HttpGet]
+    public async Task<IActionResult> GetOfferDetailById(int id)
+    {
+        var command = new CreateUpdateOfferCommand();
+
+        if (id > 0)
+        {
+            var Offer = await Mediator.Send(new GetOfferByIdQuery
+            {
+                Id = id,
+            });
+            if (Offer != null)
+            {
+                command = _mapper.Map<CreateUpdateOfferCommand>(Offer);
+            }
+        }
+        return PartialView("_PopupDetail", command);
     }
 }

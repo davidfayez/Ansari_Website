@@ -1,4 +1,4 @@
-﻿
+﻿@model List<OfferVM>
 @{
     Layout = "_Layout";
 }
@@ -11,43 +11,35 @@
 
 
             <tr>
-                <th>Title</th>
-                <th>Order </th>
-                <th>Price Before </th>
-                <th>Price After </th>
-                <th style="max-width:150px ;"></th>
+                <th style="max-width:75px ;">@Global.NameEn</th>
+                <th style="max-width:75px ;">@Global.NameAr</th>
+                <th style="max-width:25px ;">@Optic.PriceBefore</th>
+                <th style="max-width:25px ;">@Optic.PriceAfter</th>
+                <th style="max-width:50px ;"></th>
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td> Full Title Here</td>
-                <td> </td>
-                <td> </td>
-                <td> </td>
 
-                <td><a href="Offers-inner.html" class="btn btn-warning btn-sm"><i class="fa-regular fa-pen-to-square"></i></a> <a href="Events-inner.html" class="btn btn-dark btn-sm"><i class="fa-regular fa-eye"></i></a> <button class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#DeletePop"><i class="fas fa-times"></i></button></td>
-
-
-            </tr>
-            <tr>
-                <td> Full Title Here</td>
-                <td> </td>
-                <td> </td>
-                <td> </td>
-
-                <td><a href="Offers-inner.html" class="btn btn-warning btn-sm"><i class="fa-regular fa-pen-to-square"></i></a> <a href="Events-inner.html" class="btn btn-dark btn-sm"><i class="fa-regular fa-eye"></i></a> <button class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#DeletePop"><i class="fas fa-times"></i></button></td>
-
-
-            </tr>
+            @if (Model != null)
+            {
+                foreach (var offer in Model)
+                {
+                    <tr>
+                        <td>@offer.TitleEn</td>
+                        <td>@offer.TitleAr</td>
+                        <td>@offer.PriceBefore</td>
+                        <td>@offer.PriceAfter</td>
+                        <td>
+                            <a asp-action="Edit" asp-route-id="@offer.Id" class="btn btn-warning btn-sm"><i class="fa-regular fa-pen-to-square"></i></a> 
+                            <a href="Events-inner.html" class="btn btn-dark btn-sm"><i class="fa-regular fa-eye"></i></a> 
+                            <button class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#DeletePop"><i class="fas fa-times"></i></button>
+                        </td>
+                    </tr>
+                }
+            }
 
         </tbody>
     </table>
-
-
-
-
-
-
 
     <div class="text-end">
         <button class="save-btn"><i class="fa-solid fa-check"></i> Save </button>
