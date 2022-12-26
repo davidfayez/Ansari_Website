@@ -12,6 +12,7 @@ using Ansari_Website.Application.CPanel.Offer.Commands.Delete;
 using Ansari_Website.Application.CPanel.Answer.Queries.GetAll;
 using Ansari_Website.Application.CPanel.Offer.Queries.GetAll;
 using Ansari_Website.Domain.Entities.CPanel;
+using Ansari_Website.Application.CPanel.OfferDetail.Queries.GetById;
 
 namespace Ansari_Website.WebUI.Controllers;
 public class OfferController : BaseController
@@ -96,17 +97,17 @@ public class OfferController : BaseController
     [HttpGet]
     public async Task<IActionResult> GetOfferDetailById(int id)
     {
-        var command = new CreateUpdateOfferCommand();
+        var command = new CreateUpdateOfferDetailCommand();
 
         if (id > 0)
         {
-            var Offer = await Mediator.Send(new GetOfferByIdQuery
+            var Offer = await Mediator.Send(new GetOfferDetailByIdQuery
             {
                 Id = id,
             });
             if (Offer != null)
             {
-                command = _mapper.Map<CreateUpdateOfferCommand>(Offer);
+                command = _mapper.Map<CreateUpdateOfferDetailCommand>(Offer);
             }
         }
         return PartialView("_PopupDetail", command);
