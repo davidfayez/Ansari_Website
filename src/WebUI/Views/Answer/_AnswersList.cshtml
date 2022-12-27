@@ -18,3 +18,12 @@
          </tr>
      }
  }
+
+
+@if (ViewBag.IsSuccess != null && (bool)ViewBag.IsSuccess == true)
+{
+    <script asp-append-version="true">
+        $('#closeFilter').click();
+    </script>
+
+}

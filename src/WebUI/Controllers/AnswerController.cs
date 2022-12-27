@@ -36,6 +36,7 @@ public class AnswerController : BaseController
             if(isSuccess)
             {
                 var Answers = await Mediator.Send(new GetAllAnswersQuery());
+                ViewBag.IsSuccess = isSuccess;
                 return PartialView("_AnswersList", Answers);
             }
         }
