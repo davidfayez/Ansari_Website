@@ -39,7 +39,7 @@ public class AnswerController : BaseController
                 return PartialView("_AnswersList", Answers);
             }
         }
-        return View(command);
+        return PartialView("_PopUp", command);
 
     }
 
@@ -55,11 +55,11 @@ public class AnswerController : BaseController
             if (Answer != null)
             {
                 var result = _mapper.Map<CreateUpdateAnswerCommand>(Answer);
-                return View("Create", result);
+                return PartialView("_PopUp", result);
             }
         }
 
-        return View("Create", new CreateUpdateAnswerCommand());
+        return PartialView("_PopUp", new CreateUpdateAnswerCommand());
     }
 
     [HttpPost]

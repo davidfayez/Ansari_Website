@@ -1,54 +1,53 @@
 ﻿@model CreateUpdateAnswerCommand
 <!-- answer Modal -->
+@{
+    var z = 5;
+}
 
-<div class="modal fade" id="EditModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-small-big modal-dialog-centered" style="max-width: 600px;">
-        <form class="modal-content modal-small"
-        asp-controller="Answer" asp-action="Create"
-        data-ajax="true"
-        data-ajax-method="POST"
-        data-ajax-update="#_AnswerContainer"
-        data-ajax-mode="replace"
-        autocomplete="off">
+<form class="modal-content modal-small"
+      asp-controller="Answer" asp-action="Create"
+      data-ajax="true"
+      data-ajax-method="POST"
+      data-ajax-update="#_AnswerContainer"
+      data-ajax-mode="replace"
+      autocomplete="off">
 
-            <div class="modal-body">
-                <div class="inner-filter">
-                    <h3>Answer </h3>
-                    <br />
-                    <div class="row">
-                        <label class="col-md-4" style="margin-top: 5px; font-size: 14px;"> @Global.NameAr</label>
-                        <div class="col-md-8">
-                            <input type="text" asp-for="NameAr"/>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <label class="col-md-4" style="margin-top: 5px; font-size: 14px;"> @Global.NameEn</label>
-                        <div class="col-md-8">
-                            <input type="text" asp-for="NameEn" />
-                        </div>
-                    </div>
-
-                    <br />
-                    <div class="row">
-                        <label class="col-md-4" style="margin-top: 5px; font-size: 14px;">Order</label>
-                        <div class="col-md-8">
-                            <input type="number" asp-for="Order"/>
-                        </div>
-                    </div>
-                    <br />
-
-                    <div class="text-end" style="margin-top: 10px;">
-                        <button type="submit" class="btn btn-success btn-sm"><i class="fa-solid fa-check"></i></button>
-                        <button id="closeFilter" class="btn btn-dark btn-sm" data-bs-dismiss="modal">
-                            <i class="fa-solid fa-xmark"></i>
-                        </button>
-                    </div>
+      <input type="hidden" asp-for="Id" />
+    <div class="modal-body">
+        <div class="inner-filter">
+            <h3>Answer </h3>
+            <br />
+            <div class="row">
+                <label class="col-md-4" style="margin-top: 5px; font-size: 14px;"> @Global.NameAr</label>
+                <div class="col-md-8">
+                    <input type="text" asp-for="NameAr" />
                 </div>
-
             </div>
 
-        </form>
-    </div>
-</div>
+            <div class="row">
+                <label class="col-md-4" style="margin-top: 5px; font-size: 14px;"> @Global.NameEn</label>
+                <div class="col-md-8">
+                    <input type="text" asp-for="NameEn" />
+                </div>
+            </div>
 
+            <br />
+            <div class="row">
+                <label class="col-md-4" style="margin-top: 5px; font-size: 14px;">Order</label>
+                <div class="col-md-8">
+                    <input type="number" asp-for="Order" />
+                </div>
+            </div>
+            <br />
+
+            <div class="text-end" style="margin-top: 10px;">
+                <button type="submit" class="btn btn-success btn-sm"><i class="fa-solid fa-check"></i></button>
+                <button id="closeFilter" class="btn btn-dark btn-sm" data-bs-dismiss="modal">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+        </div>
+
+    </div>
+
+</form>

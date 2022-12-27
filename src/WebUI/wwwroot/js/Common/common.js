@@ -1,8 +1,8 @@
 ﻿var common = (function () {
     function renderModalView(modalId, modaldialogId, bodyHtml, isMobilePreview) {
         var mopPrev = isMobilePreview === true ? 'mob-preview' : '';
-        var htmlContainer = `<div class="modal fade ${mopPrev}" tabindex="-1" id="${modalId}" aria-labelledby="editAlertModalLabel" aria-hidden="true">
-<div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl" id="${modaldialogId}">
+        var htmlContainer = `<div class="modal fade ${mopPrev}" tabindex="-1" id="${modalId}" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div  class="modal-dialog modal-small-big modal-dialog-centered"  style="max-width: 600px;" id="${modaldialogId}">
 ${bodyHtml}
 </div>
 </div>`;
