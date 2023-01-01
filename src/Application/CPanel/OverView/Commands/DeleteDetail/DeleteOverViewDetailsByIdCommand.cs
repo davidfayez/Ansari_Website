@@ -11,7 +11,6 @@ public class DeleteOverViewDetailsByIdCommand : IRequest<bool>, IMapFrom<DB.Over
     public int Id { get; set; }
 }
 
-
 public class DeleteOverViewDetailsByIdCommandHandler : IRequestHandler<DeleteOverViewDetailsByIdCommand, bool>
 {
     private readonly IApplicationDbContext _applicationDbContext;
