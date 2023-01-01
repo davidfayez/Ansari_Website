@@ -1,0 +1,43 @@
+﻿@model List<OurValueVM>
+
+
+<table id="table_id" class=" table-pages" style="font-size:13px;">
+    <thead>
+
+
+        <tr>
+            <th>@Global.NameEn</th>
+            <th>@Global.NameAr</th>
+            <th>@Optic.IconName</th>
+            <th style="max-width:150px ;"></th>
+        </tr>
+    </thead>
+    <tbody>
+        
+         @foreach (var ourValue in Model)
+        {
+            var id = "ourValue" + ourValue.Id;
+            <tr id="@id">
+                <td> @ourValue.TitleEn</td>
+                <td> @ourValue.TitleAr</td>
+                <td> @ourValue.IconName</td>
+                <td>
+                    <a asp-controller="CPanelLookups" asp-action="EditOurValue" asp-route-id="@ourValue.Id" class="btn btn-warning btn-sm"><i class="fa-regular fa-pen-to-square"></i></a>
+                        <button class="btn btn-dark btn-sm"><i class="fa-regular fa-eye"></i></button>
+                        <button type="button" class="btn btn-danger btn-sm" onclick="deleteDetail('CPanelLookups','DeleteOurValue',@ourValue.Id,'@id')"><i class="fas fa-times"></i></button>
+
+                </td>
+            </tr>
+        }
+
+
+    </tbody>
+</table>
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#table_id').DataTable({
+        });
+    });
+</script>

@@ -17,7 +17,7 @@ public class QuestionAnswerConfiguration : IEntityTypeConfiguration<QuestionAnsw
 
         builder.Property(s => s.Id).UseIdentityColumn();
 
-        builder.HasKey(bc => new { bc.QuestionId, bc.AnswerId });
+        //builder.HasKey(bc => new { bc.QuestionId, bc.AnswerId });
        
         builder.HasOne(bc => bc.Question)
                .WithMany(b => b.QuestionAnswers)

@@ -10,3 +10,5 @@ global using MediatR;
 global using Ansari_Website.Application.Common.Interfaces;
 global using Ansari_Website.Application.Common.Mappings;
 global using Ansari_Website.Domain.Common;
+global using Ansari_Website.Application.Common.Extensions;
+global using Ansari_Website.Application.Common.Resources;

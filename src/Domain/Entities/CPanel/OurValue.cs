@@ -11,4 +11,6 @@ public class OurValue
     public string? TitleAr { get; set; }
     public string? TitleEn { get; set; }
     public string? IconName { get; set; }
+    public int AboutUsId { get; set; }
+    public AboutUs AboutUs { get; set; }
 }

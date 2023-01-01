@@ -73,6 +73,7 @@ public partial class ApplicationDbContext : IdentityDbContext<AspNetUser, Applic
     public virtual DbSet<OfferDetail> OfferDetails => Set<OfferDetail>();
     public virtual DbSet<OurValue> OurValues => Set<OurValue>();
     public virtual DbSet<OverView> OverViews => Set<OverView>();
+    public virtual DbSet<OverViewDetail> OverViewDetails => Set<OverViewDetail>();
     public virtual DbSet<PatientRight> PatientRights => Set<PatientRight>();
     public virtual DbSet<PatientRightDetail> PatientRightDetails => Set<PatientRightDetail>();
     public virtual DbSet<PatientSay> PatientSays => Set<PatientSay>();

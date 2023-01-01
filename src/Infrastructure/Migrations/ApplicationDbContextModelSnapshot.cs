@@ -627,23 +627,27 @@ namespace Ansari_Website.Infrastructure.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<int?>("AboutUsId")
+                    b.Property<int>("AboutUsId")
                         .HasColumnType("int");
 
                     b.Property<string>("IconName")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("TitleAr")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<string>("TitleEn")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.HasKey("Id");
 
                     b.HasIndex("AboutUsId");
 
-                    b.ToTable("OurValues");
+                    b.ToTable("OurValue", (string)null);
                 });
 
             modelBuilder.Entity("Ansari_Website.Domain.Entities.CPanel.OverView", b =>
@@ -1002,20 +1006,23 @@ namespace Ansari_Website.Infrastructure.Migrations
 
             modelBuilder.Entity("Ansari_Website.Domain.Entities.CPanel.QuestionAnswer", b =>
                 {
-                    b.Property<int>("QuestionId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("AnswerId")
-                        .HasColumnType("int");
-
                     b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.HasKey("QuestionId", "AnswerId");
+                    b.Property<int>("AnswerId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("QuestionId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
 
                     b.HasIndex("AnswerId");
+
+                    b.HasIndex("QuestionId");
 
                     b.ToTable("QuestionAnswer", (string)null);
                 });
@@ -1331,7 +1338,7 @@ namespace Ansari_Website.Infrastructure.Migrations
                             BranchNameEn = "Main Branch",
                             CommercialRegister = "123456",
                             CreatedUserId = "5e46158f-44e1-4e78-8101-8a4617d5daba",
-                            CreationDate = new DateTime(2022, 12, 22, 19, 35, 46, 808, DateTimeKind.Local).AddTicks(5022),
+                            CreationDate = new DateTime(2022, 12, 30, 20, 22, 19, 92, DateTimeKind.Local).AddTicks(3304),
                             DefCompanyId = 1,
                             Email = "test@example.com",
                             Fax = "123456",
@@ -1340,7 +1347,7 @@ namespace Ansari_Website.Infrastructure.Migrations
                             IsActive = true,
                             IsDeleted = false,
                             IsSystem = false,
-                            LastModifiedDate = new DateTime(2022, 12, 22, 19, 35, 46, 808, DateTimeKind.Local).AddTicks(5023),
+                            LastModifiedDate = new DateTime(2022, 12, 30, 20, 22, 19, 92, DateTimeKind.Local).AddTicks(3305),
                             LogoUrl = "//test.jpg",
                             Notes = "No",
                             Phone1 = "01204789654",
@@ -1562,7 +1569,7 @@ namespace Ansari_Website.Infrastructure.Migrations
                             CompanyNameAr = "الشركة",
                             CompanyNameEn = "Company",
                             CreatedUserId = "5e46158f-44e1-4e78-8101-8a4617d5daba",
-                            CreationDate = new DateTime(2022, 12, 22, 19, 35, 46, 808, DateTimeKind.Local).AddTicks(5001),
+                            CreationDate = new DateTime(2022, 12, 30, 20, 22, 19, 92, DateTimeKind.Local).AddTicks(3279),
                             Email = "test@example.com",
                             Fax = "123456",
                             FinancialYearEnd = new DateTime(2022, 12, 31, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -1570,7 +1577,7 @@ namespace Ansari_Website.Infrastructure.Migrations
                             IsActive = false,
                             IsDeleted = false,
                             IsSystem = false,
-                            LastModifiedDate = new DateTime(2022, 12, 22, 19, 35, 46, 808, DateTimeKind.Local).AddTicks(4989),
+                            LastModifiedDate = new DateTime(2022, 12, 30, 20, 22, 19, 92, DateTimeKind.Local).AddTicks(3265),
                             Location = "Riadh",
                             LogoUrl = "//test.jpg",
                             Notes = "No",
@@ -1665,12 +1672,12 @@ namespace Ansari_Website.Infrastructure.Migrations
                             CountryNameAr = "السعودية",
                             CountryNameEn = "KSA",
                             CreatedUserId = "5e46158f-44e1-4e78-8101-8a4617d5daba",
-                            CreationDate = new DateTime(2022, 12, 22, 19, 35, 46, 808, DateTimeKind.Local).AddTicks(5091),
+                            CreationDate = new DateTime(2022, 12, 30, 20, 22, 19, 92, DateTimeKind.Local).AddTicks(3368),
                             Description = "NO",
                             IsActive = true,
                             IsDeleted = false,
                             IsSystem = false,
-                            LastModifiedDate = new DateTime(2022, 12, 22, 19, 35, 46, 808, DateTimeKind.Local).AddTicks(5091)
+                            LastModifiedDate = new DateTime(2022, 12, 30, 20, 22, 19, 92, DateTimeKind.Local).AddTicks(3369)
                         });
                 });
 
@@ -1764,7 +1771,7 @@ namespace Ansari_Website.Infrastructure.Migrations
                             AbbreviationEn = "",
                             Code = "1",
                             CreatedUserId = "5e46158f-44e1-4e78-8101-8a4617d5daba",
-                            CreationDate = new DateTime(2022, 12, 22, 19, 35, 46, 808, DateTimeKind.Local).AddTicks(5077),
+                            CreationDate = new DateTime(2022, 12, 30, 20, 22, 19, 92, DateTimeKind.Local).AddTicks(3356),
                             CurrencyNameAr = "العملة الافتراضية",
                             CurrencyNameEn = "Default Currency",
                             DefaultFactor = 1m,
@@ -1772,7 +1779,7 @@ namespace Ansari_Website.Infrastructure.Migrations
                             IsDeleted = false,
                             IsPimary = true,
                             IsSystem = false,
-                            LastModifiedDate = new DateTime(2022, 12, 22, 19, 35, 46, 808, DateTimeKind.Local).AddTicks(5077)
+                            LastModifiedDate = new DateTime(2022, 12, 30, 20, 22, 19, 92, DateTimeKind.Local).AddTicks(3357)
                         });
                 });
 
@@ -1911,12 +1918,12 @@ namespace Ansari_Website.Infrastructure.Migrations
                         {
                             Id = 1,
                             CreatedUserId = "5e46158f-44e1-4e78-8101-8a4617d5daba",
-                            CreationDate = new DateTime(2022, 12, 22, 19, 35, 46, 808, DateTimeKind.Local).AddTicks(5106),
+                            CreationDate = new DateTime(2022, 12, 30, 20, 22, 19, 92, DateTimeKind.Local).AddTicks(3381),
                             Description = "",
                             IsActive = true,
                             IsDeleted = false,
                             IsSystem = false,
-                            LastModifiedDate = new DateTime(2022, 12, 22, 19, 35, 46, 808, DateTimeKind.Local).AddTicks(5106),
+                            LastModifiedDate = new DateTime(2022, 12, 30, 20, 22, 19, 92, DateTimeKind.Local).AddTicks(3382),
                             ReligionCode = "1",
                             ReligionNameAr = "مسلم",
                             ReligionNameEn = "Mulslim"
@@ -2010,12 +2017,12 @@ namespace Ansari_Website.Infrastructure.Migrations
                             Id = 1,
                             AspNetUserId = "5e46158f-44e1-4e78-8101-8a4617d5daba",
                             CreatedUserId = "5e46158f-44e1-4e78-8101-8a4617d5daba",
-                            CreationDate = new DateTime(2022, 12, 22, 19, 35, 46, 808, DateTimeKind.Local).AddTicks(5043),
+                            CreationDate = new DateTime(2022, 12, 30, 20, 22, 19, 92, DateTimeKind.Local).AddTicks(3330),
                             DefBranchId = 1,
                             IsActive = true,
                             IsDeleted = false,
                             IsSystem = false,
-                            LastModifiedDate = new DateTime(2022, 12, 22, 19, 35, 46, 808, DateTimeKind.Local).AddTicks(5043)
+                            LastModifiedDate = new DateTime(2022, 12, 30, 20, 22, 19, 92, DateTimeKind.Local).AddTicks(3331)
                         });
                 });
 
@@ -2121,13 +2128,13 @@ namespace Ansari_Website.Infrastructure.Migrations
                             Id = "5e46158f-44e1-4e78-8101-8a4617d5daba",
                             AccessFailedCount = 0,
                             ConcurrencyStamp = "b795837e-ee8a-41ac-aed4-3fea2f771308",
-                            CreationDate = new DateTime(2022, 12, 22, 19, 35, 46, 808, DateTimeKind.Local).AddTicks(4596),
+                            CreationDate = new DateTime(2022, 12, 30, 20, 22, 19, 92, DateTimeKind.Local).AddTicks(3068),
                             EmailConfirmed = false,
                             FullName = "ERP Developer",
                             Image = "profile-icon.jpg",
                             IsDeleted = false,
                             IsDeveloper = true,
-                            LastModifiedDate = new DateTime(2022, 12, 22, 19, 35, 46, 808, DateTimeKind.Local).AddTicks(4597),
+                            LastModifiedDate = new DateTime(2022, 12, 30, 20, 22, 19, 92, DateTimeKind.Local).AddTicks(3069),
                             LockoutEnabled = true,
                             NormalizedUserName = "DEVELOPER",
                             Password = "123456",
@@ -2177,7 +2184,7 @@ namespace Ansari_Website.Infrastructure.Migrations
                         new
                         {
                             Id = "63998b7d-6724-49a6-8488-0798f13726d5",
-                            ConcurrencyStamp = "162ff3f1-24be-4909-9b76-15963abc52af",
+                            ConcurrencyStamp = "91199298-dc0d-4c9b-acd2-660485a29bf7",
                             Name = "Developer",
                             NameAr = "مبرمج",
                             NormalizedName = "DEVELOPER",
@@ -2582,9 +2589,13 @@ namespace Ansari_Website.Infrastructure.Migrations
 
             modelBuilder.Entity("Ansari_Website.Domain.Entities.CPanel.OurValue", b =>
                 {
-                    b.HasOne("Ansari_Website.Domain.Entities.CPanel.AboutUs", null)
+                    b.HasOne("Ansari_Website.Domain.Entities.CPanel.AboutUs", "AboutUs")
                         .WithMany("OurValues")
-                        .HasForeignKey("AboutUsId");
+                        .HasForeignKey("AboutUsId")
+                        .OnDelete(DeleteBehavior.NoAction)
+                        .IsRequired();
+
+                    b.Navigation("AboutUs");
                 });
 
             modelBuilder.Entity("Ansari_Website.Domain.Entities.CPanel.OverViewDetail", b =>

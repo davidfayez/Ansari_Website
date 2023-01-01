@@ -277,6 +277,15 @@ namespace Ansari_Website.Application.Common.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Icon Name.
+        /// </summary>
+        public static string IconName {
+            get {
+                return ResourceManager.GetString("IconName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to ID Number.
         /// </summary>
         public static string IDNumber {
@@ -462,6 +471,15 @@ namespace Ansari_Website.Application.Common.Resources {
         public static string UnitNumber {
             get {
                 return ResourceManager.GetString("UnitNumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Value.
+        /// </summary>
+        public static string Value {
+            get {
+                return ResourceManager.GetString("Value", resourceCulture);
             }
         }
         

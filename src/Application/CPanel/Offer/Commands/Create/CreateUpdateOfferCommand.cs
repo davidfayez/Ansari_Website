@@ -20,8 +20,8 @@ public class CreateUpdateOfferCommand :  AuditableEntity, IRequest<bool>, IMapFr
     public string? DescriptionEn { get; set; }
     public string? ImageUrl { get; set; }
     public string? AltImage { get; set; }
-    public decimal PriceBefore { get; set; }
-    public decimal PriceAfter { get; set; }
+    public double PriceBefore { get; set; }
+    public double PriceAfter { get; set; }
     public IFormFile OfferImage { get; set; }
     public List<OfferDetailVM> OfferDetailVMs { get; set; } = new();
 

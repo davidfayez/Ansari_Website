@@ -189,6 +189,9 @@
   <data name="Female" xml:space="preserve">
     <value>انثى</value>
   </data>
+  <data name="IconName" xml:space="preserve">
+    <value>اسم الرمز</value>
+  </data>
   <data name="IDNumber" xml:space="preserve">
     <value>رقم الاقامة / الهوية الوطنية</value>
   </data>
@@ -251,6 +254,9 @@
   </data>
   <data name="UnitNumber" xml:space="preserve">
     <value>رقم الوحدة</value>
+  </data>
+  <data name="Value" xml:space="preserve">
+    <value>القيمة</value>
   </data>
   <data name="VirtualMedicalCard" xml:space="preserve">
     <value>كارت التأمين الافتراضى</value>

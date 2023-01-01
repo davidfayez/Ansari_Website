@@ -1,0 +1,65 @@
+﻿@model CreateUpdateOurValueCommand
+
+
+<form class="modal-content modal-small" asp-controller="CPanelLookups" asp-action="EditOurValue" data-ajax="true" data-ajax-method="POST"
+     data-ajax-update="#editOurValueModal" data-ajax-mode="replace" autocomplete="off">
+
+    <div class="modal-body">
+        <div class="inner-filter">
+            <h3>Our Value Item</h3>
+            <br />
+            <input type="hidden" asp-for="AboutUsId" />
+            <input type="hidden" asp-for="Id" />
+
+            <div class="row">
+                <label class="col-md-4" style="margin-top: 5px; font-size: 14px;">@Global.NameAr</label>
+                <div class="col-md-8">
+                    <input type="text" asp-for="TitleAr"></input>
+                </div>
+                <span asp-validation-for="TitleAr" class="text-danger"></span>
+
+            </div>
+            <br />
+
+            <div class="row">
+                <label class="col-md-4" style="margin-top: 5px; font-size: 14px;">@Global.NameEn</label>
+                <div class="col-md-8">
+                    <input type="text" asp-for="TitleEn"></input>
+                </div>
+                <span asp-validation-for="TitleEn" class="text-danger"></span>
+
+            </div>
+            <br />
+            <div class="row">
+                <label class="col-md-4" style="margin-top: 5px; font-size: 14px;">@Optic.Order</label>
+                <div class="col-md-8">
+                    <input type="text" asp-for="IconName" />
+                </div>
+                <span asp-validation-for="IconName" class="text-danger"></span>
+            </div>
+            <br />
+
+
+            <div class="text-end" style="margin-top: 10px;">
+                <button class="btn btn-success btn-sm"><i class="fa-solid fa-check"></i></button>
+                <button id="closeOurValue" class="btn btn-dark btn-sm" data-bs-dismiss="modal">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+        </div>
+
+    </div>
+
+</form>
+
+@if (ViewBag.IsSuccess != null && (bool)ViewBag.IsSuccess == true)
+{
+    var id = (int)ViewBag.AboutUsId;
+    
+    <script asp-append-version="true">
+        var data = { id: @id };
+        $('#closeOurValue').click();
+        common.renderPartialView('/Offer/GetAllOurValuesByAboutUsId', data, 'ourValues-list')
+    </script>
+
+}

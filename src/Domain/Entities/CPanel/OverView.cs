@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Ansari_Website.Domain.Entities.CPanel;
-public class OverView 
+public class OverView : AuditableEntity
 {
     public int Id { get; set; }
     public int? Order { get; set; }

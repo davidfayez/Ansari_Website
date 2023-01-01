@@ -1,5 +1,5 @@
 ﻿
-$("#btnSubmit").on('click', function () {
+$(document).on('click', '#btnSubmitOfferDetail', function () {
     var TitleEnDetail = $("#TitleEnDetail").val();
     var TitleArDetail = $("#TitleArDetail").val();
     var OrderDetail = $("#OrderDetail").val();
@@ -17,18 +17,18 @@ $("#btnSubmit").on('click', function () {
         $("#OfferDiv").append(`<input type="hidden" name="OfferDetailVMs[` + (count - 2) + `].Order"  value=` + OrderDetail + `>`);
 
         $("#table_id").append(`<tr><td>` + TitleEnDetail + `</td><td>` + TitleArDetail + `</td><td>` + OrderDetail + `</td>
-                                   <td><button  type="button" data-bs-toggle="modal" data-bs-target="#EditModal" class="btn btn-warning btn-sm"><i class="fa-regular fa-pen-to-square"></i></button> 
-                                       <button  type="button" class="btn btn-danger btn-sm" onclick="deleteCurrentRow(`+ (count - 1) +`)"><i class="fas fa-times"></i></button></td>
+                                   <td> 
+                                       <button  type="button" class="btn btn-danger btn-sm" onclick="deleteCurrentRow(`+ (count - 1) + `)"><i class="fas fa-times"></i></button></td>
                                </tr>`);
-        
+
+        $('#closeOfferDetail').click();
+
     }
     else {
         $("#TitleEnDetailValidation").show();
         $("#TitleArDetailValidation").show();
     }
-
-});
-
+})
 
 function deleteCurrentRow(id) {
     debugger;

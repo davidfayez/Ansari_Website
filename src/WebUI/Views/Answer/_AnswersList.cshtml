@@ -4,14 +4,16 @@
  {
      foreach (var answer in Model)
      {
-         <tr>
+        var id = "question" + answer.Id;
+
+         <tr id="@id">
              <td>@answer.NameEn</td>
              <td>@answer.NameAr</td>
              <td>@answer.Order</td>
 
              <td>
                 <button type="button" onclick="editCardItem('@answer.Id','Answer', 'Edit', 'EditModal', '_AnswerContainer')" @*data-bs-toggle="modal" data-bs-target="#EditModal"*@ class="btn btn-warning btn-sm"><i class="fa-regular fa-pen-to-square"></i></button>
-                <button type="button"  class="btn btn-danger btn-sm" onclick="deleteDetail('Answer','Delete',@answer.Id)" @*data-bs-toggle="modal" data-bs-target="#DeletePop"*@><i class="fas fa-times"></i></button>
+                <button type="button"  class="btn btn-danger btn-sm" onclick="deleteDetail('Answer','Delete',@answer.Id,'@id')" @*data-bs-toggle="modal" data-bs-target="#DeletePop"*@><i class="fas fa-times"></i></button>
              </td>
 
 
@@ -22,8 +24,10 @@
 
 @if (ViewBag.IsSuccess != null && (bool)ViewBag.IsSuccess == true)
 {
+    @*<script asp-append-version="true" src="~/js/jquery-2.1.1.js"></script>
+*@
     <script asp-append-version="true">
-        $('#closeFilter').click();
+        $('#closeAnswer').click();
     </script>
 
 }

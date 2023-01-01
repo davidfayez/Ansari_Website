@@ -45,6 +45,7 @@ public interface IApplicationDbContext
     DbSet<OfferDetail> OfferDetails { get; }
     DbSet<OurValue> OurValues { get; }
     DbSet<OverView> OverViews { get; }
+    DbSet<OverViewDetail> OverViewDetails { get; }
     DbSet<PatientRight> PatientRights { get; }
     DbSet<PatientRightDetail> PatientRightDetails { get; }
     DbSet<PatientSay> PatientSays { get; }

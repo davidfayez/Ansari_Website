@@ -1,8 +1,6 @@
 ﻿using Ansari_Website.Application.Common.Interfaces;
-using Ansari_Website.Application.CPanel.Department.Commands.Create;
 using Ansari_Website.Application.CPanel.Offer.Commands.Create;
 using Ansari_Website.Application.CPanel.Offer.Queries.GetById;
-using Ansari_Website.Application.CPanel.Offer.Commands.Create;
 using AutoMapper;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
@@ -13,6 +11,7 @@ using Ansari_Website.Application.CPanel.Answer.Queries.GetAll;
 using Ansari_Website.Application.CPanel.Offer.Queries.GetAll;
 using Ansari_Website.Domain.Entities.CPanel;
 using Ansari_Website.Application.CPanel.OfferDetail.Queries.GetById;
+using Ansari_Website.Application.CPanel.Question.Commands.Delete;
 
 namespace Ansari_Website.WebUI.Controllers;
 public class OfferController : BaseController
@@ -93,6 +92,20 @@ public class OfferController : BaseController
         return Json(false);
     }
 
+    [HttpPost]
+    public async Task<IActionResult> DeleteAsync(int id)
+    {
+        if (id > 0)
+        {
+            var isSuccess = await Mediator.Send(
+              new DeleteOfferCommand
+              {
+                  Id = id
+              });
+            return Json(isSuccess);
+        }
+        return Json(false);
+    }
 
     [HttpGet]
     public async Task<IActionResult> GetOfferDetailById(int id)
@@ -110,6 +123,46 @@ public class OfferController : BaseController
                 command = _mapper.Map<CreateUpdateOfferDetailCommand>(Offer);
             }
         }
-        return PartialView("_PopupDetail", command);
+        return PartialView("_EditPopupDetail", command);
+    }
+
+    [HttpGet]
+    public async Task<IActionResult> GetAllOfferDetailByOfferId(int id)
+    {
+        var OfferDetailVMs = new List<OfferDetailVM>();
+        if (id > 0)
+        {
+            var OfferDetails = await Mediator.Send(new GetAllDetailsByOfferIdQuery
+            {
+                Id = id,
+            });
+           OfferDetailVMs = _mapper.Map<List<OfferDetailVM>>(OfferDetails);
+        }
+        return PartialView("_OfferDetailsList", OfferDetailVMs);
+    }
+
+    [HttpGet]
+    public async Task<IActionResult> NewOfferDetail(int id)
+    {
+        
+        return PartialView("_PopupDetail", new CreateUpdateOfferDetailCommand());
+    }
+    
+    [HttpPost]
+    public async Task<IActionResult> EditOfferDetail(CreateUpdateOfferDetailCommand command)
+    {
+        if (ModelState.IsValid)
+        {
+            var isSuccess = await Mediator.Send(command);
+            if (isSuccess)
+            {
+                ViewBag.IsSuccess = isSuccess;
+                ViewBag.OfferId = command.OfferId;
+                ViewBag.Id = command.OfferId;
+                return PartialView("_EditPopupDetail", new CreateUpdateOfferDetailCommand());
+            }
+        }
+        return PartialView("_EditPopupDetail", command);
+
     }
 }

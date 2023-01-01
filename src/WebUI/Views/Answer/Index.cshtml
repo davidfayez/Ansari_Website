@@ -30,5 +30,9 @@
 
 </div>
 
-@*<partial name="_PopUp" model="new CreateUpdateAnswerCommand()"/>
-*@<partial name="_Delete" />
+<partial name="_Delete" />
+
+@*@section scripts {
+    <script asp-append-version="true" src="~/js/Pages/Answer/AddAnswer.js"></script>
+}
+*@

@@ -1,0 +1,56 @@
+﻿@model CreateUpdateQuestionCommand
+
+@{
+    Layout = "_Layout";
+}
+
+ <div class="inner-page">
+     <form asp-controller="Question" asp-action="Create" method="post" class="row" enctype="multipart/form-data">
+        <input type="hidden" asp-for="Id" />
+        <input type="hidden" asp-for="CreationDate" />
+        <input type="hidden" asp-for="CreatedUserId" />
+
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="input-sys-wrapper">
+                    <label>@Global.NameEn</label>
+                    <input type="text" asp-for="TitleEn"/>
+                    <span asp-validation-for="TitleEn" class="text-danger"></span>
+
+                  </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="input-sys-wrapper">
+                    <label>@Global.NameAr</label>
+                    <input type="text" asp-for="TitleAr" />
+                    <span asp-validation-for="TitleAr" class="text-danger"></span>
+                  </div>
+            </div>
+            <div class="col-md-6">
+                <div class="input-sys-wrapper">
+                    <label>@Optic.Order</label>
+                    <input type="number" asp-for="Order" />
+                  </div>
+            </div>
+
+         <div class="col-md-6">
+              <div class="input-sys-wrapper">
+                <label>Choose Answer</label>
+
+                  <select asp-for="AnswersId" asp-items="Model.Answers" multiple>
+                  </select>
+                    <span asp-validation-for="AnswersId" class="text-danger"></span>
+
+                </div>
+          </div>
+        </div>
+
+          <div class="text-end">
+            <button type="submit" class="save-btn"><i class="fa-solid fa-check"></i> Save </button>
+            <button class="cancel-btn"> <i class="fa-solid fa-xmark"></i> Cancel </button>
+          </div>
+     </form>
+
+</div>

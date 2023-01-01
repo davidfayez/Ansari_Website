@@ -36,6 +36,8 @@
     <link rel="stylesheet" href="~/css/InnerDesign.css">
     <link rel="stylesheet" href="~/css/Chat.css">
     <link rel="stylesheet" type="text/css" href="~/css/jquery.dataTables.css">
+    <link rel="stylesheet" href="~/css/multiselect.css" />
+    <script asp-append-version="true" src="~/js/multiselect.min.js"></script>
 
     <!--kendo CSS-->
 
@@ -450,9 +452,27 @@
     @*<script src="~/js/Kendo-UI/kendo.culture.ar-EG.min.js"></script>*@
     <script src="~/js/Kendo-UI/kendo.ar-JO.js"></script>
     <!--End Kendo js-->
-
     <script asp-append-version="true" src="~/js/common/common.js"></script>
     <script asp-append-version="true" src="~/js/common/shared.js"></script>
+
+    <script asp-append-version="true">
+        document.multiselect('#AnswersId')
+            .setCheckBoxClick("checkboxAll", function (target, args) {
+                console.log("Checkbox 'Select All' was clicked and got value ", args.checked);
+            })
+            .setCheckBoxClick("1", function (target, args) {
+                console.log("Checkbox for item with value '1' was clicked and got value ", args.checked);
+            });
+
+        function enable() {
+            document.multiselect('#AnswersId').setIsEnabled(true);
+        }
+
+        function disable() {
+            document.multiselect('#AnswersId').setIsEnabled(false);
+        }
+    </script>
+
     @await RenderSectionAsync("Scripts", required: false)
 
 </body>

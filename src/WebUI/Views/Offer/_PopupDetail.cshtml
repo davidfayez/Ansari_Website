@@ -1,55 +1,51 @@
 ﻿@model CreateUpdateOfferDetailCommand
 
 <!-- Sweep Modal -->
-<div class="modal fade" id="EditModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-small-big modal-dialog-centered" style="max-width: 600px;">
-        <div class="modal-content modal-small">
 
-            <div class="modal-body">
-                <div class="inner-filter">
-                    <h3>Offer Item</h3>
-                    <br />
+<div class="modal-content modal-small">
 
-                    <div class="row">
-                        <label class="col-md-4" style="margin-top: 5px; font-size: 14px;">@Global.NameAr</label>
-                        <div class="col-md-8">
-                            <textarea type="text" id="TitleArDetail"></textarea>
-                        </div>
-                        <span id="TitleArDetailValidation" class="text-danger" style="display:none">@ErrorMessages.Required</span>
+    <div class="modal-body">
+        <div class="inner-filter">
+            <h3>Offer Item</h3>
+            <br />
 
-                    </div>
-                    <br />
-
-                    <div class="row">
-                        <label class="col-md-4" style="margin-top: 5px; font-size: 14px;">@Global.NameEn</label>
-                        <div class="col-md-8">
-                            <textarea type="text" id="TitleEnDetail"></textarea>
-                        </div>
-                        <span id="TitleEnDetailValidation" class="text-danger" style="display:none">@ErrorMessages.Required</span>
-
-                    </div>
-                    <br />
-                    <div class="row">
-                        <label class="col-md-4" style="margin-top: 5px; font-size: 14px;">@Optic.Order</label>
-                        <div class="col-md-8">
-                            <input type="number" id="OrderDetail"/>
-                        </div>
-                        <span id="OrderDetailValidation" class="text-danger" style="display:none">@ErrorMessages.Required</span>
-                    </div>
-                    <br />
-
-
-                    <div class="text-end" style="margin-top: 10px;">
-                        <button id="btnSubmit" class="btn btn-success btn-sm"><i class="fa-solid fa-check"></i></button>
-                        <button id="closeFilter" class="btn btn-dark btn-sm" data-bs-dismiss="modal">
-                            <i class="fa-solid fa-xmark"></i>
-                        </button>
-                    </div>
+            <div class="row">
+                <label class="col-md-4" style="margin-top: 5px; font-size: 14px;">@Global.NameAr</label>
+                <div class="col-md-8">
+                    <textarea type="text" id="TitleArDetail"></textarea>
                 </div>
+                <span id="TitleArDetailValidation" class="text-danger" style="display:none">@ErrorMessages.Required</span>
 
             </div>
+            <br />
 
+            <div class="row">
+                <label class="col-md-4" style="margin-top: 5px; font-size: 14px;">@Global.NameEn</label>
+                <div class="col-md-8">
+                    <textarea type="text" id="TitleEnDetail"></textarea>
+                </div>
+                <span id="TitleEnDetailValidation" class="text-danger" style="display:none">@ErrorMessages.Required</span>
+
+            </div>
+            <br />
+            <div class="row">
+                <label class="col-md-4" style="margin-top: 5px; font-size: 14px;">@Optic.Order</label>
+                <div class="col-md-8">
+                    <input type="number" id="OrderDetail" />
+                </div>
+                <span id="OrderDetailValidation" class="text-danger" style="display:none">@ErrorMessages.Required</span>
+            </div>
+            <br />
+
+
+            <div class="text-end" style="margin-top: 10px;">
+                <button id="btnSubmitOfferDetail" class="btn btn-success btn-sm"><i class="fa-solid fa-check"></i></button>
+                <button id="closeOfferDetail" class="btn btn-dark btn-sm" data-bs-dismiss="modal">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
         </div>
-    </div>
-</div>
 
+    </div>
+
+</div>

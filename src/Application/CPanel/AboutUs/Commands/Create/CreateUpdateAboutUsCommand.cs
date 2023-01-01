@@ -1,12 +1,12 @@
 ﻿
+using Ansari_Website.Application.CPanel.AboutUs.Queries.GetAll;
+using Ansari_Website.Domain.Entities.CPanel;
+using Microsoft.AspNetCore.Http;
+
 namespace Ansari_Website.Application.CPanel.AboutUs.Commands.Create;
 public class CreateUpdateAboutUsCommand : AuditableEntity, IRequest<bool>, IMapFrom<DB.AboutUs>
 {
     public int Id { get; set; }
-    public string? TitleAr { get; set; }
-    public string? TitleEn { get; set; }
-    public string? DescriptionAr { get; set; }
-    public string? DescriptionEn { get; set; }
 
     #region Our Mission
     public string? MissionTitleAr { get; set; }
@@ -25,16 +25,20 @@ public class CreateUpdateAboutUsCommand : AuditableEntity, IRequest<bool>, IMapF
     #endregion
 
     #region Our Value
-    public string? ValueTitleAr { get; set; }
-    public string? ValueTitleEn { get; set; }
-    public string? ValueIconName { get; set; }
-    public string? ValueDescriptionAr { get; set; }
-    public string? ValueDescriptionEn { get; set; }
+    public List<OurValueVM> OurValueVMs { get; set; } = new();
+
+    #endregion
+
+    #region Picture
+    public string? ImageUrl { get; set; }
+    public IFormFile AboutUsImage { get; set; }
+
     #endregion
 
     public void Mapping(Profile profile)
     {
         profile.CreateMap<CreateUpdateAboutUsCommand, DB.AboutUs>()
+                .ForMember(des => des.OurValues, opt => opt.MapFrom(src => src.OurValueVMs))
                .ReverseMap();
     }
 }

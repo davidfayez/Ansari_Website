@@ -87,7 +87,7 @@ function editCardItem(id, controller, action, modalId, updateDialogId) {
 }
 
 
-function deleteDetail(controller, action, id) {
+function deleteDetail(controller, action, id, rowId) {
 
     swal({
         title: Resources.DeleteResource,
@@ -108,6 +108,7 @@ function deleteDetail(controller, action, id) {
                     debugger;
                     if (result) {
                         $(this).closest('tr').remove();
+                        $('#' + rowId).remove();
                         swal({
                             title: Resources.DeleteSuccessResource,
                             confirmButtonText: Resources.DoneResource,

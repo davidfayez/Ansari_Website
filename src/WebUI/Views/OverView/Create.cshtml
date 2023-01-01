@@ -1,0 +1,95 @@
+﻿@model CreateUpdateOverViewCommand
+@{
+    Layout = "_Layout";
+    var List = Model.OverViewDetailVMs;
+}
+
+<form class="inner-page" asp-controller="OverView" asp-action="Create" method="post" class="row" enctype="multipart/form-data">
+    <div class="row" id="OverViewDiv">
+     <input type="hidden" asp-for="Id" />
+        <div class="col-md-6">
+            <div class="input-sys-wrapper">
+                <label>@Global.NameAr</label>
+                <input type="text" asp-for="TitleAr"/>
+                <span asp-validation-for="TitleAr" class="text-danger"></span>
+
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="input-sys-wrapper">
+                <label>@Global.NameEn</label>
+                <input type="text" asp-for="TitleEn" />
+                <span asp-validation-for="TitleEn" class="text-danger"></span>
+
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="input-sys-wrapper">
+                <label>@Optic.Order</label>
+                <input type="number" asp-for="Order"/>
+                <span asp-validation-for="Order" class="text-danger"></span>
+
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="input-sys-wrapper">
+                <label>@Optic.AltImage</label>
+                <input type="text" asp-for="AltImage" />
+            </div>
+        </div>
+
+        <div class="col-md-12">
+            <div class="input-sys-wrapper">
+                <label>@Global.DescriptionAr </label>
+                <textarea type="text" asp-for="DescriptionAr"></textarea>
+            </div>
+        </div>
+
+        <div class="col-md-12">
+            <div class="input-sys-wrapper">
+                <label>@Global.DescriptionEn</label>
+                <textarea type="text" asp-for="DescriptionEn"></textarea>
+            </div>
+        </div>
+
+        <ul class=" ul-file">
+
+            <li>
+                <span>@Optic.AttachPhoto</span>
+                <div class="item-file-div image-upload">
+                    <img class="item-file-div" src="~/images/rheumatism.jpg" id="overViewImage">
+                    <label for="OverViewImage"><i class="fa-regular fa-pen-to-square"></i></label>
+                    <input type="file" asp-for="OverViewImage" accept=".gif, .jpg, .png" onchange="setImage(this)" style="display:none;">
+                </div>
+
+            </li>
+
+
+
+        </ul>
+    </div>
+
+    <button type="button" class="btn-add-table" style="min-width: 130px; margin-bottom: 20px;" onclick="editCardItem('0','OverView', 'NewOverViewDetail','EditModal', 'editOverViewModals' )"><i class="fa-solid fa-plus"></i> @Global.AddNew</button>
+
+    <div id="OverViewDetails-list">
+        <partial name="_OverViewDetailsList" model="@List" />
+    </div>
+    
+    <span asp-validation-for="OverViewDetailVMs" class="text-danger"></span>
+
+    <div class="text-end">
+        <button type="submit" class="save-btn"><i class="fa-solid fa-check"></i>@Global.Save </button>
+        <button class="cancel-btn"> <i class="fa-solid fa-xmark"></i> @Global.Cancel </button>
+    </div>
+
+</form>
+
+<div id="ModalContainerRenderSection"></div>
+
+
+@section scripts {
+    <script asp-append-version="true" src="~/js/pages/OverView/AddOverView.js"></script>
+}
+

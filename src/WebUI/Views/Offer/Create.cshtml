@@ -1,15 +1,18 @@
 ﻿@model CreateUpdateOfferCommand
 @{
     Layout = "_Layout";
+    var List = Model.OfferDetailVMs;
 }
 
 <form class="inner-page" asp-controller="Offer" asp-action="Create" method="post" class="row" enctype="multipart/form-data">
     <div class="row" id="OfferDiv">
-     
+     <input type="hidden" asp-for="Id" />
         <div class="col-md-6">
             <div class="input-sys-wrapper">
                 <label>@Global.NameAr</label>
                 <input type="text" asp-for="TitleAr"/>
+                <span asp-validation-for="TitleAr" class="text-danger"></span>
+
             </div>
         </div>
 
@@ -17,12 +20,16 @@
             <div class="input-sys-wrapper">
                 <label>@Global.NameEn</label>
                 <input type="text" asp-for="TitleEn" />
+                <span asp-validation-for="TitleEn" class="text-danger"></span>
+
             </div>
         </div>
         <div class="col-md-6">
             <div class="input-sys-wrapper">
                 <label>@Optic.Order</label>
                 <input type="number" asp-for="Order"/>
+                <span asp-validation-for="Order" class="text-danger"></span>
+
             </div>
         </div>
 
@@ -37,6 +44,8 @@
             <div class="input-sys-wrapper">
                 <label>@Optic.PriceBefore</label>
                 <input type="number" asp-for="PriceBefore" />
+                <span asp-validation-for="PriceBefore" class="text-danger"></span>
+
             </div>
         </div>
 
@@ -44,6 +53,8 @@
             <div class="input-sys-wrapper">
                 <label>@Optic.PriceAfter</label>
                 <input type="number" asp-for="PriceAfter" />
+                <span asp-validation-for="PriceAfter" class="text-danger"></span>
+
             </div>
         </div>
 
@@ -78,37 +89,13 @@
         </ul>
     </div>
 
-    <button type="button" class="btn-add-table" style="min-width: 130px; margin-bottom: 20px;" data-bs-toggle="modal" data-bs-target="#EditModal"><i class="fa-solid fa-plus"></i> @Global.AddNew</button>
+    <button type="button" class="btn-add-table" style="min-width: 130px; margin-bottom: 20px;" onclick="editCardItem('0','Offer', 'NewOfferDetail','EditModal', 'editOfferModals' )"><i class="fa-solid fa-plus"></i> @Global.AddNew</button>
 
-    <table id="table_id" class=" table-pages" style="font-size:13px;">
-        <thead>
-            <tr>
-                <th style="max-width:75px ;">@Global.NameEn</th>
-                <th style="max-width:75px ;">@Global.NameAr</th>
-                <th style="max-width:25px ;">@Optic.Order</th>
-                <th style="max-width:50px ;"></th>
-            </tr>
-        </thead>
-        <tbody>
-            @if(Model.OfferDetailVMs != null)
-            {
-                foreach(var detail in Model.OfferDetailVMs)
-                {
-                    <tr>
-                        <td>@detail.TitleEn</td>    
-                        <td>@detail.TitleAr</td>    
-                        <td>@detail.Order</td>    
-                        <td>
-                            <button type="button" @*data-bs-toggle="modal"*@ onclick="editCardItem('@detail.Id','Offer', 'GetOfferDetailById', 'editOfferModal', 'EditModal')" @*data-bs-target="#EditModal"*@ class="btn btn-warning btn-sm"><i class="fa-regular fa-pen-to-square"></i></button>
-                            <button type="button" class="btn btn-danger btn-sm" onclick="deleteDetail('Offer','DeleteDetail',@detail.Id)" data-bs-toggle="modal" data-bs-target="#DeletePop"><i class="fas fa-times"></i></button>
-                        </td>
-                    </tr>
-                }
-            }
-            
-            
-        </tbody>
-    </table>
+    <div id="offerDetails-list">
+        <partial name="_OfferDetailsList" model="@List" />
+    </div>
+    
+    <span asp-validation-for="OfferDetailVMs" class="text-danger"></span>
 
     <div class="text-end">
         <button type="submit" class="save-btn"><i class="fa-solid fa-check"></i>@Global.Save </button>
@@ -117,7 +104,9 @@
 
 </form>
 
-<partial name="_PopupDetail" model="new CreateUpdateOfferDetailCommand()" />
+<div id="ModalContainerRenderSection"></div>
+
+
 @section scripts {
     <script asp-append-version="true" src="~/js/pages/Offer/AddOffer.js"></script>
 }
