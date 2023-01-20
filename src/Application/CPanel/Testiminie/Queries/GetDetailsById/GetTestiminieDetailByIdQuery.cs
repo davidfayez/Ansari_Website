@@ -23,8 +23,11 @@ public class GetTestiminieDetailByIdQueryHandler : IRequestHandler<GetTestiminie
         var TestiminieDetail = _applicationDbContext.TestiminieDetails.FirstOrDefault(s => s.Id == request.Id);
 
         if (TestiminieDetail != null)
-            return Task.FromResult(TestiminieDetail);
+        {
+            TestiminieDetail.ImageUrl = TestiminieDetail.ImageUrl != null ? "Testiminies/" + TestiminieDetail.ImageUrl : "Users/profile-icon.jpg";
 
+            return Task.FromResult(TestiminieDetail);
+        }
         else
             return Task.FromResult(new DB.TestiminieDetail());
 

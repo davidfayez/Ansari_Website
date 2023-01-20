@@ -1,0 +1,72 @@
+﻿@model CreateUpdateEventDetailCommand
+
+
+<form class="modal-content modal-small" asp-controller="Event" asp-action="EditEventDetail" data-ajax="true" data-ajax-method="POST"
+     data-ajax-update="#editEventModal" data-ajax-mode="replace" autocomplete="off">
+
+    <div class="modal-body">
+        <div class="inner-filter">
+            <h3>Event Item</h3>
+            <br />
+            <input type="hidden" asp-for="EventId" />
+            <input type="hidden" asp-for="Id" />
+
+            <div class="row">
+                <label class="col-md-4" style="margin-top: 5px; font-size: 14px;">@Global.NameAr</label>
+                <div class="col-md-8">
+                    <input type="text" asp-for="TitleAr"></input>
+                </div>
+                <span asp-validation-for="TitleAr" class="text-danger"></span>
+
+            </div>
+            <br />
+
+            <div class="row">
+                <label class="col-md-4" style="margin-top: 5px; font-size: 14px;">@Global.NameEn</label>
+                <div class="col-md-8">
+                    <input type="text" asp-for="TitleEn"></input>
+                </div>
+                <span asp-validation-for="TitleEn" class="text-danger"></span>
+
+            </div>
+            <br />
+            <div class="row">
+                <label class="col-md-4" style="margin-top: 5px; font-size: 14px;">@Optic.Order</label>
+                <div class="col-md-8">
+                    <input type="number" asp-for="Order" />
+                </div>
+                <span asp-validation-for="Order" class="text-danger"></span>
+            </div>
+            <br />
+
+            <div class="row">
+                <label class="col-md-4" style="margin-top: 5px; font-size: 14px;">Upload Pic</label>
+                <div class="col-md-8">
+                    <input type="file" asp-for="EventDetailImages" multiple />
+                </div>
+            </div>
+
+            <br />
+            <div class="text-end" style="margin-top: 10px;">
+                <button class="btn btn-success btn-sm"><i class="fa-solid fa-check"></i></button>
+                <button id="closeEventDetail" class="btn btn-dark btn-sm" data-bs-dismiss="modal">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+        </div>
+
+    </div>
+
+</form>
+
+@if (ViewBag.IsSuccess != null && (bool)ViewBag.IsSuccess == true)
+{
+    var id = (int)ViewBag.EventId;
+    
+    <script asp-append-version="true">
+        var data = { id: @id };
+        $('#closeEventDetail').click();
+        common.renderPartialView('/Event/GetAllEventDetailByEventId', data, 'EventDetails-list')
+    </script>
+
+}

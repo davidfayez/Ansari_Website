@@ -8,7 +8,7 @@ using Ansari_Website.Application.CPanel.Testiminie.VM;
 using Microsoft.AspNetCore.Http;
 
 namespace Ansari_Website.Application.CPanel.Testiminie.Commands.Create;
-public class CreateUpdateTestiminieCommand : AuditableEntity, IRequest<bool>, IMapFrom<DB.Testiminie>
+public class CreateUpdateTestiminieCommand : AuditableEntity, IRequest<int>, IMapFrom<DB.Testiminie>
 {
     public int Id { get; set; }
     public string? TitleAr { get; set; }
@@ -31,7 +31,7 @@ public class CreateUpdateTestiminieCommand : AuditableEntity, IRequest<bool>, IM
     }
 }
 
-public class CreateUpdateTestiminieCommandHandler : IRequestHandler<CreateUpdateTestiminieCommand, bool>
+public class CreateUpdateTestiminieCommandHandler : IRequestHandler<CreateUpdateTestiminieCommand, int>
 {
     private readonly IApplicationDbContext _applicationDbContext;
     private readonly IMapper _mapper;
@@ -41,7 +41,7 @@ public class CreateUpdateTestiminieCommandHandler : IRequestHandler<CreateUpdate
         _applicationDbContext = applicationDbContext;
         _mapper = mapper;
     }
-    public async Task<bool> Handle(CreateUpdateTestiminieCommand request, CancellationToken cancellationToken)
+    public async Task<int> Handle(CreateUpdateTestiminieCommand request, CancellationToken cancellationToken)
     {
         try
         {
@@ -53,11 +53,11 @@ public class CreateUpdateTestiminieCommandHandler : IRequestHandler<CreateUpdate
                 _applicationDbContext.Testiminies.Add(Testiminie);
 
             await _applicationDbContext.SaveChangesAsync(cancellationToken);
-            return await Task.FromResult(true);
+            return await Task.FromResult(Testiminie.Id);
         }
         catch (Exception ex)
         {
-            return await Task.FromResult(false);
+            return await Task.FromResult(0);
         }
 
     }

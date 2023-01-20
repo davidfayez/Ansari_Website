@@ -1,0 +1,90 @@
+﻿@model CreateUpdateUserCommand
+
+@{
+    Layout = "_Layout";
+}
+
+<div class="inner-page">
+    <form asp-controller="User" asp-action="Create" method="post" class="row" enctype="multipart/form-data">
+        <input type="hidden" asp-for="Id" />
+        <input type="hidden" asp-for="CreationDate" />
+        <input type="hidden" asp-for="LastModifiedDate" />
+        <input type="hidden" asp-for="IsNew" />
+        <input type="hidden" asp-for="Password" />
+
+        <div class="row">
+
+            <div class="col-md-6">
+                <div class="input-sys-wrapper">
+                    <label>@Global.FullName</label>
+                    <input type="text" asp-for="FullName" />
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="input-sys-wrapper">
+                    <label>@Global.UserName</label>
+                    <input type="text" asp-for="UserName" />
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="input-sys-wrapper">
+                    <label>@Global.Email</label>
+                    <input type="email" asp-for="Email" />
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="input-sys-wrapper">
+                    <label>@Global.PhoneNumbers</label>
+                    <input type="text" asp-for="PhoneNumber" />
+                </div>
+            </div>
+            @if(Model.IsNew)
+            {
+                <div class="col-md-6">
+                    <div class="input-sys-wrapper">
+                        <label>@Global.Password</label>
+                        <input type="password" asp-for="Password" />
+                    </div>
+                </div>
+            }
+            <div class="col-md-6">
+                <div class="input-sys-wrapper">
+                    <label>@Optic.Speciality</label>
+                    <select asp-for="Type" class="form-control input-sys">
+                        <option value="@((int)UserType.User)">@Optic.User</option>
+                        <option value="@((int)UserType.Doctor)">@Optic.Doctor</option>
+                    </select>
+                    <span asp-validation-for="Type" class="text-danger"></span>
+                </div>
+            </div>
+            
+        </div>
+
+        <ul class=" ul-file">
+
+            <li>
+                <span>    Attach File <b>(Hint: W.1200px) </b></span>
+                <div class="item-file-div image-upload">
+                    <input type="hidden" asp-for="Image" value="@Model.Image" />
+                    <img class="item-file-div" src="~/images/@Model.Image" id="userImage">
+                    <label for="UserImage"><i class="fa-regular fa-pen-to-square"></i></label>
+                    <input type="file" asp-for="UserImage" accept=".gif, .jpg, .png" onchange="setImage(this)" style="display:none;">
+                </div>
+
+            </li>
+
+        </ul>
+
+        <div class="text-end">
+            <button type="submit" class="save-btn"><i class="fa-solid fa-check"></i> Save </button>
+            <button class="cancel-btn"> <i class="fa-solid fa-xmark"></i> Cancel </button>
+        </div>
+
+    </form>
+</div>
+<script asp-append-version="true" src="~/js/pages/User/AddUser.js"></script>
+
+

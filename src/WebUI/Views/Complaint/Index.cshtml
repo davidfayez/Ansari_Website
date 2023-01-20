@@ -1,0 +1,47 @@
+﻿@model List<ComplaintVM>
+
+<div class="inner-page">
+
+    <table id="table_id" class=" table-pages table-pages" style="font-size:13px;">
+        <thead>
+
+
+            <tr>
+                <th>Date</th>
+
+                <th>Complaint No.</th>
+                <th>Phone Number </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @if(Model != null)
+            {
+                foreach(var complaint in Model)
+                {
+                   <tr>
+                
+                       <td>@complaint.CreationDate.ToShortDateString() </td>
+                       <td>@complaint.ComplaintNo </td>
+                       <td>@complaint.PhoneNumber </td>
+                        <td><a asp-controller="Complaint" asp-action="Edit" asp-route-id="@complaint.Id" class="btn btn-dark btn-sm"><i class="fa-regular fa-eye"></i></a></td>
+                   
+                   </tr>
+                }
+            }
+            
+            
+
+
+        </tbody>
+    </table>
+
+
+
+
+
+
+
+
+
+</div>

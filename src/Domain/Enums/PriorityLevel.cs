@@ -13,3 +13,9 @@ public enum Speciality
     Department = 1,
     Center = 2
 }
+
+public enum UserType
+{
+    User = 1,
+    Doctor = 2
+}

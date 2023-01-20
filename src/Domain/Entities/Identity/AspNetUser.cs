@@ -13,15 +13,14 @@ namespace ERP.DAL.Domains
     {
         [StringLength(100)]
         public string FullName { get; set; }
-        [StringLength(100)]
-        public string Image { get; set; }
-        [StringLength(100)]
-        public string SurName { get; set; }
+        //[StringLength(100)]
+        public string? Image { get; set; }
         [StringLength(100)]
         public string Password { get; set; }
         [DefaultValue("false")]
         public bool IsDeveloper { get; set; }
         [DefaultValue("false")]
+        public int? Type { get; set; }
         public bool IsDeleted { get; set; }
         public DateTime CreationDate { get; set; } = DateTime.Now;   // تاريخ الادخال
         public DateTime LastModifiedDate { get; set; } = DateTime.Now;

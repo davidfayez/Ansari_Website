@@ -1,24 +1,24 @@
 ﻿
 $(document).on('click', '#btnSubmitOfferDetail', function () {
+    $("#table_id").find(".dataTables_empty").parents('tbody').empty();
+
     var TitleEnDetail = $("#TitleEnDetail").val();
     var TitleArDetail = $("#TitleArDetail").val();
     var OrderDetail = $("#OrderDetail").val();
     var count = $('#table_id tr').length;
     var num = count;
-
+    debugger;
     if (TitleEnDetail != "" && TitleArDetail != "") {
         $("#TitleEnDetailValidation").hide();
         $("#TitleArDetailValidation").hide();
 
-        $("#table_id").find(".dataTables_empty").parents('tbody').empty();
-
-        $("#OfferDiv").append(`<input type="hidden" name="OfferDetailVMs[` + (count - 2) + `].TitleEn"  value=` + TitleEnDetail + `>`);
-        $("#OfferDiv").append(`<input type="hidden" name="OfferDetailVMs[` + (count - 2) + `].TitleAr"  value=` + TitleArDetail + `>`);
-        $("#OfferDiv").append(`<input type="hidden" name="OfferDetailVMs[` + (count - 2) + `].Order"  value=` + OrderDetail + `>`);
+        $("#OfferDiv").append(`<input type="hidden" name="OfferDetailVMs[` + (count - 1) + `].TitleEn"  value=` + TitleEnDetail + `>`);
+        $("#OfferDiv").append(`<input type="hidden" name="OfferDetailVMs[` + (count - 1) + `].TitleAr"  value=` + TitleArDetail + `>`);
+        $("#OfferDiv").append(`<input type="hidden" name="OfferDetailVMs[` + (count - 1) + `].Order"  value=` + OrderDetail + `>`);
 
         $("#table_id").append(`<tr><td>` + TitleEnDetail + `</td><td>` + TitleArDetail + `</td><td>` + OrderDetail + `</td>
                                    <td> 
-                                       <button  type="button" class="btn btn-danger btn-sm" onclick="deleteCurrentRow(`+ (count - 1) + `)"><i class="fas fa-times"></i></button></td>
+                                       <button  type="button" class="btn btn-danger btn-sm" onclick="deleteCurrentRow(`+ (count) + `)"><i class="fas fa-times"></i></button></td>
                                </tr>`);
 
         $('#closeOfferDetail').click();

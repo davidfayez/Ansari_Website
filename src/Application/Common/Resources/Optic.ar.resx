@@ -177,6 +177,9 @@
   <data name="Diagnose" xml:space="preserve">
     <value>التشخيص</value>
   </data>
+  <data name="Doctor" xml:space="preserve">
+    <value>دكتور</value>
+  </data>
   <data name="ExtraNumber" xml:space="preserve">
     <value>الرقم الإضافي</value>
   </data>
@@ -254,6 +257,9 @@
   </data>
   <data name="UnitNumber" xml:space="preserve">
     <value>رقم الوحدة</value>
+  </data>
+  <data name="User" xml:space="preserve">
+    <value>مستخدم</value>
   </data>
   <data name="Value" xml:space="preserve">
     <value>القيمة</value>

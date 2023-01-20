@@ -69,10 +69,9 @@ public class DepartmentController : BaseController
               {
                   Id = id
               });
-            //return Json(isSuccess);
+            return Json(isSuccess);
         }
-        var Departments = await Mediator.Send(new GetAllDepartmentsQuery());
-        return PartialView("_DepartmentsList", Departments);
+        return Json(false);
     }
 
     public async Task<JsonResult> GetAll()

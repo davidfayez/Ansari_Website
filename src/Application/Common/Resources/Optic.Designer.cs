@@ -241,6 +241,15 @@ namespace Ansari_Website.Application.Common.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Doctor.
+        /// </summary>
+        public static string Doctor {
+            get {
+                return ResourceManager.GetString("Doctor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Extra Number.
         /// </summary>
         public static string ExtraNumber {
@@ -471,6 +480,15 @@ namespace Ansari_Website.Application.Common.Resources {
         public static string UnitNumber {
             get {
                 return ResourceManager.GetString("UnitNumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to User.
+        /// </summary>
+        public static string User {
+            get {
+                return ResourceManager.GetString("User", resourceCulture);
             }
         }
         

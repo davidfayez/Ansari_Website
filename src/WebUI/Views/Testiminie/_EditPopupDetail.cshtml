@@ -1,0 +1,66 @@
+﻿@model CreateUpdateTestiminieDetailCommand
+
+
+<form class="modal-content modal-small" asp-controller="Testiminie" asp-action="EditTestiminieDetail" data-ajax="true" data-ajax-method="POST"
+     data-ajax-update="#editTestiminieModal" data-ajax-mode="replace" autocomplete="off">
+
+    <div class="modal-body">
+        <div class="inner-filter">
+            <h3>Testiminie Item</h3>
+            <br />
+            <input type="hidden" asp-for="TestiminieId" />
+            <input type="hidden" asp-for="Id" />
+
+            <div class="row">
+                <label class="col-md-4" style="margin-top: 5px; font-size: 14px;">@Global.NameAr</label>
+                <div class="col-md-8">
+                    <input type="text" asp-for="TitleAr"></input>
+                </div>
+                <span asp-validation-for="TitleAr" class="text-danger"></span>
+
+            </div>
+            <br />
+
+            <div class="row">
+                <label class="col-md-4" style="margin-top: 5px; font-size: 14px;">@Global.NameEn</label>
+                <div class="col-md-8">
+                    <input type="text" asp-for="TitleEn"></input>
+                </div>
+                <span asp-validation-for="TitleEn" class="text-danger"></span>
+
+            </div>
+            <br />
+            <div class="row">
+                <label class="col-md-4" style="margin-top: 5px; font-size: 14px;">Upload Pic</label>
+                <div class="col-md-8">
+                    <input type="hidden" asp-for="ImageUrl" value="@Model.ImageUrl" />
+                    <img class="item-file-div" src="~/images/@Model.ImageUrl" id="testiminieDetailImage">
+                    <input type="file" asp-for="TestiminieDetailImage" onchange="setTestiminieDetailImage(this)"/>
+                </div>
+            </div>
+            <br />
+
+
+            <div class="text-end" style="margin-top: 10px;">
+                <button class="btn btn-success btn-sm"><i class="fa-solid fa-check"></i></button>
+                <button id="closeTestiminieDetail" class="btn btn-dark btn-sm" data-bs-dismiss="modal">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+        </div>
+
+    </div>
+
+</form>
+
+@if (ViewBag.IsSuccess != null && (bool)ViewBag.IsSuccess == true)
+{
+    var id = (int)ViewBag.TestiminieId;
+    
+    <script asp-append-version="true">
+        var data = { id: @id };
+        $('#closeTestiminieDetail').click();
+        common.renderPartialView('/Testiminie/GetAllTestiminieDetailByTestiminieId', data, 'TestiminieDetails-list')
+    </script>
+
+}

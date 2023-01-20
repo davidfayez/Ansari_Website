@@ -1,0 +1,75 @@
+@media  (max-width:991px) {
+    .conatct-ul{
+        display: none;
+    }
+    .login-ul{
+        text-align: center !important;
+
+    }
+    .department-sec{
+        background-image: none;
+    }
+    .newsletter-img{
+        display: none;
+    }
+    h2{
+        font-size: 20px;
+    }
+ 
+    .logo-footer {
+        margin: 0 auto;
+        display: inherit;
+    }
+    .p-story {
+        margin-bottom: 40px;
+    }
+    .login-pic {
+       display: none;
+    }
+    .Login-container{
+        background: transparent;
+    }
+}
+@media  (max-width:767px) {
+
+.img-doc{
+    display: none;
+}
+.content-admin{
+    padding: 30px !important;
+    height: auto;
+  
+}
+.menu-admin{
+    width: 100%;
+    position: static;
+    height: auto;
+    margin-bottom: 20px;
+   
+    
+}
+.active-menu::after{
+    width: calc(100% + 60px);
+    left: 0px;
+    left: -30px;
+}
+}
+@media  (max-width:500px) {
+
+.title-shape{
+    position: static;
+}
+.partner-Shape{
+    padding:0px 20px !important;
+}
+.mobile-img{
+    display: none;
+}
+.big-container-emergency {
+    padding: 25px;
+}
+.griadent-2{
+    padding: 100px 30px;
+}
+
+}

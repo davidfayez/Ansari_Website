@@ -1,0 +1,280 @@
+.nav-menu {
+    background-color: #1832A0;
+    width: 100%;
+    z-index: 4;
+}
+
+.logo-Anasari {
+    position: absolute;
+    width: 170px;
+    left: 0px;
+}
+.logo-Anasari:lang(ar) {
+    left: auto;
+    right:0px
+}
+
+.inner-menu {
+    position: relative;
+    padding: 14px 70px 14px 170px;
+}
+.inner-menu:lang(ar){
+    padding: 14px 200px 14px 70px;
+}
+
+.a-Appointment{
+    background-color: #DD1517;
+    color: #fff;
+    padding: 5px 10px;
+    min-width: 80px;
+    border-radius: 20px;
+    font-size: 13px;
+    position: absolute;
+    right: 0px;
+    top: 15px;
+    transition: 1s;
+}
+.a-Appointment:lang(ar){
+    left: 0px;
+    right: auto;
+}
+.a-Appointment:hover{
+    background-color: #c71b1e;
+    color: #fff;
+}
+
+.slicknav_menu{
+    display: none;
+}
+@media(max-width:1024px){
+    .logo-Anasari{
+        position: static;
+    }
+  
+    .inner-menu{
+        padding: 14px 70px 14px 0px;
+    }
+    .inner-menu:lang(ar){
+        padding: 14px 0px 14px 70px;
+    }
+    .a-Appointment{
+        display: none;
+    }
+ #menu{
+    display: none;
+ }
+ .slicknav_menu{
+    display: inline-block;
+}
+.lavazi_lamp{
+    display: none !important;
+}
+}
+/* ................. */
+nav>ul {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+	text-align: center;
+}
+nav>ul>li {
+	position: relative;
+	display: inline-block;
+	z-index: 2;
+}
+nav>ul>li>a {
+	display: block;
+	padding: 6px 8px;
+	color: #fff !important;
+	text-shadow: 1px 1px 1px #000;
+	font-size: 14px;
+	transition: all .3s ease-in-out;
+	-moz-transition: all .3s ease-in-out;
+	-webkit-transition: all .3s ease-in-out;
+}
+nav>ul ul {
+	position: absolute;
+	left: 0;
+	top: 80%;
+	opacity: 0;
+	z-index: 9;
+	visibility: hidden;
+	width: 170px;
+	transition: all .3s ease-in-out;
+	-moz-transition: all .3s ease-in-out;
+	-webkit-transition: all .3s ease-in-out;
+}
+nav>ul>li:hover ul {
+	opacity: 1;
+	visibility: visible;
+	top: 100%;
+	padding-top: 20px;
+}
+nav>ul ul>li{
+    display: block;
+}
+nav>ul ul a {
+	display: block;
+	border-bottom: 1px solid #1832a0;
+	color: #fff;
+	background: #2346db;
+	padding: 10px 5px;
+	/* font: 400 15px 'ubuntu condensed', sans-serif; */
+	font-size: 12px;
+	transition:.8s;
+}
+
+nav>ul ul a:hover {
+		padding-left:10px;
+		color: #ececec;
+}
+
+nav>ul ul li:last-child a {
+	border: none;
+}
+nav>ul ul li:first-child a{
+	position:relative;
+}
+nav>ul ul li:first-child a:after {
+	bottom: 100%;
+	left: 10%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+	border-color: rgba(136, 183, 213, 0);
+	border-bottom-color: #2346db;
+	border-width: 7px;
+	margin-left: -7px;
+}
+
+/* 
+
+.arrow{right: 1px;top: 16px;border: 5px solid transparent;border-left-color: #ffffff;display: block;content: "";position: absolute;width: 0;height: 0;transition:.5s;}
+
+   transform: rotate(20deg);
+*/ 
+
+
+
+nav>ul ul li{
+	text-align:left;
+}
+
+
+
+
+/*
+    Mobile Menu Core Style
+*/
+
+.slicknav_btn {position: relative;display: block;vertical-align: middle;/* float: right; */padding: 0.438em 0.625em 0.438em 0.625em;line-height: 1.125em;cursor: pointer;}
+.slicknav_menu  .slicknav_menutxt { display: block; line-height: 1.188em; float: left; }
+.slicknav_menu .slicknav_icon { float: left; margin: 0.188em 0 0 0.438em; }
+.slicknav_menu .slicknav_no-text { margin: 0 }
+.slicknav_menu .slicknav_icon-bar { display: block; width: 1.125em; height: 0.125em; -webkit-border-radius: 1px; -moz-border-radius: 1px; border-radius: 1px; -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.25); -moz-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.25); box-shadow: 0 1px 0 rgba(0, 0, 0, 0.25); }
+.slicknav_btn .slicknav_icon-bar + .slicknav_icon-bar { margin-top: 0.188em }
+.slicknav_nav { clear: both }
+.slicknav_nav ul,
+.slicknav_nav li { display: block }
+.slicknav_nav .slicknav_arrow { font-size: 0.8em; margin: 0 0 0 0.4em; }
+.slicknav_nav .slicknav_item { display: block; cursor: pointer; }
+.slicknav_nav a {display: block;text-align: left;}
+.slicknav_nav .slicknav_item a { display: inline }
+.slicknav_menu:before,
+.slicknav_menu:after { content: " "; display: table; }
+.slicknav_menu:after { clear: both }
+/* IE6/7 support */
+.slicknav_menu { *zoom: 1 }
+
+/* 
+    User Default Style
+    Change the following styles to modify the appearance of the menu.
+*/
+
+.slicknav_menu {
+	font-size:16px;
+}
+/* Button */
+.slicknav_btn {
+	margin: 5px 5px 6px;
+	/* text-decoration:none; */
+	/* text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75); */
+	/* -webkit-border-radius: 4px; */
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	background-color: #fd1e0f;
+	position: absolute;
+	right: 0px;
+	font-size: 14px;
+	top: 18px;
+}
+.slicknav_btn:lang(ar) {
+    right: auto;
+    left: 0px;
+}
+/* Button Text */
+.slicknav_menu  .slicknav_menutxt {
+	color: #FFF;
+	/* font-weight: bold; */
+	text-shadow: 0 1px 3px #000;
+}
+/* Button Lines */
+.slicknav_menu .slicknav_icon-bar {
+  background-color: #f5f5f5;
+}
+.slicknav_menu {
+	/* background: #166d83; */
+	padding:5px;
+}
+.slicknav_nav {
+	color:#fff;
+	margin:0;	
+	padding:0;
+	font-size:0.875em;
+}
+.slicknav_nav, .slicknav_nav ul {
+	list-style: none;
+	overflow:hidden;
+}
+.slicknav_nav ul {
+	padding:0;
+	margin:0 0 0 20px;
+}
+.slicknav_nav .slicknav_item {
+	padding:5px 10px;
+	margin:2px 5px;
+	text-align: left;
+}
+.slicknav_nav a{
+	padding:5px 10px;
+	margin:2px 5px;
+	text-decoration:none;
+	color:#fff;
+	font-size: 14px;
+}
+.slicknav_nav .slicknav_item a {
+	padding:0;
+	margin:0;
+}
+.slicknav_nav .slicknav_item:hover {
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	border-radius: 6px;
+	/* background: #126175; */
+	color:#fff;
+}
+.slicknav_nav a:hover{
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	border-radius: 6px;
+	/* background: #126175; */
+	/* color: #222; */
+}
+.slicknav_nav .slicknav_txtnode {
+     margin-left:15px;   
+}
+
+

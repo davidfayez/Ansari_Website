@@ -177,6 +177,9 @@
   <data name="Diagnose" xml:space="preserve">
     <value>Diagnose</value>
   </data>
+  <data name="Doctor" xml:space="preserve">
+    <value>Doctor</value>
+  </data>
   <data name="ExtraNumber" xml:space="preserve">
     <value>Extra Number</value>
   </data>
@@ -254,6 +257,9 @@
   </data>
   <data name="UnitNumber" xml:space="preserve">
     <value>Unit Number</value>
+  </data>
+  <data name="User" xml:space="preserve">
+    <value>User</value>
   </data>
   <data name="Value" xml:space="preserve">
     <value>Value</value>

@@ -1,0 +1,44 @@
+﻿@model GetAllBlogsQuery
+
+<form asp-controller="Job" asp-action="GetAllJobsByFilter"
+      data-ajax="true"
+      data-ajax-method="POST"
+      data-ajax-update="#BlogList"
+      data-ajax-mode="replace" autocomplete="off">
+
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="input-sys-wrapper">
+                <label>@Global.DateFrom</label>
+                <input type="date" asp-for="DateFrom">
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="input-sys-wrapper">
+                <label>@Global.DateTo</label>
+                <input type="date" asp-for="DateTo">
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="input-sys-wrapper">
+                <label>@Global.Department</label>
+                <select asp-for="DepartmentId" asp-items="Model.Departments" class="form-control input-sys">
+                </select>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="input-sys-wrapper">
+                <label>@Optic.Doctor</label>
+                <select asp-for="DoctorId" asp-items="Model.Doctors" class="form-control input-sys">
+                </select>
+            </div>
+        </div>
+
+    </div>
+    <div class="text-center">
+        <button type="submit" class="btn btn-warning">@Global.Search</button>
+    </div>
+</form>

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Ansari_Website.Application.CPanel.Event.VM;
+using Microsoft.AspNetCore.Http;
 
 namespace Ansari_Website.Application.CPanel.Event.VM;
 public class EventDetailVM : IMapFrom<DB.EventDetail>
@@ -18,5 +19,6 @@ public class EventDetailVM : IMapFrom<DB.EventDetail>
     public string? TitleAr { get; set; }
     public string? TitleEn { get; set; }
     public string? ImageUrls { get; set; }
+    public List<IFormFile> EventDetailImages { get; set; }
     public int EventId { get; set; }
 }

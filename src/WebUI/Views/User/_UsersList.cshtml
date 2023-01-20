@@ -1,0 +1,39 @@
+﻿@model List<UserVM>
+
+<table id="table_id" class=" table-pages table table-bordered" style="font-size:13px;">
+    <thead>
+        <tr>
+            <th>@Global.UserName</th>
+            <th>@Global.Email </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @if (Model != null)
+        {
+            foreach (var User in Model)
+            {
+                <tr>
+                    <td> @User.UserName </td>
+                    <td> @User.Email </td>
+
+                    <td>
+                        <a asp-controller="User" asp-action="Edit" asp-route-id="@User.Id" class="btn btn-warning btn-sm"><i class="fa-regular fa-pen-to-square"></i></a>
+                        <button class="btn btn-dark btn-sm"><i class="fa-regular fa-eye"></i></button>
+                        <form asp-controller="User" asp-action="Delete" asp-route-id="@User.Id"
+                                 data-ajax="true"
+                                 data-ajax-method="POST"
+                                 data-ajax-update="#User-list"
+                                 data-ajax-mode="replace" autocomplete="off">
+
+                            <button type="submit" class="btn btn-danger btn-sm"><i class="fas fa-times"></i></button>
+
+                        </form>
+
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>

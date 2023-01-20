@@ -1,0 +1,35 @@
+﻿@model List<BlogVM>
+
+<table id="table_id" class=" table-pages" style="font-size:13px;">
+    <thead>
+        <tr>
+            <th>@Global.CreationDate</th>
+            <th>@Global.Name</th>
+            <th>@Optic.Order </th>
+            <th>@Global.Department </th>
+            <th>@Optic.Doctor</th>
+            <th style="max-width:150px ;"></th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model != null)
+        {
+            foreach (var Blog in Model)
+            {
+                var id = "Blog" + Blog.Id;
+                <tr id="@id">
+                    <td>@Blog.CreationDate</td>
+                    <td>@Blog.TitleEn</td>
+                    <td>@Blog.Order</td>
+                    <td>@Blog.DepartmentName</td>
+                    <td>@Blog.DoctorName</td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@Blog.Id" class="btn btn-warning btn-sm"><i class="fa-regular fa-pen-to-square"></i></a>
+                        <button class="btn btn-danger btn-sm" onclick="deleteDetail('Blog','Delete',@Blog.Id,'@id')"><i class="fas fa-times"></i></button>
+                    </td>
+                </tr>
+            }
+        }
+
+    </tbody>
+</table>

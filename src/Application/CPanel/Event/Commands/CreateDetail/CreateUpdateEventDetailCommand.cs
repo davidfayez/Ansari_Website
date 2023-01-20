@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Ansari_Website.Application.CPanel.Event.Commands.CreateDetail;
+using Microsoft.AspNetCore.Http;
 
 namespace Ansari_Website.Application.CPanel.Event.Commands.CreateDetail;
 public class CreateUpdateEventDetailCommand : IRequest<bool>, IMapFrom<DB.EventDetail>
@@ -14,6 +15,8 @@ public class CreateUpdateEventDetailCommand : IRequest<bool>, IMapFrom<DB.EventD
     public string? TitleEn { get; set; }
     public string? ImageUrls { get; set; }
     public int EventId { get; set; }
+    public List<IFormFile> EventDetailImages { get; set; }
+
     public void Mapping(Profile profile)
     {
         profile.CreateMap<DB.EventDetail, CreateUpdateEventDetailCommand>()

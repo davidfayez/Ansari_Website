@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ERP.DAL.Domains;
 
 namespace Ansari_Website.Domain.Entities.CPanel;
 public class Blog : AuditableEntity
@@ -18,7 +19,7 @@ public class Blog : AuditableEntity
     public string? ImageUrl { get; set; }
     public string? AltImage { get; set; }
     public virtual Department Department { get; set; }
-    public virtual Doctor Doctor { get; set; }
+    public virtual AspNetUser Doctor { get; set; }
 
 
 }

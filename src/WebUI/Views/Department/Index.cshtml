@@ -1,13 +1,50 @@
 ﻿@model List<DepartmentVM>
-
 @{
     Layout = "_Layout";
 }
-<div class="inner-page">
-    <a asp-controller="Department" asp-action="Create" class="btn-add-table" style="min-width: 130px; margin-bottom: 20px;"><i class="fa-solid fa-plus"></i> add New</a>
 
-    <div id="department-list">
-        <partial name="_DepartmentsList" model="Model"/>
-     </div>
-    
+<div class="inner-page">
+    <a asp-action="Create" class="btn-add-table" style="min-width: 130px; margin-bottom: 20px;"><i class="fa-solid fa-plus"></i> add New</a>
+
+    <table id="table_id" class=" table-pages" style="font-size:13px;">
+        <thead>
+
+            <tr>
+                <th style="max-width:75px ;">@Global.NameEn</th>
+                <th style="max-width:75px ;">@Global.NameAr</th>
+                <th style="max-width:50px ;"></th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @if (Model != null)
+            {
+                foreach (var Department in Model)
+                {
+                    var id = "Department" + Department.Id;
+                    <tr id="@id">
+                        <td>@Department.TitleEn</td>
+                        <td>@Department.TitleAr</td>
+                        <td>
+                            <a asp-action="Edit" asp-route-id="@Department.Id" class="btn btn-warning btn-sm"><i class="fa-regular fa-pen-to-square"></i></a>
+                            <button class="btn btn-danger btn-sm" onclick="deleteDetail('Department','Delete',@Department.Id,'@id')"><i class="fas fa-times"></i></button>
+                        </td>
+                    </tr>
+                }
+            }
+
+        </tbody>
+    </table>
+
+    <div class="text-end">
+        <button class="save-btn"><i class="fa-solid fa-check"></i> Save </button>
+
+        <button class="cancel-btn"> <i class="fa-solid fa-xmark"></i> Cancel </button>
+
+
+    </div>
+
+
+
+
 </div>

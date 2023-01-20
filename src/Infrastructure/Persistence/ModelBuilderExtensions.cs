@@ -30,7 +30,7 @@ public static class ModelBuilderExtensions
                AccessFailedCount = 0,
                FullName = "ERP Developer",
                Image = "profile-icon.jpg",
-               SurName = "Developer",
+               //SurName = "Developer",
                Password = "123456",
                IsDeveloper = true,
                CreationDate = DateTime.Now,

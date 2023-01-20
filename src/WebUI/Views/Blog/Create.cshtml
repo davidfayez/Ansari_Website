@@ -1,0 +1,91 @@
+﻿@model CreateUpdateBlogCommand
+
+<div class="inner-page">
+
+    <form class="inner-page" asp-controller="Blog" asp-action="Create" method="post" class="row" enctype="multipart/form-data">
+    
+        <div class="row">
+
+        <div class="col-md-6">
+            <div class="input-sys-wrapper">
+                <label> Sepcialty Name</label>
+                <select asp-for="DepartmentId" asp-items="Model.Departments" class="form-control input-sys">
+                </select>
+                <span asp-validation-for="DepartmentId" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="input-sys-wrapper">
+                <label>@Optic.Doctor</label>
+                <select asp-for="DoctorId" asp-items="Model.Doctors" class="form-control input-sys">
+                </select>
+                <span asp-validation-for="DoctorId" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="input-sys-wrapper">
+                <label>@Global.NameAr</label>
+                <input type="text" asp-for="TitleAr"/>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="input-sys-wrapper">
+                <label>@Global.NameEn</label>
+                <input type="text" asp-for="TitleEn" />
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="input-sys-wrapper">
+                <label>@Optic.Order</label>
+                <input type="number" asp-for="Order"/>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="input-sys-wrapper">
+                <label>@Optic.AltImage</label>
+                <input type="text" asp-for="AltImage" />
+            </div>
+        </div>
+
+        <div class="col-md-12">
+            <div class="input-sys-wrapper">
+                <label>@Global.DescriptionAr</label>
+                <textarea type="text" asp-for="DescriptionAr"></textarea>
+            </div>
+        </div>
+
+        <div class="col-md-12">
+            <div class="input-sys-wrapper">
+                <label>@Global.DescriptionEn</label>
+                <textarea type="text" asp-for="DescriptionEn"></textarea>
+            </div>
+        </div>
+    </div>
+
+        <ul class=" ul-file">
+
+                <li>
+                    <span>    Attach File <b>(Hint: W.1200px) </b></span>
+                    <div class="item-file-div image-upload">
+                    <input type="hidden" asp-for="ImageUrl" value="@Model.ImageUrl" />
+                    <img class="item-file-div" src="~/images/@Model.ImageUrl" id="blogImage">
+                    <label for="BlogImage"><i class="fa-regular fa-pen-to-square"></i></label>
+                    <input type="file" asp-for="BlogImage" accept=".gif, .jpg, .png" onchange="setImage(this)" style="display:none;">
+                </div>
+
+            </li>
+
+        </ul>
+
+        <div class="text-end">
+        <button class="save-btn"><i class="fa-solid fa-check"></i> Save </button>
+        <button class="cancel-btn"> <i class="fa-solid fa-xmark"></i> Cancel </button>
+    </div>
+    </form>
+</div>
+<script asp-append-version="true" src="~/js/pages/Blog/AddBlog.js"></script>

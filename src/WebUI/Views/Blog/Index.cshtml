@@ -1,0 +1,16 @@
+﻿@model List<BlogVM>
+@{
+    Layout = "_Layout";
+}
+
+<div class="inner-page">
+
+    <partial name="_Search" model="new GetAllBlogsQuery()" />
+
+    <a asp-action="Create" class="btn-add-table" style="min-width: 130px; margin-bottom: 20px;"><i class="fa-solid fa-plus"></i> add New</a>
+
+    <div id="BlogList">
+        <partial name="_BlogsList" model="@Model" />
+    </div>
+
+</div>

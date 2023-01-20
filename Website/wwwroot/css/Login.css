@@ -1,0 +1,181 @@
+.Login-container{
+    padding: 30px;
+    background: #2346DB;
+    background: linear-gradient(260deg, #2346DB 50%, #6481FF 100%);
+    margin-top: 5%;
+    margin-bottom: 5%;
+    position: relative;
+    border-radius: 0px 80px 0px 80px;
+}
+.logo-login{
+    width: 250px;
+    margin-bottom: 20px;
+}
+
+.reg-div{
+    max-width: 400px;
+    padding: 30px;
+    background-color: #1832A0;
+    border-radius: 15px;
+    width: 100%;
+    border-radius: 0px 80px 80px 80px;
+    color: #fff;
+    position: relative;
+    z-index: 5;
+    margin: 0 auto;
+}
+
+.reg-div h3{
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff;
+
+}
+.reg-div > label{
+    font-size: 14px;
+    margin-bottom: 5px;
+    margin-top: 20px
+}
+.input-wrapper{
+    position: relative;
+   
+
+}
+
+.input-wrapper input{
+    height: 44px;
+    width: 100%;
+    border: 1px solid #D9E0E5;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 10px;
+    padding-right: 40px;
+    font-size: 12px;
+    color: #1832a0;
+}
+
+.input-wrapper input:lang(ar){
+    padding-right: 0px;
+    padding-left: 40px;
+
+}
+.input-wrapper > i{
+    position: absolute;
+    right: 10px;
+    top: 13px;
+    color: #2346DB;
+    cursor: pointer;
+    width: 25px;
+}
+.input-wrapper > i:lang(ar){
+    right: auto;
+    left: 10px;
+}
+.p-account{
+    font-size: 14px;
+    margin: 15px 0px;
+    text-align: center;
+}
+.p-account a{color: #fff;font-weight: bold;}
+
+.login-btn{
+    background-color: #1BBF30;
+    border-radius: 20px;
+    padding: 10px 15px;
+    display: inline-block;
+    border: none;
+    color: #fff;
+    margin: 40px auto 20px auto;
+}
+.forget-password{
+    font-size: 12px;
+    color: #D8DFFF;
+    margin: 10px 0px;
+    display: block;
+}
+.forget-password:hover{
+    color: #fff;
+}
+.login-pic{
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+    max-width: 531px;
+}
+.login-pic:lang(ar){
+    right: auto;
+    left: 0px;
+    transform: scaleX(-1);
+}
+.terms-Conditions{
+    text-decoration: underline;
+    color: #fff;
+
+}
+.terms-Conditions:hover{
+    color: #fff;
+ 
+}
+
+.reg-div h3{
+    font-size: 16px;
+    text-align: center;
+}
+.p-confirm-message {
+    margin: 10px;
+    font-size: 14px;
+    text-align: center;
+}
+
+.input-number-gen{
+
+    height: 40px;
+    width: 100%;
+    border: 1px solid #D9E0E5;
+    padding: 8px;
+    font-size: 16px;
+    border-radius: 10px;
+    font-size: 14px;
+    text-align: center;
+}
+.input-number-gen:valid{
+    border: 1px solid #0EACC5;
+
+}
+.container-number{
+    width: 240px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+
+/* .............timer............ */
+.timer{
+    display:
+    flex;
+    align-items:
+    center;
+    justify-content:
+    center;
+  }
+  .span-timer{
+    font-size: 12px;
+    color: #fff;
+
+  }
+  #myTimer{
+    color: #fff !important;
+    font-size: 40px;
+  }
+.button-timer{
+        background-color: #dd1517;
+        border-radius: 20px;
+        padding: 10px 15px;
+        display: none;
+        border: none;
+        color: #fff;
+        margin: 40px auto 20px auto;
+   cursor: pointer;
+}
+.icon-done{
+    max-width: 150px;
+}

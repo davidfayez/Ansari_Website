@@ -1,0 +1,34 @@
+﻿@model ComplaintVM
+
+<div class="inner-page">
+
+    <div class="row">
+
+        <div class="col-md-12">
+            <div class="input-sys-wrapper">
+                <label>Complaint</label>
+                <textarea style="min-height:400px ;" asp-for="ComplaintMessage" disabled></textarea>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="input-sys-wrapper">
+                <label>Complaint No</label>
+                <input type="text" asp-for="ComplaintNo" disabled>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="input-sys-wrapper">
+                <label>Date</label>
+                <input type="date" asp-for="CreationDate" disabled>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="input-sys-wrapper">
+                <label>Phone Number</label>
+                <input type="text" asp-for="PhoneNumber" disabled>
+            </div>
+        </div>
+
+    </div>
+</div>

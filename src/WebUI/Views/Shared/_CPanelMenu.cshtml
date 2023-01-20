@@ -1,7 +1,7 @@
 ﻿<ul id="ul-big-menu" class="big_menu">
 
     <li class="inner-child active-link"><a href="Dashboard.html"><i class="fa-solid fa-chart-line"></i> Dashboard </a></li>
-    <li class="inner-child"><a href="SiteInformation.html"><i class="fa-solid fa-info"></i> Site Information </a></li>
+    <li class="inner-child"><a asp-controller="CPanelLookups" asp-action="SiteInfo"><i class="fa-solid fa-info"></i> Site Information </a></li>
 
     <li class="inner-child"><a href="Add-Dates.html"><i class="fa-solid fa-calendar-days"></i> Add Dates </a></li>
 
@@ -9,7 +9,7 @@
         <a class="js-toggle" data-container="toggle-3" href="#"><i class="fa-solid fa-file"></i> Sections </a>
         <ul class="toggle-container" id="toggle-3">
             <li><a href="Table.html">Slider</a></li>
-            <li><a href="Table.html">Parntner</a></li>
+            <li><a asp-controller="Parntner" asp-action="Index">Parntner</a></li>
             <li><a href="Table.html">People Say</a></li>
             <li><a href="Avertising.html">Advertising</a></li>
 
@@ -18,9 +18,9 @@
     <li class="inner-child box">
         <a class="js-toggle" data-container="toggle-4" href="#"><i class="fa-regular fa-building"></i> About Us </a>
         <ul class="toggle-container" id="toggle-4">
-            <li class="inner-child"><a href="Overview.html">Overview</a></li>
-            <li class="inner-child"><a href="Mission.html">Mission & Mission&Values </a></li>
-            <li class="inner-child"><a href="Table-inner.html">Patient Rights </a></li>
+            <li class="inner-child"><a asp-controller="OverView" asp-action="Index">Overview</a></li>
+            <li class="inner-child"><a asp-controller="AboutUs" asp-action="Index">Mission & Mission&Values </a></li>
+            <li class="inner-child"><a asp-controller="PatientRight" asp-action="Index">Patient Rights </a></li>
             <li class="inner-child"><a href="Table-inner.html">Future Plan </a></li>
             <li class="inner-child"><a href="Testiminies.html">Testiminies </a></li>
 
@@ -32,8 +32,8 @@
         <ul class="toggle-container" id="toggle-5">
             <li class="inner-child"><a href="Doctors.html">Doctors </a></li>
             <li class="inner-child"><a href="Blog.html">Blog </a></li>
-            <li class="inner-child"><a href="Events.html">Events </a></li>
-            <li class="inner-child"><a href="Offer.html">Offer </a></li>
+            <li class="inner-child"><a asp-controller="Event" asp-action="Index">Events </a></li>
+            <li class="inner-child"><a asp-controller="Offer" asp-action="Index">Offer </a></li>
 
 
         </ul>
@@ -41,8 +41,7 @@
     <li class="inner-child box">
         <a class="js-toggle" data-container="toggle-6" href="#"><i class="fa-solid fa-laptop-medical"></i> Spcialties & Centres</a>
         <ul class="toggle-container" id="toggle-6">
-            <li class="inner-child"><a href="Spcialties.html">Spcialties</a></li>
-            <li class="inner-child"><a href="Spcialties.html">Centres </a></li>
+            <li class="inner-child"><a asp-controller="Department" asp-action="Index">Spcialties</a></li>
         </ul>
     </li>
     <li class="inner-child"><a href="Resource.html"><i class="fa-regular fa-file-word"></i> Resource </a></li>
@@ -51,18 +50,16 @@
     <li class="inner-child box">
         <a class="js-toggle" data-container="toggle-7" href="#"><i class="fa-solid fa-star"></i> Survey</a>
         <ul class="toggle-container" id="toggle-7">
-            <li class="inner-child"><a href="Survey.html">Survey </a></li>
-            <li class="inner-child"><a href="questionNew.html">Add question </a></li>
-            <li class="inner-child"><a href="AnswerNew.html">Add Answer </a></li>
+            <li class="inner-child"><a asp-controller="Survey" asp-action="Index">Survey </a></li>
+            <li class="inner-child"><a asp-controller="Question" asp-action="Index">Add question </a></li>
+            <li class="inner-child"><a asp-controller="Answer" asp-action="Index">Add Answer </a></li>
 
         </ul>
     </li>
-    <li class="inner-child"><a href="Complaint.html"><i class="fa-solid fa-circle-exclamation"></i> Complaint </a></li>
-
+    
+    <li class="inner-child"><a asp-controller="Complaint" asp-action="Index"><i class="fa-solid fa-circle-exclamation"></i> Complaint </a></li>
 
     <li class="inner-child border-divider"><a asp-controller="CPanelLookups" asp-action="Setting"><i class="fa-solid fa-gear"></i> Setting </a></li>
-
-
 
 </ul>
 

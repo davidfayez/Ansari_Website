@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Ansari_Website.Application.CPanel.OverView.VM;
+using Microsoft.AspNetCore.Http;
 
 namespace Ansari_Website.Application.CPanel.Testiminie.VM;
 public class TestiminieDetailVM : IMapFrom<DB.TestiminieDetail>
@@ -18,4 +19,6 @@ public class TestiminieDetailVM : IMapFrom<DB.TestiminieDetail>
     public string? TitleEn { get; set; }
     public string? ImageUrl { get; set; }
     public int TestiminieId { get; set; }
+    public IFormFile TestiminieDetailImage { get; set; }
+
 }

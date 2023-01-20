@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Ansari_Website.Application.CPanel.Testiminie.Commands.CreateDetail;
+using Microsoft.AspNetCore.Http;
 
 namespace Ansari_Website.Application.CPanel.Testiminie.Commands.CreateDetail;
 public class CreateUpdateTestiminieDetailCommand : IRequest<bool>, IMapFrom<DB.TestiminieDetail>
@@ -13,6 +14,8 @@ public class CreateUpdateTestiminieDetailCommand : IRequest<bool>, IMapFrom<DB.T
     public string? TitleEn { get; set; }
     public string? ImageUrl { get; set; }
     public int TestiminieId { get; set; }
+    public IFormFile TestiminieDetailImage { get; set; }
+
     public void Mapping(Profile profile)
     {
         profile.CreateMap<DB.TestiminieDetail, CreateUpdateTestiminieDetailCommand>()

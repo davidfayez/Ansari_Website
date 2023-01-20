@@ -1,0 +1,37 @@
+﻿@model List<TestiminieDetailVM>
+
+<table id="table_id" class=" table-pages" style="font-size:13px;">
+    <thead>
+        <tr>
+            <th style="max-width:75px ;">@Global.NameEn</th>
+            <th style="max-width:75px ;">@Global.NameAr</th>
+            <th style="max-width:50px ;"></th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model != null)
+        {
+            foreach (var detail in Model)
+            {
+                var id = "TestiminieDetail" + detail.Id;
+                <tr id="@id">
+                    <td>@detail.TitleEn</td>
+                    <td>@detail.TitleAr</td>
+                    <td>
+                        <button type="button" onclick="editCardItem('@detail.Id','Testiminie', 'GetTestiminieDetailById','EditModal', 'editTestiminieModal' )" class="btn btn-warning btn-sm"><i class="fa-regular fa-pen-to-square"></i></button>
+                        <button type="button" class="btn btn-danger btn-sm" onclick="deleteDetail('Testiminie','DeleteDetail',@detail.Id,'@id')" data-bs-toggle="modal" data-bs-target="#DeletePop"><i class="fas fa-times"></i></button>
+                    </td>
+                </tr>
+            }
+        }
+
+
+    </tbody>
+</table>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#table_id').DataTable({
+        });
+    });
+</script>

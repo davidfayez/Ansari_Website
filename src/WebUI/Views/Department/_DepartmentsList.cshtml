@@ -9,7 +9,10 @@
             </tr>
         </thead>
         <tbody>
-            @foreach (var department in Model)
+
+        @if (Model != null)
+        {
+            foreach (var department in Model)
             {
                 <tr>
                     <td> @department.TitleEn </td>
@@ -17,12 +20,12 @@
 
                     <td>
                         <a asp-controller="Department" asp-action="Edit" asp-route-id="@department.Id" class="btn btn-warning btn-sm"><i class="fa-regular fa-pen-to-square"></i></a>
-                        <button class="btn btn-dark btn-sm"><i class="fa-regular fa-eye"></i></button> 
+                        <button class="btn btn-dark btn-sm"><i class="fa-regular fa-eye"></i></button>
                         <form asp-controller="Department" asp-action="Delete" asp-route-id="@department.Id"
-                             data-ajax="true"
-                             data-ajax-method="POST"
-                             data-ajax-update="#department-list"
-                             data-ajax-mode="replace" autocomplete="off">
+                              data-ajax="true"
+                              data-ajax-method="POST"
+                              data-ajax-update="#department-list"
+                              data-ajax-mode="replace" autocomplete="off">
 
                             <button type="submit" class="btn btn-danger btn-sm"><i class="fas fa-times"></i></button>
 
@@ -31,6 +34,6 @@
                     </td>
                 </tr>
             }
-            
+        }
         </tbody>
     </table>
