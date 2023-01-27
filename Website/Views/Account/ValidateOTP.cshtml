@@ -1,0 +1,54 @@
+﻿
+<div class="Login-container">
+    <div class="row">
+        <div class="col-lg-5">
+
+            <div class="reg-div">
+                <img src="~/images/logo.png" class="logo-login" />
+
+                <br />
+                <h3>@Optic.CheckNumber </h3>
+                <p class="p-confirm-message">@Optic.PleaseEnterCode     <b>96655454550</b></p>
+
+                <div class="container-number">
+                    <div class="row">
+                        <div class="col-3">
+                            <input type="text" class="input-number-gen" placeholder="-" required />
+                        </div>
+                        <div class="col-3">
+                            <input type="text" class="input-number-gen" placeholder="-" required />
+
+                        </div>
+                        <div class="col-3">
+                            <input type="text" class="input-number-gen" placeholder="-" required />
+
+                        </div>
+                        <div class="col-3">
+                            <input type="text" class="input-number-gen" placeholder="-" required />
+
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="timer">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 200 200" preserveAspectRatio="none" style="width:50; height:50; top:0; left:0;">
+                        <circle cx="100" cy="100" r="57" id="pink-halo" fill="#fff" stroke="#dd1517" stroke-width="10" stroke-dasharray="0, 361" transform="rotate(-90,100,100)" style="margin: 0 auto;width:50px; height:50px" />
+                        <text id="myTimer" text-anchor="middle" x="100" y="110"></text>
+                    </svg>
+                    <span class="span-timer">@Optic.ResendCode</span>
+                </div>
+
+                <div class="text-center">
+                    <div class="button-timer" id="resend-code"> @Optic.Resend</div>
+                    <a href="Register-3.html" class="login-btn">@Optic.Register</a>
+                </div>
+                <p class="p-account">@Optic.AlreadyHaveAccount <a href="Login.html"> @Optic.Login</a></p>
+
+            </div>
+        </div>
+    </div>
+
+    <img src="~/images/login.png" class="login-pic" />
+
+</div>

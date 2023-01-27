@@ -120,6 +120,12 @@
   <data name="Age" xml:space="preserve">
     <value>العمر</value>
   </data>
+  <data name="AgreeTo" xml:space="preserve">
+    <value>اوافق علي</value>
+  </data>
+  <data name="AlreadyHaveAccount" xml:space="preserve">
+    <value>هل لديك حساب ؟</value>
+  </data>
   <data name="AltImage" xml:space="preserve">
     <value>بديل الصورة</value>
   </data>
@@ -135,6 +141,9 @@
   <data name="Center" xml:space="preserve">
     <value>مركز</value>
   </data>
+  <data name="CheckNumber" xml:space="preserve">
+    <value>تحقق من الارقام</value>
+  </data>
   <data name="ClassType" xml:space="preserve">
     <value>نوع الفئة</value>
   </data>
@@ -143,6 +152,9 @@
   </data>
   <data name="Complaint" xml:space="preserve">
     <value>الشكوي</value>
+  </data>
+  <data name="Congratulation" xml:space="preserve">
+    <value>تهانينا</value>
   </data>
   <data name="Country" xml:space="preserve">
     <value>البلد</value>
@@ -180,6 +192,9 @@
   <data name="Doctor" xml:space="preserve">
     <value>دكتور</value>
   </data>
+  <data name="DoNotHaveAccount" xml:space="preserve">
+    <value>ليس لديك حساب؟</value>
+  </data>
   <data name="ExtraNumber" xml:space="preserve">
     <value>الرقم الإضافي</value>
   </data>
@@ -191,6 +206,9 @@
   </data>
   <data name="Female" xml:space="preserve">
     <value>انثى</value>
+  </data>
+  <data name="HospitalWesite" xml:space="preserve">
+    <value>موقع الشركة</value>
   </data>
   <data name="IconName" xml:space="preserve">
     <value>اسم الرمز</value>
@@ -204,6 +222,12 @@
   <data name="InsuranceCompanyName" xml:space="preserve">
     <value>اسم شركة التأمين</value>
   </data>
+  <data name="Login" xml:space="preserve">
+    <value>تسجيل دخول</value>
+  </data>
+  <data name="LoginToYourCpanel" xml:space="preserve">
+    <value>تسجيل الدخول إلى لوحة التحكم الخاصة بك</value>
+  </data>
   <data name="MainCustomerData" xml:space="preserve">
     <value>بيانات العميل الاساسية</value>
   </data>
@@ -212,6 +236,9 @@
   </data>
   <data name="MedicalInsurance" xml:space="preserve">
     <value>التأمين الطبى</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>الأسم</value>
   </data>
   <data name="NationalAddress" xml:space="preserve">
     <value>العنوان الوطنى</value>
@@ -231,14 +258,32 @@
   <data name="PayType" xml:space="preserve">
     <value>طريقة الدفع</value>
   </data>
+  <data name="PhoneNumber" xml:space="preserve">
+    <value>رقم الهاتف</value>
+  </data>
+  <data name="PleaseEnterCode" xml:space="preserve">
+    <value>الرجاء إدخال الرمز الذي نرسله إلى</value>
+  </data>
   <data name="PriceAfter" xml:space="preserve">
     <value>السعر بعد</value>
   </data>
   <data name="PriceBefore" xml:space="preserve">
     <value>السعر قبل</value>
   </data>
+  <data name="Register" xml:space="preserve">
+    <value>تسجيل</value>
+  </data>
   <data name="Religion" xml:space="preserve">
     <value>الديانه</value>
+  </data>
+  <data name="RememberMe" xml:space="preserve">
+    <value>ذكرنى</value>
+  </data>
+  <data name="Resend" xml:space="preserve">
+    <value>إعادة إرسال</value>
+  </data>
+  <data name="ResendCode" xml:space="preserve">
+    <value>أعد إرسال الرمز</value>
   </data>
   <data name="SocialStatus" xml:space="preserve">
     <value>الحالة الاجتماعية</value>
@@ -251,6 +296,12 @@
   </data>
   <data name="SubComplaint" xml:space="preserve">
     <value>الشكوى الفرعيه</value>
+  </data>
+  <data name="Survey" xml:space="preserve">
+    <value>استطلاع رأي</value>
+  </data>
+  <data name="TermsAndConditions" xml:space="preserve">
+    <value>الأحكام والشروط</value>
   </data>
   <data name="UnifiedNationalNumber" xml:space="preserve">
     <value>الرقم الوطني الموحد</value>

@@ -1,13 +1,13 @@
 using Ansari_Website.Application;
 using Ansari_Website.Application.Common.Interfaces;
 using Ansari_Website.Infrastructure;
-using Ansari_Website.WebUI.Services;
 using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Localization;
 using Microsoft.Extensions.Configuration;
 using System.Globalization;
 using System.Reflection;
+using Website.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -91,7 +91,7 @@ app.UseEndpoints(endpoints =>
 {
     endpoints.MapControllerRoute(
         name: "default",
-        pattern: "{controller=Home}/{action=Index}/{id?}");
+        pattern: "{controller=Home}/{action=AboutUs}/{id?}");
     endpoints.MapRazorPages();
 });
 app.Run();

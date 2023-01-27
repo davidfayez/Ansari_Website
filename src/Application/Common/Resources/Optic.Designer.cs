@@ -70,6 +70,24 @@ namespace Ansari_Website.Application.Common.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Agree To.
+        /// </summary>
+        public static string AgreeTo {
+            get {
+                return ResourceManager.GetString("AgreeTo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Already have an account ?.
+        /// </summary>
+        public static string AlreadyHaveAccount {
+            get {
+                return ResourceManager.GetString("AlreadyHaveAccount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Alt Image.
         /// </summary>
         public static string AltImage {
@@ -115,6 +133,15 @@ namespace Ansari_Website.Application.Common.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Check Number.
+        /// </summary>
+        public static string CheckNumber {
+            get {
+                return ResourceManager.GetString("CheckNumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Class Type.
         /// </summary>
         public static string ClassType {
@@ -138,6 +165,15 @@ namespace Ansari_Website.Application.Common.Resources {
         public static string Complaint {
             get {
                 return ResourceManager.GetString("Complaint", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Congratulation.
+        /// </summary>
+        public static string Congratulation {
+            get {
+                return ResourceManager.GetString("Congratulation", resourceCulture);
             }
         }
         
@@ -250,6 +286,15 @@ namespace Ansari_Website.Application.Common.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Don&apos;t have an account ?.
+        /// </summary>
+        public static string DoNotHaveAccount {
+            get {
+                return ResourceManager.GetString("DoNotHaveAccount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Extra Number.
         /// </summary>
         public static string ExtraNumber {
@@ -282,6 +327,15 @@ namespace Ansari_Website.Application.Common.Resources {
         public static string Female {
             get {
                 return ResourceManager.GetString("Female", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Hospital Wesite.
+        /// </summary>
+        public static string HospitalWesite {
+            get {
+                return ResourceManager.GetString("HospitalWesite", resourceCulture);
             }
         }
         
@@ -322,6 +376,24 @@ namespace Ansari_Website.Application.Common.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Login.
+        /// </summary>
+        public static string Login {
+            get {
+                return ResourceManager.GetString("Login", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Login To Your Cpanel.
+        /// </summary>
+        public static string LoginToYourCpanel {
+            get {
+                return ResourceManager.GetString("LoginToYourCpanel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to MainCustomerData.
         /// </summary>
         public static string MainCustomerData {
@@ -345,6 +417,15 @@ namespace Ansari_Website.Application.Common.Resources {
         public static string MedicalInsurance {
             get {
                 return ResourceManager.GetString("MedicalInsurance", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Name.
+        /// </summary>
+        public static string Name {
+            get {
+                return ResourceManager.GetString("Name", resourceCulture);
             }
         }
         
@@ -385,6 +466,15 @@ namespace Ansari_Website.Application.Common.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Password.
+        /// </summary>
+        public static string Password {
+            get {
+                return ResourceManager.GetString("Password", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Patient File.
         /// </summary>
         public static string PatientFile {
@@ -399,6 +489,24 @@ namespace Ansari_Website.Application.Common.Resources {
         public static string PayType {
             get {
                 return ResourceManager.GetString("PayType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Phone Number.
+        /// </summary>
+        public static string PhoneNumber {
+            get {
+                return ResourceManager.GetString("PhoneNumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please enter Code We send it to.
+        /// </summary>
+        public static string PleaseEnterCode {
+            get {
+                return ResourceManager.GetString("PleaseEnterCode", resourceCulture);
             }
         }
         
@@ -421,11 +529,47 @@ namespace Ansari_Website.Application.Common.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Register.
+        /// </summary>
+        public static string Register {
+            get {
+                return ResourceManager.GetString("Register", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Religion.
         /// </summary>
         public static string Religion {
             get {
                 return ResourceManager.GetString("Religion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Remember Me.
+        /// </summary>
+        public static string RememberMe {
+            get {
+                return ResourceManager.GetString("RememberMe", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Resend.
+        /// </summary>
+        public static string Resend {
+            get {
+                return ResourceManager.GetString("Resend", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Resend Code.
+        /// </summary>
+        public static string ResendCode {
+            get {
+                return ResourceManager.GetString("ResendCode", resourceCulture);
             }
         }
         
@@ -462,6 +606,24 @@ namespace Ansari_Website.Application.Common.Resources {
         public static string SubComplaint {
             get {
                 return ResourceManager.GetString("SubComplaint", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Survey.
+        /// </summary>
+        public static string Survey {
+            get {
+                return ResourceManager.GetString("Survey", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Terms And Conditions.
+        /// </summary>
+        public static string TermsAndConditions {
+            get {
+                return ResourceManager.GetString("TermsAndConditions", resourceCulture);
             }
         }
         

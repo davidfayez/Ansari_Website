@@ -1,4 +1,5 @@
 ﻿using Ansari_Website.Application.Common.Interfaces;
+using Ansari_Website.Application.CPanel.Offer.Queries.GetAll;
 using Ansari_Website.Application.CPanel.Partner.Commands.Create;
 using Ansari_Website.Application.CPanel.Partner.Commands.Delete;
 using Ansari_Website.Application.CPanel.Partner.Queries.GetAll;
@@ -19,9 +20,10 @@ public class PartnerController : BaseController
         _fileHandler = fileHandler;
     }
 
-    public IActionResult Index()
+    public async Task<IActionResult> IndexAsync()
     {
-        return View();
+        var Partner = await Mediator.Send(new GetAllPartnersQuery());
+        return View(Partner);
     }
 
     [HttpGet]

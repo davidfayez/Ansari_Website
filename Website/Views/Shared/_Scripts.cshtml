@@ -1,0 +1,46 @@
+﻿<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script asp-append-version="true" src="~/js/jquery-2.1.1.js"></script>
+<script asp-append-version="true" src="~/js/popper.min.js"></script>
+<script asp-append-version="true" src="~/js/bootstrap.min.js"></script>
+<script asp-append-version="true" src="~/js/Slider.js"></script>
+<script asp-append-version="true" src="~/js/my-js.js"></script>
+<script asp-append-version="true" src="~/js/anime.min.js"></script>
+<script asp-append-version="true" src="~/js/glider.min.js"></script>
+<script asp-append-version="true" src="~/js/glider-optimize.js"></script>
+<script asp-append-version="true" src="~/js/star-rating.js"></script>
+<script asp-append-version="true">
+    $(document).ready(function () {
+        $('.rating-star').ffrating({ isStar: true, readonly: true, showSelectedRating: true, min: 1, max: 5 });
+        $('.add-star').ffrating({ isStar: true, readonly: false, showSelectedRating: true, min: 1, max: 5 });
+
+    });
+</script>
+<script asp-append-version="true" src="~/js/lavazi.jquery.js" type='text/javascript'></script>
+<script asp-append-version="true" type="text/javascript">
+    $(document).ready(function () {
+        $('.menu_main>ul').lavazi({ background: "rgba(255,255,255,.2)", transitionTime: 500, theme: 'simple', height: 60, mode: 'belowBar', opacity: .3 });
+    });
+</script>
+<script asp-append-version="true" src="~/js/jquery.slicknav.js"></script>
+<script asp-append-version="true" type="text/javascript">
+    $(document).ready(function () {
+        $('#menu').slicknav();
+    });
+</script>
+
+
+<script asp-append-version="true" src="~/js/imagelightbox.js"></script>
+<script asp-append-version="true" src="~/js/main.js"></script>
+
+<!-- ............ -->
+<script asp-append-version="true" src="~/js/paginga.jquery.js"></script>
+<script asp-append-version="true">
+    $(document).ready(function () {
+        $('#paging_container8').pajinate({
+            num_page_links_to_display: 3,
+            items_per_page: 16
+        });
+    });
+</script>
+
+

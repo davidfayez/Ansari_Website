@@ -1,1 +1,46 @@
-﻿
+﻿@addTagHelper "*, Microsoft.AspNetCore.Mvc.TagHelpers"
+@addTagHelper "*, Ashtar.Core.CustomTagHelpers"
+@using ERP.DAL.Domains;
+@using Microsoft.AspNetCore.Identity;
+@using Ansari_Website.Application.Common.Resources
+@using Ansari_Website.Application.CPanel.AboutUs.Commands.Create;
+@using Ansari_Website.Application.CPanel.SiteInfo.Commands.Create;
+@using Ansari_Website.Application.CPanel.Doctor.Commands.Create;
+@using Ansari_Website.Application.CPanel.Department.Commands.Create;
+@using Ansari_Website.Application.CPanel.Partner.Commands.Create;
+@using Ansari_Website.Application.CPanel.Doctor.Queries.GetAll;
+@using Ansari_Website.Application.CPanel.Department.Queries.GetAll;
+@using Ansari_Website.Application.CPanel.Partner.Queries.GetAll;
+@using Ansari_Website.Application.CPanel.SurveyQuestion.Queries.GetAll;
+@using Ansari_Website.Application.CPanel.SurveyQuestion.Commands.Create;
+@using Ansari_Website.Application.CPanel.Offer.Commands.Create;
+@using Ansari_Website.Domain.Enums;
+@using Ansari_Website.Application.CPanel.Answer.Queries.GetAll;
+@using Ansari_Website.Application.CPanel.Offer.Queries.GetAll;
+@using Ansari_Website.Application.CPanel.Answer.Commands.Create;
+@using Ansari_Website.Application.CPanel.Question.Commands.Create;
+@using Ansari_Website.Application.CPanel.Question.Queries.GetAll;
+@using Ansari_Website.Application.CPanel.AboutUs.Queries.GetAll;
+@using Ansari_Website.Application.Common.Extensions;
+@using Ansari_Website.Application.CPanel.OverView.VM;
+@using Ansari_Website.Application.CPanel.PatientRight.VM;
+@using Ansari_Website.Application.CPanel.PatientRight.Commands.Create;
+@using Ansari_Website.Application.CPanel.OverView.Commands.Create;
+@using Ansari_Website.Application.CPanel.OverView.Commands.CreateDetail;
+@using Ansari_Website.Application.CPanel.PatientRight.Commands.CreateDetail;
+@using Ansari_Website.Application.CPanel.Complaint.Queries.GetAll;
+@using Ansari_Website.Application.CPanel.Event.Queries.GetAll;
+@using Ansari_Website.Application.CPanel.Event.Commands.Create;
+@using Ansari_Website.Application.CPanel.Event.Commands.CreateDetail;
+@using Ansari_Website.Application.CPanel.Event.VM;
+@using Ansari_Website.Application.User.Commands.Create;
+@using Ansari_Website.Application.User.Queries.GetAll;
+@using Ansari_Website.Application.User.VM;
+@using Ansari_Website.Application.CPanel.Testiminie.Queries.GetAll;
+@using Ansari_Website.Application.CPanel.Testiminie.Commands.Create;
+@using Ansari_Website.Application.CPanel.Testiminie.Commands.CreateDetail;
+@using Ansari_Website.Application.CPanel.Testiminie.VM;
+@using Ansari_Website.Application.CPanel.Blog.VM;
+@using Ansari_Website.Application.CPanel.Blog.Commands.Create;
+@using Ansari_Website.Application.CPanel.Blog.Queries.GetAll;
+

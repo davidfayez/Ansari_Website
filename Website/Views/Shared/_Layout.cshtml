@@ -1,1 +1,247 @@
-﻿
+﻿<html lang="en">
+
+<head>
+   <partial name="_Styles" />
+    @await RenderSectionAsync("Styles", required: false)
+    <title>@Optic.HospitalWesite</title>
+
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <partial name="_Header" />
+        </div>
+
+    </header>
+
+    <div class="gradient-div">
+
+        <nav class="nav-menu">
+            <div class="container">
+                <partial name="_SubHeader" />
+            </div>
+        </nav>
+
+        <div class="Slider-div">
+            <partial name="_Slider" />
+        </div>
+
+    </div>
+
+    <!-- ----------appointment-------------- -->
+    <section class="appointment-sec">
+        <div class="container">
+            @RenderBody()
+            <br /><br />
+
+            <!-- ----------emergency-------------- -->
+            <partial name="_Emergency" />
+
+        </div>
+    </section>
+
+    <!-- ----------emergency-------------- -->
+    <div class="subscribe-div">
+        <div class="container">
+            <partial name="_Subscribe" />
+        </div>
+    </div>
+    <!-- ----------footer-------------- -->
+    <footer>
+        <div class="container">
+            <partial name="_Footer" />
+        </div>
+    </footer>
+    <div class="last-footer">
+        All Copyrights Reserved To Ansari 2022
+    </div>
+
+    <!-- Survey Modal -->
+    <div class="modal fade" id="Survey-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-small-big modal-dialog-centered" style="max-width: 500px;">
+            <div class="modal-content modal-border">
+
+                <div class="modal-body">
+                    <div class="inner-filter">
+                        <h3> Survey</h3>
+                        <a class="close-btn" data-bs-dismiss="modal"><i class="fa-solid fa-xmark"></i></a>
+                        <p class="p-pop">Ansari hospital performance survey</p>
+
+                        <h4>How did you find the experience of booking appointments ?</h4>
+                        <div class="SizeBtn">
+                            <input class="" type="radio" name="experience" value="" id="experience-1" checked>
+                            <label class="" for="experience-1">
+                                Very easy
+                            </label>
+                        </div>
+                        <div class="SizeBtn">
+                            <input class="" type="radio" name="experience" value="" id="experience-2">
+                            <label class="" for="experience-2">
+                                Easy
+                            </label>
+                        </div>
+                        <div class="SizeBtn">
+                            <input class="" type="radio" name="experience" value="" id="experience-3">
+                            <label class="" for="experience-3">
+                                Somewhat easy
+                            </label>
+                        </div>
+                        <div class="SizeBtn">
+                            <input class="" type="radio" name="experience" value="" id="experience-4">
+                            <label class="" for="experience-4">
+                                Diffcult
+                            </label>
+                        </div>
+
+                        <div class="SizeBtn">
+                            <input class="" type="radio" name="experience" value="" id="experience-5">
+                            <label class="" for="experience-5">
+                                Somewhat diffcult
+                            </label>
+                        </div>
+
+                        <div class="SizeBtn">
+                            <input class="" type="radio" name="experience" value="" id="experience-6">
+                            <label class="" for="experience-6">
+                                Very diffcult
+                            </label>
+                        </div>
+                        <br /><br />
+                        <h4>Was our staff quick enough with your needs?</h4>
+                        <div class="SizeBtn">
+                            <input class="" type="radio" name="staff" value="" id="staff-1" checked>
+                            <label class="" for="staff-1">
+                                Very easy
+                            </label>
+                        </div>
+                        <div class="SizeBtn">
+                            <input class="" type="radio" name="staff" value="" id="staff-2">
+                            <label class="" for="staff-2">
+                                Easy
+                            </label>
+                        </div>
+                        <div class="SizeBtn">
+                            <input class="" type="radio" name="staff" value="" id="staff-3">
+                            <label class="" for="staff-3">
+                                Somewhat easy
+                            </label>
+                        </div>
+                        <div class="SizeBtn">
+                            <input class="" type="radio" name="staff" value="" id="staff-4">
+                            <label class="" for="staff-4">
+                                Diffcult
+                            </label>
+                        </div>
+
+                        <div class="SizeBtn">
+                            <input class="" type="radio" name="staff" value="" id="staff-5">
+                            <label class="" for="staff-5">
+                                Somewhat diffcult
+                            </label>
+                        </div>
+
+                        <div class="SizeBtn">
+                            <input class="" type="radio" name="staff" value="" id="staff-6">
+                            <label class="" for="staff-6">
+                                Very diffcult
+                            </label>
+                        </div>
+                        <br /><br />
+
+                        <h4>How happy are you with the doctors's treatment ?</h4>
+                        <div class="SizeBtn">
+                            <input class="" type="radio" name="treatment" value="" id="treatment-1" checked>
+                            <label class="" for="treatment-1">
+                                Happy
+                            </label>
+                        </div>
+                        <div class="SizeBtn">
+                            <input class="" type="radio" name="treatment" value="" id="treatment-2">
+                            <label class="" for="treatment-2">
+                                Somewhat happy
+                            </label>
+                        </div>
+                        <div class="SizeBtn">
+                            <input class="" type="radio" name="treatment" value="" id="treatment-3">
+                            <label class="" for="treatment-3">
+                                Okay
+                            </label>
+                        </div>
+                        <div class="SizeBtn">
+                            <input class="" type="radio" name="treatment" value="" id="treatment-4">
+                            <label class="" for="treatment-4">
+                                Dissatisfied
+                            </label>
+                        </div>
+
+                        <br /><br />
+                        <h4>Please share your feedback with us.</h4>
+                        <textarea class="textarea-modal" placeholder="Leave your message..."></textarea>
+                        <br /><br />
+                        <h4>How much do you rate us ?</h4>
+                        <input type="textbox" value="0" class="ff-rating add-star" />
+
+                        <div class="text-end" style="margin-top: 10px;">
+                            <button class="btn-done-modal">Submit</button>
+                            <button class="btn-cancel-modal" data-bs-dismiss="modal">Cancel</button>
+
+                        </div>
+
+
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Complaint Modal -->
+    <div class="modal fade" id="Complaint-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-small-big modal-dialog-centered" style="max-width: 500px;">
+            <div class="modal-content modal-border">
+
+                <div class="modal-body">
+                    <div class="inner-filter">
+                        <h3> Customer complaint</h3>
+                        <a class="close-btn" data-bs-dismiss="modal"><i class="fa-solid fa-xmark"></i></a>
+                        <p class="p-pop">Ansari hospital complaint form</p>
+
+                        <h4 class="text-center">Your opinion matters to us!</h4>
+
+                        <br />
+
+                        <input class="input-modal" placeholder="Phone Number" />
+
+                        <br />
+                        <textarea class="textarea-modal" placeholder="Leave your message..."></textarea>
+                        <br /><br />
+
+
+                        <div class="text-end" style="margin-top: 10px;">
+                            <button class="btn-done-modal">Submit</button>
+                            <button class="btn-cancel-modal" data-bs-dismiss="modal">Cancel</button>
+
+                        </div>
+
+
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <a id="hb-gotop"><img src="~/images/arrow-up.png" alt=""></a>
+    <partial name="_Scripts" />
+    @await RenderSectionAsync("Scripts", required: false)
+
+</body>
+
+</html>
