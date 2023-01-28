@@ -1,0 +1,87 @@
+﻿@{
+    Layout = "_Layout";
+}
+
+<!-- ----------admin-------------- -->
+<section class="admin-sec">
+    <h2 class="text-center">Doctor Panel</h2>
+
+
+    <div class="admin-div">
+        <div class="container">
+            <div class="content-admin">
+
+                <div class="menu-admin">
+                    <div class="user-div">
+                        <img src="images/person-1.png" class="img-admin" />
+                        <h3>Tarek Yehia</h3>
+                        <p>Doctor</p>
+
+                    </div>
+
+                    <h4>Personal Account</h4>
+
+
+                    <ul class="menu-dashboard">
+                        <li class="active-menu"><a href="U-Dates-Doc.html"><i class="fas fa-calendar"></i> My Date</a> </li>
+                        <li><a href="U-Add-Blog-Doc.html"><i class="fa-solid fa-blog"></i> Add New Blog</a></li>
+                        <li><a href="U-View-Blog-Doc.html"><i class="fa-brands fa-blogger-b"></i> View My Blog</a></li>
+
+                        <li><a href="U-Password-Doc.html"><i class="fas fa-lock"></i> Change Password</a></li>
+                        <li><a href="#"><i class="fa-solid fa-arrow-right-from-bracket"></i> Log Out</a></li>
+
+
+                    </ul>
+
+
+
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <label>From Date</label>
+                        <input type="date" class="select-oppp">
+
+                    </div>
+                    <div class="col-6">
+                        <label>From Date</label>
+                        <input type="date" class="select-oppp">
+
+                    </div>
+                </div>
+                <div class="text-center">
+                    <button class="a-wizard active-btn"><i class="fa-solid fa-magnifying-glass"></i> Search </button>
+
+                </div>
+                <br />
+                <table id="table_id" class="display table-first table table-bordered my-dates-table">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Title </th>
+                            <th></th>
+
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>19-5-2018</td>
+
+                            <td>Full title Here</td>
+                            <td><a href="U-Add-Blog-Doc.html" class="btn btn-warning btn-sm"><i class="fa-regular fa-pen-to-square"></i></a> <a target="_blank" href="Blog-inner.html" class="btn btn-dark btn-sm"><i class="fa-regular fa-eye"></i></a> <button class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#DeletePop"><i class="fas fa-times"></i></button></td>
+                        </tr>
+
+
+
+                    </tbody>
+                </table>
+
+
+            </div>
+        </div>
+
+
+    </div>
+
+</section>
+

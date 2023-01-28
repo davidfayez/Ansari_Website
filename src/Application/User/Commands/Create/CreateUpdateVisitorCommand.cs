@@ -1,21 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Identity;
 using ERP.DAL.Domains;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 
 namespace Ansari_Website.Application.User.Commands.Create;
-public class CreateUpdateUserCommand : IdentityUser, IRequest<bool>, IMapFrom<AspNetUser>
+public class CreateUpdateVisitorCommand : IdentityUser, IRequest<bool>, IMapFrom<AspNetUser>
 {
     public string FullName { get; set; }
     public string? Email { get; set; }
     public string? PhoneNumber { get; set; }
-    public string Image { get; set; }
     public string Password { get; set; }
     public bool IsDeveloper { get; set; }
     public bool IsNew { get; set; }
@@ -23,27 +20,26 @@ public class CreateUpdateUserCommand : IdentityUser, IRequest<bool>, IMapFrom<As
     public bool IsDeleted { get; set; }
     public DateTime CreationDate { get; set; } = DateTime.Now;   // تاريخ الادخال
     public DateTime LastModifiedDate { get; set; } = DateTime.Now;
-    public IFormFile UserImage { get; set; }
     public void Mapping(Profile profile)
     {
-        profile.CreateMap<AspNetUser, CreateUpdateUserCommand>()
+        profile.CreateMap<AspNetUser, CreateUpdateVisitorCommand>()
                .ReverseMap();
     }
 }
 
-public class CreateUpdateUserCommandHandler : IRequestHandler<CreateUpdateUserCommand, bool>
+public class CreateUpdateVisitorCommandHandler : IRequestHandler<CreateUpdateVisitorCommand, bool>
 {
     private readonly IApplicationDbContext _applicationDbContext;
     private readonly IMapper _mapper;
     private readonly UserManager<AspNetUser> _userManager;
 
-    public CreateUpdateUserCommandHandler(IApplicationDbContext applicationDbContext, IMapper mapper, UserManager<AspNetUser> userManager)
+    public CreateUpdateVisitorCommandHandler(IApplicationDbContext applicationDbContext, IMapper mapper, UserManager<AspNetUser> userManager)
     {
         _applicationDbContext = applicationDbContext;
         _mapper = mapper;
         _userManager = userManager;
     }
-    public async Task<bool> Handle(CreateUpdateUserCommand request, CancellationToken cancellationToken)
+    public async Task<bool> Handle(CreateUpdateVisitorCommand request, CancellationToken cancellationToken)
     {
         try
         {
@@ -69,4 +65,3 @@ public class CreateUpdateUserCommandHandler : IRequestHandler<CreateUpdateUserCo
 
     }
 }
-

@@ -43,6 +43,7 @@ public partial class ApplicationDbContext : IdentityDbContext<AspNetUser, Applic
     public virtual DbSet<AspNetUserDefBranch> AspNetUserDefBranches => Set<AspNetUserDefBranch>();
     public virtual DbSet<ApplicationUserRole> AspNetUserRoles => Set<ApplicationUserRole>();
     public virtual DbSet<AuthenticationTickets> AuthenticationTickets => Set<AuthenticationTickets>();
+    public virtual DbSet<UserOTP> UserOTPs => Set<UserOTP>();
     #endregion
 
     #region Def
