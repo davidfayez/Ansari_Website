@@ -51,6 +51,8 @@ public interface IApplicationDbContext
     DbSet<PatientSay> PatientSays { get; }
     DbSet<Testiminie> Testiminies { get; }
     DbSet<TestiminieDetail> TestiminieDetails { get; }
+    DbSet<FuturePlan> FuturePlans { get; }
+    DbSet<Slider> Sliders { get; }
 
     #endregion
 

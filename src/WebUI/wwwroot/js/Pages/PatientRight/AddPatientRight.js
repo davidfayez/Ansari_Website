@@ -1,5 +1,7 @@
 ﻿
 $(document).on('click', '#btnSubmitPatientRightDetail', function () {
+    $("#table_id").find(".dataTables_empty").parents('tbody').empty();
+
     var TitleEnDetail = $("#TitleEnDetail").val();
     var TitleArDetail = $("#TitleArDetail").val();
     var count = $('#table_id tr').length;
@@ -8,14 +10,13 @@ $(document).on('click', '#btnSubmitPatientRightDetail', function () {
         $("#TitleEnDetailValidation").hide();
         $("#TitleArDetailValidation").hide();
 
-        $("#table_id").find(".dataTables_empty").parents('tbody').empty();
 
-        $("#PatientRightDiv").append(`<input type="hidden" name="PatientRightDetailVMs[` + (count - 2) + `].TitleEn"  value=` + TitleEnDetail + `>`);
-        $("#PatientRightDiv").append(`<input type="hidden" name="PatientRightDetailVMs[` + (count - 2) + `].TitleAr"  value=` + TitleArDetail + `>`);
+        $("#PatientRightDiv").append(`<input type="hidden" name="PatientRightDetailVMs[` + (count - 1) + `].TitleEn"  value=` + TitleEnDetail + `>`);
+        $("#PatientRightDiv").append(`<input type="hidden" name="PatientRightDetailVMs[` + (count - 1) + `].TitleAr"  value=` + TitleArDetail + `>`);
 
         $("#table_id").append(`<tr><td>` + TitleEnDetail + `</td><td>` + TitleArDetail + `</td>
                                    <td> 
-                                       <button  type="button" class="btn btn-danger btn-sm" onclick="deleteCurrentRow(`+ (count - 1) + `)"><i class="fas fa-times"></i></button>
+                                       <button  type="button" class="btn btn-danger btn-sm" onclick="deleteCurrentRow(`+ (count) + `)"><i class="fas fa-times"></i></button>
                                    </td>
                                </tr>`);
 

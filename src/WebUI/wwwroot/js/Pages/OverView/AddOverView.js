@@ -1,24 +1,24 @@
 ﻿
 $(document).on('click', '#btnSubmitOverViewDetail', function () {
+    $("#table_id").find(".dataTables_empty").parents('tbody').empty();
+
     var TitleEnDetail = $("#TitleEnDetail").val();
     var TitleArDetail = $("#TitleArDetail").val();
     var ValueDetail = $("#ValueDetail").val();
     var count = $('#table_id tr').length;
-    var num = count;
 
     if (TitleEnDetail != "" && TitleArDetail != "") {
         $("#TitleEnDetailValidation").hide();
         $("#TitleArDetailValidation").hide();
 
-        $("#table_id").find(".dataTables_empty").parents('tbody').empty();
 
-        $("#OverViewDiv").append(`<input type="hidden" name="OverViewDetailVMs[` + (count - 2) + `].TitleEn"  value=` + TitleEnDetail + `>`);
-        $("#OverViewDiv").append(`<input type="hidden" name="OverViewDetailVMs[` + (count - 2) + `].TitleAr"  value=` + TitleArDetail + `>`);
-        $("#OverViewDiv").append(`<input type="hidden" name="OverViewDetailVMs[` + (count - 2) + `].Value"  value=` + ValueDetail + `>`);
+        $("#OverViewDiv").append(`<input type="hidden" name="OverViewDetailVMs[` + (count - 1) + `].TitleEn"  value=` + TitleEnDetail + `>`);
+        $("#OverViewDiv").append(`<input type="hidden" name="OverViewDetailVMs[` + (count - 1) + `].TitleAr"  value=` + TitleArDetail + `>`);
+        $("#OverViewDiv").append(`<input type="hidden" name="OverViewDetailVMs[` + (count - 1) + `].Value"  value=` + ValueDetail + `>`);
 
         $("#table_id").append(`<tr><td>` + TitleEnDetail + `</td><td>` + TitleArDetail + `</td><td>` + ValueDetail + `</td>
                                    <td> 
-                                       <button  type="button" class="btn btn-danger btn-sm" onclick="deleteCurrentRow(`+ (count - 1) + `)"><i class="fas fa-times"></i></button></td>
+                                       <button  type="button" class="btn btn-danger btn-sm" onclick="deleteCurrentRow(`+ (count) + `)"><i class="fas fa-times"></i></button></td>
                                </tr>`);
 
         $('#closeOverViewDetail').click();

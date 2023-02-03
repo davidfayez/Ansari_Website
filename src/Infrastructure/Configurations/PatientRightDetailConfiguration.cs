@@ -18,11 +18,11 @@ public class PatientRightDetailConfiguration : IEntityTypeConfiguration<PatientR
 
         builder.Property(s => s.TitleAr)
                .IsRequired()
-               .HasMaxLength(50);
+               .HasMaxLength(500);
 
         builder.Property(s => s.TitleEn)
                .IsRequired()
-               .HasMaxLength(50);
+               .HasMaxLength(500);
 
         builder.HasOne(s => s.PatientRight)
                .WithMany(s => s.PatientRightDetails)

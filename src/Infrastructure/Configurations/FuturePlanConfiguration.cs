@@ -4,15 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Ansari_Website.Domain.Entities.CPanel;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using Microsoft.EntityFrameworkCore;
 
 namespace Ansari_Website.Infrastructure.Configurations;
-public class TestiminieConfiguration : IEntityTypeConfiguration<Testiminie>
+public class FuturePlanConfiguration : IEntityTypeConfiguration<FuturePlan>
 {
-    public void Configure(EntityTypeBuilder<Testiminie> builder)
+    public void Configure(EntityTypeBuilder<FuturePlan> builder)
     {
-        builder.ToTable(nameof(Testiminie));
+        builder.ToTable(nameof(FuturePlan));
 
         builder.Property(s => s.Id).UseIdentityColumn();
 
