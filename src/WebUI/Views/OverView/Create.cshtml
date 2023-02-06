@@ -54,6 +54,17 @@
             </div>
         </div>
 
+        @if(Model.OverViewDetailVMs != null && Model.OverViewDetailVMs.Count >0)
+        {
+            for (int i=0; i < Model.OverViewDetailVMs.Count; i++)
+            {
+                <input type="hidden" asp-for="@Model.OverViewDetailVMs[i].Id">
+                <input type="hidden" asp-for="@Model.OverViewDetailVMs[i].Value">
+                <input type="hidden" asp-for="@Model.OverViewDetailVMs[i].TitleEn">
+                <input type="hidden" asp-for="@Model.OverViewDetailVMs[i].TitleAr">
+             }
+        }
+
         <ul class=" ul-file">
 
             <li>

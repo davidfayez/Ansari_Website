@@ -14,7 +14,7 @@ public class GetAboutUsQueryHandler : IRequestHandler<GetAboutUsQuery, DB.AboutU
     }
     public Task<DB.AboutUs> Handle(GetAboutUsQuery request, CancellationToken cancellationToken)
     {
-        var AboutUs = _applicationDbContext.AboutUs.FirstOrDefault();
+        var AboutUs = _applicationDbContext.AboutUs.Include(s=>s.OurValues).FirstOrDefault();
 
         if (AboutUs != null)
             return Task.FromResult(AboutUs);

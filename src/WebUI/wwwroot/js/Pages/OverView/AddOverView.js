@@ -6,8 +6,8 @@ $(document).on('click', '#btnSubmitOverViewDetail', function () {
     var TitleArDetail = $("#TitleArDetail").val();
     var ValueDetail = $("#ValueDetail").val();
     var count = $('#table_id tr').length;
-
-    if (TitleEnDetail != "" && TitleArDetail != "") {
+    debugger;
+    if (TitleEnDetail != "" && TitleArDetail != "" && ValueDetail != "") {
         $("#TitleEnDetailValidation").hide();
         $("#TitleArDetailValidation").hide();
 
@@ -27,6 +27,7 @@ $(document).on('click', '#btnSubmitOverViewDetail', function () {
     else {
         $("#TitleEnDetailValidation").show();
         $("#TitleArDetailValidation").show();
+        $("#ValueDetailValidation").show();
     }
 })
 

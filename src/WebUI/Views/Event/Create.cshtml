@@ -39,6 +39,18 @@
             </div>
         </div>
 
+        @if (Model.EventDetailVMs != null && Model.EventDetailVMs.Count > 0)
+        {
+            for (int i = 0; i < Model.EventDetailVMs.Count; i++)
+            {
+                <input type="hidden" asp-for="@Model.EventDetailVMs[i].Id">
+                <input type="hidden" asp-for="@Model.EventDetailVMs[i].Order">
+                <input type="hidden" asp-for="@Model.EventDetailVMs[i].ImageUrls">
+                <input type="hidden" asp-for="@Model.EventDetailVMs[i].TitleEn">
+                <input type="hidden" asp-for="@Model.EventDetailVMs[i].TitleAr">
+             }
+        }
+
         <ul class=" ul-file">
 
             <li>

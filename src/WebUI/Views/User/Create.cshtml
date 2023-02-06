@@ -10,7 +10,6 @@
         <input type="hidden" asp-for="CreationDate" />
         <input type="hidden" asp-for="LastModifiedDate" />
         <input type="hidden" asp-for="IsNew" />
-        <input type="hidden" asp-for="Password" />
 
         <div class="row">
 
@@ -49,6 +48,10 @@
                         <input type="password" asp-for="Password" />
                     </div>
                 </div>
+            }
+            else
+            {
+                <input type="hidden" asp-for="Password" />
             }
             <div class="col-md-6">
                 <div class="input-sys-wrapper">

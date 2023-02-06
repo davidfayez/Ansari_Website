@@ -72,6 +72,17 @@
             </div>
         </div>
 
+        @if (Model.OfferDetailVMs != null && Model.OfferDetailVMs.Count > 0)
+        {
+            for (int i = 0; i < Model.OfferDetailVMs.Count; i++)
+            {
+                <input type="hidden" asp-for="@Model.OfferDetailVMs[i].Id">
+                <input type="hidden" asp-for="@Model.OfferDetailVMs[i].Order">
+                <input type="hidden" asp-for="@Model.OfferDetailVMs[i].TitleEn">
+                <input type="hidden" asp-for="@Model.OfferDetailVMs[i].TitleAr">
+             }
+        }
+
         <ul class=" ul-file">
 
             <li>

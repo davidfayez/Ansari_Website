@@ -3,6 +3,7 @@ using Ansari_Website.Application.User.Commands.Create;
 using Ansari_Website.Application.User.Commands.Delete;
 using Ansari_Website.Application.User.Queries.GetAll;
 using Ansari_Website.Application.User.Queries.GetById;
+using Ansari_Website.Domain.Enums;
 using AutoMapper;
 using ERP.DAL.Domains;
 using Microsoft.AspNetCore.Identity;
@@ -26,6 +27,12 @@ public class UserController : BaseController
         var Users = await Mediator.Send(new GetAllUsersQuery());
 
         return View(Users);
+    }
+
+    public async Task<IActionResult> Doctors()
+    {
+        var Doctors = await Mediator.Send(new GetAllUsersQuery { Type=(int)UserType.Doctor});
+        return View(Doctors);
     }
 
     [HttpGet]

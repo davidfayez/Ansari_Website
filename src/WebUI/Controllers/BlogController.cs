@@ -30,7 +30,7 @@ public class BlogController : BaseController
     {
         var command = new CreateUpdateBlogCommand();
         await FillBlogDDLAsync(command);
-        return View();
+        return View(command);
     }
 
     [HttpPost]

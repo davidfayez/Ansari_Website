@@ -8,7 +8,7 @@
     <li class="inner-child box">
         <a class="js-toggle" data-container="toggle-3" href="#"><i class="fa-solid fa-file"></i> Sections </a>
         <ul class="toggle-container" id="toggle-3">
-            <li><a href="Table.html">Slider</a></li>
+            <li><a asp-controller="Slider" asp-action="Index">Slider</a></li>
             <li><a asp-controller="Parntner" asp-action="Index">Parntner</a></li>
             <li><a href="Table.html">People Say</a></li>
             <li><a href="Avertising.html">Advertising</a></li>
@@ -21,8 +21,8 @@
             <li class="inner-child"><a asp-controller="OverView" asp-action="Index">Overview</a></li>
             <li class="inner-child"><a asp-controller="CPanelLookups" asp-action="AboutUs">Mission & Mission&Values </a></li>
             <li class="inner-child"><a asp-controller="PatientRight" asp-action="Index">Patient Rights </a></li>
-            <li class="inner-child"><a href="Table-inner.html">Future Plan </a></li>
-            <li class="inner-child"><a href="Testiminies.html">Testiminies </a></li>
+            <li class="inner-child"><a asp-controller="FuturePlan" asp-action="Index">Future Plan </a></li>
+            <li class="inner-child"><a asp-controller="Testiminie" asp-action="Index">Testiminies </a></li>
 
 
         </ul>
@@ -30,8 +30,8 @@
     <li class="inner-child box">
         <a class="js-toggle" data-container="toggle-5" href="#"><i class="fa-solid fa-list-ul"></i> Pages </a>
         <ul class="toggle-container" id="toggle-5">
-            <li class="inner-child"><a href="Doctors.html">Doctors </a></li>
-            <li class="inner-child"><a href="Blog.html">Blog </a></li>
+            <li class="inner-child"><a asp-controller="User" asp-action="Doctors">Doctors </a></li>
+            <li class="inner-child"><a asp-controller="Blog" asp-action="Index">Blog </a></li>
             <li class="inner-child"><a asp-controller="Event" asp-action="Index">Events </a></li>
             <li class="inner-child"><a asp-controller="Offer" asp-action="Index">Offer </a></li>
 
@@ -45,7 +45,7 @@
         </ul>
     </li>
     <li class="inner-child"><a href="Resource.html"><i class="fa-regular fa-file-word"></i> Resource </a></li>
-    <li class="inner-child"><a href="Users.html"><i class="fa-solid fa-user"></i> Users </a></li>
+    <li class="inner-child"><a asp-controller="User" asp-action="Index"><i class="fa-solid fa-user"></i> Users </a></li>
 
     <li class="inner-child box">
         <a class="js-toggle" data-container="toggle-7" href="#"><i class="fa-solid fa-star"></i> Survey</a>

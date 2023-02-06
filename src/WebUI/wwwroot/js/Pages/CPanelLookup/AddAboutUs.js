@@ -1,5 +1,7 @@
 ﻿
 $(document).on('click', '#btnSubmitOurValue', function () {
+    $("#table_id").find(".dataTables_empty").parents('tbody').empty();
+
     var TitleEnDetail = $("#TitleEnDetail").val();
     var TitleArDetail = $("#TitleArDetail").val();
     var IconNameDetail = $("#IconNameDetail").val();
@@ -10,15 +12,13 @@ $(document).on('click', '#btnSubmitOurValue', function () {
         $("#TitleEnDetailValidation").hide();
         $("#TitleArDetailValidation").hide();
 
-        $("#table_id").find(".dataTables_empty").parents('tbody').empty();
-
-        $("#AboutUsDiv").append(`<input type="hidden" name="OurValueVMs[` + (count - 2) + `].TitleEn"  value=` + TitleEnDetail + `>`);
-        $("#AboutUsDiv").append(`<input type="hidden" name="OurValueVMs[` + (count - 2) + `].TitleAr"  value=` + TitleArDetail + `>`);
-        $("#AboutUsDiv").append(`<input type="hidden" name="OurValueVMs[` + (count - 2) + `].IconName"  value=` + IconNameDetail + `>`);
+        $("#AboutUsDiv").append(`<input type="hidden" name="OurValueVMs[` + (count - 1) + `].TitleEn"  value=` + TitleEnDetail + `>`);
+        $("#AboutUsDiv").append(`<input type="hidden" name="OurValueVMs[` + (count - 1) + `].TitleAr"  value=` + TitleArDetail + `>`);
+        $("#AboutUsDiv").append(`<input type="hidden" name="OurValueVMs[` + (count - 1) + `].IconName"  value=` + IconNameDetail + `>`);
 
         $("#table_id").append(`<tr><td>` + TitleEnDetail + `</td><td>` + TitleArDetail + `</td><td>` + IconNameDetail + `</td>
                                    <td> 
-                                       <button  type="button" class="btn btn-danger btn-sm" onclick="deleteCurrentRow(`+ (count - 1) + `)"><i class="fas fa-times"></i></button></td>
+                                       <button  type="button" class="btn btn-danger btn-sm" onclick="deleteCurrentRow(`+ (count) + `)"><i class="fas fa-times"></i></button></td>
                                </tr>`);
 
         $('#closeOurValue').click();

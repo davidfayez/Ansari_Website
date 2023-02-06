@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 namespace Ansari_Website.Application.CPanel.Blog.Commands.Create;
 public class CreateUpdateBlogCommand : AuditableEntity, IRequest<bool>, IMapFrom<DB.Blog>
 {
+    
     public int Id { get; set; }
     public int? Order { get; set; }
     public int DepartmentId { get; set; }
@@ -14,8 +15,8 @@ public class CreateUpdateBlogCommand : AuditableEntity, IRequest<bool>, IMapFrom
     public string? DescriptionEn { get; set; }
     public string? ImageUrl { get; set; }
     public string? AltImage { get; set; }
-    public List<SelectListItem> Doctors { get; set; }
-    public List<SelectListItem> Departments { get; set; }
+    public List<SelectListItem> Doctors { get; set; } = new();
+    public List<SelectListItem> Departments { get; set; } = new();
     public IFormFile BlogImage { get; set; }
 
 
