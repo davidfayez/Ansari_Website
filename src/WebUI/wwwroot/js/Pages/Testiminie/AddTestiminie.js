@@ -16,8 +16,8 @@ $(document).on('click', '#btnSubmitTestiminieDetail', function () {
         $("#TitleArDetailValidation").hide();
 
 
-        $("#TestiminieDiv").append(`<input type="hidden" name="TestiminieDetailVMs[` + (count - 1) + `].TitleEn"  value=` + TitleEnDetail + `>`);
-        $("#TestiminieDiv").append(`<input type="hidden" name="TestiminieDetailVMs[` + (count - 1) + `].TitleAr"  value=` + TitleArDetail + `>`);
+        $("#TestiminieDiv").append(`<input type="hidden" name="TestiminieDetailVMs[` + (count - 1) + `].TitleEn"  value="` + TitleEnDetail + `">`);
+        $("#TestiminieDiv").append(`<input type="hidden" name="TestiminieDetailVMs[` + (count - 1) + `].TitleAr"  value="` + TitleArDetail + `">`);
         $("#TestiminieDiv").append(`<input type="file" style="display:none" name="TestiminieDetailVMs[` + (count - 1) + `].TestiminieDetailImage"  id=image` + (count - 1) + `>`);
         let fileInputElement = document.getElementById('image' + (count - 1));
         fileInputElement.files = files;

@@ -16,9 +16,9 @@ $(document).on('click', '#btnSubmitEventDetail', function () {
         $("#TitleArDetailValidation").hide();
 
 
-        $("#EventDiv").append(`<input type="hidden" name="EventDetailVMs[` + (count - 1) + `].TitleEn"  value=` + TitleEnDetail + `>`);
-        $("#EventDiv").append(`<input type="hidden" name="EventDetailVMs[` + (count - 1) + `].TitleAr"  value=` + TitleArDetail + `>`);
-        $("#EventDiv").append(`<input type="hidden" name="EventDetailVMs[` + (count - 1) + `].Order"  value=` + OrderDetail + `>`);
+        $("#EventDiv").append(`<input type="hidden" name="EventDetailVMs[` + (count - 1) + `].TitleEn"  value="` + TitleEnDetail + `">`);
+        $("#EventDiv").append(`<input type="hidden" name="EventDetailVMs[` + (count - 1) + `].TitleAr"  value="` + TitleArDetail + `">`);
+        $("#EventDiv").append(`<input type="hidden" name="EventDetailVMs[` + (count - 1) + `].Order"  value="` + OrderDetail + `">`);
         $("#EventDiv").append(`<input type="file" style="display:none" name="EventDetailVMs[` + (count - 1) + `].EventDetailImages"  id=image` + (count - 1) + `>`);
         let fileInputElement = document.getElementById('image' + (count - 1));
         fileInputElement.files = files;

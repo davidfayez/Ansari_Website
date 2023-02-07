@@ -11,8 +11,8 @@ $(document).on('click', '#btnSubmitPatientRightDetail', function () {
         $("#TitleArDetailValidation").hide();
 
 
-        $("#PatientRightDiv").append(`<input type="hidden" name="PatientRightDetailVMs[` + (count - 1) + `].TitleEn"  value=` + TitleEnDetail + `>`);
-        $("#PatientRightDiv").append(`<input type="hidden" name="PatientRightDetailVMs[` + (count - 1) + `].TitleAr"  value=` + TitleArDetail + `>`);
+        $("#PatientRightDiv").append(`<input type="hidden" name="PatientRightDetailVMs[` + (count - 1) + `].TitleEn"  value="` + TitleEnDetail + `">`);
+        $("#PatientRightDiv").append(`<input type="hidden" name="PatientRightDetailVMs[` + (count - 1) + `].TitleAr"  value="` + TitleArDetail + `">`);
 
         $("#table_id").append(`<tr><td>` + TitleEnDetail + `</td><td>` + TitleArDetail + `</td>
                                    <td> 

@@ -12,9 +12,9 @@ $(document).on('click', '#btnSubmitOverViewDetail', function () {
         $("#TitleArDetailValidation").hide();
 
 
-        $("#OverViewDiv").append(`<input type="hidden" name="OverViewDetailVMs[` + (count - 1) + `].TitleEn"  value=` + TitleEnDetail + `>`);
-        $("#OverViewDiv").append(`<input type="hidden" name="OverViewDetailVMs[` + (count - 1) + `].TitleAr"  value=` + TitleArDetail + `>`);
-        $("#OverViewDiv").append(`<input type="hidden" name="OverViewDetailVMs[` + (count - 1) + `].Value"  value=` + ValueDetail + `>`);
+        $("#OverViewDiv").append(`<input type="hidden" name="OverViewDetailVMs[` + (count - 1) + `].TitleEn"  value="` + TitleEnDetail + `">`);
+        $("#OverViewDiv").append(`<input type="hidden" name="OverViewDetailVMs[` + (count - 1) + `].TitleAr"  value="` + TitleArDetail + `">`);
+        $("#OverViewDiv").append(`<input type="hidden" name="OverViewDetailVMs[` + (count - 1) + `].Value"  value="` + ValueDetail + `">`);
 
         $("#table_id").append(`<tr><td>` + TitleEnDetail + `</td><td>` + TitleArDetail + `</td><td>` + ValueDetail + `</td>
                                    <td> 

@@ -12,9 +12,9 @@ $(document).on('click', '#btnSubmitOfferDetail', function () {
         $("#TitleEnDetailValidation").hide();
         $("#TitleArDetailValidation").hide();
 
-        $("#OfferDiv").append(`<input type="hidden" name="OfferDetailVMs[` + (count - 1) + `].TitleEn"  value=` + TitleEnDetail + `>`);
-        $("#OfferDiv").append(`<input type="hidden" name="OfferDetailVMs[` + (count - 1) + `].TitleAr"  value=` + TitleArDetail + `>`);
-        $("#OfferDiv").append(`<input type="hidden" name="OfferDetailVMs[` + (count - 1) + `].Order"  value=` + OrderDetail + `>`);
+        $("#OfferDiv").append(`<input type="hidden" name="OfferDetailVMs[` + (count - 1) + `].TitleEn"  value="` + TitleEnDetail + `">`);
+        $("#OfferDiv").append(`<input type="hidden" name="OfferDetailVMs[` + (count - 1) + `].TitleAr"  value="` + TitleArDetail + `">`);
+        $("#OfferDiv").append(`<input type="hidden" name="OfferDetailVMs[` + (count - 1) + `].Order"  value="` + OrderDetail + `">`);
 
         $("#table_id").append(`<tr><td>` + TitleEnDetail + `</td><td>` + TitleArDetail + `</td><td>` + OrderDetail + `</td>
                                    <td> 

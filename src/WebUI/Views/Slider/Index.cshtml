@@ -1,4 +1,4 @@
-﻿@model List<FuturePlanVM>
+﻿@model List<SliderVM>
 @{
     Layout = "_Layout";
 }
@@ -19,15 +19,15 @@
 
             @if (Model != null)
             {
-                foreach (var FuturePlan in Model)
+                foreach (var Slider in Model)
                 {
-                    var id = "FuturePlan" + FuturePlan.Id;
+                    var id = "Slider" + Slider.Id;
                     <tr id="@id">
-                        <td>@FuturePlan.TitleEn</td>
-                        <td>@FuturePlan.TitleAr</td>
+                        <td>@Slider.TitleEn</td>
+                        <td>@Slider.TitleAr</td>
                         <td>
-                            <a asp-action="Edit" asp-route-id="@FuturePlan.Id" class="btn btn-warning btn-sm"><i class="fa-regular fa-pen-to-square"></i></a>
-                            <button class="btn btn-danger btn-sm" onclick="deleteDetail('FuturePlan','Delete',@FuturePlan.Id,'@id')"><i class="fas fa-times"></i></button>
+                            <a asp-action="Edit" asp-route-id="@Slider.Id" class="btn btn-warning btn-sm"><i class="fa-regular fa-pen-to-square"></i></a>
+                            <button class="btn btn-danger btn-sm" onclick="deleteDetail('Slider','Delete',@Slider.Id,'@id')"><i class="fas fa-times"></i></button>
                         </td>
                     </tr>
                 }

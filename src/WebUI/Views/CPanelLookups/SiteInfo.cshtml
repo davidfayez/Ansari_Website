@@ -6,6 +6,8 @@
 
 <div class="inner-page">
     <form asp-controller="CPanelLookups" asp-action="SiteInfo" method="post" class="row" enctype="multipart/form-data">
+        <input type="hidden" asp-for="Id" />
+        <input type="hidden" asp-for="CreationDate" />
 
         <div class="row">
             <div class="col-md-6">
