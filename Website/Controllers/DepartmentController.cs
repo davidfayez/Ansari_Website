@@ -14,11 +14,14 @@ public class DepartmentController : BaseController
     {
         _mapper = mapper;
     }
-    public async Task<IActionResult> IndexAsync()
+    public async Task<IActionResult> IndexAsync(Speciality? type)
     {
-        var Departments = await Mediator.Send(new GetAllDepartmentsQuery());
+        if (!type.HasValue)
+        {
+            type = Speciality.Department;
+        }
+        var Departments = await Mediator.Send(new GetAllDepartmentsQuery { Speciality = type });
         return View(Departments);
-        //return View();
     }
 
     [HttpGet]

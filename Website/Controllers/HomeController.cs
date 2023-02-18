@@ -50,4 +50,9 @@ public class HomeController : BaseController
     {
         return View();
     }
+
+    public IActionResult Complaint()
+    {
+        return View();
+    }
 }

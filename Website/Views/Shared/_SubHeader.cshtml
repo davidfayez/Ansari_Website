@@ -3,12 +3,11 @@
 
     <nav class="magic-line-menu-pill menu_main">
         <ul id="menu">
-            <li><a href="index.html" class="active">Home</a></li>
-
+            <li><a asp-controller="Home" asp-action="Index" class="active">Home</a></li>
             <li>
-                <a href="#">About us</a>
+                <a asp-controller="Home" asp-action="AboutUs">About us</a>
                 <ul>
-                    <li><a href='Overview.html'>Overview </a></li>
+                    <li><a asp-controller="Home" asp-action="Overview">Overview </a></li>
                     <li><a href='Mission.html'>Our Mission & Vision & Values </a></li>
 
                     <li><a href='About.html'>Patient Right </a></li>
@@ -19,14 +18,14 @@
             </li>
 
             <li>
-                <a href="#">Specialties &  Centers</a>
+                <a asp-controller="Department" asp-action="Index">Specialties &  Centers</a>
                 <ul>
-                    <li><a href='Department.html'>Specialties </a></li>
-                    <li><a href='Department.html'>Centers</a></li>
+                    <li><a asp-controller="Department" asp-action="Index" asp-route-type="@Speciality.Department">Specialties </a></li>
+                    <li><a asp-controller="Department" asp-action="Index" asp-route-type="@Speciality.Center">Centers</a></li>
 
                 </ul>
             </li>
-            <li><a href="Doctors.html">Doctors</a></li>
+            <li><a asp-controller="Doctor" asp-action="Index">Doctors</a></li>
             <li><a href="Blog.html">Blogs</a></li>
             <li><a href="Events.html">Events</a></li>
             <li><a href="Offer.html">Offers</a></li>
