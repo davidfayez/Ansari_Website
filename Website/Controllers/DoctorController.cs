@@ -1,4 +1,5 @@
 ﻿using Ansari_Website.Application.Common.Interfaces;
+using Ansari_Website.Application.CPanel.Department.Queries.GetAll;
 using Ansari_Website.Application.CPanel.Doctor.Queries.GetAll;
 using Ansari_Website.Application.User.Queries.GetAll;
 using Ansari_Website.Domain.Enums;
@@ -20,8 +21,9 @@ public class DoctorController : BaseController
 
     public async Task<IActionResult> IndexAsync()
     {
-        //var doctors = await Mediator.Send(new GetAllUsersQuery { Type = (int)UserType.Doctor});
-        //return View(doctors);
-        return View();
+        var doctors = await Mediator.Send(new GetAllUsersQuery { Type = (int)UserType.Doctor});
+        ViewBag.Departments = await Mediator.Send(new GetAllDepartmentsQuery { Speciality = Speciality.Department });
+        return View(doctors);
+        //return View();
     }
 }

@@ -1,20 +1,15 @@
-﻿@{
+﻿@model List<PartnerVM>
+@{
     Layout = "_Layout";
 }
-
 <!-- ----------service-------------- -->
 <section class="service-sec">
   <div class="container">
-    <h2 class="text-center">WHY YOU CHOOSE Ansari Hospital!!
+        <h2 class="text-center">
+            @Global.WhyYouChoose @Global.AnsariHospital !!
 
     </h2>
-    <p class="p-service text-center">Lorem Ipsum is simply dummy text of the printing and
-      typesetting industry. Lorem Ipsum has been. </p>
-
-
-
-
-
+        <p class="p-service text-center">@Global.WhyYouChooseDescription </p>
   </div>
 
 </section>
@@ -24,16 +19,13 @@
 
 <div class="container">
 <ul class="ul-partner row">
-<li class="col-md-3"><a href="Partner-inner.html"><img src="~/images/Co1.png" /></a></li>
-<li class="col-md-3"><a href="Partner-inner.html"><img src="~/images/Co2.png" /></a></li>
-<li class="col-md-3"><a href="Partner-inner.html"><img src="~/images/Co3.png" /></a></li>
-<li class="col-md-3"><a href="Partner-inner.html"><img src="~/images/Co4.png" /></a></li>
-<li class="col-md-3"><a href="Partner-inner.html"><img src="~/images/Co1.png" /></a></li>
-<li class="col-md-3"><a href="Partner-inner.html"><img src="~/images/Co2.png" /></a></li>
-<li class="col-md-3"><a href="Partner-inner.html"><img src="~/images/Co3.png" /></a></li>
-<li class="col-md-3"><a href="Partner-inner.html"><img src="~/images/Co4.png" /></a></li>
-<li class="col-md-3"><a href="Partner-inner.html"><img src="~/images/Co4.png" /></a></li>
-
+    @if (Model != null)
+    {
+        foreach (var partner in Model)
+        {
+            <li class="col-md-3"><a asp-controller="Partner" asp-action="Details" asp-route-id="@partner.Id"><img src="~/images/Partners/@partner.ImageUrl" /></a></li>
+        }
+    }
 </ul>
 
 </div>

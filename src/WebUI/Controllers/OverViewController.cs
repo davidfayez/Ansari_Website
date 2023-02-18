@@ -48,7 +48,12 @@ public class OverViewController : BaseController
             if (isSuccess)
             {
                 if (OverViewImagePath != null)
-                    _fileHandler.UploadFile("OverViews", command.OverViewImage, "" /*command.OverViewCode.ToString()*/);
+                {
+                    var mainFolderPath = "E:\\Private\\Ansari_Website\\Website\\wwwroot\\images";
+                    _fileHandler.UploadFile("OverViews", command.OverViewImage);
+                    _fileHandler.UploadFile("OverViews", command.OverViewImage, mainFolderPath);
+
+                }
                 return RedirectToAction("Index");
             }
         }

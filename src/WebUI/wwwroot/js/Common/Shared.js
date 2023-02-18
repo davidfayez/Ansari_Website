@@ -80,6 +80,9 @@ $(document).ajaxError(function (event, jqXHR, ajaxSettings, thrownError) {
 
 function editCardItem(id, controller, action, modalId, updateDialogId) {
     //showLoader();
+    var e = window.event;
+    e.stopPropagation();
+    e.preventDefault();
     var data = { id: id };
     common.getPartialViewModal('/' + controller + '/' + action, data, modalId, updateDialogId);
     //hideLoader();

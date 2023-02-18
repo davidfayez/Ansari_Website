@@ -7,17 +7,21 @@ using Ansari_Website.Application.CPanel.Partner.Queries.GetById;
 using AutoMapper;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using Host = Microsoft.AspNetCore.Hosting;
 
 namespace Ansari_Website.WebUI.Controllers;
 public class PartnerController : BaseController
 {
     private readonly IMapper _mapper;
     private readonly IFileHandler _fileHandler;
+    private readonly IWebHostEnvironment _environment;
 
-    public PartnerController(IMapper mapper, IFileHandler fileHandler)
+
+    public PartnerController(IMapper mapper, IFileHandler fileHandler, IWebHostEnvironment environment)
     {
         _mapper = mapper;
         _fileHandler = fileHandler;
+        _environment = environment;
     }
 
     public async Task<IActionResult> IndexAsync()
@@ -38,7 +42,10 @@ public class PartnerController : BaseController
     {
         if (ModelState.IsValid)
         {
-            var PartnerImagePath = (command.PartnerImage != null) ? /*command.PartnerCode +*/ command.PartnerImage.FileName.Substring(command.PartnerImage.FileName.LastIndexOf('.')) : null;
+            var PartnerImagePath = (command.PartnerImage != null) ? command.PartnerImage.FileName : null;
+            //var PartnerImagePath = Path.Combine(_environment.WebRootPath, "images/Partners/", command.PartnerImage?.FileName);
+            var mainFolderPath = "E:\\Private\\Ansari_Website\\Website\\wwwroot\\images";
+
             if (PartnerImagePath != null)
                 command.ImageUrl = PartnerImagePath;
 
@@ -46,8 +53,11 @@ public class PartnerController : BaseController
             if (isSuccess)
             {
                 if (PartnerImagePath != null)
-                    _fileHandler.UploadFile("Partners", command.PartnerImage, "" /*command.PartnerCode.ToString()*/);
-                RedirectToAction("Index");
+                {
+                    _fileHandler.UploadFile("Partners", command.PartnerImage);
+                    _fileHandler.UploadFile("Partners", command.PartnerImage, mainFolderPath);
+                }
+                return RedirectToAction("Index");
             }
         }
         return View(command);

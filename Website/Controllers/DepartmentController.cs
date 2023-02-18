@@ -1,6 +1,7 @@
 ﻿using Ansari_Website.Application.CPanel.Department.Commands.Create;
 using Ansari_Website.Application.CPanel.Department.Queries.GetAll;
 using Ansari_Website.Application.CPanel.Department.Queries.GetById;
+using Ansari_Website.Domain.Enums;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 
@@ -15,29 +16,28 @@ public class DepartmentController : BaseController
     }
     public async Task<IActionResult> IndexAsync()
     {
-        //var Departments = await Mediator.Send(new GetAllDepartmentsQuery());
-
-        //return View(Departments);
-        return View();
+        var Departments = await Mediator.Send(new GetAllDepartmentsQuery());
+        return View(Departments);
+        //return View();
     }
 
     [HttpGet]
     public async Task<IActionResult> Details(int id)
     {
-        //if (id > 0)
-        //{
-        //    var Department = await Mediator.Send(new GetDepartmentByIdQuery
-        //    {
-        //        Id = id,
-        //    });
-        //    if (Department != null)
-        //    {
-        //        var result = _mapper.Map<DepartmentVM>(Department);
-        //        return View(result);
-        //    }
-        //}
+        if (id > 0)
+        {
+            ViewBag.Departments = await Mediator.Send(new GetAllDepartmentsQuery { Speciality = Speciality.Department });
 
-        //return View(new DepartmentVM());
-        return View();
+            var Department = await Mediator.Send(new GetDepartmentByIdQuery
+            {
+                Id = id,
+            });
+            if (Department != null)
+            {
+                var result = _mapper.Map<DepartmentVM>(Department);
+                return View(result);
+            }
+        }
+        return View(new DepartmentVM());
     }
 }

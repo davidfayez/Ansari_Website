@@ -18,7 +18,7 @@ public class GetAllUsersQueryHandler : IRequestHandler<GetAllUsersQuery, List<Us
     }
     public Task<List<UserVM>> Handle(GetAllUsersQuery request, CancellationToken cancellationToken)
     {
-        var Users = _applicationDbContext.AspNetUsers.Where(s => !s.IsDeleted);
+        var Users = _applicationDbContext.AspNetUsers.Include(s=>s.Department).Where(s => !s.IsDeleted);
         
         if(request.Type.HasValue)
             Users = Users.Where(s=>s.Type == request.Type.Value);

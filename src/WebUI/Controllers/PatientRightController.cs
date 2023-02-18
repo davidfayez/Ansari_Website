@@ -47,7 +47,11 @@ public class PatientRightController : BaseController
             if (isSuccess)
             {
                 if (PatientRightImagePath != null)
-                    _fileHandler.UploadFile("PatientRights", command.PatientRightImage, "" /*command.PatientRightCode.ToString()*/);
+                {
+                    var mainFolderPath = "E:\\Private\\Ansari_Website\\Website\\wwwroot\\images";
+                    _fileHandler.UploadFile("PatientRights", command.PatientRightImage);
+                    _fileHandler.UploadFile("PatientRights", command.PatientRightImage, mainFolderPath);
+                }
                 return RedirectToAction("Index");
             }
         }

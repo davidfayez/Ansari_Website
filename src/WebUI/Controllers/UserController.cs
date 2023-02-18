@@ -1,4 +1,8 @@
 ﻿using Ansari_Website.Application.Common.Interfaces;
+using Ansari_Website.Application.Common.Models;
+using Ansari_Website.Application.Common.Resources;
+using Ansari_Website.Application.CPanel.Blog.Commands.Create;
+using Ansari_Website.Application.CPanel.Department.Queries.GetAll;
 using Ansari_Website.Application.User.Commands.Create;
 using Ansari_Website.Application.User.Commands.Delete;
 using Ansari_Website.Application.User.Queries.GetAll;
@@ -8,6 +12,8 @@ using AutoMapper;
 using ERP.DAL.Domains;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 
 namespace Ansari_Website.WebUI.Controllers;
 public class UserController : BaseController
@@ -36,9 +42,11 @@ public class UserController : BaseController
     }
 
     [HttpGet]
-    public IActionResult Create()
+    public async Task<IActionResult> CreateAsync()
     {
-        return View(new CreateUpdateUserCommand() { IsNew=true});
+        var command = new CreateUpdateUserCommand() { IsNew = true };
+        await FillDDLAsync(command);
+        return View(command);
     }
 
     [HttpPost]
@@ -46,7 +54,9 @@ public class UserController : BaseController
     {
         if (ModelState.IsValid)
         {
-            var UserImagePath = (command.UserImage != null) ? command.Id + command.UserImage.FileName.Substring(command.UserImage.FileName.LastIndexOf('.')) : null;
+            //var UserImagePath = (command.UserImage != null) ? command.Id + command.UserImage.FileName.Substring(command.UserImage.FileName.LastIndexOf('.')) : null;
+            var UserImagePath = (command.UserImage != null) ? command.UserImage.FileName : null;
+
             if (UserImagePath != null)
                 command.Image = UserImagePath;
 
@@ -54,10 +64,15 @@ public class UserController : BaseController
             if (isSuccess)
             {
                 if (UserImagePath != null)
-                    _fileHandler.UploadFile("Users", command.UserImage,command.Id.ToString());
+                {
+                    var mainFolderPath = "E:\\Private\\Ansari_Website\\Website\\wwwroot\\images";
+                    _fileHandler.UploadFile("Users", command.UserImage);
+                    _fileHandler.UploadFile("Users", command.UserImage, mainFolderPath);
+                }
                 return RedirectToAction("Index");
             }
         }
+        await FillDDLAsync(command);
         return View(command);
 
     }
@@ -75,6 +90,7 @@ public class UserController : BaseController
             {
                 var result = _mapper.Map<CreateUpdateUserCommand>(User);
                 result.IsNew = false;
+                await FillDDLAsync(result);
                 return View("Create", result);
             }
         }
@@ -102,4 +118,13 @@ public class UserController : BaseController
         var Users = await Mediator.Send(new GetAllUsersQuery());
         return Json(Users);
     }
+
+    private async Task FillDDLAsync(CreateUpdateUserCommand command)
+    {
+        command.Departments.Add(new SelectListItem { Text = Global.SelectOne, Value = "" });
+        var Departments = await Mediator.Send(new GetAllDepartmentsQuery());
+        command.Departments.AddRange(Departments.Select(a => new SelectListItem { Text = a.TitleEn, Value = a.Id.ToString() }));
+
+    }
+
 }

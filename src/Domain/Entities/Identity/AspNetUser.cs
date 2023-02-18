@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using Ansari_Website.Domain.Entities.CPanel;
+using Microsoft.AspNetCore.Identity;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -24,5 +25,8 @@ namespace ERP.DAL.Domains
         public bool IsDeleted { get; set; }
         public DateTime CreationDate { get; set; } = DateTime.Now;   // تاريخ الادخال
         public DateTime LastModifiedDate { get; set; } = DateTime.Now;
+        public int? IsShow { get; set; }
+        public int? DepartmentId { get; set; }
+        public virtual Department Department { get; set; }
     }
 }

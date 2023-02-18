@@ -1,5 +1,8 @@
-﻿@{
+﻿@model PartnerVM
+@{
     Layout = "_Layout";
+    var Partners = ViewBag.Partners as List<PartnerVM>;
+
 }
 
 <div class="inner-div-depart">
@@ -7,17 +10,12 @@
 
     <div class="row">
         <div class="col-md-4">
-            <img src="~/images/Co1.png" style="width:100% ;" />
+            <img src="~/images/Partners/@Model.ImageUrl" style="width:100% ;" />
         </div>
         <div class="col-md-8">
-            <h3>Partner Title</h3>
+            <h3>@Model.TitleEn</h3>
             <p>
-                Al Ansari Hospital is characterized that we have great services,
-                including: Acute services such as the emergency
-                department, specialized trauma center, burn unit, surgery or
-                urgent care. It can then be supported by more specialized
-                units such as cardiology, intensive care unit, neuroscience,
-                obstetrics and gynecology.
+                @Model.DescriptionEn
             </p>
             <br />
         </div>
@@ -27,15 +25,13 @@
 <br />
 <div class="glider-contain">
     <div class="glider Partner-Slider">
-        <div><a href="Partner-inner.html"><img src="~/images/Co1.png" /></a></div>
-        <div><a href="Partner-inner.html"><img src="~/images/Co2.png" /></a></div>
-        <div><a href="Partner-inner.html"><img src="~/images/Co3.png" /></a></div>
-        <div><a href="Partner-inner.html"><img src="~/images/Co4.png" /></a></div>
-        <div><a href="Partner-inner.html"><img src="~/images/Co1.png" /></a></div>
-        <div><a href="Partner-inner.html"><img src="~/images/Co2.png" /></a></div>
-        <div><a href="Partner-inner.html"><img src="~/images/Co3.png" /></a></div>
-        <div><a href="Partner-inner.html"><img src="~/images/Co4.png" /></a></div>
-
+        @if (Partners != null)
+        {
+            foreach (var partner in Partners)
+            {
+                <div><a asp-action="Details" asp-route-id="@partner.Id"><img src="~/images/Partners/@partner.ImageUrl" /></a></div>
+            }
+        }
     </div>
 
     <button aria-label="Previous" class="glider-prev partner-prev">«</button>

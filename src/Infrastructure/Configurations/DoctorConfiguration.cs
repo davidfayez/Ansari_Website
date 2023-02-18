@@ -24,9 +24,9 @@ public class DoctorConfiguration : IEntityTypeConfiguration<Doctor>
                .IsRequired()
                .HasMaxLength(50);
 
-        builder.HasOne(s => s.Department)
-               .WithMany(s => s.Doctors)
-               .HasForeignKey(s => s.DepartmentId)
-               .OnDelete(DeleteBehavior.NoAction);
+        //builder.HasOne(s => s.Department)
+        //       .WithMany(s => s.Doctors)
+        //       .HasForeignKey(s => s.DepartmentId)
+        //       .OnDelete(DeleteBehavior.NoAction);
     }
 }

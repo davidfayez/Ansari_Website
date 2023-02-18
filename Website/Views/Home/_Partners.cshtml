@@ -1,0 +1,46 @@
+﻿@{
+    var Partners = ViewBag.Partners as List<PartnerVM>;
+}
+
+  <!-- ---------sponser------------ -->
+<section class="sponser-sec">
+    <div class="container">
+        <h2 class="h2-partner">@Global.OurTrustedPartners</h2>
+        <div class="glider-contain">
+            <div class="glider Partner-Slider">
+                @if (Partners != null)
+                {
+                    foreach (var partner in Partners)
+                    {
+                        <div><a asp-controller="Partner" asp-action="Details" asp-route-id="@partner.Id"><img src="~/images/Partners/@partner.ImageUrl" /></a></div>
+                    }
+                }
+            </div>
+
+            <button aria-label="Previous" class="glider-prev partner-prev">«</button>
+            <button aria-label="Next" class="glider-next partner-next">»</button>
+            <div role="tablist" class="dots"></div>
+        </div>
+        <br />
+        <br />
+
+        <div class="partner-Shape">
+            <div class="title-shape">
+                <h2>
+                    @Global.WhyYouChoose
+                    <strong>@Global.AnsariHospital !!</strong>
+                </h2>
+                <p>
+                    @Global.WhyYouChooseDescription
+                </p>
+                <a asp-controller="Partner" asp-action="Index" class="a-more">@Global.LearnMore <i class="fa-solid fa-angle-right"></i></a>
+            </div>
+
+            <img src="images/partner.png" class="partner-shape-img" />
+
+        </div>
+
+
+    </div>
+</section>
+

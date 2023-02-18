@@ -1,0 +1,102 @@
+﻿<!-- ---------Doctors------------ -->
+@{
+    var Doctors = ViewBag.Doctors as List<UserVM>;
+}
+<section class="doctor-sec">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <h2 class="h2-doctor">@Global.MeetOurExperts</h2>
+                <p>
+                    Lorem Ipsum is simply dummy text of the printing and
+                    typesetting industry. Lorem Ipsum has been.
+                </p>
+            </div>
+            <div class="col-lg-4 text-center">
+                <a asp-controller="Doctor" asp-action="Index" class="a-Appointment-sec"><i class="fa-solid fa-user-doctor"></i> View more doctors</a>
+            </div>
+
+        </div>
+        <br />
+
+        <div class="glider-contain">
+            <div class="glider Doctor-Slider">
+                @if (Doctors != null)
+                {
+                    @foreach (var doctor in Doctors)
+                    {
+                        <div>
+                            <a href="Doctors.html" class="item-slider-doctor">
+                                <div class="doctor-pic" style="background-image: url(/images/Users/@doctor.Image);"></div>
+                            
+                                <div class="doc-back">
+                            
+                                    <h6>@doctor.FullName</h6>
+                            
+                                    <p>@doctor.DepartmentName</p>
+                            
+                                    <i class="fa-solid fa-calendar-days"></i>
+                                    <div class="icon-doctor"><img src="~/images/spcialist-icon.png" /></div>
+                                </div>
+                            </a>
+                        </div>
+                    
+                    }
+                }
+                
+                
+            </div>
+
+            <button aria-label="Previous" class="glider-prev Doctor-prev">«</button>
+            <button aria-label="Next" class="glider-next Doctor-next">»</button>
+            <div role="tablist" class="dots"></div>
+        </div>
+
+
+
+        <!-- ----------griadient div-------------- -->
+        <div class="app-div">
+
+            <div class="word-div">
+                <div class="word-item item-1">
+                    <img src="images/person2.png" class="person-1 patient" />
+                    Hello! I'm so tired from
+                    5 days I have pain in my
+                    lower back.
+                </div>
+                <div class="word-item">
+                    <img src="images/person1.png" class="person-1" />
+                    Don't worry we will help
+                    you to get better, tell me
+                    more what you feel?
+                </div>
+            </div>
+            <div class="griadent-1">
+                <div class="griadent-2">
+                    <img src="images/mobile.png" class="mobile-img" />
+                    <div class="row">
+                        <div class="col-lg-4 ">
+                            <h2>
+                                @Global.Download  <br />
+                                <b>@Global.OurApplication</b>
+                            </h2>
+                            <ul class="apllication-ul">
+                                <li><a href="#"><img src="images/google.png" /></a></li>
+                                <li><a href="#"><img src="images/apple.png" /></a></li>
+
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+

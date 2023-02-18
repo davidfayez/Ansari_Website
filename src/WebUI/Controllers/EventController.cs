@@ -54,12 +54,15 @@ public class EventController : BaseController
                 }
 
             }
-
+            var mainFolderPath = "E:\\Private\\Ansari_Website\\Website\\wwwroot\\images";
             var isSuccess = await Mediator.Send(command);
             if (isSuccess)
             {
                 if (EventImagePath != null)
-                    _fileHandler.UploadFile("Events", command.EventImage,command.TitleEn.ToString());
+                {
+                    _fileHandler.UploadFile("Events", command.EventImage);
+                    _fileHandler.UploadFile("Events", command.EventImage, mainFolderPath);
+                }
 
                 foreach (var detail in command.EventDetailVMs)
                 {
@@ -67,7 +70,8 @@ public class EventController : BaseController
                     {
                         var eventDetailImagePath = (image != null) ? detail.TitleEn.ToString() + image.FileName : null;
                         if (eventDetailImagePath != null)
-                            _fileHandler.UploadFile("Events", image, (detail.TitleEn.ToString()) + image.FileName);
+                            _fileHandler.UploadFile("Events", image);
+                            _fileHandler.UploadFile("Events", image, mainFolderPath);
                     }
                     
                 }

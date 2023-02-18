@@ -232,6 +232,15 @@ namespace Ansari_Website.Application.Common.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Ansari Hospital.
+        /// </summary>
+        public static string AnsariHospital {
+            get {
+                return ResourceManager.GetString("AnsariHospital", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Approved.
         /// </summary>
         public static string Approved {
@@ -1213,6 +1222,15 @@ namespace Ansari_Website.Application.Common.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to healthcare programs.
+        /// </summary>
+        public static string HealthcarePrograms {
+            get {
+                return ResourceManager.GetString("HealthcarePrograms", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Home.
         /// </summary>
         public static string Home {
@@ -1357,6 +1375,15 @@ namespace Ansari_Website.Application.Common.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Learn More.
+        /// </summary>
+        public static string LearnMore {
+            get {
+                return ResourceManager.GetString("LearnMore", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Location.
         /// </summary>
         public static string Location {
@@ -1434,6 +1461,25 @@ namespace Ansari_Website.Application.Common.Resources {
         public static string MedicalType {
             get {
                 return ResourceManager.GetString("MedicalType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Meet our experts doctors.
+        /// </summary>
+        public static string MeetOurExperts {
+            get {
+                return ResourceManager.GetString("MeetOurExperts", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Lorem Ipsum is simply dummy text of the printing and
+        ///      typesetting industry. Lorem Ipsum has been..
+        /// </summary>
+        public static string MeetOurExpertsDescription {
+            get {
+                return ResourceManager.GetString("MeetOurExpertsDescription", resourceCulture);
             }
         }
         
@@ -1668,6 +1714,44 @@ namespace Ansari_Website.Application.Common.Resources {
         public static string OpeningBalances {
             get {
                 return ResourceManager.GetString("OpeningBalances", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Our Application.
+        /// </summary>
+        public static string OurApplication {
+            get {
+                return ResourceManager.GetString("OurApplication", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Our Specialties Centers.
+        /// </summary>
+        public static string OurSpecialtiesCenters {
+            get {
+                return ResourceManager.GetString("OurSpecialtiesCenters", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Lorem Ipsum is simply dummy
+        ///                    text of the printing and typesetting
+        ///                    industry. Lorem Ipsum has been..
+        /// </summary>
+        public static string OurSpecialtiesCentersDescription {
+            get {
+                return ResourceManager.GetString("OurSpecialtiesCentersDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Our Trusted Partners.
+        /// </summary>
+        public static string OurTrustedPartners {
+            get {
+                return ResourceManager.GetString("OurTrustedPartners", resourceCulture);
             }
         }
         
@@ -2032,6 +2116,25 @@ namespace Ansari_Website.Application.Common.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Services we provides.
+        /// </summary>
+        public static string ServicesWeProvides {
+            get {
+                return ResourceManager.GetString("ServicesWeProvides", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Lorem Ipsum is simply dummy text of the printing and
+        ///            typesetting industry. Lorem Ipsum has been..
+        /// </summary>
+        public static string ServicesWeProvidesDescription {
+            get {
+                return ResourceManager.GetString("ServicesWeProvidesDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Setting.
         /// </summary>
         public static string Setting {
@@ -2325,6 +2428,56 @@ namespace Ansari_Website.Application.Common.Resources {
         public static string WelcomeAnsari {
             get {
                 return ResourceManager.GetString("WelcomeAnsari", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to We offer complete.
+        /// </summary>
+        public static string WeOfferComplete {
+            get {
+                return ResourceManager.GetString("WeOfferComplete", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to We offer complete healthcare programs.
+        /// </summary>
+        public static string WeOfferHealthcarePrograms {
+            get {
+                return ResourceManager.GetString("WeOfferHealthcarePrograms", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Al Ansari Hospital is characterized that we have great services, including:
+        ///            Acute services such as the emergency department, specialized trauma center,
+        ///            burn unit, surgery or urgent care. It can then be supported by more specialized
+        ///            units such as cardiology, intensive care unit, neuroscience, obstetrics and gynecology..
+        /// </summary>
+        public static string WeOfferHealthcareProgramsDescription {
+            get {
+                return ResourceManager.GetString("WeOfferHealthcareProgramsDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to WHY YOU CHOOSE.
+        /// </summary>
+        public static string WhyYouChoose {
+            get {
+                return ResourceManager.GetString("WhyYouChoose", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Lorem Ipsum is simply dummy
+        ///                    text of the printing and typesetting
+        ///                    industry. Lorem Ipsum has been..
+        /// </summary>
+        public static string WhyYouChooseDescription {
+            get {
+                return ResourceManager.GetString("WhyYouChooseDescription", resourceCulture);
             }
         }
         

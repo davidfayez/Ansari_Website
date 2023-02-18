@@ -1,6 +1,59 @@
-﻿@{
+﻿@model List<UserVM>
+@{
     Layout = "_Layout";
+    var Departments = ViewBag.Departments as List<DepartmentVM>;
+
 }
+
+<!-- ----------service-------------- -->
+<section class="service-sec">
+  <div class="container">
+        <h2 class="text-center">
+            @Global.MeetOurExperts
+    </h2>
+    <p class="p-service text-center">
+            @Global.MeetOurExpertsDescription
+  </p>
+
+<div class="Service-back">
+
+  <div class="glider-contain">
+    <div class="glider Service-Slider">
+         @if (Departments != null)
+         {
+             @foreach (var department in Departments)
+             {
+                  <div>
+                      <div class="category-Filter">
+                          <input class="" type="radio" name="Filter" value="" id="Filter-@department.Id" checked>
+                          <label class="service-item " for="Filter-@department.Id">
+                              <div class="icon-service"><img src="~/images/service-icon.png" /></div>
+                               <h2>@department.TitleEn </h2>
+                              <p>
+                                  @department.DescriptionEn
+                              </p>
+                          </label>
+                      </div>
+                  </div>
+             }
+         }
+    
+    </div>
+  
+    <button aria-label="Previous"  class="glider-prev Service-prev">«</button>
+    <button aria-label="Next"  class="glider-next Service-next">»</button>
+    <div role="tablist" class="dots"></div>
+  </div>
+
+</div>
+      
+
+
+
+  </div>
+
+</section>
+
 
 <!-- ----------department-------------- -->
 <section class="Doctors-inner-sec">
@@ -11,131 +64,28 @@
     <br />
     <div class="container">
         <div class="row">
-            <div class="col-lg-3 col-md-4">
-                <div class="item-slider-doctor doctor-items">
-                    <div class="doctor-pic" style="background-image: url(~/images/doc1.png);"></div>
+            @if(Model != null)
+            {
+                foreach (var doctor in Model)
+                {
+                    <div class="col-lg-3 col-md-4">
+                        <div class="item-slider-doctor doctor-items">
+                            <div class="doctor-pic" style="background-image: url(/images/Users/@doctor.Image);"></div>
 
-                    <div class="doc-back">
+                            <div class="doc-back">
 
-                        <h6>Doctor Name</h6>
+                                <h6>@doctor.FullName</h6>
 
-                        <p>Audiologist</p>
+                                <p>@doctor.DepartmentName</p>
 
-                        <i class="fa-solid fa-calendar-days"></i>
-                        <div class="icon-doctor"><img src="~/images/spcialist-icon.png"></div>
+                                <i class="fa-solid fa-calendar-days"></i>
+                                <div class="icon-doctor"><img src="~/images/spcialist-icon.png"></div>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-
-            <div class="col-lg-3 col-md-4">
-                <div class="item-slider-doctor doctor-items">
-                    <div class="doctor-pic" style="background-image:url(~/images/doc1.png);"></div>
-
-                    <div class="doc-back">
-
-                        <h6>Doctor Name</h6>
-
-                        <p>Audiologist</p>
-
-                        <i class="fa-solid fa-calendar-days"></i>
-                        <div class="icon-doctor"><img src="~/images/spcialist-icon.png"></div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-4">
-                <div class="item-slider-doctor doctor-items">
-                    <div class="doctor-pic" style="background-image: url(~/images/doc1.png);"></div>
-
-                    <div class="doc-back">
-
-                        <h6>Doctor Name</h6>
-
-                        <p>Audiologist</p>
-
-                        <i class="fa-solid fa-calendar-days"></i>
-                        <div class="icon-doctor"><img src="~/images/spcialist-icon.png"></div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-3 col-md-4">
-                <div class="item-slider-doctor doctor-items">
-                    <div class="doctor-pic" style="background-image: url(~/images/doc1.png);"></div>
-
-                    <div class="doc-back">
-
-                        <h6>Doctor Name</h6>
-
-                        <p>Audiologist</p>
-
-                        <i class="fa-solid fa-calendar-days"></i>
-                        <div class="icon-doctor"><img src="~/images/spcialist-icon.png"></div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-4">
-                <div class="item-slider-doctor doctor-items">
-                    <div class="doctor-pic" style="background-image: url(~/images/doc1.png);"></div>
-
-                    <div class="doc-back">
-
-                        <h6>Doctor Name</h6>
-
-                        <p>Audiologist</p>
-
-                        <i class="fa-solid fa-calendar-days"></i>
-                        <div class="icon-doctor"><img src="~/images/spcialist-icon.png"></div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-3 col-md-4">
-                <div class="item-slider-doctor doctor-items">
-                    <div class="doctor-pic" style="background-image: url(~/images/doc1.png);"></div>
-
-                    <div class="doc-back">
-
-                        <h6>Doctor Name</h6>
-
-                        <p>Audiologist</p>
-
-                        <i class="fa-solid fa-calendar-days"></i>
-                        <div class="icon-doctor"><img src="~/images/spcialist-icon.png"></div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-4">
-                <div class="item-slider-doctor doctor-items">
-                    <div class="doctor-pic" style="background-image: url(~/images/doc1.png);"></div>
-
-                    <div class="doc-back">
-
-                        <h6>Doctor Name</h6>
-
-                        <p>Audiologist</p>
-
-                        <i class="fa-solid fa-calendar-days"></i>
-                        <div class="icon-doctor"><img src="~/images/spcialist-icon.png"></div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-3 col-md-4">
-                <div class="item-slider-doctor doctor-items">
-                    <div class="doctor-pic" style="background-image: url(~/images/doc1.png);"></div>
-
-                    <div class="doc-back">
-
-                        <h6>Doctor Name</h6>
-
-                        <p>Audiologist</p>
-
-                        <i class="fa-solid fa-calendar-days"></i>
-                        <div class="icon-doctor"><img src="~/images/spcialist-icon.png"></div>
-                    </div>
-                </div>
-            </div>
-
+                }
+            }
+            
         </div>
 
     </div>

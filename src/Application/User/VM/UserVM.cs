@@ -12,13 +12,15 @@ public class UserVM : IdentityUser, IMapFrom<AspNetUser>
 {
     public void Mapping(Profile profile)
     {
-        profile.CreateMap<UserVM, AspNetUser>()
+        profile.CreateMap<AspNetUser, UserVM>()
+                .ForMember(des => des.DepartmentName, opt => opt.MapFrom(src => src.Department.TitleEn))
                .ReverseMap();
     }
     public string FullName { get; set; }
     public string Image { get; set; }
     public string SurName { get; set; }
     public string Password { get; set; }
+    public string DepartmentName { get; set; }
     public bool IsDeveloper { get; set; }
     public int? Type { get; set; }
     public bool IsDeleted { get; set; }

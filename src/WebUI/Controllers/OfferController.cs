@@ -49,7 +49,11 @@ public class OfferController : BaseController
             if (isSuccess)
             {
                 if (OfferImagePath != null)
-                    _fileHandler.UploadFile("Offers", command.OfferImage, "" /*command.OfferCode.ToString()*/);
+                {
+                    var mainFolderPath = "E:\\Private\\Ansari_Website\\Website\\wwwroot\\images";
+                    _fileHandler.UploadFile("Offers", command.OfferImage);
+                    _fileHandler.UploadFile("Offers", command.OfferImage, mainFolderPath);
+                }
                 return RedirectToAction("Index");
             }
         }

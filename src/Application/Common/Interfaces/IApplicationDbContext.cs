@@ -53,6 +53,7 @@ public interface IApplicationDbContext
     DbSet<TestiminieDetail> TestiminieDetails { get; }
     DbSet<FuturePlan> FuturePlans { get; }
     DbSet<Slider> Sliders { get; }
+    DbSet<Survey> Surveys { get; }
 
     #endregion
 

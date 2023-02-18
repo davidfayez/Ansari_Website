@@ -64,6 +64,15 @@
                 </div>
             </div>
             
+            <div class="col-md-6">
+                <div class="input-sys-wrapper">
+                    <label>@Optic.Speciality</label>
+                    <select asp-for="DepartmentId" asp-items="Model.Departments" class="form-control input-sys">
+                        
+                    </select>
+                    <span asp-validation-for="Type" class="text-danger"></span>
+                </div>
+            </div>
         </div>
 
         <ul class=" ul-file">

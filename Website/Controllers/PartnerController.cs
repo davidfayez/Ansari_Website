@@ -20,27 +20,28 @@ public class PartnerController : BaseController
 
     public async Task<IActionResult> IndexAsync()
     {
-        //var Partner = await Mediator.Send(new GetAllPartnersQuery());
-        //return View(Partner);
-        return View();
+        var Partner = await Mediator.Send(new GetAllPartnersQuery());
+        return View(Partner);
+        //return View();
     }
 
     [HttpGet]
     public async Task<IActionResult> Details(int id)
     {
-        //var partnerVM = new PartnerVM();
-        //if (id > 0)
-        //{
-        //    var Partner = await Mediator.Send(new GetPartnerByIdQuery
-        //    {
-        //        Id = id,
-        //    });
-        //    if (Partner != null)
-        //    {
-        //        partnerVM = _mapper.Map<PartnerVM>(Partner);
-        //    }
-        //}
-        //return View(partnerVM);
-        return View();
+        var partnerVM = new PartnerVM();
+        if (id > 0)
+        {
+            var Partner = await Mediator.Send(new GetPartnerByIdQuery
+            {
+                Id = id,
+            });
+            if (Partner != null)
+            {
+                partnerVM = _mapper.Map<PartnerVM>(Partner);
+            }
+        }
+        ViewBag.Partners = await Mediator.Send(new GetAllPartnersQuery());
+        return View(partnerVM);
+        //return View();
     }
 }

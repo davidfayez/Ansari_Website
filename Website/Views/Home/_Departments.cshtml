@@ -1,0 +1,47 @@
+﻿@{
+    var Departments = ViewBag.Departments as List<DepartmentVM>;
+}
+
+<!-- ----------service-------------- -->
+<section class="service-sec">
+    <div class="container">
+        <h2 class="text-center">@Global.ServicesWeProvides</h2>
+        <p class="p-service text-center">
+            @Global.ServicesWeProvidesDescription
+              <a asp-controller="Department" asp-action="Index" class="more-service">@Global.LearnMore <i class="fa-solid fa-angle-right"></i></a>
+        </p>
+
+        <div class="Service-back">
+            <div class="glider-contain">
+                <div class="glider Service-Slider">
+                    @if(Departments != null)
+                    {
+                        @foreach (var department in Departments)
+                        {
+                            <div>
+                                <a asp-controller="Department" asp-action="Index" asp-route-id="@department.Id" class="service-item">
+                                    <div class="icon-service"><img src="~/images/service-icon.png" /></div>
+                                    <h2>@department.TitleEn</h2>
+                                    <p>
+                                        @department.DescriptionEn
+                                    </p>
+                                </a>
+
+                            </div>
+                        }
+                    }
+                    
+                </div>
+
+                <button aria-label="Previous" class="glider-prev Service-prev">«</button>
+                <button aria-label="Next" class="glider-next Service-next">»</button>
+                <div role="tablist" class="dots"></div>
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+

@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
 using ERP.DAL.Domains;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace Ansari_Website.Application.User.Commands.Create;
 public class CreateUpdateUserCommand : IdentityUser, IRequest<bool>, IMapFrom<AspNetUser>
@@ -24,6 +25,10 @@ public class CreateUpdateUserCommand : IdentityUser, IRequest<bool>, IMapFrom<As
     public DateTime CreationDate { get; set; } = DateTime.Now;   // تاريخ الادخال
     public DateTime LastModifiedDate { get; set; } = DateTime.Now;
     public IFormFile UserImage { get; set; }
+    public int? IsShow { get; set; }
+    public int? DepartmentId { get; set; }
+    public List<SelectListItem> Departments { get; set; } = new();
+
     public void Mapping(Profile profile)
     {
         profile.CreateMap<AspNetUser, CreateUpdateUserCommand>()

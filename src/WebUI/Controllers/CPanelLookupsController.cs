@@ -92,7 +92,7 @@ public class CPanelLookupsController : BaseController
     }
 
 
-    [HttpGet]
+    //[HttpGet]
     public async Task<IActionResult> GetOurValueById(int id)
     {
         var command = new CreateUpdateOurValueCommand();

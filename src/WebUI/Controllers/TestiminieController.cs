@@ -53,17 +53,24 @@ public class TestiminieController : BaseController
             }
 
             var res = await Mediator.Send(command);
+            var mainFolderPath = "E:\\Private\\Ansari_Website\\Website\\wwwroot\\images";
 
             if (res > 0)
             {
                 if (TestiminieImagePath != null)
-                    _fileHandler.UploadFile("Testiminies", command.TestiminieImage, command.TitleEn.ToString());
+                {
+                    _fileHandler.UploadFile("Testiminies", command.TestiminieImage);
+                    _fileHandler.UploadFile("Testiminies", command.TestiminieImage, mainFolderPath);
+                }
 
                 foreach (var detail in command.TestiminieDetailVMs)
                 {
                     var TestiminieDetailImagePath = (detail.TestiminieDetailImage != null) ? detail.TitleEn.ToString() + detail.TestiminieDetailImage.FileName.Substring(detail.TestiminieDetailImage.FileName.LastIndexOf('.')) : null;
                     if (TestiminieDetailImagePath != null)
-                        _fileHandler.UploadFile("Testiminies", detail.TestiminieDetailImage, detail.TitleEn.ToString());
+                    {
+                        _fileHandler.UploadFile("Testiminies", detail.TestiminieDetailImage);
+                        _fileHandler.UploadFile("Testiminies", detail.TestiminieDetailImage, mainFolderPath);
+                    }
                 }
 
                 return RedirectToAction("Index");
