@@ -41,7 +41,8 @@ public class TestiminieController : BaseController
     {
         if (ModelState.IsValid)
         {
-            var TestiminieImagePath = (command.TestiminieImage != null) ? command.TitleEn.ToString() + command.TestiminieImage.FileName.Substring(command.TestiminieImage.FileName.LastIndexOf('.')) : null;
+            var TestiminieImagePath = (command.TestiminieImage != null) ? command.TestiminieImage.FileName : null;
+
             if (TestiminieImagePath != null)
                 command.ImageUrl = TestiminieImagePath;
 

@@ -1,10 +1,12 @@
 ﻿using Ansari_Website.Application.Common.Interfaces;
+using Ansari_Website.Application.CPanel.Complaint.Commands.Create;
 using Ansari_Website.Application.CPanel.Department.Queries.GetAll;
 using Ansari_Website.Application.CPanel.Partner.Queries.GetAll;
 using Ansari_Website.Application.User.Queries.GetAll;
 using Ansari_Website.Domain.Enums;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 
 namespace Website.Controllers;
 public class HomeController : BaseController
@@ -51,8 +53,10 @@ public class HomeController : BaseController
         return View();
     }
 
-    public IActionResult Complaint()
+    public async Task<IActionResult> ComplaintAsync(CreateComplaintCommand command)
     {
-        return View();
+        var isSuccess = await Mediator.Send(command);
+        ViewBag.IsSuccess = isSuccess;  
+        return PartialView("_ComplaintForm",new CreateComplaintCommand());
     }
 }

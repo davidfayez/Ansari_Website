@@ -44,7 +44,7 @@
                 <span>Attach Photo</span>
 
                 <div class="item-file-div image-upload">
-                    @if(Model != null && Model.Id > 0)
+                    @if (Model != null && Model.Id > 0 && Model.ImageUrl != null)
                     {
                         <img class="item-file-div" src="~/images/Partners/@Model.ImageUrl" id="partnerImage">
                         <input type="hidden" asp-for="ImageUrl">

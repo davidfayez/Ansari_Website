@@ -252,6 +252,9 @@
   <data name="CharacterAndNumbers" xml:space="preserve">
     <value>Character And Numbers</value>
   </data>
+  <data name="Choose" xml:space="preserve">
+    <value>Choose</value>
+  </data>
   <data name="Cities" xml:space="preserve">
     <value>Cities</value>
   </data>

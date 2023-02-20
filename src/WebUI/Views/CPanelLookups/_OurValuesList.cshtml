@@ -1,5 +1,14 @@
 ﻿@model List<OurValueVM>
 
+@*@if(Model != null && Model.Count >0 )
+{
+    for(int i=0;i<Model.Count;i++)
+    {
+        <input type="hidden" name="OurValueVMs[@i].TitleEn" value="@Model[i].TitleEn"/>
+        <input type="hidden" name="OurValueVMs[@i].TitleAr" value="@Model[i].TitleAr" />
+        <input type="hidden" name="OurValueVMs[@i].IconName" value="@Model[i].IconName" />
+    }
+}*@
 
 <table id="table_id" class=" table-pages" style="font-size:13px;">
     <thead>

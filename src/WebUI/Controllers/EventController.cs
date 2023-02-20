@@ -40,7 +40,8 @@ public class EventController : BaseController
     {
         if (ModelState.IsValid)
         {
-            var EventImagePath = (command.EventImage != null) ? command.TitleEn + command.EventImage.FileName.Substring(command.EventImage.FileName.LastIndexOf('.')) : null;
+            var EventImagePath = (command.EventImage != null) ? command.EventImage.FileName : null;
+
             if (EventImagePath != null)
                 command.ImageUrl = EventImagePath;
 

@@ -70,7 +70,17 @@
             <li>
                 <span>@Optic.AttachPhoto</span>
                 <div class="item-file-div image-upload">
-                    <img class="item-file-div" src="~/images/rheumatism.jpg" id="patientRightImage">
+                    
+                    @if (Model != null && Model.Id > 0 && Model.ImageUrl != null)
+                    {
+                        <img class="item-file-div" src="~/images/PatientRights/@Model.ImageUrl" id="patientRightImage">
+                        <input type="hidden" asp-for="ImageUrl">
+                    }
+                    else
+                    {
+                        <img class="item-file-div" src="~/images/rheumatism.jpg" id="patientRightImage">
+                    }
+                    
                     <label for="PatientRightImage"><i class="fa-regular fa-pen-to-square"></i></label>
                     <input type="file" asp-for="PatientRightImage" accept=".gif, .jpg, .png" onchange="setImage(this)" style="display:none;">
                 </div>

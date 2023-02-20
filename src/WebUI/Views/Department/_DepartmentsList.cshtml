@@ -1,39 +1,17 @@
 ﻿@model List<DepartmentVM>
 
-    <table id="table_id" class=" table-pages table table-bordered" style="font-size:13px;">
-        <thead>
-            <tr>
-                <th>Title Name english</th>
-                <th>Title Name Arabic </th>
-                <th></th>
-            </tr>
-        </thead>
-        <tbody>
-
-        @if (Model != null)
-        {
-            foreach (var department in Model)
-            {
-                <tr>
-                    <td> @department.TitleEn </td>
-                    <td> @department.TitleAr </td>
-
-                    <td>
-                        <a asp-controller="Department" asp-action="Edit" asp-route-id="@department.Id" class="btn btn-warning btn-sm"><i class="fa-regular fa-pen-to-square"></i></a>
-                        <button class="btn btn-dark btn-sm"><i class="fa-regular fa-eye"></i></button>
-                        <form asp-controller="Department" asp-action="Delete" asp-route-id="@department.Id"
-                              data-ajax="true"
-                              data-ajax-method="POST"
-                              data-ajax-update="#department-list"
-                              data-ajax-mode="replace" autocomplete="off">
-
-                            <button type="submit" class="btn btn-danger btn-sm"><i class="fas fa-times"></i></button>
-
-                        </form>
-
-                    </td>
-                </tr>
-            }
-        }
-        </tbody>
-    </table>
+@if (Model != null)
+{
+    foreach (var Department in Model)
+    {
+        var id = "Department" + Department.Id;
+        <tr id="@id">
+            <td>@Department.TitleEn</td>
+            <td>@Department.TitleAr</td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@Department.Id" class="btn btn-warning btn-sm"><i class="fa-regular fa-pen-to-square"></i></a>
+                <button class="btn btn-danger btn-sm" onclick="deleteDetail('Department','Delete',@Department.Id,'@id')"><i class="fas fa-times"></i></button>
+            </td>
+        </tr>
+    }
+}

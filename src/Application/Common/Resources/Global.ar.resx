@@ -252,6 +252,9 @@
   <data name="CharacterAndNumbers" xml:space="preserve">
     <value>أعداد و أحرف</value>
   </data>
+  <data name="Choose" xml:space="preserve">
+    <value>اختر</value>
+  </data>
   <data name="Cities" xml:space="preserve">
     <value>المدن</value>
   </data>

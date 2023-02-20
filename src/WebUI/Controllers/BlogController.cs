@@ -1,4 +1,5 @@
-﻿using Ansari_Website.Application.Common.Resources;
+﻿using Ansari_Website.Application.Common.Interfaces;
+using Ansari_Website.Application.Common.Resources;
 using Ansari_Website.Application.CPanel.Blog.Commands.Create;
 using Ansari_Website.Application.CPanel.Blog.Commands.Delete;
 using Ansari_Website.Application.CPanel.Blog.Queries.GetAll;
@@ -14,10 +15,12 @@ namespace Ansari_Website.WebUI.Controllers;
 public class BlogController : BaseController
 {
     private readonly IMapper _mapper;
+    private readonly IFileHandler _fileHandler;
 
-    public BlogController(IMapper mapper)
+    public BlogController(IMapper mapper, IFileHandler fileHandler)
     {
         _mapper = mapper;
+        _fileHandler = fileHandler;
     }
     public async Task<IActionResult> Index()
     {
@@ -38,10 +41,22 @@ public class BlogController : BaseController
     {
         if (ModelState.IsValid)
         {
+            var BlogImagePath = (command.BlogImage != null) ? command.BlogImage.FileName : null;
+
+            if (BlogImagePath != null)
+                command.ImageUrl = BlogImagePath;
+
             var isSuccess = await Mediator.Send(command);
             if (isSuccess)
             {
-                var Blogs = await Mediator.Send(new GetAllBlogsQuery());
+                if (BlogImagePath != null)
+                {
+                    var mainFolderPath = "E:\\Private\\Ansari_Website\\Website\\wwwroot\\images";
+                    _fileHandler.UploadFile("Blogs", command.BlogImage);
+                    _fileHandler.UploadFile("Blogs", command.BlogImage, mainFolderPath);
+                }
+
+                //var Blogs = await Mediator.Send(new GetAllBlogsQuery());
                 ViewBag.IsSuccess = isSuccess;
                 return RedirectToAction("Index");
             }

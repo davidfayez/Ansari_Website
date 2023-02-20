@@ -1,4 +1,5 @@
-﻿using Ansari_Website.Application.CPanel.FuturePlan.Commands.Create;
+﻿using Ansari_Website.Application.Common.Interfaces;
+using Ansari_Website.Application.CPanel.FuturePlan.Commands.Create;
 using Ansari_Website.Application.CPanel.FuturePlan.Commands.Delete;
 using Ansari_Website.Application.CPanel.FuturePlan.Queries.GetAll;
 using Ansari_Website.Application.CPanel.FuturePlan.Queries.GetById;
@@ -9,10 +10,12 @@ namespace Ansari_Website.WebUI.Controllers;
 public class FuturePlanController : BaseController
 {
     private readonly IMapper _mapper;
+    private readonly IFileHandler _fileHandler;
 
-    public FuturePlanController(IMapper mapper)
+    public FuturePlanController(IMapper mapper, IFileHandler fileHandler)
     {
         _mapper = mapper;
+        _fileHandler = fileHandler;
     }
     public async Task<IActionResult> IndexAsync()
     {
@@ -32,8 +35,22 @@ public class FuturePlanController : BaseController
     {
         if (ModelState.IsValid)
         {
+            var FuturePlanImage = (command.FuturePlanImage != null) ? command.FuturePlanImage.FileName : null;
+
+            if (FuturePlanImage != null)
+                command.ImageUrl = FuturePlanImage;
+
             var isSuccess = await Mediator.Send(command);
-            return isSuccess ? RedirectToAction("Index") : View(command);
+            if (isSuccess)
+            {
+                if (FuturePlanImage != null)
+                {
+                    var mainFolderPath = "E:\\Private\\Ansari_Website\\Website\\wwwroot\\images";
+                    _fileHandler.UploadFile("FuturePlans", command.FuturePlanImage);
+                    _fileHandler.UploadFile("FuturePlans", command.FuturePlanImage, mainFolderPath);
+                }
+                return RedirectToAction("Index");
+            }
         }
         return View(command);
 

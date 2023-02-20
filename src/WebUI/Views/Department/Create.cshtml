@@ -79,7 +79,17 @@
             <li>
                 <span>    Attach File <b>(Hint: W.1200px) </b></span>
                 <div class="item-file-div image-upload">
-                    <img class="item-file-div" src="~/images/rheumatism.jpg" id="departmentImage">
+                    
+                    @if (Model != null && Model.Id > 0 && Model.ImageUrl != null)
+                    {
+                        <img class="item-file-div" src="~/images/Departments/@Model.ImageUrl" id="departmentImage">
+                        <input type="hidden" asp-for="ImageUrl">
+                    }
+                    else
+                    {
+                        <img class="item-file-div" src="~/images/rheumatism.jpg" id="departmentImage">
+                    }
+                    
                     <label for="DepartmentImage"><i class="fa-regular fa-pen-to-square"></i></label>
                     <input type="file" asp-for="DepartmentImage" accept=".gif, .jpg, .png" onchange="setImage(this)" style="display:none;">
                 </div>

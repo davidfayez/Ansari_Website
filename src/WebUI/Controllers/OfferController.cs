@@ -41,7 +41,9 @@ public class OfferController : BaseController
     {
         if (ModelState.IsValid)
         {
-            var OfferImagePath = (command.OfferImage != null) ? /*command.OfferCode +*/ command.OfferImage.FileName.Substring(command.OfferImage.FileName.LastIndexOf('.')) : null;
+            //var OfferImagePath = (command.OfferImage != null) ? /*command.OfferCode +*/ command.OfferImage.FileName.Substring(command.OfferImage.FileName.LastIndexOf('.')) : null;
+            var OfferImagePath = (command.OfferImage != null) ? command.OfferImage.FileName : null;
+
             if (OfferImagePath != null)
                 command.ImageUrl = OfferImagePath;
 

@@ -1,4 +1,5 @@
-﻿using Ansari_Website.Application.CPanel.Slider.Commands.Create;
+﻿using Ansari_Website.Application.Common.Interfaces;
+using Ansari_Website.Application.CPanel.Slider.Commands.Create;
 using Ansari_Website.Application.CPanel.Slider.Commands.Delete;
 using Ansari_Website.Application.CPanel.Slider.Queries.GetAll;
 using Ansari_Website.Application.CPanel.Slider.Queries.GetById;
@@ -9,10 +10,12 @@ namespace Ansari_Website.WebUI.Controllers;
 public class SliderController : BaseController
 {
     private readonly IMapper _mapper;
+    private readonly IFileHandler _fileHandler;
 
-    public SliderController(IMapper mapper)
+    public SliderController(IMapper mapper, IFileHandler fileHandler)
     {
         _mapper = mapper;
+        _fileHandler = fileHandler;
     }
     public async Task<IActionResult> IndexAsync()
     {
@@ -32,8 +35,21 @@ public class SliderController : BaseController
     {
         if (ModelState.IsValid)
         {
+            var SliderImage = (command.SliderImage != null) ? command.SliderImage.FileName : null;
+            if (SliderImage != null)
+                command.ImageUrl = SliderImage;
+
             var isSuccess = await Mediator.Send(command);
-            return isSuccess ? RedirectToAction("Index") : View(command);
+            if (isSuccess)
+            {
+                if (SliderImage != null)
+                {
+                    var mainFolderPath = "E:\\Private\\Ansari_Website\\Website\\wwwroot\\images";
+                    _fileHandler.UploadFile("Users", command.SliderImage);
+                    _fileHandler.UploadFile("Users", command.SliderImage, mainFolderPath);
+                }
+                return RedirectToAction("Index");
+            }
         }
         return View(command);
 

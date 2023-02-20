@@ -1,0 +1,25 @@
+﻿@model int
+
+<form asp-controller="Department" asp-action="Filter"
+          data-ajax="true"
+          data-ajax-method="POST"
+          data-ajax-update="#departmentsList"
+          data-ajax-mode="replace" autocomplete="off">
+
+          <div class="col-md-3">
+                <div class="input-sys-wrapper">
+                    <label>@Optic.Speciality</label>
+                    <select name="type" class="form-control input-sys">
+                        <option value="0">@Global.Choose</option>
+                        <option value="@((int)Speciality.Center)">@Optic.Center</option>
+                        <option value="@((int)Speciality.Department)">@Optic.Department</option>
+                    </select>
+                </div>
+
+            </div>
+           <div class="col-md-3">
+               <button type="submit" class="btn-primary">Filter</button>
+
+           </div>
+
+    </form>

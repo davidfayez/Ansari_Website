@@ -5,16 +5,24 @@ $(document).on('click', '#btnSubmitOurValue', function () {
     var TitleEnDetail = $("#TitleEnDetail").val();
     var TitleArDetail = $("#TitleArDetail").val();
     var IconNameDetail = $("#IconNameDetail").val();
+    var OurValuesCount = parseInt($("#OurValuesCount").val());
+    debugger;
     var count = $('#table_id tr').length;
-    var num = count;
+    if (OurValuesCount == 0)
+        OurValuesCount = 1
 
+    if (OurValuesCount <= count)
+        OurValuesCount = count
+
+    var num = count;
+    debugger;
     if (TitleEnDetail != "" && TitleArDetail != "") {
         $("#TitleEnDetailValidation").hide();
         $("#TitleArDetailValidation").hide();
 
-        $("#AboutUsDiv").append(`<input type="hidden" name="OurValueVMs[` + (count - 1) + `].TitleEn"  value=` + TitleEnDetail + `>`);
-        $("#AboutUsDiv").append(`<input type="hidden" name="OurValueVMs[` + (count - 1) + `].TitleAr"  value=` + TitleArDetail + `>`);
-        $("#AboutUsDiv").append(`<input type="hidden" name="OurValueVMs[` + (count - 1) + `].IconName"  value=` + IconNameDetail + `>`);
+        $("#AboutUsDiv").append(`<input type="hidden" name="OurValueVMs[` + (count - OurValuesCount) + `].TitleEn"  value="` + TitleEnDetail + `">`);
+        $("#AboutUsDiv").append(`<input type="hidden" name="OurValueVMs[` + (count - OurValuesCount) + `].TitleAr"  value="` + TitleArDetail + `">`);
+        $("#AboutUsDiv").append(`<input type="hidden" name="OurValueVMs[` + (count - OurValuesCount) + `].IconName"  value="` + IconNameDetail + `">`);
 
         $("#table_id").append(`<tr><td>` + TitleEnDetail + `</td><td>` + TitleArDetail + `</td><td>` + IconNameDetail + `</td>
                                    <td> 

@@ -2,13 +2,14 @@
 
 @{
     Layout = "_Layout";
+    var OurValuesCount = Model.OurValueVMs.Count;
 }
 
 <div class="inner-page">
     <form asp-controller="CPanelLookups" asp-action="AboutUs" method="post" class="row" enctype="multipart/form-data">
         <input type="hidden" asp-for="Id" />
         <div class="accordion" id="AboutUsDiv">
-   
+            <input type="hidden" id="OurValuesCount" value="@OurValuesCount" />
             <div class="accordion-item">
                 <h2 class="accordion-header" id="headingOne">
                     <button class="accordion-button  accordion-setting collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
@@ -123,7 +124,7 @@
                         <br />
                         <button type="button" class="btn-add-table" style="min-width: 130px; margin-bottom: 20px;" onclick="editCardItem('0','CPanelLookups', 'NewOurValue','EditModal', 'editOfferModals' )"><i class="fa-solid fa-plus"></i> @Global.AddNew</button>
 
-                        <div id="ourValue-list">
+                        <div id="ourValues-list">
                             <partial name="_OurValuesList" model="Model.OurValueVMs" />
                         </div>
 

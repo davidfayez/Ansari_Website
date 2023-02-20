@@ -1,10 +1,10 @@
-﻿
+﻿@model CreateComplaintCommand
 <div class="modal fade" id="Complaint-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-small-big modal-dialog-centered" style="max-width: 500px;">
         <div class="modal-content modal-border">
 
             <div class="modal-body">
-                <div class="inner-filter">
+                <form asp-controller="Home" asp-action="Complaint" class="inner-filter" id="ComplaintForm">
                     <h3> Customer complaint</h3>
                     <a class="close-btn" data-bs-dismiss="modal"><i class="fa-solid fa-xmark"></i></a>
                     <p class="p-pop">Ansari hospital complaint form</p>
@@ -13,25 +13,61 @@
 
                     <br />
 
-                    <input class="input-modal" placeholder="Phone Number" />
+                    <input type="text" asp-for="PhoneNumber" class="input-modal" placeholder="Phone Number" />
+                    <span id="PhoneNumberValidation" class="text-danger" style="display:none">@ErrorMessages.Required</span>
 
                     <br />
-                    <textarea class="textarea-modal" placeholder="Leave your message..."></textarea>
+                    <textarea asp-for="ComplaintMessage" class="textarea-modal" placeholder="Leave your message..."></textarea>
+                    <span id="ComplaintMessageValidation" class="text-danger" style="display:none">@ErrorMessages.Required</span>
+
                     <br /><br />
 
 
                     <div class="text-end" style="margin-top: 10px;">
-                        <button class="btn-done-modal">Submit</button>
-                        <button class="btn-cancel-modal" data-bs-dismiss="modal">Cancel</button>
-
+                        <button type="button" class="btn-done-modal" id="btnSubmit">Submit</button>
+                        <button class="btn-cancel-modal" data-bs-dismiss="modal" id="close">Cancel</button>
                     </div>
-
-
-
-                </div>
+                </form>
 
             </div>
 
         </div>
     </div>
 </div>
+<script asp-append-version="true">
+
+    $('#btnSubmit').on('click', function (e) {
+        var ComplaintMessage = $("#ComplaintMessage").val();
+        var PhoneNumber = $("#PhoneNumber").val();
+        
+        if (ComplaintMessage == "")
+            $("#ComplaintMessageValidation").show();
+        else
+            $("#ComplaintMessageValidation").hide();
+
+        if (PhoneNumber == "")
+            $("#PhoneNumberValidation").show();
+        else
+            $("#PhoneNumberValidation").hide();
+
+        if (ComplaintMessage == "" || PhoneNumber == "") {
+            e.stopPropagation();
+            e.preventDefault();
+        }
+        else {
+            $('#ComplaintForm').submit();
+        }
+
+
+    });
+
+</script>
+@if (ViewBag.IsSuccess != null && (bool)ViewBag.IsSuccess == true)
+{
+    <script asp-append-version="true" src="~/js/jquery-2.1.1.js"></script>
+    <script asp-append-version="true" src="~/js/bootstrap.min.js"></script>
+    <script asp-append-version="true">
+        $('#close').click();
+    </script>
+
+}

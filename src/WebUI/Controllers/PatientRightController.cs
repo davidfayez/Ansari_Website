@@ -39,7 +39,8 @@ public class PatientRightController : BaseController
     {
         if (ModelState.IsValid)
         {
-            var PatientRightImagePath = (command.PatientRightImage != null) ? /*command.PatientRightCode +*/ command.PatientRightImage.FileName.Substring(command.PatientRightImage.FileName.LastIndexOf('.')) : null;
+            var PatientRightImagePath = (command.PatientRightImage != null) ? command.PatientRightImage.FileName : null;
+
             if (PatientRightImagePath != null)
                 command.ImageUrl = PatientRightImagePath;
 

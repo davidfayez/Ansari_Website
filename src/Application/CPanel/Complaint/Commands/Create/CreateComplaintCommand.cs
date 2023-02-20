@@ -35,13 +35,10 @@ public class CreateComplaintCommandHandler : IRequestHandler<CreateComplaintComm
     {
         try
         {
+            var ComplaintNo = _applicationDbContext.Complaints.Count();
             var Complaint = _mapper.Map<DB.Complaint>(request);
-
-            if (request.Id > 0)
-                _applicationDbContext.Complaints.Update(Complaint);
-            else
-                _applicationDbContext.Complaints.Add(Complaint);
-
+            Complaint.ComplaintNo = ComplaintNo + 1;
+            _applicationDbContext.Complaints.Add(Complaint);
             await _applicationDbContext.SaveChangesAsync(cancellationToken);
             return await Task.FromResult(true);
         }

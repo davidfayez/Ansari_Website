@@ -40,7 +40,8 @@ public class OverViewController : BaseController
     {
         if (ModelState.IsValid)
         {
-            var OverViewImagePath = (command.OverViewImage != null) ? /*command.OverViewCode +*/ command.OverViewImage.FileName.Substring(command.OverViewImage.FileName.LastIndexOf('.')) : null;
+            var OverViewImagePath = (command.OverViewImage != null) ? command.OverViewImage.FileName : null;
+
             if (OverViewImagePath != null)
                 command.ImageUrl = OverViewImagePath;
 
