@@ -53,10 +53,12 @@ public class HomeController : BaseController
         return View();
     }
 
+    [HttpPost]
     public async Task<IActionResult> ComplaintAsync(CreateComplaintCommand command)
     {
         var isSuccess = await Mediator.Send(command);
-        ViewBag.IsSuccess = isSuccess;  
-        return PartialView("_ComplaintForm",new CreateComplaintCommand());
+        ViewBag.IsSuccess = isSuccess;
+        //return PartialView("_ComplaintForm",new CreateComplaintCommand());
+        return Json(isSuccess);
     }
 }
