@@ -8,7 +8,7 @@
                 <a asp-controller="Home" asp-action="AboutUs">About us</a>
                 <ul>
                     <li><a asp-controller="Home" asp-action="Overview">Overview </a></li>
-                    <li><a href='Mission.html'>Our Mission & Vision & Values </a></li>
+                    <li><a asp-controller="Home" asp-action="Mission">Our Mission & Vision & Values </a></li>
 
                     <li><a href='About.html'>Patient Right </a></li>
                     <li><a href='Department.html'>Future Plan </a></li>
@@ -22,13 +22,12 @@
                 <ul>
                     <li><a asp-controller="Department" asp-action="Index" asp-route-type="@Speciality.Department">Specialties </a></li>
                     <li><a asp-controller="Department" asp-action="Index" asp-route-type="@Speciality.Center">Centers</a></li>
-
                 </ul>
             </li>
             <li><a asp-controller="Doctor" asp-action="Index">Doctors</a></li>
-            <li><a href="Blog.html">Blogs</a></li>
-            <li><a href="Events.html">Events</a></li>
-            <li><a href="Offer.html">Offers</a></li>
+            <li><a asp-controller="Blog" asp-action="Index">Blogs</a></li>
+            <li><a asp-controller="Event" asp-action="Index">Events</a></li>
+            <li><a asp-controller="Offer" asp-action="Index">Offers</a></li>
             <li><a href="Contact.html">Contact us</a></li>
         </ul>
     </nav>

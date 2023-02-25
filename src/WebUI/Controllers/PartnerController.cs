@@ -4,6 +4,8 @@ using Ansari_Website.Application.CPanel.Partner.Commands.Create;
 using Ansari_Website.Application.CPanel.Partner.Commands.Delete;
 using Ansari_Website.Application.CPanel.Partner.Queries.GetAll;
 using Ansari_Website.Application.CPanel.Partner.Queries.GetById;
+using Ansari_Website.Domain.Enums;
+using Ansari_Website.Infrastructure.Common;
 using AutoMapper;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;

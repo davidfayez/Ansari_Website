@@ -21,14 +21,27 @@
             {
                 foreach(var complaint in Model)
                 {
-                   <tr>
-                
-                       <td>@complaint.CreationDate.ToShortDateString() </td>
-                       <td>@complaint.ComplaintNo </td>
-                       <td>@complaint.PhoneNumber </td>
-                        <td><a asp-controller="Complaint" asp-action="Edit" asp-route-id="@complaint.Id" class="btn btn-dark btn-sm"><i class="fa-regular fa-eye"></i></a></td>
+                    var isSeen = complaint.IsSeen;
+                    @if (!complaint.IsSeen)
+                    {
+                        <tr style="background-color:red">
+                            <td>@complaint.CreationDate.ToShortDateString() </td>
+                            <td>@complaint.ComplaintNo </td>
+                            <td>@complaint.PhoneNumber </td>
+                            <td><a asp-controller="Complaint" asp-action="Edit" asp-route-id="@complaint.Id" class="btn btn-dark btn-sm"><i class="fa-regular fa-eye"></i></a></td>
+                        </tr>
+                    }
+                    else
+                    {
+                        <tr>
+                            <td>@complaint.CreationDate.ToShortDateString() </td>
+                            <td>@complaint.ComplaintNo </td>
+                            <td>@complaint.PhoneNumber </td>
+                            <td><a asp-controller="Complaint" asp-action="Edit" asp-route-id="@complaint.Id" class="btn btn-dark btn-sm"><i class="fa-regular fa-eye"></i></a></td>
                    
-                   </tr>
+                        </tr>
+                    }
+                    
                 }
             }
             

@@ -17,6 +17,7 @@ public class TestiminieDetailVM : IMapFrom<DB.TestiminieDetail>
     public int Id { get; set; }
     public string? TitleAr { get; set; }
     public string? TitleEn { get; set; }
+    public string? Title { get; set; }
     public string? ImageUrl { get; set; }
     public int TestiminieId { get; set; }
     public IFormFile TestiminieDetailImage { get; set; }

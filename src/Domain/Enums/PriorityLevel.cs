@@ -17,5 +17,6 @@ public enum Speciality
 public enum UserType
 {
     User = 1,
-    Doctor = 2
+    Doctor = 2,
+    Visitor = 3
 }

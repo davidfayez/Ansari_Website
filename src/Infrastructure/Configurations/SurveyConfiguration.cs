@@ -16,14 +16,8 @@ public class SurveyConfiguration : IEntityTypeConfiguration<Survey>
 
         builder.Property(s => s.Id).UseIdentityColumn();
 
-        builder.Property(s => s.QuestionId)
-               .IsRequired();
-
-        builder.Property(s => s.AnswerId)
-               .IsRequired();
-
         builder.Property(s => s.Feedback)
-               .HasMaxLength(450);
+               .HasMaxLength(750);
 
         builder.Property(s => s.Rate)
                .HasMaxLength(5);

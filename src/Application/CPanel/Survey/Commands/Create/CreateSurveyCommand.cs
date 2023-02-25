@@ -4,21 +4,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Ansari_Website.Application.CPanel.Survey.Commands.Create;
+using Ansari_Website.Application.CPanel.Survey.Queries.GetAll;
 
 namespace Ansari_Website.Application.CPanel.Survey.Commands.Create;
 public class CreateUpdateSurveyCommand : AuditableEntity, IRequest<bool>, IMapFrom<DB.Survey>
 {
     public int Id { get; set; }
-    public int QuestionId { get; set; }
-    public int AnswerId { get; set; }
     public int? Rate { get; set; }
     public bool IsViewed { get; set; }
     public string? Feedback { get; set; }
+    public List<SurveyQuestionAnswerVM> SurveyQuestionAnswerVMs { get; set; }
     public void Mapping(Profile profile)
     {
-        profile.CreateMap<DB.Survey, CreateUpdateSurveyCommand>()
-               .ReverseMap();
+        profile.CreateMap<CreateUpdateSurveyCommand, DB.Survey>()
+                .ForMember(des => des.SurveyQuestionAnswers, opt => opt.MapFrom(src => src.SurveyQuestionAnswerVMs));
 
+        profile.CreateMap<SurveyQuestionAnswerVM,DB.SurveyQuestionAnswer>();
+               
     }
 }
 

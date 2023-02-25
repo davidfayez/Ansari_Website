@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Ansari_Website.Domain.Entities.CPanel;
 
 namespace Ansari_Website.Application.CPanel.PatientRight.VM;
 public class PatientRightVM : AuditableEntity, IMapFrom<DB.PatientRight>
@@ -20,4 +21,8 @@ public class PatientRightVM : AuditableEntity, IMapFrom<DB.PatientRight>
     public string? DescriptionEn { get; set; }
     public string? ImageUrl { get; set; }
     public string? AltImage { get; set; }
+    public string? Title { get; set; }
+    public string? Description { get; set; }
+    public List<PatientRightDetailVM> PatientRightDetailVMs { get; set; }
+
 }

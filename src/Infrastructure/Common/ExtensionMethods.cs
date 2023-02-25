@@ -206,6 +206,12 @@ public static class ExtensionMethods
         return User.Claims.FirstOrDefault(x => x.Type == ClaimTypes.Name)?.Value;
     }
 
+    public static string GetUserAvatar(this ClaimsPrincipal User)
+    {
+        return User.Claims.FirstOrDefault(x => x.Type == "Avatar")?.Value;
+    }
+
+
     public static int GetUserType(this ClaimsPrincipal User)
     {
         return Convert.ToInt32(User.Claims.FirstOrDefault(x => x.Type == "Type")?.Value);

@@ -2,6 +2,8 @@
 using Ansari_Website.Application.CPanel.Blog.Queries.GetAll;
 using Ansari_Website.Application.CPanel.Blog.Queries.GetById;
 using Ansari_Website.Application.CPanel.Blog.VM;
+using Ansari_Website.Domain.Enums;
+using Ansari_Website.Infrastructure.Common;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 
@@ -16,12 +18,16 @@ public class BlogController : BaseController
     }
     public async Task<IActionResult> Index()
     {
+        ViewBag.IsArabic = Request.GetLangIdFromHeader() == (int)ELanguages.AR;
+
         var Blogs = await Mediator.Send(new GetAllBlogsQuery());
         return View(Blogs);
     }
 
     public async Task<IActionResult> Details(int id)
     {
+        ViewBag.IsArabic = Request.GetLangIdFromHeader() == (int)ELanguages.AR;
+
         if (id > 0)
         {
             var Blog = await Mediator.Send(new GetBlogByIdQuery
@@ -31,6 +37,9 @@ public class BlogController : BaseController
             if (Blog != null)
             {
                 var result = _mapper.Map<BlogVM>(Blog);
+                result.Title = (Request.GetLangIdFromHeader() == (int)ELanguages.EN) ? result.TitleEn : result.TitleAr;
+                result.Description = (Request.GetLangIdFromHeader() == (int)ELanguages.EN) ? result.DescriptionEn : result.DescriptionAr;
+                ViewBag.Blogs = await Mediator.Send(new GetAllBlogsQuery());
                 return View(result);
             }
         }

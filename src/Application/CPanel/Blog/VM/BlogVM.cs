@@ -19,6 +19,8 @@ public class BlogVM : AuditableEntity, IMapFrom<DB.Blog>
     public string? DescriptionEn { get; set; }
     public string? ImageUrl { get; set; }
     public string? AltImage { get; set; }
-    public string DepartmentName { get; private set; }
-    public string DoctorName { get; private set; }
+    public string? DepartmentName { get; set; }
+    public string DoctorName { get; set; }
+    public string? Title { get; set; }
+    public string? Description { get; set; }
 }

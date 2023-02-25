@@ -1,5 +1,47 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@model List<SurveyVM>
 @{
+    Layout = "_Layout";
 }
+<div class="inner-page">
+
+    <table id="table_id" class=" table-pages table-pages" style="font-size:13px;">
+        <thead>
+            <tr>
+                <th>Creation Date</th>
+                <th>Survey No</th>
+                <th>Rate </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model != null)
+            {
+                foreach (var survey in Model)
+                {
+                    var isSeen = survey.IsViewed;
+                    @if (!survey.IsViewed)
+                    {
+                        <tr style="background-color:red">
+                            <td>@survey.CreationDate.ToShortDateString() </td>
+                            <td>@survey.Id </td>
+                            <td>@survey.Rate </td>
+                            <td><a asp-controller="Survey" asp-action="Details" asp-route-id="@survey.Id" class="btn btn-dark btn-sm"><i class="fa-regular fa-eye"></i></a></td>
+                        </tr>
+                    }
+                    else
+                    {
+                        <tr>
+                            <td>@survey.CreationDate.ToShortDateString() </td>
+                            <td>@survey.Id </td>
+                            <td>@survey.Rate </td>
+                            <td><a asp-controller="Survey" asp-action="Details" asp-route-id="@survey.Id" class="btn btn-dark btn-sm"><i class="fa-regular fa-eye"></i></a></td>
+
+                        </tr>
+                    }
+
+                }
+            }
+
+        </tbody>
+    </table>
+</div>

@@ -531,6 +531,9 @@
   <data name="InProgress" xml:space="preserve">
     <value>قيد العمل</value>
   </data>
+  <data name="InvalidLogin" xml:space="preserve">
+    <value>خطا اثناء تسجيل الدخول</value>
+  </data>
   <data name="IsAfterOrEqualTo" xml:space="preserve">
     <value>بعد أو يساوي</value>
   </data>
@@ -746,6 +749,9 @@
   </data>
   <data name="References" xml:space="preserve">
     <value>المراجع</value>
+  </data>
+  <data name="Register" xml:space="preserve">
+    <value>تسجيل الدخول</value>
   </data>
   <data name="Reject" xml:space="preserve">
     <value>رفض</value>

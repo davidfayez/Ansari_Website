@@ -1,4 +1,5 @@
-﻿using Ansari_Website.Application.CPanel.Complaint.Queries.GetAll;
+﻿using Ansari_Website.Application.CPanel.Complaint.Commands.IsSeen;
+using Ansari_Website.Application.CPanel.Complaint.Queries.GetAll;
 using Ansari_Website.Application.CPanel.Complaint.Queries.GetById;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
@@ -25,12 +26,17 @@ public class ComplaintController : BaseController
     {
         if (id > 0)
         {
+            //isSeenTrue
             var Complaint = await Mediator.Send(new GetComplaintByIdQuery
             {
                 Id = id,
             });
             if (Complaint != null)
             {
+                var IsSeen = await Mediator.Send(new IsComplaintSeenCommand
+                {
+                    Id = id,
+                });
                 var result = _mapper.Map<ComplaintVM>(Complaint);
                 return View(result);
             }

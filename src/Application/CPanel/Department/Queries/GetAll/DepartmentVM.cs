@@ -18,4 +18,6 @@ public class DepartmentVM : AuditableEntity, IMapFrom<DB.Department>
     public string? TitleEn { get; set; }
     public string? DescriptionAr { get; set; }
     public string? DescriptionEn { get; set; }
+    public string? Title { get; set; }
+    public string? Description { get; set; }
 }

@@ -1,0 +1,63 @@
+﻿@model LoginVM
+
+@{
+    Layout = "_LoginLayout";
+}
+
+<div class="Login-container">
+    <div class="row">
+        <div class="col-lg-5">
+
+            <div class="reg-div">
+
+                <img src="images/logo.png" class="logo-login" />
+                <div class="text-center">
+                    <h3>Login</h3>
+                </div>
+
+
+
+                <label> Phone Number</label>
+                <div class="input-wrapper">
+                    <i class="fa-solid fa-phone"></i>
+                    <input placeholder="Phone Number">
+                </div>
+
+
+                <label> Password</label>
+                <div class="input-wrapper ">
+                    <i class="fa-solid fa-eye" id="show-pass"></i>
+                    <input type="password" class="two-padding input-pass" placeholder=" password ">
+
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <div class="form-check forget-password">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                            <label class="form-check-label" for="flexCheckChecked">
+                                Remember me
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-6 text-end"><a class="forget-password" href="Forget-password.html">Forgot your password?</a></div>
+
+                </div>
+
+                <div class="text-center">
+                    <a href="U-Info.html" class="login-btn">Login As Patient</a>
+                    <a href="U-Dates-Doc.html" class="login-btn" style="background-color:#c7171a ;">Login As Doctor</a>
+
+                </div>
+
+
+
+                <p class="p-account">Don't have an account ? <a href="Register.html"> Register</a></p>
+
+            </div>
+        </div>
+    </div>
+
+    <img src="images/login.png" class="login-pic" />
+
+</div>
+

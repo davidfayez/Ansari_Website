@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Ansari_Website.Application.User.VM;
 using ERP.DAL.Domains;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
@@ -23,6 +24,9 @@ public class CreateUpdateVisitorCommand : IdentityUser, IRequest<bool>, IMapFrom
     public void Mapping(Profile profile)
     {
         profile.CreateMap<AspNetUser, CreateUpdateVisitorCommand>()
+               .ReverseMap();
+
+        profile.CreateMap<UserVM, CreateUpdateVisitorCommand>()
                .ReverseMap();
     }
 }

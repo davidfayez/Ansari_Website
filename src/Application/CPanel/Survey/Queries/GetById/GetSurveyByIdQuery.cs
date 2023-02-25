@@ -21,7 +21,11 @@ public class GetSurveyByIdQueryHandler : IRequestHandler<GetSurveyByIdQuery, DB.
     }
     public Task<DB.Survey> Handle(GetSurveyByIdQuery request, CancellationToken cancellationToken)
     {
-        var Survey = _applicationDbContext.Surveys.FirstOrDefault(s => s.Id == request.Id && !s.IsDeleted);
+        var Survey = _applicationDbContext.Surveys.Include(s=>s.SurveyQuestionAnswers)
+            .ThenInclude(s=>s.Question)
+            .Include(s => s.SurveyQuestionAnswers)
+            .ThenInclude(s => s.Answer)
+            .FirstOrDefault(s => s.Id == request.Id && !s.IsDeleted);
 
         if (Survey != null)
             return Task.FromResult(Survey);

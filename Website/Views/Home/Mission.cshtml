@@ -1,7 +1,8 @@
-﻿@{
+﻿@model CreateUpdateAboutUsCommand
+@{
+    var IsArabic = (bool)ViewBag.IsArabic;
     Layout = "_Layout";
 }
-
 <section class="mission-sec">
     <div class="container">
         <div class="row">
@@ -10,11 +11,9 @@
                     <li class="col-md-6">
                         <div class="item-about-inner">
                             <div class="img-item-about-inner"><i class="fa-solid fa-bullseye"></i></div>
-                            <h4>Our Mission</h4>
+                            <h4>@(IsArabic ? Model.MissionTitleAr : Model.MissionTitleEn)</h4>
                             <p>
-                                when an unknown printer
-                                took a galley of type
-                                and scrambled.
+                                @(IsArabic ? Model.MissionDescriptionAr : Model.MissionDescriptionEn)
                             </p>
                         </div>
                     </li>
@@ -22,11 +21,9 @@
                     <li class="col-md-6">
                         <div class="item-about-inner">
                             <div class="img-item-about-inner"><i class="fa-solid fa-city"></i></div>
-                            <h4>Our Vision</h4>
+                            <h4>@(IsArabic ? Model.VisionTitleAr : Model.VisionTitleEn)</h4>
                             <p>
-                                when an unknown printer
-                                took a galley of type
-                                and scrambled.
+                                @(IsArabic ? Model.VisionTitleAr : Model.VisionTitleEn)
                             </p>
                         </div>
                     </li>
@@ -44,58 +41,24 @@
 
             <div class="col-lg-3 col-md-4">
 
-
                 <div class="item-about-inner">
                     <div class="img-item-about-inner"><i class="fa-solid fa-chart-gantt"></i></div>
                     <h4>Our Values</h4>
 
                     <ul class="ul-about">
 
+                        @foreach (var item in Model.OurValueVMs)
+                        {
+                             <li>
+                                @(IsArabic ? item.TitleAr : item.TitleEn)
 
-                        <li>
-                            ● Assuring an environment of
-                            understanding, transparency,
-                            and honesty.
-                        </li>
-                        <li>
-                            ● Looking for personal and
-                            professional growth.
-                        </li>
-                        <li>
-                            ● Allowing patients to be involved
-                            in their care.
-                        </li>
-                        <li>
-                            ● Never giving less quality than
-                            the patient’s expectation.
-                        </li>
-                        <li>
-                            ● Serving the community with
-                            proper health education.
-                        </li>
-                        <li>
-                            ● Admitting mistakes and
-                            learning from experiences.
-                        </li>
-                        <li>
-                            ● Recognizing patients' trust
-                            in our skills and expertise.
-                        </li>
-                        <li>
-                            ● Interested in what is new that
-                            will better serve our patients.
-                        </li>
-
+                             </li>
+                        }
 
                     </ul>
 
                 </div>
             </div>
-
-
-
-
-
         </div>
     </div>
 

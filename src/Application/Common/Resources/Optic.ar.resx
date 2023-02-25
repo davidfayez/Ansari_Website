@@ -129,6 +129,9 @@
   <data name="AltImage" xml:space="preserve">
     <value>بديل الصورة</value>
   </data>
+  <data name="AnsariSurvey" xml:space="preserve">
+    <value>رايك عن أداء مستشفى الأنصاري</value>
+  </data>
   <data name="AttachPhoto" xml:space="preserve">
     <value>ارفق صوره</value>
   </data>
@@ -270,6 +273,9 @@
   <data name="PriceBefore" xml:space="preserve">
     <value>السعر قبل</value>
   </data>
+  <data name="RateUs" xml:space="preserve">
+    <value>كم تقيمنا؟</value>
+  </data>
   <data name="Register" xml:space="preserve">
     <value>تسجيل</value>
   </data>
@@ -284,6 +290,9 @@
   </data>
   <data name="ResendCode" xml:space="preserve">
     <value>أعد إرسال الرمز</value>
+  </data>
+  <data name="ShareFeedback" xml:space="preserve">
+    <value>يرجى مشاركة ملاحظاتك معنا.</value>
   </data>
   <data name="SocialStatus" xml:space="preserve">
     <value>الحالة الاجتماعية</value>

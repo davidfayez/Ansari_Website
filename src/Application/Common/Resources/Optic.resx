@@ -129,6 +129,9 @@
   <data name="AltImage" xml:space="preserve">
     <value>Alt Image</value>
   </data>
+  <data name="AnsariSurvey" xml:space="preserve">
+    <value>Ansari hospital performance survey</value>
+  </data>
   <data name="AttachPhoto" xml:space="preserve">
     <value>Attach Photo</value>
   </data>
@@ -273,6 +276,9 @@
   <data name="PriceBefore" xml:space="preserve">
     <value>Price Before</value>
   </data>
+  <data name="RateUs" xml:space="preserve">
+    <value>How much do you rate us ?</value>
+  </data>
   <data name="Register" xml:space="preserve">
     <value>Register</value>
   </data>
@@ -287,6 +293,9 @@
   </data>
   <data name="ResendCode" xml:space="preserve">
     <value>Resend Code</value>
+  </data>
+  <data name="ShareFeedback" xml:space="preserve">
+    <value>Please share your feedback with us.</value>
   </data>
   <data name="SocialStatus" xml:space="preserve">
     <value>Social Status</value>

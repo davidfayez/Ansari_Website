@@ -11,8 +11,8 @@ namespace Ansari_Website.Application.User.VM;
 public class LoginVM
 {
     [Required(ErrorMessageResourceType = typeof(Application.Common.Resources.ErrorMessages), ErrorMessageResourceName = "Required")]
-    [Display(Name = "UserName", ResourceType = typeof(Application.Common.Resources.Global))]
-    public string UserName { get; set; }
+    [Display(Name = "Email", ResourceType = typeof(Application.Common.Resources.Global))]
+    public string Email { get; set; }
 
     [DataType(DataType.Password)]
     [Required(ErrorMessageResourceType = typeof(Application.Common.Resources.ErrorMessages), ErrorMessageResourceName = "Required")]

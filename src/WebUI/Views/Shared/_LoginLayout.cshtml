@@ -1,0 +1,96 @@
+﻿<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="icon" href="~/images/five.png">
+  <link rel="stylesheet" href="~/css/Font.css">
+
+  <link rel="stylesheet" href="~/css/bootstrap.min.css">
+  <!--    ..............add this file with arabic only................-->
+  <!-- <link rel="stylesheet" href="css/bootstrap.rtl.min.css"> -->
+
+  <link rel="stylesheet" href="~/css/bootstrap-icons.css">
+  <link rel="stylesheet" type="text/css" href="~/css/all.min.css">
+  <link rel="stylesheet" href="~/css/main.css">
+  <link rel="stylesheet" href="~/css/Menu.css">
+  <link rel="stylesheet" href="~/css/lavazi.css">
+
+  <link rel="stylesheet" href="~/css/btn-effect.css">
+  <link rel="stylesheet" href="~/css/Slider.css">
+  <link rel="stylesheet" href="~/css/glider.css">
+  <link rel="stylesheet" href="~/css/starRating.css">
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
+
+
+  <!-- ............for login only........... -->
+  <link rel="stylesheet" href="~/css/Login.css">
+
+
+  <link rel="stylesheet" href="~/css/media.css">
+
+
+
+
+  <title>Hospital Wesite</title>
+
+
+</head>
+
+<body>
+
+
+<div class="container">
+     @RenderBody()
+</div>
+
+
+
+
+<a id="hb-gotop" ><img src="images/arrow-up.png" alt=""></a>
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="~/js/jquery-2.1.1.js"></script>
+  <script src="~/js/popper.min.js"></script>
+  <script src="~/js/bootstrap.min.js"></script>
+
+
+
+  <script src="~/js/Slider.js"></script>
+
+  <script src="~/js/my-js.js"></script>
+  <script src="~/js/anime.min.js"></script>
+
+<script src="~/js/glider.min.js"></script>
+<script src="~/js/glider-optimize.js"></script>
+<script src="~/js/star-rating.js"></script>
+<script>
+  $(document).ready(function(){
+  $('.rating-star').ffrating({isStar:true,readonly:true,showSelectedRating:true,min:1,max:5});
+  $('.add-star').ffrating({isStar:true,readonly:false,showSelectedRating:true,min:1,max:5});
+
+ });
+</script>
+
+<script src="~/js/lavazi.jquery.js" type='text/javascript'></script>
+
+
+<script type="text/javascript">
+$(document).ready(function() {
+    $('.menu_main>ul').lavazi({background:"rgba(255,255,255,.2)",transitionTime:500,theme:'simple',height:60,mode:'belowBar',opacity: .3});
+});
+</script>
+<script src="~/js/jquery.slicknav.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+    $('#menu').slicknav();
+});
+</script>
+
+
+</body>
+
+</html>

@@ -1,23 +1,29 @@
-﻿<div class="Login-container">
+﻿@model LoginViaEmailCommand
+
+@{
+    Layout = "_LayoutLogin";
+}
+
+<div class="Login-container">
     <div class="row">
         <div class="col-lg-5">
-            <div class="reg-div">
+            <form asp-action="Login" class="reg-div">
 
                 <img src="~/images/logo.png" class="logo-login" />
                 <div class="text-center">
                     <h3>@Global.Login</h3>
                 </div>
 
-                <label>@Optic.PhoneNumber</label>
+                <label>@Global.Email</label>
                 <div class="input-wrapper">
                     <i class="fa-solid fa-phone"></i>
-                    <input placeholder="Phone Number">
+                    <input type="text" asp-for="Email" placeholder="@Global.Email">
                 </div>
 
                 <label>@Optic.Password</label>
                 <div class="input-wrapper ">
                     <i class="fa-solid fa-eye" id="show-pass"></i>
-                    <input type="password" class="two-padding input-pass" placeholder=" password ">
+                    <input type="password" asp-for="Password" class="two-padding input-pass" placeholder=" password ">
 
                 </div>
                 <div class="row">
@@ -34,13 +40,12 @@
                 </div>
 
                 <div class="text-center">
-                    <a href="U-Info.html" class="login-btn">Login As Patient</a>
-                    <a href="U-Dates-Doc.html" class="login-btn" style="background-color:#c7171a ;">Login As Doctor</a>
+                    <button type="submit" class="login-btn">@Global.Login</button>
                 </div>
 
                 <p class="p-account">@Optic.DoNotHaveAccount <a asp-controller="Account" asp-action="Register"> @Optic.Register</a></p>
 
-            </div>
+            </form>
         </div>
     </div>
 

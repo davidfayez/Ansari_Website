@@ -21,4 +21,6 @@ public class SliderVM : AuditableEntity, IMapFrom<DB.Slider>
     public string? DescriptionEn { get; set; }
     public string? ImageUrl { get; set; }
     public string? AltImage { get; set; }
+    public string? Title { get; set; }
+    public string? Description { get; set; }
 }

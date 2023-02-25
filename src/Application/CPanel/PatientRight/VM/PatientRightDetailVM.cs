@@ -15,5 +15,6 @@ public class PatientRightDetailVM : IMapFrom<DB.PatientRightDetail>
     public int Id { get; set; }
     public string? TitleAr { get; set; }
     public string? TitleEn { get; set; }
+    public string? Title { get; set; }
     public int PatientRightId { get; set; }
 }

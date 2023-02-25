@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Ansari_Website.Application.CPanel.Offer.Queries.GetAll;
+using Ansari_Website.Domain.Entities.CPanel;
 
 namespace Ansari_Website.Application.CPanel.OverView.VM;
 public class OverViewVM : AuditableEntity, IMapFrom<DB.OverView>
@@ -11,6 +12,7 @@ public class OverViewVM : AuditableEntity, IMapFrom<DB.OverView>
     public void Mapping(Profile profile)
     {
         profile.CreateMap<OverViewVM, DB.OverView>()
+                .ForMember(des => des.OverViewDetails, opt => opt.MapFrom(src => src.OverViewDetailVMs))
                .ReverseMap();
     }
     public int Id { get; set; }
@@ -21,4 +23,8 @@ public class OverViewVM : AuditableEntity, IMapFrom<DB.OverView>
     public string? DescriptionEn { get; set; }
     public string? ImageUrl { get; set; }
     public string? AltImage { get; set; }
+    public string? Title { get; set; }
+    public string? Description { get; set; }
+    public List<OverViewDetailVM> OverViewDetailVMs { get; set; }
+
 }

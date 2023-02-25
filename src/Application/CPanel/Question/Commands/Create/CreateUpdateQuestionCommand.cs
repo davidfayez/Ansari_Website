@@ -67,7 +67,12 @@ public class CreateUpdateQuestionCommandHandler : IRequestHandler<CreateUpdateQu
 
             }
             else
+            {
+                request.AnswersId.ForEach(s => QuestionAnswers.Add(new QuestionAnswer { AnswerId = s }));
+                Question.QuestionAnswers = QuestionAnswers;
                 _applicationDbContext.Questions.Add(Question);
+
+            }
 
             await _applicationDbContext.SaveChangesAsync(cancellationToken);
 

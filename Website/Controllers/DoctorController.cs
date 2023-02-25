@@ -3,6 +3,7 @@ using Ansari_Website.Application.CPanel.Department.Queries.GetAll;
 using Ansari_Website.Application.CPanel.Doctor.Queries.GetAll;
 using Ansari_Website.Application.User.Queries.GetAll;
 using Ansari_Website.Domain.Enums;
+using Ansari_Website.Infrastructure.Common;
 using AutoMapper;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
@@ -21,6 +22,8 @@ public class DoctorController : BaseController
 
     public async Task<IActionResult> IndexAsync()
     {
+        ViewBag.IsArabic = Request.GetLangIdFromHeader() == (int)ELanguages.AR;
+
         var doctors = await Mediator.Send(new GetAllUsersQuery { Type = (int)UserType.Doctor});
         ViewBag.Departments = await Mediator.Send(new GetAllDepartmentsQuery { Speciality = Speciality.Department });
         return View(doctors);

@@ -531,6 +531,9 @@
   <data name="InProgress" xml:space="preserve">
     <value>In Progress</value>
   </data>
+  <data name="InvalidLogin" xml:space="preserve">
+    <value>Invalid Login</value>
+  </data>
   <data name="IsAfterOrEqualTo" xml:space="preserve">
     <value>Is After Or Equal To</value>
   </data>
@@ -746,6 +749,9 @@
   </data>
   <data name="References" xml:space="preserve">
     <value>References</value>
+  </data>
+  <data name="Register" xml:space="preserve">
+    <value>Register</value>
   </data>
   <data name="Reject" xml:space="preserve">
     <value>Reject</value>

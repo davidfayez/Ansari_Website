@@ -1,0 +1,65 @@
+﻿@model CreateUpdateSurveyCommand
+@{
+    var Questions = ViewBag.Questions as List<QuestionVM>;
+    var IsArabic = (bool)ViewBag.IsArabic;
+}
+<div class="modal-content modal-border" id="SurveyForm">
+
+    <div class="modal-body">
+        <div  class="inner-filter" >
+            <h3>@Optic.Survey</h3>
+            <a class="close-btn" data-bs-dismiss="modal"><i class="fa-solid fa-xmark"></i></a>
+            <p class="p-pop">@Optic.AnsariSurvey</p>
+            @if (Questions != null)
+            {
+                @foreach(var question in Questions)
+                {
+                    <h4>@(IsArabic ? question.TitleAr : question.TitleEn)</h4>
+                    @foreach (var answer in question.QuestionAnswerVMs)
+                    {
+                        <div class="SizeBtn">
+                            <input class="questionAnswers" type="radio" name="@question.Id" value="@answer.AnswerId" id="experience-@question.Id-@answer.Id" checked>
+                            <label class="" for="experience-@question.Id-@answer.Id">
+                                @(IsArabic ? answer.AnswerAr : answer.AnswerEn)
+                            </label>
+                        </div>
+                    }
+                    <br />
+                    <br />
+                }
+            }
+            
+
+            <h4>@Optic.ShareFeedback</h4>
+            <textarea class="textarea-modal" placeholder="Leave your message..." id="Feedback"></textarea>
+            <span id="FeedbackValidation" class="text-danger" style="display:none">@ErrorMessages.Required</span>
+
+            <br /><br />
+            <h4>@Optic.RateUs</h4>
+            <input type="textbox" class="ff-rating add-star" id="Rate" />
+            <span id="RateValidation" class="text-danger" style="display:none">@ErrorMessages.Required</span>
+            <br />
+            <div class="text-end" style="margin-top: 10px;">
+                <button onclick="AddSurvey()" class="btn-done-modal">@Global.Save</button>
+                <button class="btn-cancel-modal" data-bs-dismiss="modal" id="close">@Global.Cancel</button>
+
+            </div>
+
+
+
+        </div>
+
+    </div>
+
+</div>
+<script asp-append-version="true" src="~/js/jquery-2.1.1.js"></script>
+<script asp-append-version="true" src="~/js/bootstrap.min.js"></script>
+<script asp-append-version="true" src="~/js/star-rating.js"></script>
+<script asp-append-version="true">
+    $(document).ready(function () {
+        $('.rating-star').ffrating({ isStar: true, readonly: true, showSelectedRating: true, min: 1, max: 5 });
+        $('.add-star').ffrating({ isStar: true, readonly: false, showSelectedRating: true, min: 1, max: 5 });
+
+    });
+</script>
+

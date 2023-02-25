@@ -70,7 +70,7 @@ public class AccountController : BaseController
         if (ModelState.IsValid)
         {
 
-            var user = await _identityService.AuthenticateUserAsync(model.UserName, model.Password, model.RememberMe);
+            var user = await _identityService.AuthenticateUserAsync(model.Email, model.Password, model.RememberMe);
 
             if (user != null)
             {

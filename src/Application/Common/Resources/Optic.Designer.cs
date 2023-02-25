@@ -97,6 +97,15 @@ namespace Ansari_Website.Application.Common.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Ansari hospital performance survey.
+        /// </summary>
+        public static string AnsariSurvey {
+            get {
+                return ResourceManager.GetString("AnsariSurvey", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Attach Photo.
         /// </summary>
         public static string AttachPhoto {
@@ -529,6 +538,15 @@ namespace Ansari_Website.Application.Common.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to How much do you rate us ?.
+        /// </summary>
+        public static string RateUs {
+            get {
+                return ResourceManager.GetString("RateUs", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Register.
         /// </summary>
         public static string Register {
@@ -570,6 +588,15 @@ namespace Ansari_Website.Application.Common.Resources {
         public static string ResendCode {
             get {
                 return ResourceManager.GetString("ResendCode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please share your feedback with us..
+        /// </summary>
+        public static string ShareFeedback {
+            get {
+                return ResourceManager.GetString("ShareFeedback", resourceCulture);
             }
         }
         

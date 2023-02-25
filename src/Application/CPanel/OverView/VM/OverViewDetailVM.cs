@@ -16,6 +16,7 @@ public class OverViewDetailVM : IMapFrom<DB.OverViewDetail>
     public int Id { get; set; }
     public string? TitleAr { get; set; }
     public string? TitleEn { get; set; }
+    public string? Title { get; set; }
     public int Value { get; set; }
     public int OverViewId { get; set; }
 }

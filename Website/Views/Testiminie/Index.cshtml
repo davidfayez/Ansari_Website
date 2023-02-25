@@ -1,26 +1,25 @@
-﻿@{
+﻿@model TestiminieVM
+@{
     Layout = "_Layout";
 }
 
 
 <div class="inner-div-depart">
-    <div class="img-inner-department" style="background-image: url(~/images/rheumatism.jpg);">
+    <div class="img-inner-department" style="background-image: url(~/images/Testiminies/@Model.ImageUrl);">
 
     </div>
 
-<h3>Testiminies</h3>
-<p>Al Ansari Hospital is characterized that we have great services,
-    including: Acute services such as the emergency
-    department, specialized trauma center, burn unit, surgery or
-    urgent care. It can then be supported by more specialized
-    units such as cardiology, intensive care unit, neuroscience,
-    obstetrics and gynecology.</p>
+<h3>@Model.Title</h3>
+<p>
+    @Model.Description
+</p>
     <br/>
 
     <ul class="light-box-cer">
-        <li><a href="~/images/cr1.jpg" data-imagelightbox="g" data-ilb2-caption="Sunset in Tanzania"><img src="~/images/cr1.jpg" class="tump-img"></a></li>
-        <li><a href="~/images/cr2.jpg" data-imagelightbox="g" data-ilb2-caption="Traffic jam in Tanzania"><img src="~/images/cr2.jpg" class="tump-img"></a></li>
-
+        @foreach (var item in Model.TestiminieDetailVMs)
+        {
+            <li><a href="~/images/Testiminies/@item.ImageUrl" data-imagelightbox="g" data-ilb2-caption="Sunset in Tanzania"><img src="~/images/Testiminies/@item.ImageUrl" class="tump-img"></a></li>
+        }
     </ul>            
 
 

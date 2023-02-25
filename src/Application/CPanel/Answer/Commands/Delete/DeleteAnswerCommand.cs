@@ -29,7 +29,7 @@ public class DeleteAnswerCommandHandler : IRequestHandler<DeleteAnswerCommand, b
             if (Answer != null)
             {
                 Answer.IsDeleted = true;
-                _applicationDbContext.Answers.Update(Answer);
+                //_applicationDbContext.Answers.Update(Answer);
                 await _applicationDbContext.SaveChangesAsync(cancellationToken);
                 return await Task.FromResult(true);
             }

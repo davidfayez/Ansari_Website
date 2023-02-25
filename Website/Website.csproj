@@ -7,6 +7,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="wwwroot\js\Common\common.js" />
+    <Content Remove="wwwroot\js\Common\common.min.js" />
+    <Content Remove="wwwroot\js\Common\Shared.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\js\Common\common.js" />
+    <None Include="wwwroot\js\Common\common.min.js" />
+    <None Include="wwwroot\js\Common\Shared.js" />
     <None Include="wwwroot\js\site.js" />
   </ItemGroup>
 

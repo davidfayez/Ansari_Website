@@ -1,5 +1,9 @@
 ﻿@model CreateUpdateVisitorCommand
 
+@{
+    Layout = "_LayoutLogin";
+}
+
 <div class="Login-container">
     <div class="row">
         <div class="col-lg-5">
@@ -15,6 +19,12 @@
                     <div class="input-wrapper">
                         <i class="fa-solid fa-user"></i>
                         <input type="text" asp-for="FullName" placeholder="Name">
+                    </div>
+
+                    <label>@Global.Email</label>
+                    <div class="input-wrapper">
+                        <i class="fa-solid fa-phone"></i>
+                        <input type="text" asp-for="Email" placeholder="@Global.Email">
                     </div>
 
                     <label>@Optic.PhoneNumber</label>
@@ -39,7 +49,7 @@
                     <div class="text-center">
                         <button type="submit" class="login-btn">@Optic.Register</button>
                     </div>
-                    <p class="p-account">@Optic.AlreadyHaveAccount <a href="Login.html"> @Optic.Login</a></p>
+                    <p class="p-account">@Optic.AlreadyHaveAccount <a asp-action="Login"> @Optic.Login</a></p>
 
                 </div>
             </form>

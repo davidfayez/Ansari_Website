@@ -1,5 +1,6 @@
 ﻿@model List<BlogVM>
 @{
+    var IsArabic = (bool)ViewBag.IsArabic;
     Layout = "_Layout";
 }
 
@@ -38,182 +39,32 @@
         <div id="paging_container8">
 
             <ul class="row blogs-ul content">
-                <li class="col-lg-4 col-md-6 li-blogs">
+                @foreach (var blog in Model)
+                {
+                    <li class="col-lg-4 col-md-6 li-blogs">
                     <div class="img-doc" style="background-image:url(images/doc1.png);"></div>
-                    <a href="Blog-inner.html">
+                        <a asp-controller="Blog" asp-action="Details" asp-route-id="@blog.Id">
                         <div class="position-relative">
-                            <div class="img-blog" style="background-image:url(images/rheumatism.jpg) ;"></div>
+                                <div class="img-blog" style="background-image:url(images/Blogs/@blog.ImageUrl) ;"></div>
                             <div class="absolute-blogs container-fluid">
                                 <div class="row">
-                                    <div class="col-6"><i class="fa-solid fa-calendar-days"></i> 17/9/2022</div>
+                                    <div class="col-6"><i class="fa-solid fa-calendar-days"></i> @blog.CreationDate.ToShortDateString()</div>
                                     <div class="col-6 text-end"><i class="fa-solid fa-eye"></i> 555</div>
 
                                 </div>
                             </div>
                         </div>
 
-
-                        <h4>Your Blog title here</h4>
-                        <h6>Dr., Mohamed Gamal</h6>
+                         <h4>@blog.Title</h4>
+                        <h6>Dr., @blog.DoctorName</h6>
                         <hr>
-                        <p class="p-blogs">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris dapibus ex sed eros molestie blandit. Fusce sem enim, commodo sit amet diam pharetr.</p>
+                        <p class="p-blogs">@blog.Description</p>
                     </a>
 
                 </li>
-                <li class="col-lg-4 col-md-6 li-blogs">
-                    <div class="img-doc" style="background-image:url(images/doc1.png);"></div>
-                    <a href="Blog-inner.html">
-                        <div class="position-relative">
-                            <div class="img-blog" style="background-image:url(images/rheumatism.jpg) ;"></div>
-                            <div class="absolute-blogs container-fluid">
-                                <div class="row">
-                                    <div class="col-6"><i class="fa-solid fa-calendar-days"></i> 17/9/2022</div>
-                                    <div class="col-6 text-end"><i class="fa-solid fa-eye"></i> 555</div>
-
-                                </div>
-                            </div>
-                        </div>
-
-
-                        <h4>Your Blog title here</h4>
-                        <h6>Dr., Mohamed Gamal</h6>
-                        <hr>
-                        <p class="p-blogs">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris dapibus ex sed eros molestie blandit. Fusce sem enim, commodo sit amet diam pharetr.</p>
-                    </a>
-
-                </li>
-                <li class="col-lg-4 col-md-6 li-blogs">
-                    <div class="img-doc" style="background-image:url(images/doc1.png);"></div>
-                    <a href="Blog-inner.html">
-                        <div class="position-relative">
-                            <div class="img-blog" style="background-image:url(images/rheumatism.jpg) ;"></div>
-                            <div class="absolute-blogs container-fluid">
-                                <div class="row">
-                                    <div class="col-6"><i class="fa-solid fa-calendar-days"></i> 17/9/2022</div>
-                                    <div class="col-6 text-end"><i class="fa-solid fa-eye"></i> 555</div>
-
-                                </div>
-                            </div>
-                        </div>
-
-
-                        <h4>Your Blog title here</h4>
-                        <h6>Dr., Mohamed Gamal</h6>
-                        <hr>
-                        <p class="p-blogs">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris dapibus ex sed eros molestie blandit. Fusce sem enim, commodo sit amet diam pharetr.</p>
-                    </a>
-
-                </li>
-                <li class="col-lg-4 col-md-6 li-blogs">
-                    <div class="img-doc" style="background-image:url(images/doc1.png);"></div>
-                    <a href="Blog-inner.html">
-                        <div class="position-relative">
-                            <div class="img-blog" style="background-image:url(images/rheumatism.jpg) ;"></div>
-                            <div class="absolute-blogs container-fluid">
-                                <div class="row">
-                                    <div class="col-6"><i class="fa-solid fa-calendar-days"></i> 17/9/2022</div>
-                                    <div class="col-6 text-end"><i class="fa-solid fa-eye"></i> 555</div>
-
-                                </div>
-                            </div>
-                        </div>
-
-
-                        <h4>Your Blog title here</h4>
-                        <h6>Dr., Mohamed Gamal</h6>
-                        <hr>
-                        <p class="p-blogs">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris dapibus ex sed eros molestie blandit. Fusce sem enim, commodo sit amet diam pharetr.</p>
-                    </a>
-
-                </li>
-                <li class="col-lg-4 col-md-6 li-blogs">
-                    <div class="img-doc" style="background-image:url(images/doc1.png);"></div>
-                    <a href="Blog-inner.html">
-                        <div class="position-relative">
-                            <div class="img-blog" style="background-image:url(images/rheumatism.jpg) ;"></div>
-                            <div class="absolute-blogs container-fluid">
-                                <div class="row">
-                                    <div class="col-6"><i class="fa-solid fa-calendar-days"></i> 17/9/2022</div>
-                                    <div class="col-6 text-end"><i class="fa-solid fa-eye"></i> 555</div>
-
-                                </div>
-                            </div>
-                        </div>
-
-
-                        <h4>Your Blog title here</h4>
-                        <h6>Dr., Mohamed Gamal</h6>
-                        <hr>
-                        <p class="p-blogs">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris dapibus ex sed eros molestie blandit. Fusce sem enim, commodo sit amet diam pharetr.</p>
-                    </a>
-
-                </li>
-                <li class="col-lg-4 col-md-6 li-blogs">
-                    <div class="img-doc" style="background-image:url(images/doc1.png);"></div>
-                    <a href="Blog-inner.html">
-                        <div class="position-relative">
-                            <div class="img-blog" style="background-image:url(images/rheumatism.jpg) ;"></div>
-                            <div class="absolute-blogs container-fluid">
-                                <div class="row">
-                                    <div class="col-6"><i class="fa-solid fa-calendar-days"></i> 17/9/2022</div>
-                                    <div class="col-6 text-end"><i class="fa-solid fa-eye"></i> 555</div>
-
-                                </div>
-                            </div>
-                        </div>
-
-
-                        <h4>Your Blog title here</h4>
-                        <h6>Dr., Mohamed Gamal</h6>
-                        <hr>
-                        <p class="p-blogs">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris dapibus ex sed eros molestie blandit. Fusce sem enim, commodo sit amet diam pharetr.</p>
-                    </a>
-
-                </li>
-                <li class="col-lg-4 col-md-6 li-blogs">
-                    <div class="img-doc" style="background-image:url(images/doc1.png);"></div>
-                    <a href="Blog-inner.html">
-                        <div class="position-relative">
-                            <div class="img-blog" style="background-image:url(images/rheumatism.jpg) ;"></div>
-                            <div class="absolute-blogs container-fluid">
-                                <div class="row">
-                                    <div class="col-6"><i class="fa-solid fa-calendar-days"></i> 17/9/2022</div>
-                                    <div class="col-6 text-end"><i class="fa-solid fa-eye"></i> 555</div>
-
-                                </div>
-                            </div>
-                        </div>
-
-
-                        <h4>Your Blog title here</h4>
-                        <h6>Dr., Mohamed Gamal</h6>
-                        <hr>
-                        <p class="p-blogs">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris dapibus ex sed eros molestie blandit. Fusce sem enim, commodo sit amet diam pharetr.</p>
-                    </a>
-
-                </li>
-                <li class="col-lg-4 col-md-6 li-blogs">
-                    <div class="img-doc" style="background-image:url(images/doc1.png);"></div>
-                    <a href="Blog-inner.html">
-                        <div class="position-relative">
-                            <div class="img-blog" style="background-image:url(images/rheumatism.jpg) ;"></div>
-                            <div class="absolute-blogs container-fluid">
-                                <div class="row">
-                                    <div class="col-6"><i class="fa-solid fa-calendar-days"></i> 17/9/2022</div>
-                                    <div class="col-6 text-end"><i class="fa-solid fa-eye"></i> 555</div>
-
-                                </div>
-                            </div>
-                        </div>
-
-
-                        <h4>Your Blog title here</h4>
-                        <h6>Dr., Mohamed Gamal</h6>
-                        <hr>
-                        <p class="p-blogs">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris dapibus ex sed eros molestie blandit. Fusce sem enim, commodo sit amet diam pharetr.</p>
-                    </a>
-
-                </li>
+                }
+                
+                
             </ul>
             <div class="page_navigation"></div>
 

@@ -23,7 +23,9 @@ public class GetAllQuestionsQueryHandler : IRequestHandler<GetAllQuestionsQuery,
     }
     public Task<List<QuestionVM>> Handle(GetAllQuestionsQuery request, CancellationToken cancellationToken)
     {
-        var Questions = _applicationDbContext.Questions.Where(s => !s.IsDeleted);
+        var Questions = _applicationDbContext.Questions
+                        .Include(s=>s.QuestionAnswers).ThenInclude(s=>s.Answer)
+                        .Where(s => !s.IsDeleted).OrderBy(s=>s.Order);
 
         var QuestionVMs = _mapper.Map<List<QuestionVM>>(Questions.ToList());
         return Task.FromResult(QuestionVMs);

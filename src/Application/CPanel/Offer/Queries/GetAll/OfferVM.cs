@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Ansari_Website.Application.CPanel.Department.Queries.GetAll;
+using Ansari_Website.Application.CPanel.Doctor.Commands.Create;
 using Ansari_Website.Domain.Entities.CPanel;
 
 namespace Ansari_Website.Application.CPanel.Offer.Queries.GetAll;
@@ -24,6 +25,10 @@ public class OfferVM : AuditableEntity, IMapFrom<DB.Offer>
     public string? AltImage { get; set; }
     public decimal PriceBefore { get; set; }
     public decimal PriceAfter { get; set; }
+    public string Title { get; set; }
+    public string? Description { get; set; }
+    public List<OfferDetailVM> OfferDetailVMs { get; set; }
+
 }
 
 public class OfferDetailsVM : IMapFrom<DB.OfferDetail>

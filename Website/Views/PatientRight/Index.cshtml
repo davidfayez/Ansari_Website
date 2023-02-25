@@ -1,0 +1,28 @@
+﻿@model PatientRightVM
+
+@{
+    Layout = "_Layout";
+}
+
+<div class="inner-div-depart">
+    <div class="img-inner-department" style="background-image: url(images/rheumatism.jpg);">
+
+    </div>
+
+<h3>@Model.Title</h3>
+<p>
+    @Model.Description
+</p>
+    <br/>
+
+    <ul>
+        @foreach (var item in Model.PatientRightDetailVMs)
+        {
+            <li>@item.Title</li>
+        }
+    </ul>
+
+</div>
+
+
+<br/><br/>

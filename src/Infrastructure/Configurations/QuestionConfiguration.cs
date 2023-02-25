@@ -17,11 +17,11 @@ public class QuestionConfiguration : IEntityTypeConfiguration<Question>
 
         builder.Property(s => s.TitleAr)
                .IsRequired()
-               .HasMaxLength(50);
+               .HasMaxLength(500);
 
         builder.Property(s => s.TitleEn)
                .IsRequired()
-               .HasMaxLength(50);
+               .HasMaxLength(500);
 
        
     }

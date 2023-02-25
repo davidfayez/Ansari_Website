@@ -2,6 +2,7 @@
 using Ansari_Website.Application.CPanel.Department.Queries.GetAll;
 using Ansari_Website.Application.CPanel.Department.Queries.GetById;
 using Ansari_Website.Domain.Enums;
+using Ansari_Website.Infrastructure.Common;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 
@@ -16,6 +17,8 @@ public class DepartmentController : BaseController
     }
     public async Task<IActionResult> IndexAsync(Speciality? type)
     {
+        ViewBag.IsArabic = Request.GetLangIdFromHeader() == (int)ELanguages.AR;
+
         if (!type.HasValue)
         {
             type = Speciality.Department;
@@ -27,6 +30,8 @@ public class DepartmentController : BaseController
     [HttpGet]
     public async Task<IActionResult> Details(int id)
     {
+        ViewBag.IsArabic = Request.GetLangIdFromHeader() == (int)ELanguages.AR;
+
         if (id > 0)
         {
             ViewBag.Departments = await Mediator.Send(new GetAllDepartmentsQuery { Speciality = Speciality.Department });
@@ -38,6 +43,8 @@ public class DepartmentController : BaseController
             if (Department != null)
             {
                 var result = _mapper.Map<DepartmentVM>(Department);
+                result.Title = (Request.GetLangIdFromHeader() == (int)ELanguages.EN) ? result.TitleEn : result.TitleAr;
+                result.Description = (Request.GetLangIdFromHeader() == (int)ELanguages.EN) ? result.DescriptionEn : result.DescriptionAr;
                 return View(result);
             }
         }

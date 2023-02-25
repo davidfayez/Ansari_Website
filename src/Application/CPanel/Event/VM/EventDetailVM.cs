@@ -18,6 +18,7 @@ public class EventDetailVM : IMapFrom<DB.EventDetail>
     public int? Order { get; set; }
     public string? TitleAr { get; set; }
     public string? TitleEn { get; set; }
+    public string? Title { get; set; }
     public string? ImageUrls { get; set; }
     public List<IFormFile> EventDetailImages { get; set; }
     public int EventId { get; set; }

@@ -1,8 +1,11 @@
 ﻿using Ansari_Website.Application.Common.Interfaces;
+using Ansari_Website.Application.Common.Models;
 using Ansari_Website.Application.CPanel.Testiminie.Commands.Create;
 using Ansari_Website.Application.CPanel.Testiminie.Queries.GetAll;
 using Ansari_Website.Application.CPanel.Testiminie.Queries.GetById;
 using Ansari_Website.Application.CPanel.Testiminie.VM;
+using Ansari_Website.Domain.Enums;
+using Ansari_Website.Infrastructure.Common;
 using AutoMapper;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
@@ -20,29 +23,33 @@ public class TestiminieController : BaseController
     }
     public async Task<IActionResult> IndexAsync()
     {
-        //var Testiminies = await Mediator.Send(new GetAllTestiminiesQuery());
-        //return View(Testiminies);
-        return View();
+
+        ViewBag.IsArabic = Request.GetLangIdFromHeader() == (int)ELanguages.AR;
+        var Testiminies = await Mediator.Send(new GetAllTestiminiesQuery());
+        return View(Testiminies);
     }
 
 
     [HttpGet]
     public async Task<IActionResult> EditAsync(int id)
     {
-        //var testiminieVM = new TestiminieVM();
+        ViewBag.IsArabic = Request.GetLangIdFromHeader() == (int)ELanguages.AR;
 
-        //if (id > 0)
-        //{
-        //    var Testiminie = await Mediator.Send(new GetTestiminieByIdQuery
-        //    {
-        //        Id = id,
-        //    });
-        //    if (Testiminie != null)
-        //    {
-        //        testiminieVM = _mapper.Map<TestiminieVM>(Testiminie);
-        //    }
-        //}
-        //return View(testiminieVM);
-        return View();
+        var testiminieVM = new TestiminieVM();
+
+        if (id > 0)
+        {
+            var Testiminie = await Mediator.Send(new GetTestiminieByIdQuery
+            {
+                Id = id,
+            });
+            if (Testiminie != null)
+            {
+                testiminieVM = _mapper.Map<TestiminieVM>(Testiminie);
+                testiminieVM.Title = (Request.GetLangIdFromHeader() == (int)ELanguages.EN) ? testiminieVM.TitleEn : testiminieVM.TitleAr;
+                testiminieVM.Description = (Request.GetLangIdFromHeader() == (int)ELanguages.EN) ? testiminieVM.DescriptionEn : testiminieVM.DescriptionAr;
+            }
+        }
+        return View(testiminieVM);
     }
 }

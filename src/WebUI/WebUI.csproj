@@ -46,6 +46,11 @@
     </ItemGroup>
 
     <ItemGroup>
+      <Content Remove="Views\Account\Login.cshtml" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Include="Views\Account\Login.cshtml" />
       <None Include="wwwroot\fonts\bootstrap-icons.woff2" />
       <None Include="wwwroot\fonts\fa-brands-400.svg" />
       <None Include="wwwroot\fonts\fa-brands-400.woff2" />
@@ -88,10 +93,6 @@
         <ProjectReference Include="..\Infrastructure\Infrastructure.csproj" />
     </ItemGroup>
 
-    <ItemGroup>
-      <Folder Include="Views\Account\" />
-    </ItemGroup>
-
     <PropertyGroup>
         <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
     </PropertyGroup>
@@ -130,5 +131,13 @@
             </ResolvedFileToPublish>
         </ItemGroup>
     </Target>
+
+    <ItemGroup>
+      <UpToDateCheckInput Remove="Views\Account\Login.cshtml" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <_ContentIncludedByDefault Remove="Views\Account\Login.cshtml" />
+    </ItemGroup>
 
 </Project>
