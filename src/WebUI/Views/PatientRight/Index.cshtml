@@ -1,4 +1,4 @@
-﻿@model List<PatientRightVM>
+﻿@model PatientRightVM
 @{
     Layout = "_Layout";
 }
@@ -21,34 +21,18 @@
 
             @if (Model != null)
             {
-                foreach (var PatientRight in Model)
-                {
-                    var id = "patientRight" + PatientRight.Id;
-                    <tr id="@id">
-                        <td>@PatientRight.TitleEn</td>
-                        <td>@PatientRight.TitleAr</td>
-                        <td>@PatientRight.Order</td>
-                        <td>
-                            <a asp-action="Edit" asp-route-id="@PatientRight.Id" class="btn btn-warning btn-sm"><i class="fa-regular fa-pen-to-square"></i></a> 
-                            <a href="Events-inner.html" class="btn btn-dark btn-sm"><i class="fa-regular fa-eye"></i></a>
-                            <button class="btn btn-danger btn-sm" onclick="deleteDetail('PatientRight','Delete',@PatientRight.Id,'@id')"><i class="fas fa-times"></i></button>
-                        </td>
-                    </tr>
-                }
+                <tr>
+                    <td>@Model.TitleEn</td>
+                    <td>@Model.TitleAr</td>
+                    <td>@Model.Order</td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-warning btn-sm"><i class="fa-regular fa-pen-to-square"></i></a>
+                        @*                        <button class="btn btn-danger btn-sm" onclick="deleteDetail('PatientRight','Delete',@PatientRight.Id,'@id')"><i class="fas fa-times"></i></button>
+*@                    </td>
+                </tr>
             }
 
         </tbody>
     </table>
-
-    <div class="text-end">
-        <button class="save-btn"><i class="fa-solid fa-check"></i> Save </button>
-
-        <button class="cancel-btn"> <i class="fa-solid fa-xmark"></i> Cancel </button>
-
-
-    </div>
-
-
-
-
+    
 </div>

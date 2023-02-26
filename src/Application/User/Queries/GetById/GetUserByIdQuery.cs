@@ -21,10 +21,9 @@ public class GetUserByIdQueryHandler : IRequestHandler<GetUserByIdQuery, AspNetU
 
         if (User != null)
         {
-            User.Image = User.Image != null ? "Users/" + User.Image : "Users/profile-icon.jpg";
+            User.Image = User.Image != null ? User.Image : "Users/profile-icon.jpg";
             return Task.FromResult(User);
         }
-
         else
             return Task.FromResult(new AspNetUser());
 

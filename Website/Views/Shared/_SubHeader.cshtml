@@ -28,11 +28,10 @@
             <li><a asp-controller="Blog" asp-action="Index">@Optic.Blogs</a></li>
             <li><a asp-controller="Event" asp-action="Index">@Optic.Events</a></li>
             <li><a asp-controller="Offer" asp-action="Index">@Optic.Offers</a></li>
-            <li><a href="Contact.html">@Optic.ContactUs</a></li>
+            <li><a asp-controller="Home" asp-action="Contact">@Optic.ContactUs</a></li>
         </ul>
     </nav>
-
-
+    
 
 @*    <a href="booking-1.html" class="a-Appointment"><i class="fa-solid fa-calendar-days"></i> Appointment</a>
 *@

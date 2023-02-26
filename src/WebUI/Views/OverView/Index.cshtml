@@ -1,4 +1,4 @@
-﻿@model List<OverViewVM>
+﻿@model OverViewVM
 @{
     Layout = "_Layout";
 }
@@ -19,36 +19,16 @@
         </thead>
         <tbody>
 
-            @if (Model != null)
-            {
-                foreach (var OverView in Model)
-                {
-                    var id = "OverView" + OverView.Id;
-                    <tr id="@id">
-                        <td>@OverView.TitleEn</td>
-                        <td>@OverView.TitleAr</td>
-                        <td>@OverView.Order</td>
-                        <td>
-                            <a asp-action="Edit" asp-route-id="@OverView.Id" class="btn btn-warning btn-sm"><i class="fa-regular fa-pen-to-square"></i></a> 
-                            <a href="Events-inner.html" class="btn btn-dark btn-sm"><i class="fa-regular fa-eye"></i></a>
-                            <button class="btn btn-danger btn-sm" onclick="deleteDetail('OverView','Delete',@OverView.Id,'@id')"><i class="fas fa-times"></i></button>
-                        </td>
-                    </tr>
-                }
-            }
+            <tr>
+                <td>@Model.TitleEn</td>
+                <td>@Model.TitleAr</td>
+                <td>@Model.Order</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-warning btn-sm"><i class="fa-regular fa-pen-to-square"></i></a>
+               </td>
+            </tr>
 
         </tbody>
     </table>
-
-    <div class="text-end">
-        <button class="save-btn"><i class="fa-solid fa-check"></i> Save </button>
-
-        <button class="cancel-btn"> <i class="fa-solid fa-xmark"></i> Cancel </button>
-
-
-    </div>
-
-
-
 
 </div>

@@ -45,8 +45,8 @@ public class SliderController : BaseController
                 if (SliderImage != null)
                 {
                     var mainFolderPath = "E:\\Private\\Ansari_Website\\Website\\wwwroot\\images";
-                    _fileHandler.UploadFile("Users", command.SliderImage);
-                    _fileHandler.UploadFile("Users", command.SliderImage, mainFolderPath);
+                    _fileHandler.UploadFile("Sliders", command.SliderImage);
+                    _fileHandler.UploadFile("Sliders", command.SliderImage, mainFolderPath);
                 }
                 return RedirectToAction("Index");
             }

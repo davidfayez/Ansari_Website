@@ -63,7 +63,7 @@ public class HomeController : BaseController
         ViewBag.IsArabic = Request.GetLangIdFromHeader() == (int)ELanguages.AR;
         var isSuccess = await Mediator.Send(command);
         ViewBag.IsSuccess = isSuccess;
-        return Json(isSuccess);
+        return View(new CreateContactUsCommand());
     }
 
     public async Task<IActionResult> Overview()
