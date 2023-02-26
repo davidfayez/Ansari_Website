@@ -44,22 +44,26 @@ public class HomeController : BaseController
 
     public IActionResult AboutUs()
     {
+        ViewBag.IsArabic = Request.GetLangIdFromHeader() == (int)ELanguages.AR;
+
         return View();
     }
 
     public IActionResult Contact()
     {
+        ViewBag.IsArabic = Request.GetLangIdFromHeader() == (int)ELanguages.AR;
+
         return View();
     }
 
-    public async Task<IActionResult> Mission()
+    public async Task<IActionResult> Overview()
     {
         ViewBag.IsArabic = Request.GetLangIdFromHeader() == (int)ELanguages.AR;
         var OverView = await Mediator.Send(new GetAllOverViewsQuery { LangId = Request.GetLangIdFromHeader() });
         return View(OverView);
     }
 
-    public async Task<IActionResult> Overview()
+    public async Task<IActionResult> Mission()
     {
         ViewBag.IsArabic = Request.GetLangIdFromHeader() == (int)ELanguages.AR;
         var AboutUs = await Mediator.Send(new GetAboutUsQuery());
