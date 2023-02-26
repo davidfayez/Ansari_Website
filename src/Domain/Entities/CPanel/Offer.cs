@@ -17,6 +17,7 @@ public class Offer : AuditableEntity
     public string? AltImage { get; set; }
     public decimal PriceBefore { get; set; }
     public decimal PriceAfter { get; set; }
+    public int ReviewsNo { get; set; }
     public virtual IList<OfferDetail> OfferDetails { get; set; }
 
 }

@@ -1,5 +1,6 @@
 ﻿using Ansari_Website.Application.Common.Interfaces;
 using Ansari_Website.Application.Common.Models;
+using Ansari_Website.Application.CPanel.Offer.Commands.AddReview;
 using Ansari_Website.Application.CPanel.Offer.Commands.Create;
 using Ansari_Website.Application.CPanel.Offer.Queries.GetAll;
 using Ansari_Website.Application.CPanel.Offer.Queries.GetById;
@@ -44,8 +45,10 @@ public class OfferController : BaseController
             });
             if (Offer != null)
             {
+                var ReviewsNo = await Mediator.Send(new AddOfferReviewCommand { Id = id });
                 ViewBag.Offers = await Mediator.Send(new GetAllOffersQuery());
                 offerVM = _mapper.Map<OfferVM>(Offer);
+                Offer.ReviewsNo = ReviewsNo;
                 offerVM.Title = (Request.GetLangIdFromHeader() == (int)ELanguages.EN) ? offerVM.TitleEn : offerVM.TitleAr;
                 offerVM.Description = (Request.GetLangIdFromHeader() == (int)ELanguages.EN) ? offerVM.DescriptionEn : offerVM.DescriptionAr;
             }

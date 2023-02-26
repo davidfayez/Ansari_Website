@@ -66,6 +66,7 @@
 
     <ItemGroup>
       <Folder Include="CPanel\Answer\Commands\Delete\" />
+      <Folder Include="CPanel\ContactUs\Queries\" />
     </ItemGroup>
 
 </Project>

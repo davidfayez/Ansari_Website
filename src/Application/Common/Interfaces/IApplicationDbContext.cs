@@ -29,6 +29,7 @@ public interface IApplicationDbContext
     #endregion
 
     #region CPanel
+    DbSet<ContactUs> ContactUs { get; }
     DbSet<AboutUs> AboutUs { get; }
     DbSet<SiteInfo> SiteInfo { get; }
     DbSet<Doctor> Doctors { get; }

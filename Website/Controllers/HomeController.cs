@@ -2,6 +2,7 @@
 using Ansari_Website.Application.CPanel.AboutUs.Commands.Create;
 using Ansari_Website.Application.CPanel.AboutUs.Queries.GetById;
 using Ansari_Website.Application.CPanel.Complaint.Commands.Create;
+using Ansari_Website.Application.CPanel.ContactUs.Commands.Create;
 using Ansari_Website.Application.CPanel.Department.Queries.GetAll;
 using Ansari_Website.Application.CPanel.OverView.Queries.GetAll;
 using Ansari_Website.Application.CPanel.Partner.Queries.GetAll;
@@ -34,6 +35,7 @@ public class HomeController : BaseController
 
     public async Task<IActionResult> IndexAsync()
     {
+        var z = Request.GetLangIdFromHeader();
         var mainFolderPath = Path.Combine(_environment.WebRootPath, "images");
         ViewBag.IsArabic = Request.GetLangIdFromHeader() == (int)ELanguages.AR;
         ViewBag.Doctors = await Mediator.Send(new GetAllUsersQuery { Type = (int)UserType.Doctor});
@@ -52,8 +54,16 @@ public class HomeController : BaseController
     public IActionResult Contact()
     {
         ViewBag.IsArabic = Request.GetLangIdFromHeader() == (int)ELanguages.AR;
-
         return View();
+    }
+
+    [HttpPost]
+    public async Task<IActionResult> Contact(CreateContactUsCommand command)
+    {
+        ViewBag.IsArabic = Request.GetLangIdFromHeader() == (int)ELanguages.AR;
+        var isSuccess = await Mediator.Send(command);
+        ViewBag.IsSuccess = isSuccess;
+        return Json(isSuccess);
     }
 
     public async Task<IActionResult> Overview()

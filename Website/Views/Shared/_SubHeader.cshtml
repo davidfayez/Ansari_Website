@@ -3,37 +3,37 @@
 
     <nav class="magic-line-menu-pill menu_main">
         <ul id="menu">
-            <li><a asp-controller="Home" asp-action="Index" class="active">Home</a></li>
+            <li><a asp-controller="Home" asp-action="Index" class="active">@Global.Home</a></li>
             <li>
-                <a asp-controller="Home" asp-action="AboutUs">About us</a>
+                <a asp-controller="Home" asp-action="AboutUs">@Optic.Aboutus</a>
                 <ul>
-                    <li><a asp-controller="Home" asp-action="Overview">Overview </a></li>
-                    <li><a asp-controller="Home" asp-action="Mission">Our Mission & Vision & Values </a></li>
+                    <li><a asp-controller="Home" asp-action="Overview">@Optic.Overview </a></li>
+                    <li><a asp-controller="Home" asp-action="Mission">@Optic.OurMissionVisionValues </a></li>
 
-                    <li><a href='About.html'>Patient Right </a></li>
-                    <li><a href='Department.html'>Future Plan </a></li>
-                    <li><a href='Testiminies.html'>Testiminies  </a></li>
+                    <li><a href='About.html'>@Optic.PatientRight </a></li>
+                    <li><a href='Department.html'>@Optic.FuturePlan </a></li>
+                    <li><a asp-controller="Testiminie" asp-action="Index">@Optic.Testiminies  </a></li>
 
                 </ul>
             </li>
 
             <li>
-                <a asp-controller="Department" asp-action="Index">Specialties &  Centers</a>
+                <a asp-controller="Department" asp-action="Index">@Optic.Specialties &  @Optic.Centers</a>
                 <ul>
-                    <li><a asp-controller="Department" asp-action="Index" asp-route-type="@Speciality.Department">Specialties </a></li>
-                    <li><a asp-controller="Department" asp-action="Index" asp-route-type="@Speciality.Center">Centers</a></li>
+                    <li><a asp-controller="Department" asp-action="Index" asp-route-type="@Speciality.Department">@Optic.Specialties </a></li>
+                    <li><a asp-controller="Department" asp-action="Index" asp-route-type="@Speciality.Center">@Optic.Centers</a></li>
                 </ul>
             </li>
-            <li><a asp-controller="Doctor" asp-action="Index">Doctors</a></li>
-            <li><a asp-controller="Blog" asp-action="Index">Blogs</a></li>
-            <li><a asp-controller="Event" asp-action="Index">Events</a></li>
-            <li><a asp-controller="Offer" asp-action="Index">Offers</a></li>
-            <li><a href="Contact.html">Contact us</a></li>
+            <li><a asp-controller="Doctor" asp-action="Index">@Optic.Doctors</a></li>
+            <li><a asp-controller="Blog" asp-action="Index">@Optic.Blogs</a></li>
+            <li><a asp-controller="Event" asp-action="Index">@Optic.Events</a></li>
+            <li><a asp-controller="Offer" asp-action="Index">@Optic.Offers</a></li>
+            <li><a href="Contact.html">@Optic.ContactUs</a></li>
         </ul>
     </nav>
 
 
 
-    <a href="booking-1.html" class="a-Appointment"><i class="fa-solid fa-calendar-days"></i> Appointment</a>
-
+@*    <a href="booking-1.html" class="a-Appointment"><i class="fa-solid fa-calendar-days"></i> Appointment</a>
+*@
 </div>

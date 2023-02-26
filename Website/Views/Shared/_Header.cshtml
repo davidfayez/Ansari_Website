@@ -23,7 +23,7 @@
                 <li class="disabled-items"><a asp-controller="Account" asp-action="Login"><i class="fa-solid fa-user-check"></i> @User.GetUserName()</a></li>
                 @if(IsArabic)
                 {
-                    <li><a asp-action="ChangeLanguage" asp-controller="Home" asp-route-Lang="ar-EG"> <img src="~/images/ar.png" /></a></li>
+                    <li><a asp-action="ChangeLanguage" asp-controller="Home" asp-route-Lang="en-US"> <img src="~/images/ar.png" /></a></li>
                 }
                 else
                 {
@@ -35,7 +35,7 @@
                 <li class="disabled-items"><a asp-controller="Account" asp-action="Login"><i class="fa-solid fa-user-check"></i> @Global.Login / @Global.Register</a></li>
                 @if(IsArabic)
                 {
-                    <li><a asp-action="ChangeLanguage" asp-controller="Home" asp-route-Lang="ar-EG"> <img src="~/images/ar.png" /></a></li>
+                    <li><a asp-action="ChangeLanguage" asp-controller="Home" asp-route-Lang="en-US"> <img src="~/images/ar.png" /></a></li>
                 }
                 else
                 {

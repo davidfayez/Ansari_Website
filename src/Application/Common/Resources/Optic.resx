@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Aboutus" xml:space="preserve">
+    <value>Aboutus</value>
+  </data>
   <data name="Age" xml:space="preserve">
     <value>Age</value>
   </data>
@@ -135,6 +138,9 @@
   <data name="AttachPhoto" xml:space="preserve">
     <value>Attach Photo</value>
   </data>
+  <data name="Blogs" xml:space="preserve">
+    <value>Blogs</value>
+  </data>
   <data name="CardImage" xml:space="preserve">
     <value>Card Image</value>
   </data>
@@ -143,6 +149,9 @@
   </data>
   <data name="Center" xml:space="preserve">
     <value>Center</value>
+  </data>
+  <data name="Centers" xml:space="preserve">
+    <value>Centers</value>
   </data>
   <data name="CheckNumber" xml:space="preserve">
     <value>Check Number</value>
@@ -158,6 +167,9 @@
   </data>
   <data name="Congratulation" xml:space="preserve">
     <value>Congratulation</value>
+  </data>
+  <data name="ContactUs" xml:space="preserve">
+    <value>Contact Us</value>
   </data>
   <data name="Country" xml:space="preserve">
     <value>Country</value>
@@ -195,8 +207,14 @@
   <data name="Doctor" xml:space="preserve">
     <value>Doctor</value>
   </data>
+  <data name="Doctors" xml:space="preserve">
+    <value>Doctors</value>
+  </data>
   <data name="DoNotHaveAccount" xml:space="preserve">
     <value>Don't have an account ?</value>
+  </data>
+  <data name="Events" xml:space="preserve">
+    <value>Events</value>
   </data>
   <data name="ExtraNumber" xml:space="preserve">
     <value>Extra Number</value>
@@ -209,6 +227,9 @@
   </data>
   <data name="Female" xml:space="preserve">
     <value>Female</value>
+  </data>
+  <data name="FuturePlan" xml:space="preserve">
+    <value>Future Plan</value>
   </data>
   <data name="HospitalWesite" xml:space="preserve">
     <value>Hospital Wesite</value>
@@ -240,6 +261,9 @@
   <data name="MedicalInsurance" xml:space="preserve">
     <value>Medical Insurance</value>
   </data>
+  <data name="Message" xml:space="preserve">
+    <value>Message</value>
+  </data>
   <data name="Name" xml:space="preserve">
     <value>Name</value>
   </data>
@@ -249,17 +273,29 @@
   <data name="Nationality" xml:space="preserve">
     <value>Nationality</value>
   </data>
+  <data name="Offers" xml:space="preserve">
+    <value>Offers</value>
+  </data>
   <data name="OpticMedicalFile" xml:space="preserve">
     <value>Optics Medical File</value>
   </data>
   <data name="Order" xml:space="preserve">
     <value>Order</value>
   </data>
+  <data name="OurMissionVisionValues" xml:space="preserve">
+    <value>Our Mission &amp; Vision &amp; Values</value>
+  </data>
+  <data name="Overview" xml:space="preserve">
+    <value>Overview</value>
+  </data>
   <data name="Password" xml:space="preserve">
     <value>Password</value>
   </data>
   <data name="PatientFile" xml:space="preserve">
     <value>Patient File</value>
+  </data>
+  <data name="PatientRight" xml:space="preserve">
+    <value>Patient Right</value>
   </data>
   <data name="PayType" xml:space="preserve">
     <value>Pay Type</value>
@@ -294,6 +330,9 @@
   <data name="ResendCode" xml:space="preserve">
     <value>Resend Code</value>
   </data>
+  <data name="SendMessage" xml:space="preserve">
+    <value>Send Message</value>
+  </data>
   <data name="ShareFeedback" xml:space="preserve">
     <value>Please share your feedback with us.</value>
   </data>
@@ -302,6 +341,9 @@
   </data>
   <data name="Speciality" xml:space="preserve">
     <value>Speciality</value>
+  </data>
+  <data name="Specialties" xml:space="preserve">
+    <value>Specialties</value>
   </data>
   <data name="StreetName" xml:space="preserve">
     <value>Street Name</value>
@@ -314,6 +356,9 @@
   </data>
   <data name="TermsAndConditions" xml:space="preserve">
     <value>Terms And Conditions</value>
+  </data>
+  <data name="Testiminies" xml:space="preserve">
+    <value>Testiminies</value>
   </data>
   <data name="UnifiedNationalNumber" xml:space="preserve">
     <value>Unified National Number</value>

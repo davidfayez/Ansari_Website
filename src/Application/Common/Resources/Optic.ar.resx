@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Aboutus" xml:space="preserve">
+    <value>معلومات عنا</value>
+  </data>
   <data name="Age" xml:space="preserve">
     <value>العمر</value>
   </data>
@@ -135,6 +138,9 @@
   <data name="AttachPhoto" xml:space="preserve">
     <value>ارفق صوره</value>
   </data>
+  <data name="Blogs" xml:space="preserve">
+    <value>المدونات</value>
+  </data>
   <data name="CardImage" xml:space="preserve">
     <value>صورة كارت التامين</value>
   </data>
@@ -143,6 +149,9 @@
   </data>
   <data name="Center" xml:space="preserve">
     <value>مركز</value>
+  </data>
+  <data name="Centers" xml:space="preserve">
+    <value>المراكز</value>
   </data>
   <data name="CheckNumber" xml:space="preserve">
     <value>تحقق من الارقام</value>
@@ -158,6 +167,9 @@
   </data>
   <data name="Congratulation" xml:space="preserve">
     <value>تهانينا</value>
+  </data>
+  <data name="ContactUs" xml:space="preserve">
+    <value>اتصل بنا</value>
   </data>
   <data name="Country" xml:space="preserve">
     <value>البلد</value>
@@ -195,8 +207,14 @@
   <data name="Doctor" xml:space="preserve">
     <value>دكتور</value>
   </data>
+  <data name="Doctors" xml:space="preserve">
+    <value>الأطباء</value>
+  </data>
   <data name="DoNotHaveAccount" xml:space="preserve">
     <value>ليس لديك حساب؟</value>
+  </data>
+  <data name="Events" xml:space="preserve">
+    <value>الأحداث</value>
   </data>
   <data name="ExtraNumber" xml:space="preserve">
     <value>الرقم الإضافي</value>
@@ -209,6 +227,9 @@
   </data>
   <data name="Female" xml:space="preserve">
     <value>انثى</value>
+  </data>
+  <data name="FuturePlan" xml:space="preserve">
+    <value>خطة المستقبل</value>
   </data>
   <data name="HospitalWesite" xml:space="preserve">
     <value>موقع الشركة</value>
@@ -240,6 +261,9 @@
   <data name="MedicalInsurance" xml:space="preserve">
     <value>التأمين الطبى</value>
   </data>
+  <data name="Message" xml:space="preserve">
+    <value>الرسالة</value>
+  </data>
   <data name="Name" xml:space="preserve">
     <value>الأسم</value>
   </data>
@@ -249,14 +273,26 @@
   <data name="Nationality" xml:space="preserve">
     <value>الجنسيه</value>
   </data>
+  <data name="Offers" xml:space="preserve">
+    <value>عروض</value>
+  </data>
   <data name="OpticMedicalFile" xml:space="preserve">
     <value>الملف الطبى للنظارت</value>
   </data>
   <data name="Order" xml:space="preserve">
     <value>الترتيب</value>
   </data>
+  <data name="OurMissionVisionValues" xml:space="preserve">
+    <value>مهمتنا ورؤيتنا وقيمنا</value>
+  </data>
+  <data name="Overview" xml:space="preserve">
+    <value>نظرة عامة</value>
+  </data>
   <data name="PatientFile" xml:space="preserve">
     <value>ملف العميل</value>
+  </data>
+  <data name="PatientRight" xml:space="preserve">
+    <value>حقوق المريض</value>
   </data>
   <data name="PayType" xml:space="preserve">
     <value>طريقة الدفع</value>
@@ -291,6 +327,9 @@
   <data name="ResendCode" xml:space="preserve">
     <value>أعد إرسال الرمز</value>
   </data>
+  <data name="SendMessage" xml:space="preserve">
+    <value>ارسال رسالة</value>
+  </data>
   <data name="ShareFeedback" xml:space="preserve">
     <value>يرجى مشاركة ملاحظاتك معنا.</value>
   </data>
@@ -299,6 +338,9 @@
   </data>
   <data name="Speciality" xml:space="preserve">
     <value>التخصص</value>
+  </data>
+  <data name="Specialties" xml:space="preserve">
+    <value>التخصصات</value>
   </data>
   <data name="StreetName" xml:space="preserve">
     <value>اسم الشارع</value>
@@ -311,6 +353,9 @@
   </data>
   <data name="TermsAndConditions" xml:space="preserve">
     <value>الأحكام والشروط</value>
+  </data>
+  <data name="Testiminies" xml:space="preserve">
+    <value>شهادات</value>
   </data>
   <data name="UnifiedNationalNumber" xml:space="preserve">
     <value>الرقم الوطني الموحد</value>

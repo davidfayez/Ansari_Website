@@ -58,6 +58,7 @@ public partial class ApplicationDbContext : IdentityDbContext<AspNetUser, Applic
     #endregion
 
     #region CPanel
+    public virtual DbSet<ContactUs> ContactUs => Set<ContactUs>();
     public virtual DbSet<AboutUs> AboutUs => Set<AboutUs>();
     public virtual DbSet<SiteInfo> SiteInfo => Set<SiteInfo>();
     public virtual DbSet<Department> Departments => Set<Department>();

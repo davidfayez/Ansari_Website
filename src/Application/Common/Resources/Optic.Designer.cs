@@ -61,6 +61,15 @@ namespace Ansari_Website.Application.Common.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Aboutus.
+        /// </summary>
+        public static string Aboutus {
+            get {
+                return ResourceManager.GetString("Aboutus", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Age.
         /// </summary>
         public static string Age {
@@ -115,6 +124,15 @@ namespace Ansari_Website.Application.Common.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Blogs.
+        /// </summary>
+        public static string Blogs {
+            get {
+                return ResourceManager.GetString("Blogs", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Card Image.
         /// </summary>
         public static string CardImage {
@@ -138,6 +156,15 @@ namespace Ansari_Website.Application.Common.Resources {
         public static string Center {
             get {
                 return ResourceManager.GetString("Center", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Centers.
+        /// </summary>
+        public static string Centers {
+            get {
+                return ResourceManager.GetString("Centers", resourceCulture);
             }
         }
         
@@ -183,6 +210,15 @@ namespace Ansari_Website.Application.Common.Resources {
         public static string Congratulation {
             get {
                 return ResourceManager.GetString("Congratulation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Contact Us.
+        /// </summary>
+        public static string ContactUs {
+            get {
+                return ResourceManager.GetString("ContactUs", resourceCulture);
             }
         }
         
@@ -295,11 +331,29 @@ namespace Ansari_Website.Application.Common.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Doctors.
+        /// </summary>
+        public static string Doctors {
+            get {
+                return ResourceManager.GetString("Doctors", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Don&apos;t have an account ?.
         /// </summary>
         public static string DoNotHaveAccount {
             get {
                 return ResourceManager.GetString("DoNotHaveAccount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Events.
+        /// </summary>
+        public static string Events {
+            get {
+                return ResourceManager.GetString("Events", resourceCulture);
             }
         }
         
@@ -336,6 +390,15 @@ namespace Ansari_Website.Application.Common.Resources {
         public static string Female {
             get {
                 return ResourceManager.GetString("Female", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Future Plan.
+        /// </summary>
+        public static string FuturePlan {
+            get {
+                return ResourceManager.GetString("FuturePlan", resourceCulture);
             }
         }
         
@@ -430,6 +493,15 @@ namespace Ansari_Website.Application.Common.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Message.
+        /// </summary>
+        public static string Message {
+            get {
+                return ResourceManager.GetString("Message", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Name.
         /// </summary>
         public static string Name {
@@ -457,6 +529,15 @@ namespace Ansari_Website.Application.Common.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Offers.
+        /// </summary>
+        public static string Offers {
+            get {
+                return ResourceManager.GetString("Offers", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Optics Medical File.
         /// </summary>
         public static string OpticMedicalFile {
@@ -475,6 +556,24 @@ namespace Ansari_Website.Application.Common.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Our Mission &amp; Vision &amp; Values.
+        /// </summary>
+        public static string OurMissionVisionValues {
+            get {
+                return ResourceManager.GetString("OurMissionVisionValues", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Overview.
+        /// </summary>
+        public static string Overview {
+            get {
+                return ResourceManager.GetString("Overview", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Password.
         /// </summary>
         public static string Password {
@@ -489,6 +588,15 @@ namespace Ansari_Website.Application.Common.Resources {
         public static string PatientFile {
             get {
                 return ResourceManager.GetString("PatientFile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Patient Right.
+        /// </summary>
+        public static string PatientRight {
+            get {
+                return ResourceManager.GetString("PatientRight", resourceCulture);
             }
         }
         
@@ -592,6 +700,15 @@ namespace Ansari_Website.Application.Common.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Send Message.
+        /// </summary>
+        public static string SendMessage {
+            get {
+                return ResourceManager.GetString("SendMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Please share your feedback with us..
         /// </summary>
         public static string ShareFeedback {
@@ -615,6 +732,15 @@ namespace Ansari_Website.Application.Common.Resources {
         public static string Speciality {
             get {
                 return ResourceManager.GetString("Speciality", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Specialties.
+        /// </summary>
+        public static string Specialties {
+            get {
+                return ResourceManager.GetString("Specialties", resourceCulture);
             }
         }
         
@@ -651,6 +777,15 @@ namespace Ansari_Website.Application.Common.Resources {
         public static string TermsAndConditions {
             get {
                 return ResourceManager.GetString("TermsAndConditions", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Testiminies.
+        /// </summary>
+        public static string Testiminies {
+            get {
+                return ResourceManager.GetString("Testiminies", resourceCulture);
             }
         }
         
