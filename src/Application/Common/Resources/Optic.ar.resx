@@ -126,6 +126,9 @@
   <data name="AgreeTo" xml:space="preserve">
     <value>اوافق علي</value>
   </data>
+  <data name="AllCopyrights" xml:space="preserve">
+    <value>جميع الحقوق محفوظة لشركة أنصاري 2022</value>
+  </data>
   <data name="AlreadyHaveAccount" xml:space="preserve">
     <value>هل لديك حساب ؟</value>
   </data>
@@ -192,6 +195,9 @@
   <data name="CustomerNameEn" xml:space="preserve">
     <value>اسم العميل انجليزى</value>
   </data>
+  <data name="DailyWorkHours" xml:space="preserve">
+    <value>9:00 ص - 12:00 م، 5:00 م - 10:00 م</value>
+  </data>
   <data name="DateExpiry" xml:space="preserve">
     <value>تاريخ الانتهاء</value>
   </data>
@@ -212,6 +218,9 @@
   </data>
   <data name="DoNotHaveAccount" xml:space="preserve">
     <value>ليس لديك حساب؟</value>
+  </data>
+  <data name="EveningHours" xml:space="preserve">
+    <value>مساءً: 5:00 صباحًا - 9:00 مساءً</value>
   </data>
   <data name="Events" xml:space="preserve">
     <value>الأحداث</value>
@@ -273,6 +282,9 @@
   <data name="Nationality" xml:space="preserve">
     <value>الجنسيه</value>
   </data>
+  <data name="NeedEmergency" xml:space="preserve">
+    <value>هل تحتاج إلى مساعدة طارئة؟</value>
+  </data>
   <data name="Offers" xml:space="preserve">
     <value>عروض</value>
   </data>
@@ -284,6 +296,9 @@
   </data>
   <data name="OurMissionVisionValues" xml:space="preserve">
     <value>مهمتنا ورؤيتنا وقيمنا</value>
+  </data>
+  <data name="Ourstory" xml:space="preserve">
+    <value>قصتنا </value>
   </data>
   <data name="Overview" xml:space="preserve">
     <value>نظرة عامة</value>
@@ -327,6 +342,9 @@
   <data name="ResendCode" xml:space="preserve">
     <value>أعد إرسال الرمز</value>
   </data>
+  <data name="SaturdayToWednesdayMorning" xml:space="preserve">
+    <value>من السبت إلى الأربعاء صباحًا</value>
+  </data>
   <data name="SendMessage" xml:space="preserve">
     <value>ارسال رسالة</value>
   </data>
@@ -357,6 +375,9 @@
   <data name="Testiminies" xml:space="preserve">
     <value>شهادات</value>
   </data>
+  <data name="ThursdayMorningHours" xml:space="preserve">
+    <value>الخميس صباحا 9:00 صباحا - 12:30 مساءا</value>
+  </data>
   <data name="UnifiedNationalNumber" xml:space="preserve">
     <value>الرقم الوطني الموحد</value>
   </data>
@@ -371,5 +392,8 @@
   </data>
   <data name="VirtualMedicalCard" xml:space="preserve">
     <value>كارت التأمين الافتراضى</value>
+  </data>
+  <data name="WorkingDaysHours" xml:space="preserve">
+    <value>أيام وساعات العمل</value>
   </data>
 </root>

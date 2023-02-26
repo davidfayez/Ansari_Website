@@ -1,4 +1,4 @@
-﻿@model List<DepartmentVM>
+﻿@model List<FuturePlanVM>
 @{
     Layout = "_Layout";
 }
@@ -32,7 +32,7 @@
                     {
                         <div class="col-lg-3 col-md-4 col-sm-6">
                             <a asp-action="Details" asp-route-id="@department.Id" class="item-doctor hvr-hang">
-                                <div class="img-doctor" style="background-image: url(/images/Neurosurgery.jpg);"></div>
+                                <div class="img-doctor" style="background-image: url(/images/FuturePlans/@department.ImageUrl);"></div>
                                 <h4>@department.TitleEn</h4>
                                 <p>
                                    @department.DescriptionEn

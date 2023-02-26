@@ -1,12 +1,12 @@
-﻿@model DepartmentVM
+﻿@model FuturePlanVM
 @{
     Layout = "_Layout";
-    var Departments = ViewBag.Departments as List<DepartmentVM>;
+    var FuturePlans = ViewBag.FuturePlans as List<FuturePlanVM>;
 }
 
 
 <div class="inner-div-depart">
-    <div class="img-inner-department" style="background-image: url(/images/Departments/@Model.ImageUrl);">
+    <div class="img-inner-department" style="background-image: url(/images/rheumatism.jpg);">
     </div>
 
     <h3>@Model.TitleEn</h3>
@@ -18,14 +18,14 @@
 
 <div class="glider-contain">
     <div class="glider Doctor-Slider">
-        @if(Departments != null)
+        @if (FuturePlans != null)
         {
-            @foreach (var department in Departments)
+            @foreach (var department in FuturePlans)
             {
                 <div>
                    <div class="padding-dep">
-                        <a asp-controller="Department" asp-action="Details" asp-route-id="@department.Id" class="item-doctor ">
-                            <div class="img-doctor" style="background-image: url(/images/Departments/@department.ImageUrl);"></div>
+                       <a asp-controller="FuturePlan" asp-action="Details" asp-route-id="@department.Id" class="item-doctor ">
+                            <div class="img-doctor" style="background-image: url(/images/FuturePlans/@department.ImageUrl);"></div>
                            <h4>@department.TitleEn</h4>
                            <p>
                               @department.DescriptionEn

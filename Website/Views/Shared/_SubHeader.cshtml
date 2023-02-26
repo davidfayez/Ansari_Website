@@ -10,10 +10,10 @@
                     <li><a asp-controller="Home" asp-action="Overview">@Optic.Overview </a></li>
                     <li><a asp-controller="Home" asp-action="Mission">@Optic.OurMissionVisionValues </a></li>
 
-                    <li><a href='About.html'>@Optic.PatientRight </a></li>
-                    <li><a href='Department.html'>@Optic.FuturePlan </a></li>
+                    <li><a asp-controller="PatientRight" asp-action="Index">@Optic.PatientRight </a></li>
+                    <li><a asp-controller="FuturePlan" asp-action="Index">@Optic.FuturePlan </a></li>
                     <li><a asp-controller="Testiminie" asp-action="Index">@Optic.Testiminies  </a></li>
-
+                    
                 </ul>
             </li>
 

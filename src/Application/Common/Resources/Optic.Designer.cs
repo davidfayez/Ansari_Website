@@ -88,6 +88,15 @@ namespace Ansari_Website.Application.Common.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to All Copyrights Reserved To Ansari 2022.
+        /// </summary>
+        public static string AllCopyrights {
+            get {
+                return ResourceManager.GetString("AllCopyrights", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Already have an account ?.
         /// </summary>
         public static string AlreadyHaveAccount {
@@ -286,6 +295,15 @@ namespace Ansari_Website.Application.Common.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to 9:00 AM-12:00 PM, Evening 5:00 PM-10:00 PM.
+        /// </summary>
+        public static string DailyWorkHours {
+            get {
+                return ResourceManager.GetString("DailyWorkHours", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Date Expiry.
         /// </summary>
         public static string DateExpiry {
@@ -345,6 +363,15 @@ namespace Ansari_Website.Application.Common.Resources {
         public static string DoNotHaveAccount {
             get {
                 return ResourceManager.GetString("DoNotHaveAccount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Evening 5:00 AM –9:00 PM.
+        /// </summary>
+        public static string EveningHours {
+            get {
+                return ResourceManager.GetString("EveningHours", resourceCulture);
             }
         }
         
@@ -529,6 +556,15 @@ namespace Ansari_Website.Application.Common.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Need an emergency help ?.
+        /// </summary>
+        public static string NeedEmergency {
+            get {
+                return ResourceManager.GetString("NeedEmergency", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Offers.
         /// </summary>
         public static string Offers {
@@ -561,6 +597,15 @@ namespace Ansari_Website.Application.Common.Resources {
         public static string OurMissionVisionValues {
             get {
                 return ResourceManager.GetString("OurMissionVisionValues", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Our story.
+        /// </summary>
+        public static string Ourstory {
+            get {
+                return ResourceManager.GetString("Ourstory", resourceCulture);
             }
         }
         
@@ -700,6 +745,15 @@ namespace Ansari_Website.Application.Common.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Saturday to Wednesday morning.
+        /// </summary>
+        public static string SaturdayToWednesdayMorning {
+            get {
+                return ResourceManager.GetString("SaturdayToWednesdayMorning", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Send Message.
         /// </summary>
         public static string SendMessage {
@@ -790,6 +844,15 @@ namespace Ansari_Website.Application.Common.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Thursday Morning 9:00 AM – 12:30 PM.
+        /// </summary>
+        public static string ThursdayMorningHours {
+            get {
+                return ResourceManager.GetString("ThursdayMorningHours", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Unified National Number.
         /// </summary>
         public static string UnifiedNationalNumber {
@@ -831,6 +894,15 @@ namespace Ansari_Website.Application.Common.Resources {
         public static string VirtualMedicalCard {
             get {
                 return ResourceManager.GetString("VirtualMedicalCard", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Working days &amp; hours.
+        /// </summary>
+        public static string WorkingDaysHours {
+            get {
+                return ResourceManager.GetString("WorkingDaysHours", resourceCulture);
             }
         }
     }

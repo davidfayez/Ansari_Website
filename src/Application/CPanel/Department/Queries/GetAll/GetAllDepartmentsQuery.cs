@@ -38,6 +38,10 @@ public class GetAllDepartmentsQueryHandler : IRequestHandler<GetAllDepartmentsQu
             DescriptionEn=s.DescriptionEn,
             TitleAr= s.TitleAr,
             TitleEn= s.TitleEn,
+            IconUrl = s.IconUrl,
+            ImageUrl= s.ImageUrl,
+            AltImage = s.AltImage,
+            Speciality = s.Speciality,
             Title = (request.LangId == (int)ELanguages.AR) ? s.TitleAr : s.TitleEn,
             Description = (request.LangId == (int)ELanguages.AR) ? s.DescriptionAr : s.DescriptionEn,
         }).ToList();

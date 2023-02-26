@@ -126,6 +126,9 @@
   <data name="AgreeTo" xml:space="preserve">
     <value>Agree To</value>
   </data>
+  <data name="AllCopyrights" xml:space="preserve">
+    <value>All Copyrights Reserved To Ansari 2022</value>
+  </data>
   <data name="AlreadyHaveAccount" xml:space="preserve">
     <value>Already have an account ?</value>
   </data>
@@ -192,6 +195,9 @@
   <data name="CustomerNameEn" xml:space="preserve">
     <value>Customer English Name</value>
   </data>
+  <data name="DailyWorkHours" xml:space="preserve">
+    <value>9:00 AM-12:00 PM, Evening 5:00 PM-10:00 PM</value>
+  </data>
   <data name="DateExpiry" xml:space="preserve">
     <value>Date Expiry</value>
   </data>
@@ -212,6 +218,9 @@
   </data>
   <data name="DoNotHaveAccount" xml:space="preserve">
     <value>Don't have an account ?</value>
+  </data>
+  <data name="EveningHours" xml:space="preserve">
+    <value>Evening 5:00 AM –9:00 PM</value>
   </data>
   <data name="Events" xml:space="preserve">
     <value>Events</value>
@@ -273,6 +282,9 @@
   <data name="Nationality" xml:space="preserve">
     <value>Nationality</value>
   </data>
+  <data name="NeedEmergency" xml:space="preserve">
+    <value>Need an emergency help ?</value>
+  </data>
   <data name="Offers" xml:space="preserve">
     <value>Offers</value>
   </data>
@@ -284,6 +296,9 @@
   </data>
   <data name="OurMissionVisionValues" xml:space="preserve">
     <value>Our Mission &amp; Vision &amp; Values</value>
+  </data>
+  <data name="Ourstory" xml:space="preserve">
+    <value>Our story</value>
   </data>
   <data name="Overview" xml:space="preserve">
     <value>Overview</value>
@@ -330,6 +345,9 @@
   <data name="ResendCode" xml:space="preserve">
     <value>Resend Code</value>
   </data>
+  <data name="SaturdayToWednesdayMorning" xml:space="preserve">
+    <value>Saturday to Wednesday morning</value>
+  </data>
   <data name="SendMessage" xml:space="preserve">
     <value>Send Message</value>
   </data>
@@ -360,6 +378,9 @@
   <data name="Testiminies" xml:space="preserve">
     <value>Testiminies</value>
   </data>
+  <data name="ThursdayMorningHours" xml:space="preserve">
+    <value>Thursday Morning 9:00 AM – 12:30 PM</value>
+  </data>
   <data name="UnifiedNationalNumber" xml:space="preserve">
     <value>Unified National Number</value>
   </data>
@@ -374,5 +395,8 @@
   </data>
   <data name="VirtualMedicalCard" xml:space="preserve">
     <value>Virtual Medical Insurance Card</value>
+  </data>
+  <data name="WorkingDaysHours" xml:space="preserve">
+    <value>Working days &amp; hours</value>
   </data>
 </root>
