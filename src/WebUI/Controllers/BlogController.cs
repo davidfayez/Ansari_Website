@@ -5,7 +5,9 @@ using Ansari_Website.Application.CPanel.Blog.Commands.Delete;
 using Ansari_Website.Application.CPanel.Blog.Queries.GetAll;
 using Ansari_Website.Application.CPanel.Blog.Queries.GetById;
 using Ansari_Website.Application.CPanel.Department.Queries.GetAll;
+using Ansari_Website.Application.CPanel.Doctor.Queries.GetAllByDepartment;
 using Ansari_Website.Application.User.Queries.GetAll;
+using Ansari_Website.Domain.Entities.CPanel;
 using Ansari_Website.Domain.Enums;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
@@ -61,6 +63,7 @@ public class BlogController : BaseController
                 return RedirectToAction("Index");
             }
         }
+        await FillBlogDDLAsync(command);
         return View(command);
 
     }
@@ -114,7 +117,11 @@ public class BlogController : BaseController
         command.Departments.Add(new SelectListItem { Text = Global.SelectOne, Value = "" });
         var Departments = await Mediator.Send(new GetAllDepartmentsQuery());
         command.Departments.AddRange(Departments.Select(a => new SelectListItem { Text = a.TitleEn, Value = a.Id.ToString() }));
-
     }
 
+    public async Task<JsonResult> GetAllDoctorsByDepartmentId(int departmentId)
+    {
+        var doctors = await Mediator.Send(new GetAllDoctorsByDepartmentIdQuery { DepartmentId = departmentId });
+        return Json(doctors);
+    }
 }

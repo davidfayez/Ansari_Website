@@ -28,5 +28,7 @@ namespace ERP.DAL.Domains
         public int? IsShow { get; set; }
         public int? DepartmentId { get; set; }
         public virtual Department Department { get; set; }
+        public virtual IList<Blog> Blogs { get; set; }
+
     }
 }

@@ -13,6 +13,7 @@
             <tr>
                 <th style="max-width:75px ;">@Global.UserName</th>
                 <th style="max-width:75px ;">@Global.Email</th>
+                <th style="max-width:75px ;">@Global.DepartmentName</th>
                 <th style="max-width:50px ;"></th>
             </tr>
         </thead>
@@ -26,6 +27,7 @@
                     <tr id="@id">
                         <td>@User.UserName</td>
                         <td>@User.Email</td>
+                        <td>@User.DepartmentName</td>
                         <td>
                             <a asp-action="Edit" asp-route-id="@User.Id" class="btn btn-warning btn-sm"><i class="fa-regular fa-pen-to-square"></i></a>
                             <button class="btn btn-danger btn-sm" onclick="deleteDetail('User','Delete',@User.Id,'@id')"><i class="fas fa-times"></i></button>

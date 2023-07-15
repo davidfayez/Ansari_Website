@@ -1,0 +1,37 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Ansari_Website.Domain.Entities.CPanel;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
+
+namespace Ansari_Website.Infrastructure.Configurations;
+public class BlogConfiguration : IEntityTypeConfiguration<Blog>
+{
+    public void Configure(EntityTypeBuilder<Blog> builder)
+    {
+        builder.Property(s => s.Id).UseIdentityColumn();
+
+        builder.Property(s => s.TitleAr)
+               .IsRequired()
+               .HasMaxLength(500);
+
+        builder.Property(s => s.TitleEn)
+               .IsRequired()
+               .HasMaxLength(500);
+
+
+        builder.HasOne(s => s.Department)
+               .WithMany(s => s.Blogs)
+               .HasForeignKey(s => s.DepartmentId)
+               .OnDelete(DeleteBehavior.NoAction);
+
+        builder.HasOne(s => s.Doctor)
+               .WithMany(s => s.Blogs)
+               .HasForeignKey(s => s.DoctorId)
+               .OnDelete(DeleteBehavior.NoAction);
+
+    }
+}

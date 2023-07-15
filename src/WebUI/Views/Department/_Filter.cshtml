@@ -11,15 +11,11 @@
                     <label>@Optic.Speciality</label>
                     <select name="type" class="form-control input-sys">
                         <option value="0">@Global.Choose</option>
-                        <option value="@((int)Speciality.Center)">@Optic.Center</option>
-                        <option value="@((int)Speciality.Department)">@Optic.Department</option>
+                        <option value="@(Speciality.Center)">@Optic.Center</option>
+                        <option value="@(Speciality.Department)">@Optic.Department</option>
                     </select>
                 </div>
 
             </div>
-           <div class="col-md-3">
-               <button type="submit" class="btn-primary">Filter</button>
-
-           </div>
 
     </form>

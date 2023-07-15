@@ -34,8 +34,8 @@ public class DepartmentController : BaseController
         return View(new CreateUpdateDepartmentCommand());
     }
 
-    [HttpPost]
-    public async Task<IActionResult> FilterAsync(Speciality type)
+    [HttpGet]
+    public async Task<IActionResult> Filter(Speciality type)
     {
         if (type > 0)
         {

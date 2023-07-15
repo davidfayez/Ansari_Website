@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -24,4 +25,5 @@ public class Department
     public bool IsSystem { get; set; }                  // تم الادخال من الشاشات أم قاعدة البيانات
     public DateTime CreationDate { get; set; }         // تاريخ الادخال
     public DateTime LastModifiedDate { get; set; }
+    public virtual IList<Blog> Blogs { get; set; }
 }

@@ -8,7 +8,7 @@ public class CreateUpdateBlogCommand : AuditableEntity, IRequest<bool>, IMapFrom
     public int Id { get; set; }
     public int? Order { get; set; }
     public int DepartmentId { get; set; }
-    public int DoctorId { get; set; }
+    public string DoctorId { get; set; }
     public string? TitleAr { get; set; }
     public string? TitleEn { get; set; }
     public string? DescriptionAr { get; set; }

@@ -20,7 +20,7 @@
         <div class="col-md-6">
             <div class="input-sys-wrapper">
                 <label>@Optic.Doctor</label>
-                <select asp-for="DoctorId" asp-items="Model.Doctors" class="form-control input-sys">
+                <select asp-for="DoctorId" class="form-control input-sys">
                 </select>
                 <span asp-validation-for="DoctorId" class="text-danger"></span>
             </div>
@@ -102,4 +102,6 @@
     </div>
     </form>
 </div>
-<script asp-append-version="true" src="~/js/pages/Blog/AddBlog.js"></script>
+@section scripts {
+    <script asp-append-version="true" src="~/js/pages/Blog/AddBlog.js"></script>
+}

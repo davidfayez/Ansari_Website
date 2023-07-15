@@ -12,7 +12,7 @@ public class BlogVM : AuditableEntity, IMapFrom<DB.Blog>
     public int Id { get; set; }
     public int? Order { get; set; }
     public int DepartmentId { get; set; }
-    public int DoctorId { get; set; }
+    public string DoctorId { get; set; }
     public string? TitleAr { get; set; }
     public string? TitleEn { get; set; }
     public string? DescriptionAr { get; set; }
